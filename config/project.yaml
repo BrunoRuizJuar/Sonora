@@ -1,0 +1,13 @@
+project:
+  name: SONORA
+  language: en
+  repository: https://github.com/BrunoRuizJuar/Sonora.git
+storage:
+  backend: local
+  data_root: data
+  artifacts_root: artifacts
+  runtime_root: runtime
+serving:
+  catalog_version: null
+  release_manifest: null
+  require_validated_release: true

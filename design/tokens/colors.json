@@ -1,0 +1,12 @@
+{
+  "status": "initial_proposal",
+  "colors": {
+    "background": "#1B1410",
+    "surface": "#2B2019",
+    "surfaceRaised": "#3D2C22",
+    "textPrimary": "#F2E2C4",
+    "textSecondary": "#BDA589",
+    "accentPrimary": "#D97732",
+    "accentSecondary": "#A94732"
+  }
+}

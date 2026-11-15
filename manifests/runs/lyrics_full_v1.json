@@ -1,0 +1,422 @@
+{
+  "run_id": "lyrics_full_v1",
+  "created_utc": "2026-11-13T04:14:41+00:00",
+  "updated_utc": "2026-11-14T03:54:20+00:00",
+  "stages": {
+    "ingest": {
+      "status": "complete",
+      "finished_utc": "2026-11-13T05:43:19+00:00",
+      "chunks_total": 160,
+      "chunks_remaining": 0,
+      "chunks_written_this_session": 0,
+      "rows_written_this_session": 0,
+      "rows_in_scope": 3179588,
+      "seconds_this_session": 1.7,
+      "batch_size": 2000,
+      "peak_rss_bytes": 60846080,
+      "detector": null
+    },
+    "consolidate": {
+      "status": "complete",
+      "finished_utc": "2026-11-13T06:13:00+00:00",
+      "seconds": 1780.9,
+      "source_records": 3179588,
+      "status_counts": {
+        "accepted": 3177443,
+        "review": 1914,
+        "excluded": 231
+      },
+      "canonical_lyrics": 3155772,
+      "accepted_duplicates_consolidated": 21671,
+      "peak_rss_bytes": 3289522176,
+      "code_sha256": "55b634c1c80ad0e5b606e1fff1f84d437040912f4f1325b440c702f1987c27b3"
+    },
+    "split": {
+      "status": "complete",
+      "finished_utc": "2026-11-13T06:13:30+00:00",
+      "seconds": 29.6,
+      "lyrics": 3155772,
+      "groups": 3145790,
+      "by_split": {
+        "train": {
+          "lyrics": 2208832,
+          "groups": 2201895,
+          "source_records": 2223978
+        },
+        "test": {
+          "lyrics": 631651,
+          "groups": 629609,
+          "source_records": 635945
+        },
+        "validation": {
+          "lyrics": 315289,
+          "groups": 314286,
+          "source_records": 317520
+        }
+      },
+      "peak_rss_bytes": 3289522176
+    },
+    "demo": {
+      "status": "complete",
+      "finished_utc": "2026-11-14T03:54:07+00:00",
+      "seconds": 2.7,
+      "selection_rows": 886,
+      "distinct_genius_locators": 850,
+      "in_processed_scope": 886,
+      "locator_verified": 886,
+      "locator_check": {
+        "title_artist_normalized_equal": 886
+      },
+      "lyrics_status": {
+        "accepted": 886
+      },
+      "lyrics_exclusion_rule": {},
+      "has_lyrics": 886,
+      "distinct_lyrics_ids": 849,
+      "recordings_per_lyrics_id_max": 3,
+      "by_split_recordings": {
+        "train": 575,
+        "validation": 101,
+        "test": 210
+      },
+      "by_split_lyrics": {
+        "validation": 96,
+        "test": 201,
+        "train": 552
+      },
+      "has_audio_file": 886,
+      "fma_audio_dirs_found": [
+        "data/raw/fma/fma_medium"
+      ],
+      "original_status": {
+        "exact_unique_candidate": 787,
+        "exact_ambiguous": 99
+      },
+      "catalog_eligible": 0
+    },
+    "report": {
+      "status": "complete",
+      "finished_utc": "2026-11-14T03:54:20+00:00",
+      "reconciled": true
+    }
+  },
+  "scope": {
+    "shards": null,
+    "row_limit_per_shard": null
+  },
+  "scope_is_full_corpus": true,
+  "ingest_hash": "8fd66da2b977d590c70bd7ccd368cf3b5f4aab7ac02f58d3f2218624c61376be",
+  "config": {
+    "version": 1,
+    "genius": {
+      "dataset": "theelderemo/genius-lyrics-cleaned",
+      "dir": "data/raw/genius",
+      "pattern": "train-*-of-00010.parquet",
+      "expected_files": 10,
+      "columns": [
+        "title",
+        "artist",
+        "tag",
+        "year",
+        "lyrics"
+      ]
+    },
+    "chunk_rows": 20000,
+    "language": {
+      "detector": "lingua-language-detector",
+      "mode": "high_accuracy",
+      "excerpt_window_chars": 800,
+      "excerpt_windows": 3,
+      "secondary_detector": "py3langid",
+      "rules": {
+        "primary_accept_en_min_conf": 0.99,
+        "short_text_words": 20,
+        "secondary_min_conf": 0.5
+      }
+    },
+    "quality": {
+      "min_words": 5,
+      "very_long_chars": 20000,
+      "placeholder_max_words": 30,
+      "placeholder_patterns": [
+        "lyrics for this song have yet to be (released|transcribed)",
+        "^\\W*instrumental\\W*$",
+        "this (song|track) is (an )?instrumental",
+        "lyrics (are )?not (yet )?available",
+        "^\\W*(tba|tbd|coming soon)\\W*$"
+      ]
+    },
+    "dedup": {
+      "key": "casefold_whitespace_of_analysis_view",
+      "id_prefix": "lyr_",
+      "id_hex_chars": 20
+    },
+    "split": {
+      "seed": 42,
+      "fractions": {
+        "train": 0.7,
+        "test": 0.2,
+        "validation": 0.1
+      },
+      "group_rules": [
+        "identical_normalized_text_hash",
+        "same_artist_and_base_title"
+      ]
+    },
+    "demo": {
+      "selection": "data/interim/matching/SONORA_Revision_Matching/medium_prioritarios.json",
+      "expected_count": 886,
+      "expected_distinct_genius_rows": 850,
+      "fma_audio_dirs": [
+        "data/raw/fma/fma_medium",
+        "data/raw/fma/fma_large",
+        "data/raw/fma/fma_full"
+      ]
+    },
+    "audit": {
+      "seed": 42,
+      "accepted_sample": 200,
+      "uncertain_sample": 200,
+      "non_english_sample": 100,
+      "excerpt_chars": 400
+    }
+  },
+  "provenance": {
+    "pipeline_version": "lyrics-corpus-1.0.0",
+    "code_sha256": "55b634c1c80ad0e5b606e1fff1f84d437040912f4f1325b440c702f1987c27b3",
+    "git_revision": null,
+    "environment": {
+      "python": "3.14.7",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "cpu_count": 20,
+      "packages": {
+        "pyarrow": "26.0.1",
+        "lingua-language-detector": "2.2.0",
+        "pyyaml": "6.0.3",
+        "psutil": "7.2.2"
+      },
+      "ram_total_bytes": 16873545728
+    }
+  },
+  "inputs": [
+    {
+      "name": "train-00000-of-00010.parquet",
+      "bytes": 326095861,
+      "mtime_ns": 1794459835257404600,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "a6a573dc7640806077dea6d3fe28e8bc675c5832b71776fddcc20dbcac042fab"
+    },
+    {
+      "name": "train-00001-of-00010.parquet",
+      "bytes": 279127953,
+      "mtime_ns": 1794459829065918400,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "e46820fbae4bb9d147eb53b588dacb53ccf14f260fd7f7e4fe1d2123cfd4c0ca"
+    },
+    {
+      "name": "train-00002-of-00010.parquet",
+      "bytes": 258296274,
+      "mtime_ns": 1794459836012172100,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "5027958c03741ba7f79a2d04c4af9360f19c13d9800c27197d753ac7a080e4f1"
+    },
+    {
+      "name": "train-00003-of-00010.parquet",
+      "bytes": 244869811,
+      "mtime_ns": 1794459968146485400,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "2f13f71bcf216b4cc67b175a3084b978a7220abd83bfb538ab79e6b763832938"
+    },
+    {
+      "name": "train-00004-of-00010.parquet",
+      "bytes": 241204225,
+      "mtime_ns": 1794459968953408800,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "6bb939305655d8abb3ccc206d7e7d8c2cb84a5c94dd79d84402a57bfd7b97969"
+    },
+    {
+      "name": "train-00005-of-00010.parquet",
+      "bytes": 248191280,
+      "mtime_ns": 1794459970756844300,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "d3eac2425448fb10b1f50799ebc1fed3de552ccfec29e8c8844cf3307522d3f7"
+    },
+    {
+      "name": "train-00006-of-00010.parquet",
+      "bytes": 251536374,
+      "mtime_ns": 1794459826400521800,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "ce6cce8e23ae190d0439cba682aadd41f8aba09f7f236c58513841ba23f405c8"
+    },
+    {
+      "name": "train-00007-of-00010.parquet",
+      "bytes": 244586301,
+      "mtime_ns": 1794459825218263700,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "b7b2fbe4d77300c1d8263fa091362804bce0bd76f6b424c0acbe788a9b08e033"
+    },
+    {
+      "name": "train-00008-of-00010.parquet",
+      "bytes": 241413416,
+      "mtime_ns": 1794459970758951900,
+      "num_rows": 317958,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "65956e943641125b924617a91c8dea29d293c129edb5d91749daac6be06d4991"
+    },
+    {
+      "name": "train-00009-of-00010.parquet",
+      "bytes": 223503510,
+      "mtime_ns": 1794459966048139400,
+      "num_rows": 317958,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "b40a358065673289daf6792a7cf6989b225f5793e84492519d41b8fefe947e6e"
+    }
+  ],
+  "outputs": {
+    "data/processed/lyrics/lyrics_full_v1/source_to_lyrics.parquet": {
+      "bytes": 206116724,
+      "rows": 3179588
+    },
+    "data/processed/lyrics/lyrics_full_v1/exclusions.parquet": {
+      "bytes": 223628,
+      "rows": 2145
+    },
+    "data/processed/splits/lyrics_full_v1/lyrics_splits.parquet": {
+      "bytes": 62829491,
+      "rows": 3155772
+    },
+    "data/processed/demo/lyrics_full_v1/demo_links.parquet": {
+      "bytes": 79222,
+      "rows": 886
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00000-of-00010.parquet": {
+      "bytes": 681443244,
+      "rows": 317650
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00001-of-00010.parquet": {
+      "bytes": 586394656,
+      "rows": 317280
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00002-of-00010.parquet": {
+      "bytes": 543703361,
+      "rows": 316697
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00003-of-00010.parquet": {
+      "bytes": 515553207,
+      "rows": 316051
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00004-of-00010.parquet": {
+      "bytes": 507530893,
+      "rows": 315324
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet": {
+      "bytes": 521713782,
+      "rows": 314693
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00006-of-00010.parquet": {
+      "bytes": 528631161,
+      "rows": 314428
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet": {
+      "bytes": 513705008,
+      "rows": 314178
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00008-of-00010.parquet": {
+      "bytes": 506076560,
+      "rows": 314416
+    },
+    "data/processed/lyrics/lyrics_full_v1/corpus/train-00009-of-00010.parquet": {
+      "bytes": 470119488,
+      "rows": 315055
+    }
+  },
+  "complete_full_corpus_run": true
+}

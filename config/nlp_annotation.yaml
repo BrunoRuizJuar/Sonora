@@ -1,0 +1,12 @@
+# SONORA - anotación morfosintáctica del corpus completo (E1-03, E3, E4).
+# Cambiar model/gdrop/docs_per_task cambia el hash: usar otro --annotation-id.
+version: 1
+corpus_run_id: lyrics_full_v1          # data/processed/lyrics/<run>/corpus/*.parquet
+text_view: lyrics_analysis
+model: en_core_web_sm                  # spaCy 3.8; NER excluido (coste +50 %, no requerido en el pase completo)
+sentence_policy: line_break_forced_boundary_plus_parser
+gdrop:
+  enabled: true
+  min_ing_form_count: 20               # "runnin'" -> "running" sólo si "running" aparece >= 20 veces
+docs_per_task: 500                     # letras por parte; memoria por worker acotada
+workers: 10                            # i7-13650HX: 6P+8E núcleos; ~3 GB RAM extra medidos con 10 procesos

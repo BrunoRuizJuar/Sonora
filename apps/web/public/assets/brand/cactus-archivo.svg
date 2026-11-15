@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 224" role="img" aria-labelledby="title desc">
+<title id="title">SONORA · Cactus con audífonos, iteración 3</title>
+<desc id="desc">Cactus más alto y robusto, con el brazo derecho más alto que el izquierdo, dos líneas verticales y audífonos sólidos en crema. Vector editable con fondo transparente.</desc>
+<g id="cactus" fill="#D97732">
+<path id="tallo" d="M68 204V58a22 22 0 0 1 44 0v146Z"/>
+<path id="brazo-izquierdo-bajo" d="M68 153H49C33 153 24 143 24 127v-23a12 12 0 0 1 24 0v20c0 4 1 5 5 5h15Z"/>
+<path id="brazo-derecho-alto" d="M112 120h25c16 0 24-10 24-26V72a12 12 0 0 0-24 0v20c0 4-1 5-5 5h-20Z"/>
+</g>
+<g id="lineas-del-cactus" fill="none" stroke="#1B1410" stroke-opacity=".24" stroke-width="3" stroke-linecap="round"><path id="linea-izquierda" d="M82 101v84"/><path id="linea-derecha" d="M98 101v84"/></g>
+<g id="audifonos-solidos" fill="#F2E2C4">
+<path id="diadema" d="M55 65V49a35 35 0 0 1 70 0v16" fill="none" stroke="#F2E2C4" stroke-width="10" stroke-linecap="round"/>
+<rect id="auricular-izquierdo" x="47" y="53" width="19" height="38" rx="8"/>
+<rect id="auricular-derecho" x="114" y="53" width="19" height="38" rx="8"/>
+</g>
+</svg>

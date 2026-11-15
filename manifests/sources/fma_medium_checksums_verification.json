@@ -1,0 +1,12 @@
+{
+  "variant_dir": "data/raw/fma/fma_medium",
+  "verified_utc": "2026-11-14T03:53:43+00:00",
+  "expected_files": 25000,
+  "present_mp3": 25000,
+  "verified_ok": 25000,
+  "checksum_mismatch": [],
+  "missing": [],
+  "extra_not_in_checksums": [],
+  "zero_byte_files": [],
+  "total_bytes": 24813876398
+}

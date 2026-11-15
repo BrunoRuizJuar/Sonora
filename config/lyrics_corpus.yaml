@@ -1,0 +1,67 @@
+# SONORA - preparación reproducible del corpus de letras (etapa "corpus completo + demo").
+# Cualquier cambio en las secciones genius/chunk_rows/language/quality cambia el hash de
+# configuración de la ingesta y obliga a usar otro --run-id (no se mezclan resultados).
+# batch_size NO forma parte del hash: sólo afecta memoria, no resultados.
+version: 1
+
+genius:
+  dataset: theelderemo/genius-lyrics-cleaned   # nombre registrado en config/sources.yaml
+  dir: data/raw/genius
+  pattern: "train-*-of-00010.parquet"
+  expected_files: 10
+  # Esquema real inspeccionado el 2026-11-12: title, artist, tag, year (int64), lyrics.
+  # No existe columna de idioma ni ID único: la identidad de fuente es archivo + fila global.
+  columns: [title, artist, tag, year, lyrics]
+
+# Filas por parte de salida; las partes se alinean a filas globales del shard.
+chunk_rows: 20000
+
+language:
+  detector: lingua-language-detector
+  mode: high_accuracy          # todos los idiomas soportados por lingua
+  excerpt_window_chars: 800    # ventanas inicio/medio/final de la vista de análisis
+  excerpt_windows: 3
+  secondary_detector: py3langid    # sólo cuando el primario no es concluyente
+  rules:
+    # Aceptación directa: lingua dice inglés con confianza >= 0.99 y el texto no es corto.
+    # Cualquier otro caso exige acuerdo de ambos detectores; el desacuerdo va a revisión.
+    # Calibración: en 106 000 filas reales lingua asignó confianza 1.0 a idiomas erróneos
+    # (de/tl/la) sobre inglés evidente, por eso una exclusión nunca depende de un solo detector.
+    primary_accept_en_min_conf: 0.99
+    short_text_words: 20
+    secondary_min_conf: 0.50
+
+quality:
+  min_words: 5                 # menos palabras en la vista de análisis => too_few_words
+  very_long_chars: 20000       # sólo bandera de revisión, no exclusión
+  placeholder_max_words: 30
+  placeholder_patterns:
+    - "lyrics for this song have yet to be (released|transcribed)"
+    - "^\\W*instrumental\\W*$"
+    - "this (song|track) is (an )?instrumental"
+    - "lyrics (are )?not (yet )?available"
+    - "^\\W*(tba|tbd|coming soon)\\W*$"
+
+dedup:
+  key: casefold_whitespace_of_analysis_view
+  id_prefix: "lyr_"
+  id_hex_chars: 20
+
+split:
+  seed: 42
+  fractions: {train: 0.70, test: 0.20, validation: 0.10}
+  group_rules: [identical_normalized_text_hash, same_artist_and_base_title]
+
+demo:
+  selection: data/interim/matching/SONORA_Revision_Matching/medium_prioritarios.json
+  expected_count: 886
+  expected_distinct_genius_rows: 850
+  # Estructura FMA: <dir>/<3 primeros dígitos>/<id de 6 dígitos>.mp3
+  fma_audio_dirs: [data/raw/fma/fma_medium, data/raw/fma/fma_large, data/raw/fma/fma_full]
+
+audit:
+  seed: 42
+  accepted_sample: 200
+  uncertain_sample: 200
+  non_english_sample: 100
+  excerpt_chars: 400

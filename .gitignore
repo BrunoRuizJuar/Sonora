@@ -1,0 +1,44 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+apps/web/.env.local
+# Python / Node
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+node_modules/
+.next/
+coverage/
+dist/
+build/
+# Large or reproducible runtime data
+data/**
+!data/**/
+!data/**/.gitkeep
+!data/README.md
+artifacts/**
+!artifacts/**/
+!artifacts/**/.gitkeep
+!artifacts/README.md
+runtime/**
+!runtime/**/
+!runtime/**/.gitkeep
+reports/generated/
+*.log
+*.zip
+*.parquet
+*.npy
+*.npz
+*.mp3
+*.wav
+*.flac
+*.pt
+*.pth
+# Notebook / editor temporary files
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db

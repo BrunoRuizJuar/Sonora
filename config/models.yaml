@@ -1,0 +1,26 @@
+# Initial hypotheses, not trained models or validated hyperparameters.
+language: en
+baselines:
+  tfidf:
+    enabled: true
+  pretrained_minilm:
+    model_id: sentence-transformers/all-MiniLM-L6-v2
+    role: comparison_only
+own_embeddings:
+  family: word2vec
+  document_pooling: tfidf_weighted_mean
+  vector_size: 256
+  window: 5
+  min_count: 5
+  sg: 1
+  seed: 42
+topics:
+  family: lda
+  n_components: null
+  status: select_with_validation
+emotions:
+  enabled: false
+  status: labels_and_evaluation_pending
+audio:
+  feature_schema_version: null
+  status: coverage_and_quality_trial

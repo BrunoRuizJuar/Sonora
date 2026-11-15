@@ -1,0 +1,111 @@
+{
+  "run_id": "lyrics_full_v1",
+  "seed": 42,
+  "target_fractions": {
+    "train": 0.7,
+    "test": 0.2,
+    "validation": 0.1
+  },
+  "assignment": "sha256(f'{seed}:{group_id}') -> uniforme [0,1) -> train/test/validation acumulado",
+  "group_rules": [
+    "identical_normalized_text_hash",
+    "same_artist_and_base_title"
+  ],
+  "group_rule_notes": [
+    "identical_normalized_text_hash: los duplicados exactos ya comparten lyrics_id.",
+    "same_artist_and_base_title: artista normalizado igual y título sin sufijo de versión ((Live), - Remix, etc.) igual; une versiones y títulos repetidos del mismo artista.",
+    "No se detectan casi-duplicados por similitud ni covers con letra modificada (limitación)."
+  ],
+  "lyrics": 3155772,
+  "groups": 3145790,
+  "by_split": {
+    "train": {
+      "lyrics": 2208832,
+      "groups": 2201895,
+      "source_records": 2223978
+    },
+    "test": {
+      "lyrics": 631651,
+      "groups": 629609,
+      "source_records": 635945
+    },
+    "validation": {
+      "lyrics": 315289,
+      "groups": 314286,
+      "source_records": 317520
+    }
+  },
+  "actual_fraction_lyrics": {
+    "train": 0.69993,
+    "test": 0.20016,
+    "validation": 0.09991
+  },
+  "actual_fraction_groups": {
+    "train": 0.69995,
+    "test": 0.20014,
+    "validation": 0.09991
+  },
+  "group_size_distribution": {
+    "1": 3136891,
+    "2": 8153,
+    "3": 582,
+    "4": 105,
+    "5": 25,
+    "6": 16,
+    "7": 8,
+    "8": 2,
+    "9": 1,
+    "10": 1,
+    "11": 2,
+    "15": 1,
+    "17": 1,
+    "19": 1,
+    "24": 1
+  },
+  "group_size_max": 24,
+  "lyrics_in_groups_larger_than_1": 18881,
+  "largest_groups": [
+    {
+      "group_id": "grp_12d2d74dc4809b47733d",
+      "lyrics": 24
+    },
+    {
+      "group_id": "grp_12483cdd660db886dcba",
+      "lyrics": 19
+    },
+    {
+      "group_id": "grp_13295be8bdc3beeceb0d",
+      "lyrics": 17
+    },
+    {
+      "group_id": "grp_0295c592044f839661c1",
+      "lyrics": 15
+    },
+    {
+      "group_id": "grp_0109e4b7121cf7b08832",
+      "lyrics": 11
+    },
+    {
+      "group_id": "grp_27e4dac9a1d49c4426b4",
+      "lyrics": 11
+    },
+    {
+      "group_id": "grp_16474f2498937001ab51",
+      "lyrics": 10
+    },
+    {
+      "group_id": "grp_02501ed98c42ae6865ba",
+      "lyrics": 9
+    },
+    {
+      "group_id": "grp_0101c15e78b749a22359",
+      "lyrics": 8
+    },
+    {
+      "group_id": "grp_1afde8be4194dcdfcfe3",
+      "lyrics": 8
+    }
+  ],
+  "parquet": "data/processed/splits/lyrics_full_v1/lyrics_splits.parquet",
+  "parquet_sha256": "bf0c427873b2fda3b2ffc59799f4c99fbee268f94732254bdd4d5318272bf134"
+}

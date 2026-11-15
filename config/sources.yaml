@@ -1,0 +1,27 @@
+sources:
+  genius:
+    dataset: theelderemo/genius-lyrics-cleaned
+    revision: null   # no registrada en la descarga; identidad fijada por sha256 en manifests/sources/genius_snapshot.json
+    local_files: data/raw/genius/train-0000[0-9]-of-00010.parquet
+    columns: [title, artist, tag, year, lyrics]   # inspeccionado 2026-11-12; sin idioma ni ID único
+    purpose: lyrics
+    status: local_full_corpus_preparation   # config/lyrics_corpus.yaml
+  musicbrainz:
+    base_url: https://musicbrainz.org/ws/2/
+    purpose: identity_and_metadata
+    status: previously_used_audit_pending
+  acousticbrainz:
+    base_url: https://acousticbrainz.org/
+    purpose: precomputed_acoustic_features
+    status: not_a_dependency   # REQUIREMENTS v1.2
+  fma:
+    repository: https://github.com/mdeff/fma
+    purpose: audio_source_for_demo
+    variant: medium   # clips de 30 s; metadata subset small O medium
+    status: medium_audio_local_checksums_verified   # 2026-11-13: 25 000 MP3, sha1 OK (manifests/sources/fma_medium_checksums_verification.json)
+    audio_dir: data/raw/fma/fma_medium
+    matching_run: data/interim/matching/run_20261113T021601Z_160845
+    retained_selection: data/interim/matching/SONORA_Revision_Matching/medium_prioritarios.json
+coverage_trial:
+  target_sample_size: 500
+  random_seed: 42

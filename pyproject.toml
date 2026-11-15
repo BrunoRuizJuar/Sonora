@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sonora"
+version = "0.1.0"
+description = "SONORA architecture and initial API scaffold"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "pydantic>=2,<3"]
+
+[project.optional-dependencies]
+data = ["numpy", "pandas", "pyarrow", "datasets", "httpx"]
+corpus = ["numpy", "pyarrow>=15", "pyyaml>=6", "lingua-language-detector>=2.1", "psutil", "pytest"]
+nlp = ["numpy", "scikit-learn", "gensim"]
+audio = ["librosa", "soundfile"]
+services = ["opensearch-py", "httpx", "redis", "rq"]
+
+[tool.setuptools.packages.find]
+where = ["packages/sonora/src", "apps/api/src"]
+include = ["sonora*", "sonora_api*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests", "packages/sonora/src", "apps/api/src"]

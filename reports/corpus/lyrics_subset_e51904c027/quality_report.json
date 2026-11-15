@@ -1,0 +1,335 @@
+{
+  "run_id": "lyrics_subset_e51904c027",
+  "generated_utc": "2026-11-13T05:43:10+00:00",
+  "universe": "SUBCONJUNTO de prueba: {'shards': ['train-00007-of-00010'], 'row_limit_per_shard': 40000} — NO es el corpus completo",
+  "scope_is_full_corpus": false,
+  "source_records_read": 40000,
+  "source_records_expected_in_scope": 40000,
+  "reconciled": true,
+  "status_counts": {
+    "accepted": 39969,
+    "review": 29,
+    "excluded": 2
+  },
+  "exclusion_or_review_rule_counts": {
+    "language_uncertain": 29,
+    "non_english": 1,
+    "placeholder_text": 1
+  },
+  "language_status_counts": {
+    "en": 39969,
+    "uncertain": 29,
+    "non_en": 1,
+    "None": 1
+  },
+  "language_reason_counts": {
+    "primary_en_high_conf": 39671,
+    "both_detectors_en": 298,
+    "primary_not_en_secondary_en": 19,
+    "primary_en_secondary_not_en": 6,
+    "detectors_disagree_non_en": 4,
+    "both_detectors_ja": 1,
+    "None": 1
+  },
+  "detected_top_language_counts_top20": {
+    "en": 39975,
+    "tl": 5,
+    "st": 3,
+    "nb": 2,
+    "ms": 2,
+    "zu": 2,
+    "tn": 1,
+    "fr": 1,
+    "fi": 1,
+    "af": 1,
+    "zh": 1,
+    "da": 1,
+    "sv": 1,
+    "ja": 1,
+    "nl": 1,
+    "la": 1,
+    "None": 1
+  },
+  "secondary_detector_runs": 328,
+  "secondary_language_counts_top20": {
+    "en": 322,
+    "pcm": 3,
+    "yue": 1,
+    "xh": 1,
+    "ja": 1
+  },
+  "english_confidence_histogram": {
+    "[0.00,0.05)": 15,
+    "[0.05,0.20)": 10,
+    "[0.20,0.50)": 40,
+    "[0.50,0.80)": 90,
+    "[0.80,0.90)": 62,
+    "[0.90,0.95)": 48,
+    "[0.95,0.99)": 59,
+    "[0.99,1.00)": 39675
+  },
+  "quality_flag_counts": {
+    "short_text_language": 32,
+    "contains_url": 31,
+    "missing_title": 3,
+    "replacement_char": 3,
+    "html_entity_unescaped": 1
+  },
+  "accepted_source_records": 39969,
+  "canonical_lyrics": 39965,
+  "accepted_duplicate_source_records": 4,
+  "non_accepted_records_matching_an_accepted_text": 0,
+  "canonical_lyrics_with_duplicates": 4,
+  "canonical_n_words": {
+    "p0": 11.0,
+    "p1": 35.0,
+    "p5": 71.0,
+    "p25": 149.0,
+    "p50": 231.0,
+    "p75": 356.0,
+    "p95": 590.0,
+    "p99": 793.3600000000006,
+    "p100": 3241.0,
+    "mean": 270.5767046165395
+  },
+  "canonical_n_chars_original": {
+    "p0": 101.0,
+    "p1": 185.0,
+    "p5": 371.0,
+    "p25": 764.0,
+    "p50": 1177.0,
+    "p75": 1809.0,
+    "p95": 3014.0,
+    "p99": 4068.0,
+    "p100": 15572.0,
+    "mean": 1381.251344926811
+  },
+  "canonical_n_lines": {
+    "p0": 1.0,
+    "p1": 1.0,
+    "p5": 9.0,
+    "p25": 23.0,
+    "p50": 35.0,
+    "p75": 52.0,
+    "p95": 85.0,
+    "p99": 118.0,
+    "p100": 465.0,
+    "mean": 39.774077317652946
+  },
+  "canonical_n_stanzas": {
+    "p0": 1.0,
+    "p1": 1.0,
+    "p5": 1.0,
+    "p25": 3.0,
+    "p50": 5.0,
+    "p75": 7.0,
+    "p95": 13.0,
+    "p99": 27.0,
+    "p100": 184.0,
+    "mean": 5.9779056674590265
+  },
+  "canonical_with_section_markers": 15534,
+  "canonical_total_words": 10813598,
+  "canonical_tag_counts": {
+    "pop": 16920,
+    "rap": 14054,
+    "rock": 6373,
+    "rb": 1870,
+    "country": 748
+  },
+  "canonical_year": {
+    "min": 1,
+    "max": 2023,
+    "below_1900": 33,
+    "decades": {
+      "1900": 1,
+      "1920": 24,
+      "1930": 10,
+      "1940": 7,
+      "1950": 63,
+      "1960": 339,
+      "1970": 405,
+      "1980": 610,
+      "1990": 2316,
+      "2000": 5117,
+      "2010": 21721,
+      "2020": 9319
+    }
+  },
+  "section_label_top30": {
+    "verse": 28263,
+    "chorus": 21735,
+    "hook": 6417,
+    "intro": 4205,
+    "bridge": 4059,
+    "outro": 4038,
+    "pre-chorus": 3400,
+    "?": 806,
+    "refrain": 732,
+    "post-chorus": 708,
+    "instrumental": 669,
+    "interlude": 495,
+    "pre": 319,
+    "drop": 280,
+    "": 224,
+    "guitar": 171,
+    "part": 134,
+    "spoken": 133,
+    "pre-hook": 133,
+    "break": 118,
+    "chrous": 103,
+    "solo": 100,
+    "sample": 86,
+    "breakdown": 76,
+    "post": 70,
+    "produced": 68,
+    "repeat": 62,
+    "lil": 53,
+    "skit": 46,
+    "pre-drop": 46
+  },
+  "split": {
+    "run_id": "lyrics_subset_e51904c027",
+    "seed": 42,
+    "target_fractions": {
+      "train": 0.7,
+      "test": 0.2,
+      "validation": 0.1
+    },
+    "assignment": "sha256(f'{seed}:{group_id}') -> uniforme [0,1) -> train/test/validation acumulado",
+    "group_rules": [
+      "identical_normalized_text_hash",
+      "same_artist_and_base_title"
+    ],
+    "group_rule_notes": [
+      "identical_normalized_text_hash: los duplicados exactos ya comparten lyrics_id.",
+      "same_artist_and_base_title: artista normalizado igual y título sin sufijo de versión ((Live), - Remix, etc.) igual; une versiones y títulos repetidos del mismo artista.",
+      "No se detectan casi-duplicados por similitud ni covers con letra modificada (limitación)."
+    ],
+    "lyrics": 39965,
+    "groups": 39964,
+    "by_split": {
+      "train": {
+        "lyrics": 28133,
+        "groups": 28132,
+        "source_records": 28135
+      },
+      "test": {
+        "lyrics": 7903,
+        "groups": 7903,
+        "source_records": 7903
+      },
+      "validation": {
+        "lyrics": 3929,
+        "groups": 3929,
+        "source_records": 3931
+      }
+    },
+    "actual_fraction_lyrics": {
+      "train": 0.70394,
+      "test": 0.19775,
+      "validation": 0.09831
+    },
+    "actual_fraction_groups": {
+      "train": 0.70393,
+      "test": 0.19775,
+      "validation": 0.09831
+    },
+    "group_size_distribution": {
+      "1": 39963,
+      "2": 1
+    },
+    "group_size_max": 2,
+    "lyrics_in_groups_larger_than_1": 2,
+    "largest_groups": [
+      {
+        "group_id": "grp_2654ba43ec5641265f8d",
+        "lyrics": 2
+      },
+      {
+        "group_id": "grp_00004fe99c68049bd85c",
+        "lyrics": 1
+      },
+      {
+        "group_id": "grp_000083bde30e894c60b9",
+        "lyrics": 1
+      },
+      {
+        "group_id": "grp_0002c77e9d2b89ee679b",
+        "lyrics": 1
+      },
+      {
+        "group_id": "grp_0005628fdf586a164dab",
+        "lyrics": 1
+      },
+      {
+        "group_id": "grp_00077a076773afd12ee7",
+        "lyrics": 1
+      },
+      {
+        "group_id": "grp_0007ee2fa30ddf4c3676",
+        "lyrics": 1
+      },
+      {
+        "group_id": "grp_000bdfb7982c3f9ac390",
+        "lyrics": 1
+      },
+      {
+        "group_id": "grp_000dae4062ed66e23aa7",
+        "lyrics": 1
+      },
+      {
+        "group_id": "grp_000dc0123d1e4e880fa4",
+        "lyrics": 1
+      }
+    ],
+    "parquet": "data/processed/splits/lyrics_subset_e51904c027/lyrics_splits.parquet",
+    "parquet_sha256": "bbb1bc7fdb6b14c5f693c30a862c7c3e4e290893736f551586859458ce18ee6c"
+  },
+  "demo": {
+    "selection_rows": 886,
+    "distinct_genius_locators": 850,
+    "in_processed_scope": 9,
+    "locator_verified": 9,
+    "locator_check": {
+      "locator_outside_processed_scope": 877,
+      "title_artist_normalized_equal": 9
+    },
+    "lyrics_status": {
+      "None": 877,
+      "accepted": 9
+    },
+    "lyrics_exclusion_rule": {},
+    "has_lyrics": 9,
+    "distinct_lyrics_ids": 9,
+    "recordings_per_lyrics_id_max": 1,
+    "by_split_recordings": {
+      "None": 877,
+      "train": 4,
+      "test": 3,
+      "validation": 2
+    },
+    "by_split_lyrics": {
+      "test": 3,
+      "train": 4,
+      "validation": 2
+    },
+    "has_audio_file": 0,
+    "fma_audio_dirs_found": [],
+    "original_status": {
+      "exact_unique_candidate": 787,
+      "exact_ambiguous": 99
+    },
+    "catalog_eligible": 0
+  },
+  "language_audit_sample": {
+    "seed": 42,
+    "sizes": {
+      "accepted": 200,
+      "uncertain": 29,
+      "non_english": 1
+    },
+    "path": "data/processed/lyrics/lyrics_subset_e51904c027/language_audit_sample.parquet",
+    "human_review_done": false
+  }
+}

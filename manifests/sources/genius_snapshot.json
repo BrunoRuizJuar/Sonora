@@ -1,0 +1,168 @@
+{
+  "dataset": "theelderemo/genius-lyrics-cleaned",
+  "revision": null,
+  "note": "Revisión de Hugging Face no registrada en la descarga; la identidad se fija por sha256.",
+  "updated_utc": "2026-11-13T04:14:40+00:00",
+  "files": [
+    {
+      "name": "train-00000-of-00010.parquet",
+      "bytes": 326095861,
+      "mtime_ns": 1794459835257404600,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "a6a573dc7640806077dea6d3fe28e8bc675c5832b71776fddcc20dbcac042fab"
+    },
+    {
+      "name": "train-00001-of-00010.parquet",
+      "bytes": 279127953,
+      "mtime_ns": 1794459829065918400,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "e46820fbae4bb9d147eb53b588dacb53ccf14f260fd7f7e4fe1d2123cfd4c0ca"
+    },
+    {
+      "name": "train-00002-of-00010.parquet",
+      "bytes": 258296274,
+      "mtime_ns": 1794459836012172100,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "5027958c03741ba7f79a2d04c4af9360f19c13d9800c27197d753ac7a080e4f1"
+    },
+    {
+      "name": "train-00003-of-00010.parquet",
+      "bytes": 244869811,
+      "mtime_ns": 1794459968146485400,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "2f13f71bcf216b4cc67b175a3084b978a7220abd83bfb538ab79e6b763832938"
+    },
+    {
+      "name": "train-00004-of-00010.parquet",
+      "bytes": 241204225,
+      "mtime_ns": 1794459968953408800,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "6bb939305655d8abb3ccc206d7e7d8c2cb84a5c94dd79d84402a57bfd7b97969"
+    },
+    {
+      "name": "train-00005-of-00010.parquet",
+      "bytes": 248191280,
+      "mtime_ns": 1794459970756844300,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "d3eac2425448fb10b1f50799ebc1fed3de552ccfec29e8c8844cf3307522d3f7"
+    },
+    {
+      "name": "train-00006-of-00010.parquet",
+      "bytes": 251536374,
+      "mtime_ns": 1794459826400521800,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "ce6cce8e23ae190d0439cba682aadd41f8aba09f7f236c58513841ba23f405c8"
+    },
+    {
+      "name": "train-00007-of-00010.parquet",
+      "bytes": 244586301,
+      "mtime_ns": 1794459825218263700,
+      "num_rows": 317959,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "b7b2fbe4d77300c1d8263fa091362804bce0bd76f6b424c0acbe788a9b08e033"
+    },
+    {
+      "name": "train-00008-of-00010.parquet",
+      "bytes": 241413416,
+      "mtime_ns": 1794459970758951900,
+      "num_rows": 317958,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "65956e943641125b924617a91c8dea29d293c129edb5d91749daac6be06d4991"
+    },
+    {
+      "name": "train-00009-of-00010.parquet",
+      "bytes": 223503510,
+      "mtime_ns": 1794459966048139400,
+      "num_rows": 317958,
+      "num_row_groups": 318,
+      "columns": {
+        "title": "string",
+        "artist": "string",
+        "tag": "string",
+        "year": "int64",
+        "lyrics": "string"
+      },
+      "created_by": "parquet-cpp-arrow version 18.1.0",
+      "sha256": "b40a358065673289daf6792a7cf6989b225f5793e84492519d41b8fefe947e6e"
+    }
+  ]
+}

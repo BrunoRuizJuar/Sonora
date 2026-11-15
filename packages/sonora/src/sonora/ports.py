@@ -1,0 +1,16 @@
+"""Boundary contracts; adapters are implemented in subsequent milestones."""
+from typing import Protocol, Sequence
+
+
+class CatalogRepository(Protocol):
+    def get_track(self, track_id: str) -> dict | None: ...
+
+
+class VectorIndex(Protocol):
+    def nearest(self, vector: Sequence[float], limit: int, filters: dict) -> list[str]: ...
+
+
+class ArtifactStore(Protocol):
+    def read_bytes(self, key: str) -> bytes: ...
+    def write_bytes(self, key: str, content: bytes) -> None: ...
+    def exists(self, key: str) -> bool: ...

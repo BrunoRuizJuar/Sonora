@@ -1,0 +1,58 @@
+{
+  "lexicon": {
+    "version": "regex-words-v1",
+    "token_definition": "[^\\W\\d_]+(?:'[^\\W\\d_]+)*",
+    "lowercased": true,
+    "view": "lyrics_analysis",
+    "docs": 3155772,
+    "tokens": 902376353,
+    "types": 1277145,
+    "seconds": 323.4,
+    "finished_utc": "2026-11-14T04:32:59+00:00",
+    "path": "data/processed/nlp/lyrics_full_v1/lexicon/lexicon.parquet"
+  },
+  "annotations": {
+    "spacy_sm_v1": {
+      "config": {
+        "annotation_version": "spacy-lines-gdrop-v1",
+        "model": "en_core_web_sm",
+        "model_version": "3.8.0",
+        "spacy": "3.8.18",
+        "sentence_policy": "line_break_forced_boundary_plus_parser",
+        "text_view": "lyrics_analysis",
+        "docs_per_task": 500,
+        "corpus_run_id": "lyrics_full_v1",
+        "gdrop_forms_sha256": "8d9d55bd487582412f1f29136590fee06d10ebc0915acfea0991c1212864da1e"
+      },
+      "hash": "d65d6e681e45581486a0b6bc3b8f3f6534c2e875c00fba791fb484dc265d8c7c",
+      "gdrop_forms": 5431,
+      "workers": 1,
+      "status": "complete",
+      "started_utc": "2026-11-15T00:42:00+00:00",
+      "path": "data/processed/nlp/lyrics_full_v1/spacy_sm_v1",
+      "tasks_total": 6317,
+      "tasks_done_this_session": 0,
+      "tasks_remaining": 0,
+      "words_this_session": 0,
+      "seconds_this_session": 8.7,
+      "finished_utc": "2026-11-15T00:44:26+00:00"
+    }
+  },
+  "frequency": {
+    "pos-lexicon": {
+      "version": "frequency-v1",
+      "tokens": 1033733693,
+      "rows": 3236971,
+      "group_rows": 3256,
+      "seconds": 242.2,
+      "path": "word_pos.parquet, group_pos.parquet",
+      "finished_utc": "2026-11-14T23:46:36+00:00"
+    },
+    "vocable-candidates": {
+      "candidates": 731,
+      "path": "data/processed/nlp/lyrics_full_v1/frequency/vocable_candidates.json",
+      "rule": "train only; count>=100 and (majority INTJ or repeated syllable or elongation) or (self-repetition share>=0.2 and count>=1000)",
+      "finished_utc": "2026-11-14T23:50:23+00:00"
+    }
+  }
+}

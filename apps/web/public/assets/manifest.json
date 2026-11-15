@@ -1,0 +1,18 @@
+{
+  "version": "0.2",
+  "directions": [
+    "ocaso",
+    "archivo",
+    "cobre"
+  ],
+  "formats": {
+    "brand": "SVG",
+    "icons": "SVG",
+    "covers": "SVG",
+    "photography": "WebP",
+    "fonts": "WOFF"
+  },
+  "note": "Portadas originales de muestra, no oficiales. Recomendaciones editoriales de ejemplo.",
+  "approved_logo": "brand/cactus-sonora.svg",
+  "logo_iteration": 3
+}
