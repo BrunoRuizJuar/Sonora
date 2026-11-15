@@ -53,6 +53,11 @@
       "path": "data/processed/nlp/lyrics_full_v1/frequency/vocable_candidates.json",
       "rule": "train only; count>=100 and (majority INTJ or repeated syllable or elongation) or (self-repetition share>=0.2 and count>=1000)",
       "finished_utc": "2026-11-14T23:50:23+00:00"
+    },
+    "vocables": {
+      "vocables": 426,
+      "path": "config/vocables.yaml",
+      "finished_utc": "2026-11-15T00:46:27+00:00"
     }
   }
 }

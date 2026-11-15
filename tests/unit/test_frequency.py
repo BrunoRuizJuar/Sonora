@@ -95,3 +95,16 @@ def test_shard_pos_counts(tmp_path):
     g = pq.read_table(tmp_path / "out" / "group_pos" / "s0.parquet")
     assert int(pc.sum(g.filter(pc.is_null(g["decade"]))["count"]).as_py()) == 1   # doc c: no year
     assert fq._shard_pos_counts((shard, tmp_path / "al.parquet", tmp_path / "ds.parquet", tmp_path / "out"))["skipped"]
+
+
+def test_select_vocables_reductions_and_review():
+    cand = [
+        {"form": "oh", "reasons": ["intj_majority"]}, {"form": "la", "reasons": ["self_repetition"]},
+        {"form": "hehe", "reasons": ["intj_majority"]}, {"form": "please", "reasons": ["intj_majority"]},
+        {"form": "ooooh", "reasons": ["elongated"]}, {"form": "lalala", "reasons": ["repeated_syllable"]},
+        {"form": "hehehe", "reasons": ["repeated_syllable"]}, {"form": "nooo", "reasons": ["elongated"]},
+        {"form": "mama", "reasons": ["repeated_syllable"]},
+    ]
+    got = fq.select_vocables(cand, include={"huh": "manual"}, exclude={"please": "lexical"})
+    assert got == sorted(["oh", "la", "hehe", "huh", "ooooh", "lalala", "hehehe"])
+    assert {"oh", "ooh"} <= fq.reductions("ooooh")

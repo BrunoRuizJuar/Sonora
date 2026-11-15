@@ -1,0 +1,537 @@
+# GENERADO por pipelines/nlp/e2_frequency.py vocables; no editar a mano.
+# Revisión humana en config/vocables_review.yaml; candidatos derivados SOLO de train.
+version: vocables-v1
+derived_from: train split of lyrics_full_v1 (spaCy POS + n-gram counts)
+candidates_sha256: 434c271ebc025c570307956a52bbb0db10d252840f08eb2698cfb3b9736ed504
+review_sha256: 785f6cab8b4fb73ff0711b6f256b5855dc46469a9b56968a0a1833da186e9dc0
+rule: base = candidatos con POS mayoritario INTJ (spaCy, train, frecuencia regex >= 100) o con autorrepetición
+  >= 0.2 (bigrama "w w" en el verso, frecuencia >= 1000), menos `exclude`, más `include`; las formas de
+  sílaba repetida o alargadas (>= 3 letras iguales) entran sólo si una de sus reducciones (colapsar letras
+  repetidas o tomar la sílaba repetida) pertenece a la base.
+excluded:
+  well: adverbio y marcador discursivo léxico (además es stopword)
+  please: cortesía, contenido léxico
+  true: afirmación léxica
+  hello: saludo léxico
+  hi: saludo léxico
+  bye: despedida léxica
+  amen: fórmula religiosa
+  alleluia: fórmula religiosa
+  hallelu: fórmula religiosa (hallelujah truncado)
+  hurrah: exclamación léxica
+  alas: exclamación léxica
+  gosh: exclamación léxica (eufemismo de god)
+  lordy: exclamación léxica (lord)
+  damn: expletivo con contenido léxico
+  yay: exclamación léxica de celebración
+  bang: onomatopeya léxica (verbo/sustantivo)
+  boom: onomatopeya léxica
+  tick: onomatopeya léxica
+  bling: sustantivo (slang)
+  pow: onomatopeya léxica
+  beep: onomatopeya léxica
+  bam: onomatopeya léxica
+  ding: onomatopeya léxica
+  ching: onomatopeya léxica (cha-ching)
+  zoom: verbo/onomatopeya léxica
+  vroom: onomatopeya léxica
+  whoop: verbo/onomatopeya léxica
+  meow: onomatopeya léxica (animal)
+  woof: onomatopeya léxica (animal)
+  moo: onomatopeya léxica (animal)
+  quack: onomatopeya léxica (animal)
+  baa: onomatopeya léxica (animal)
+  toot: onomatopeya léxica
+  thump: onomatopeya léxica
+  chug: verbo
+  pew: sustantivo / onomatopeya de disparo ambigua
+  choo: onomatopeya léxica (choo choo)
+  boop: onomatopeya léxica
+  bop: verbo/sustantivo (bop)
+  bum: sustantivo léxico
+  tat: sustantivo (tattoo) / onomatopeya ambigua
+  coo: verbo léxico
+  poo: sustantivo léxico
+  goo: sustantivo léxico
+  yum: exclamación léxica
+  yummy: adjetivo
+  goody: sustantivo/adjetivo
+  wiggle: verbo
+  shimmy: verbo
+  twinkle: verbo
+  merrily: adverbio
+  mayday: sustantivo
+  looky: verbo (look)
+  licky: derivado léxico (lick)
+  diggy: derivado léxico (dig)
+  chitty: título/nombre (Chitty Chitty Bang Bang)
+  noel: sustantivo/nombre propio
+  ella: nombre propio
+  jolene: nombre propio
+  pam: nombre propio
+  su: palabra española
+  lo: pronombre español / inglés arcaico (ambiguo)
+  oui: palabra francesa
+  ola: palabra española
+  andale: palabra española
+  slatt: slang léxico (acrónimo)
+  skeet: slang léxico
+  tf: abreviatura
+  pls: abreviatura de please
+  plz: abreviatura de please
+  abt: abreviatura de about
+  wh: fragmento de tartamudeo
+  ch: fragmento de tartamudeo
+  tr: fragmento de tartamudeo
+  thi: fragmento de tartamudeo
+  soundin: fragmento (soundin')
+  wih: fragmento/ortografía no estándar de with
+  tanky: palabra léxica
+  yoy: ambiguo, sin sentido verificable
+  papa: sustantivo léxico
+  gaga: nombre propio / adjetivo
+  popo: slang léxico (policía)
+  riri: nombre propio (Rihanna)
+  bobo: sustantivo léxico
+  lili: nombre propio
+  tata: sustantivo léxico / despedida
+  tutu: sustantivo léxico
+  pepe: nombre propio
+  baba: sustantivo/nombre ambiguo
+  dodo: sustantivo léxico
+included_manually:
+  huh: interjección; spaCy la etiqueta PROPN 52 % / INTJ 44 %
+  ayy: ad-lib; spaCy PROPN 96 %
+  ohh: variante de oh; spaCy NOUN/PROPN
+  uhh: variante de uh; spaCy PROPN/NOUN
+  yuh: ad-lib (variante de yeah); spaCy PROPN 91 %
+  woo: grito/ad-lib; spaCy PROPN 84 %
+  ugh: interjección; spaCy PROPN/NOUN
+count: 426
+vocables:
+- aa
+- aaa
+- aaaa
+- aaaaa
+- aaaaaa
+- aaaaaaa
+- aaaaaaaaah
+- aaaaaaaah
+- aaaaaaah
+- aaaaaah
+- aaaaah
+- aaaah
+- aaaahh
+- aaaahhh
+- aaaahhhh
+- aaah
+- aaahh
+- aaahhh
+- aaahhhh
+- aaay
+- aah
+- aahhh
+- ah
+- ahah
+- ahahah
+- ahh
+- ahhh
+- ahhhh
+- ahhhhh
+- ahhhhhh
+- ahhhhhhh
+- ahhhhhhhh
+- ahhhhhhhhh
+- ahhhhhhhhhh
+- ahhhhhhhhhhh
+- ahn
+- ai
+- aiii
+- aw
+- awww
+- awwww
+- awwwww
+- ay
+- ayy
+- ayyy
+- ayyyy
+- ayyyyy
+- ayyyyyy
+- ba
+- baaa
+- baaaa
+- bababa
+- babababa
+- bah
+- baow
+- bap
+- bla
+- blah
+- blap
+- blat
+- blatt
+- blocka
+- bo
+- bom
+- br
+- brap
+- brr
+- brrr
+- brrrr
+- brrrrr
+- brrrrrr
+- brrrt
+- brrt
+- bu
+- buh
+- cha
+- chacha
+- chicka
+- cyeah
+- da
+- daaa
+- daaaa
+- dada
+- dadada
+- dadadada
+- dadadadada
+- dah
+- dai
+- dibby
+- dit
+- doh
+- doo
+- dooby
+- doodoo
+- doodoodoo
+- dooo
+- doooo
+- dooooo
+- doot
+- du
+- dudu
+- dududu
+- duh
+- dum
+- dun
+- ea
+- eah
+- eeeeh
+- eeeh
+- eeey
+- eh
+- eheh
+- ehhh
+- ehhhh
+- ehhhhh
+- ei
+- er
+- errr
+- ey
+- eyyy
+- eyyyy
+- fa
+- fafa
+- fah
+- ga
+- ge
+- grrah
+- grrrah
+- ha
+- haa
+- haaa
+- haaaa
+- haaaaa
+- haaaaaa
+- haaah
+- hah
+- haha
+- hahaha
+- hahahaha
+- hahahahaha
+- hahahahahaha
+- hahahahahahaha
+- hahhh
+- hee
+- heee
+- heeee
+- heeeeey
+- heeeey
+- heeey
+- heh
+- hehe
+- hehehe
+- hehehehe
+- hey
+- heya
+- heyyy
+- heyyyy
+- heyyyyy
+- heyyyyyy
+- hm
+- hmm
+- hmmm
+- hmmmm
+- hmmmmm
+- hmmmmmm
+- hmmmmmmm
+- hoo
+- hooo
+- hoooo
+- hooooo
+- hoooooo
+- hu
+- huh
+- huhhh
+- huhhhh
+- huuu
+- huuuh
+- ie
+- igh
+- ju
+- juju
+- la
+- laa
+- laaa
+- laaaa
+- laaaaa
+- lah
+- lai
+- lala
+- lalala
+- lalalala
+- lalalalala
+- lalalalalala
+- lalalalalalala
+- lalalalalalalala
+- lalalalalalalalala
+- li
+- luh
+- mh
+- mhhh
+- mhm
+- mhmmm
+- mhmmmm
+- mm
+- mmh
+- mmm
+- mmmh
+- mmmhmm
+- mmmhmmm
+- mmmm
+- mmmmh
+- mmmmm
+- mmmmmm
+- mmmmmmm
+- mmmmmmmm
+- mmmmmmmmm
+- mmmmmmmmmm
+- na
+- naaa
+- naaaa
+- naaaaa
+- naaah
+- nae
+- nah
+- nahhh
+- nahhhh
+- nana
+- nanana
+- nananana
+- nanananana
+- nananananana
+- nanananananana
+- oa
+- oah
+- oh
+- ohh
+- ohhh
+- ohhhh
+- ohhhhh
+- ohhhhhh
+- ohhhhhhh
+- ohhhhhhhh
+- ohhhhhhhhh
+- ohhhhhhhhhh
+- ohhhhhhhhhhh
+- oho
+- ohoh
+- ohohoh
+- ohohohoh
+- oi
+- oo
+- ooh
+- oohhh
+- oohhhh
+- oohhhhh
+- oohooh
+- ooo
+- oooh
+- ooohh
+- ooohhh
+- ooohhhh
+- ooohhhhh
+- ooohooo
+- oooo
+- ooooh
+- oooohh
+- oooohhh
+- oooohhhh
+- oooohhhhh
+- ooooo
+- oooooh
+- ooooohh
+- ooooohhh
+- ooooohhhh
+- ooooohhhhh
+- oooooo
+- ooooooh
+- oooooohh
+- oooooohhh
+- oooooohhhh
+- ooooooo
+- oooooooh
+- oooooooo
+- ooooooooh
+- ooooooooo
+- oooooooooh
+- oooooooooo
+- ooooooooooh
+- ooooooooooo
+- oooooooooooh
+- oooooooooooo
+- ooooooooooooh
+- ooooooooooooo
+- oooou
+- ooou
+- ooouu
+- ooouuu
+- ooow
+- oop
+- oouuu
+- ou
+- ouh
+- ouhhh
+- ouuu
+- ouuuu
+- ouuuuu
+- ouuuuuu
+- ow
+- owww
+- owwww
+- oy
+- pa
+- pah
+- pap
+- papapa
+- phew
+- po
+- pom
+- pu
+- pum
+- pumpum
+- ra
+- raaa
+- rah
+- rahhh
+- rara
+- ri
+- rrrah
+- ru
+- shoop
+- skr
+- skrr
+- skrrr
+- skrrrr
+- skrrrrt
+- skrrrt
+- skrrt
+- skrt
+- skrttt
+- ta
+- tatata
+- tuh
+- tum
+- ugh
+- ughhh
+- ughhhh
+- uh
+- uhh
+- uhhh
+- uhhhh
+- uhhhhh
+- uhhhhhh
+- uhhhhhhh
+- uhuh
+- um
+- ummm
+- ummmm
+- ummmmm
+- uuhhh
+- uuuh
+- uuuhh
+- uuuuh
+- uuuuuh
+- wa
+- waaa
+- wawa
+- whoa
+- whoaaa
+- whoaaaa
+- whoaaaaa
+- whoooa
+- whooooa
+- wo
+- woaaah
+- woah
+- woahhh
+- woahhhh
+- woahhhhh
+- woh
+- woi
+- woo
+- wooo
+- woooah
+- woooh
+- woooo
+- wooooah
+- wooooh
+- wooooo
+- woooooo
+- wooooooo
+- woooooooo
+- wooow
+- woop
+- woowoo
+- wow
+- wowo
+- yaaah
+- yah
+- yahhh
+- yahhhh
+- yai
+- yeaaaaaah
+- yeaaaaah
+- yeaaaah
+- yeaaah
+- yeaaahh
+- yeaaahhh
+- yeaahhh
+- yeah
+- yeahhh
+- yeahhhh
+- yeahhhhh
+- yeahhhhhh
+- yeahhhhhhh
+- yeeeaah
+- yeeeah
+- yeeeeah
+- yeeeeeah
+- 'yes'
+- yesss
+- yey
+- yi
+- yip
+- yuh
+- yuhhh
+- yuhhhh

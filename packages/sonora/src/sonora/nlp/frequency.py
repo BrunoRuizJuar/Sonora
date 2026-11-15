@@ -207,7 +207,7 @@ def reductions(form: str) -> set[str]:
     out = {re.sub(r"(.)\1{2,}", r"\1", form), re.sub(r"(.)\1{2,}", r"\1\1", form), re.sub(r"(.)\1+", r"\1", form)}
     m = REPEATED_SYLLABLE.match(form)
     if m:
-        out.add(m.group(1))
+        out.update({m.group(1), m.group(1) * 2})  # nanana -> na; hehehe -> hehe
     out.discard(form)
     return out
 
