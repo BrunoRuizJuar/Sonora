@@ -407,13 +407,24 @@ recomendación (VAL-06).
 code(r"""
 res_path = NLP / "lm/results.json"
 LM = json.loads(res_path.read_text(encoding="utf-8")) if res_path.exists() else {}
-LM_READY = any("eval" in v for v in LM.values())
+assert all("train" in LM.get(k, {}) and "eval" in LM[k] for k in ("o2", "o3", "o4")), "Faltan órdenes evaluados para cerrar E2"
+assert manifest["ngram_lm"] == {"results": str(res_path.relative_to(ROOT)).replace("\\", "/"), **LM}
+LM_READY = True
 print("Resultados KenLM:", "disponibles" if LM_READY else "PENDIENTES (ngram_lm.py train/eval aún no ejecutado)")
 fr = manifest["frequency"]
 print("Vocabulario:", fr["lm-vocab"])
 tot = fr["lm-export"]["totals"]
 tr = tot["train"]; val = {k: v for k, v in tot.items() if k.startswith("validation.")}
 vt = sum(v["tokens"] for v in val.values()); vo = sum(v["mapped_oov"] for v in val.values())
+for key, entry in LM.items():
+    ev = entry["eval"]; global_eval = ev["validation"]
+    groups = [ev[f"validation.{t}"] for t in viz.TAG_ORDER]
+    assert global_eval["tokens_incl_eos"] == vt + sum(v["lines"] for v in val.values())
+    assert sum(g["tokens_incl_eos"] for g in groups) == global_eval["tokens_incl_eos"]
+    weighted_ppl = math.exp(sum(g["tokens_incl_eos"] * math.log(g["ppl_incl_oov"]) for g in groups)
+                            / global_eval["tokens_incl_eos"])
+    assert math.isclose(weighted_ppl, global_eval["ppl_incl_oov"], rel_tol=1e-8)
+    assert global_eval["kenlm_oovs"] == 0
 show([{"conjunto": "train", "letras": tr["docs"], "versos": tr["lines"], "tokens": tr["tokens"], "<oov>": tr["mapped_oov"],
        "% <oov>": 100 * tr["mapped_oov"] / tr["tokens"]},
       {"conjunto": "validation", "letras": sum(v["docs"] for v in val.values()), "versos": sum(v["lines"] for v in val.values()),
@@ -430,6 +441,7 @@ if rows:
     show(rows)
     best = min(rows, key=lambda r: r["PPL validation"]); BEST = f"o{best['orden']}"
     print("Orden elegido por validation:", best["orden"])
+    print("Comprobados: manifiesto, tokens con fin de verso y perplejidad global ponderada por tag.")
 """),
 code(r"""
 if LM_READY:
@@ -448,7 +460,7 @@ else:
 """),
 code(r"""
 if LM_READY:
-    # Ejemplos ilustrativos (frases construidas a mano, no del corpus): log10 P por token.
+    # Ejemplos ilustrativos (frases construidas a mano, no del corpus): log10 P total de la frase.
     ex = LM[BEST].get("examples", [])
     for e in ex:
         print(f"{e['total_log10']:8.2f}  {e['sentence']}")
@@ -512,14 +524,30 @@ Todas las cifras proceden de las celdas anteriores (corpus completo salvo que se
    `night`, `tonight`, `dance`. Son contrastes contra «el resto», dominado por pop (42 % de las
    letras), y el tag es la etiqueta de la fuente, no un género verificado.
 
-8. **Limitaciones.** (a) La lista de vocablos es heurística: formas ambiguas con uso léxico
+8. **Modelo de lenguaje: se elige el orden 4 entre los órdenes 2, 3 y 4 evaluados.** La
+   perplejidad de validation baja de 153,53 (orden 2) a 97,45 (orden 3) y 82,34 (orden 4):
+   mejora relativa del 15,50 % frente al trigrama. El binario crece de 0,871 a 2,708 GB
+   decimales (3,11 veces); el orden 4 registra 21,45 minutos entre estimación y construcción.
+   La elección prioriza perplejidad entre los candidatos probados, no demuestra un óptimo
+   sobre todos los órdenes ni una mejora del recomendador. No se necesita probar orden 5
+   para cerrar esta comparación. El orden 4 mejora en los cinco tags: pop 60,43, rap 114,61,
+   rock 73,83, R&B 53,72 y country 61,34. Son diferencias descriptivas; no prueban una causa.
+   Todos evalúan 103 134 073 tokens = 90 048 892 palabras + 13 085 181 finales de verso.
+   Los 0 OOV de KenLM resultan del mapeo previo a la clase conocida `<oov>`: ésta representa
+   168 646 palabras de validation (0,187 %), no ausencia de palabras nuevas. Los ejemplos
+   construidos a mano muestran log10 de probabilidad total de frase; no deben compararse
+   como probabilidades normalizadas por longitud. El modelo aprende sólo con train y la
+   selección usa validation; test no se ha usado para evaluar ni elegir el modelo.
+
+9. **Limitaciones.** (a) La lista de vocablos es heurística: formas ambiguas con uso léxico
    (`aye`, `ya`, `yo`, `yea`, `o`) quedaron fuera a propósito y aparecen en los trigramas de
    contenido; (b) los tokens regex no separan contracciones, a diferencia de spaCy (E3), por lo
    que las cifras de ambos no son directamente comparables; (c) spaCy `en_core_web_sm` comete
    errores de POS en vocablos (los etiqueta como nombres propios), lo que se analizará en E3;
-   (d) el modelo de lenguaje (sección 7) depende de KenLM en WSL y sus resultados se reportan
-   sólo cuando `pipelines/nlp/ngram_lm.py` termina; mientras falten, la sección 7 lo indica
-   explícitamente.
+   (d) el modelo de lenguaje depende de KenLM en WSL; los binarios y corpus son artefactos
+   locales fuera de Git. La perplejidad depende de la tokenización, vocabulario y fronteras
+   declarados: no se compara directamente con otros corpus o protocolos. No se ha medido
+   aquí latencia de inferencia ni calidad de recomendación.
 """),
 ]
 

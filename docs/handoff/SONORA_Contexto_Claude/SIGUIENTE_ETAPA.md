@@ -80,3 +80,10 @@ y proponer configuración de ejecución, sin sustituir silenciosamente el corpus
   de 3 155 772 letras (hecho), conteo de uni/bi/trigramas por split (hecho).
 - E1 (hecho, ejecutado). E2–E5: pendientes. Estado detallado y prompt de continuación:
   `docs/handoff/ESTADO_2026-11-14.md`.
+
+## Actualizaci?n de cierre ? 2026-11-15
+
+- E1 y E2: (hecho), notebooks ejecutados. E2 incluye KenLM de ?rdenes 2/3/4;
+  elegido orden 4 por validation (PPL 82,34), test reservado.
+- E3?E5 siguen pendientes. No se inici? E3; siguiente etapa autorizable tras el cierre E2.
+- Detalle vigente: `docs/handoff/ESTADO_2026-11-14.md`, secci?n ?Cierre E2?.

@@ -232,8 +232,8 @@ Todo sobre `lyrics_full_v1` (3 155 772 letras canónicas). Salidas bajo `data/pr
 | Unigramas por tag y década | (hecho) | `e2_frequency.py group-unigrams` | 4 128 532 filas; suma por tag = 902 376 353 tokens |
 | Resumen de n-gramas (totales, espectro, top-K) | (hecho) | `e2_frequency.py ngram-summary` | tipos 1 277 145 / 25 877 889 / 105 251 805 (órdenes 1–3) |
 | Texto y vocabulario del LM (train ≥ 2) | (hecho) | `e2_frequency.py lm-vocab` / `lm-export` | 497 831 tipos; `<oov>` 0,084 % train, 0,187 % validation |
-| E2 notebook, secciones 1–6 | (hecho) | `notebooks/evidencias/build_e2.py` | `notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb`, figuras en `reports/figures/E2/` |
-| E2-05 KenLM (órdenes por validation) | en curso | `pipelines/nlp/ngram_lm.py train/eval --order N` | pendiente de resultados |
+| E2 notebook completo, secciones 1–8 | (hecho 2026-11-15) | `notebooks/evidencias/build_e2.py` | `notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb`, figuras en `reports/figures/E2/`, comparación y hallazgos KenLM ejecutados |
+| E2-05 KenLM (órdenes por validation) | (hecho 2026-11-15) | `pipelines/nlp/ngram_lm.py train/eval --order N` | órdenes 2/3/4: PPL 153,53 / 97,45 / 82,34; elegido orden 4; binario local WSL 2,708 GB, fuera de Git; test reservado |
 
 Decisiones de la anotación: spaCy 3.8.18 + `en_core_web_sm` 3.8.0 sin NER; todo salto de verso es
 frontera de oración (en una muestra de 400 letras la segmentación por defecto unía versos en el
