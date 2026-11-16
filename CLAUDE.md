@@ -22,8 +22,9 @@
 - No cambiar el diseño web aprobado (sepia rojizo, terracota, viejo oeste; Smokum/Rubik
   Distressed/Ovo; banners día [06:00,18:00)).
 - Un solo proceso escribe en una misma `--run-id` (lock en `runtime/locks/`).
-- Estado y siguiente paso más reciente: `docs/handoff/ESTADO_2026-11-14.md` (añadido 2026-11-14).
-  Prioridad del usuario: PLN completo (E1–E5) antes del audio; un solo trabajo pesado a la vez.
+- Estado y siguiente paso más reciente: `docs/handoff/E5_2026-11-16.md`, con prompt
+  para la siguiente sesión. Prioridad del usuario: PLN completo (E1–E5) antes del audio.
+  Paralelismo E5 autorizado con directorios y locks independientes, según se detalla abajo.
 
 - Continuación más reciente: `docs/handoff/MIGRACION_2026-11-16.md`; E3 ejecutada, revisión final pendiente; nuevo equipo 25 GB RAM.
 - E3: revisión asistida y lista para revisión del autor en `docs/E3_REVISION.md`, también
@@ -33,3 +34,11 @@
   El usuario autorizó E4 conservando E3 pendiente de su revisión personal.
 - E4: cierre técnico/documental completado. Pendientes de revisión humana del proyecto
   centralizados en `TODO-human.md`; no marcar casillas ni aprobar contenido en nombre del usuario.
+- E5 en curso: `docs/handoff/E5_2026-11-16.md`, protocolo `docs/E5_METODO.md`.
+  Gensim 4.4.0 compilado y verificado en Python 3.14; no reinstalar Build Tools.
+  Caché completa y vocabulario/IDF train-only en `semantics/e5-surface-v2/`.
+  Consultar el handoff antes de asumir que entrenamiento, exportación o análisis terminaron.
+- Para esta corrida E5 el usuario autorizó varios trabajos simultáneos: coordinador
+  `pipelines/nlp/run_e5_models.py --parallel --workers 4`, tres subruns independientes
+  con locks propios (dos candidatos SGNS y LDA). No lanzar copias del coordinador ni
+  compartir un checkpoint entre escritores. Ver `runtime/e5_status.json` y el handoff.

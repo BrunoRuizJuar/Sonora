@@ -47,6 +47,14 @@ una corrección pequeña y se registra qué resultados quedarían afectados.
 
 ## Antes del cierre académico
 
+- [ ] **H12 — Revisar el contenido de E5 cuando estén sus resultados reales.**
+  Consultar `docs/handoff/E5_2026-11-16.md` para distinguir ejecución de implementación.
+  Cuando existan vecinos, contextos y tópicos reales: confirmar o corregir sus
+  interpretaciones, registrar fallos y valorar si las etiquetas temáticas son defendibles.
+  Distinguir el modelo estático de sus contextos por década/tag y la muestra de figuras
+  del corpus completo. No usar PCA, coherencia o perplexity como juicios de recomendación.
+  La revisión humana no sustituye ejecutar y comprobar las etapas técnicas pendientes.
+
 - [ ] **H07 — Aclarar el requisito de 150–300 páginas con el profesor.**
   Registrar el criterio aceptado para este corpus digital o la aclaración recibida.
   El tamaño en documentos/tokens y el split 70/20/10 no sustituyen esa condición.
@@ -88,10 +96,10 @@ las casillas que todavía no hayas revisado; no confundir ejecución con aprobac
 
 ## Seguimiento técnico que puede hacer el agente
 
-- Preparar E5: baseline TF-IDF, elección de embeddings propios y LDA; ajuste sólo con
-  train, selección con validation y test reservado para evaluación final.
-- Resolver Gensim en el entorno: su instalación en Python 3.14 requiere herramientas
-  de compilación C++ que faltan. Documentar la solución sin cambiar silenciosamente
-  Python, modelo o versiones. No es una tarea de anotación humana.
+- Continuar E5 según `docs/handoff/E5_2026-11-16.md`: caché completa y vocabulario/IDF
+  ya ajustados con train; verificar recuperación, entrenamiento propio, tópicos,
+  exportación y análisis reales. Validation selecciona; test sigue reservado.
+- Gensim 4.4.0 ya compilado y verificado, con Build Tools y Cython 3.3.1;
+  procedimiento/hashes en el handoff. Python/spaCy/modelo conservan sus versiones.
 - Mantener el ZIP y los datos locales fuera de Git; no repetir ingesta, anotación o
   corridas completas sin un problema identificado y una corrección justificada.
