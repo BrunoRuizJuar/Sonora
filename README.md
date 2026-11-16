@@ -1,8 +1,14 @@
 # SONORA
 
 Prototipo de recomendación musical por letras, sonido y combinación de ambas señales.
-Working directory de Windows: `B:\University\2027-1\SONORA`.
+Working directory actual de Windows: `B:\SONORA`.
 Repositorio: https://github.com/BrunoRuizJuar/Sonora.git
+
+Estado vigente de continuación y entorno: [ENTORNO_2026-11-16.md](docs/handoff/ENTORNO_2026-11-16.md).
+La sección siguiente describe el scaffold original; para avances de PLN consultar el handoff.
+Último avance: [E4 ejecutada y revisión pendiente](docs/handoff/E4_2026-11-16.md).
+E4 tiene cierre técnico/documental completo. Pendientes personales del autor:
+[TODO-human.md](TODO-human.md).
 
 ## Estado de esta entrega
 

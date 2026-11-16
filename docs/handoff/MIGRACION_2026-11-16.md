@@ -20,6 +20,14 @@ trazables tomados del primer archivo de cada shard. La muestra sólo ilustra eje
 específicos a partir de las tablas; el texto actual explica mecanismos y limitaciones.
 No marcar E3 cerrada todavía.** Revisar también legibilidad de figuras y cobertura E3-01…04.
 
+**Actualización de revisión (2026-11-16):** revisión asistida de los nueve ejemplos,
+hallazgos cuantitativos y cobertura E3-01…04 documentados en
+[`../E3_REVISION.md`](../E3_REVISION.md), incorporado también al generador del notebook.
+Se mejoran las tres figuras. El autor debe revisar los juicios lingüísticos, los gráficos
+y la interpretación mediante la lista de comprobación del documento. **E3 permanece
+pendiente de revisión personal del autor; no está cerrada.** Las predicciones originales
+se conservan y no se repite spaCy.
+
 Pruebas nuevas: 2 aprobadas. Suite completa dentro del sandbox: 28 aprobadas y 12 errores
 de preparación por permisos sobre temporales pytest, no fallos de aserción. Se solicitó
 repetición con permisos; la herramienta fue interrumpida y su resultado no quedó recogido.
@@ -70,3 +78,11 @@ No ejecutar `--force` ni borrar salidas para resolver una copia incompleta.
    finalmente audio. Ajustar sólo train; elegir con validation; evaluación final en test.
 
 No hay agentes delegados ni trabajos pesados pendientes autorizados para la nueva máquina.
+
+## Instalación en el equipo de destino
+
+Raíz actual: `B:\SONORA`. Diagnóstico de transferencia, dependencias y diferencias:
+[ENTORNO_2026-11-16.md](ENTORNO_2026-11-16.md).
+
+Continuación posterior autorizada por el usuario: E4 implementada reutilizando anotaciones.
+Ver [E4_2026-11-16.md](E4_2026-11-16.md). E3 permanece pendiente de revisión personal.

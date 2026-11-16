@@ -18,3 +18,7 @@ erróneo, alcance parcial nunca marcado como completo y lock de un único escrit
 
 Pendiente para etapas siguientes: invariantes de vectores, capacidades por modo, filtros,
 pesos, versiones y recuperación frente a referencia exacta.
+
+E4 añade pruebas sintéticas de ponderación de distancias por arco frente a segmento,
+distancia no definida sin arcos, conservación de índices con huecos y detección de ciclos,
+cabezas ausentes y múltiples raíces (`tests/unit/test_syntax.py`). No miden precisión del parser.

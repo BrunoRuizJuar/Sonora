@@ -83,6 +83,8 @@ fig, ax = plt.subplots(figsize=(9,4))
 ax.bar([r['upos'] for r in global_pos], [r['pct_all'] for r in global_pos], color=viz.SEQUENTIAL)
 ax.set(ylabel='% de todos los tokens', title='Categorías gramaticales · corpus completo')
 ax.tick_params(axis='x', rotation=45)
+ax.bar_label(ax.containers[0], fmt='%.2f', fontsize=8, padding=3)
+ax.set_ylim(0, 21)
 viz.save(fig, FIG/'pos_global.png'); plt.show()
 """), md(r"""
 ## 2. Comparaciones por tag y década (E3-03)
@@ -114,19 +116,25 @@ pos_order = [r['upos'] for r in global_pos if r['upos'] not in EXCLUDED]
 tags = [t for t in viz.TAG_ORDER if t in doc_tags]
 matrix = np.array([[next((r['pct_nonpunct'] for r in tag_pos if r['group']==t and r['upos']==p),0)
                     for p in pos_order] for t in tags])
-fig, ax = plt.subplots(figsize=(12,4))
+fig, ax = plt.subplots(figsize=(14,4.5))
 im = ax.imshow(matrix, cmap='Blues', aspect='auto')
+ax.grid(False)
+for i in range(len(tags)):
+    for j in range(len(pos_order)):
+        ax.text(j,i,f'{matrix[i,j]:.2f}',ha='center',va='center',fontsize=8,
+                color='white' if matrix[i,j]>12 else 'black')
 ax.set_xticks(range(len(pos_order)),pos_order,rotation=45); ax.set_yticks(range(len(tags)),tags)
 ax.set_title('POS por tag · % de tokens sin PUNCT/SYM/SPACE')
 fig.colorbar(im, ax=ax, label='% dentro del tag')
 viz.save(fig, FIG/'pos_tags.png'); plt.show()
 decades = sorted(d for d in doc_dec if d is not None and doc_dec[d]>=1000)
 fig, ax = plt.subplots(figsize=(9,4))
-for p in ['NOUN','VERB','PRON','PROPN','ADJ','AUX']:
+for p, style in zip(['NOUN','VERB','PRON','PROPN','ADJ','AUX'], ['-','--','-.',':','--','-.']):
     ax.plot(decades,[next((r['pct_nonpunct'] for r in dec_pos if r['group']==d and r['upos']==p),0)
-                    for d in decades], marker='o', label=p)
+                    for d in decades], marker='o', linestyle=style, label=p)
 ax.set(title='POS por década · grupos con ≥ 1 000 letras', xlabel='Década de year', ylabel='% sin PUNCT/SYM/SPACE')
-ax.legend(ncol=3); viz.save(fig, FIG/'pos_decadas.png'); plt.show()
+ax.legend(ncol=3, loc='upper center', bbox_to_anchor=(0.5,-0.22))
+viz.save(fig, FIG/'pos_decadas.png'); plt.show()
 spread = []
 for p in pos_order:
     rows = [r for r in tag_pos if r['upos']==p]
@@ -273,6 +281,9 @@ agregados completos de `e2_frequency.py pos-lexicon` y la anotación ya terminad
 no se modifica `data/raw`, no se reentrena spaCy. Figuras en `reports/figures/E3/`;
 resumen y procedencia de ejemplos en `reports/nlp/lyrics_full_v1/e3_summary.json`.
 """)]
+
+# Keep the executed notebook and its durable review notes synchronized.
+CELLS.append(md((ROOT/'docs/E3_REVISION.md').read_text(encoding='utf-8')))
 
 if __name__ == '__main__':
     print(build(CELLS, ROOT/'notebooks/evidencias/E3_morfosintaxis.ipynb'))

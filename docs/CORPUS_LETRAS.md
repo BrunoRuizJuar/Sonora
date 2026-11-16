@@ -245,3 +245,18 @@ si la forma `-ing` aparece ≥ 20 veces (el token conserva su forma original); `
 Lección operativa: con 15,7 GB de RAM no ejecutar dos trabajos pesados a la vez; las corridas
 largas conviene lanzarlas en una terminal propia del usuario (Claude Code puede detener procesos
 en segundo plano cuando el sistema se queda sin memoria).
+
+## 13. E4 sobre las anotaciones existentes (2026-11-16)
+
+Ejecutada en `B:\SONORA` sobre todo el corpus: 3 155 772 letras, 144 457 653 segmentos,
+1 033 733 693 tokens y 809 010 838 arcos incluidos. Reutiliza `spacy_sm_v1/sentences/`
+y `doc_stats/`, sin repetir spaCy. Métricas por tag/década y bandas de longitud;
+árboles y auditoría dirigida con alcance declarado por separado.
+
+CLI `pipelines/nlp/e4_syntax.py`; generador `notebooks/evidencias/build_e4.py`;
+notebook `E4_sintaxis_dependencias.ipynb`. Resultados en
+`reports/nlp/lyrics_full_v1/e4_{summary,examples}.json`; siete figuras en `reports/figures/E4/`.
+Las convenciones de puntuación e índices se distinguen explícitamente de E3.
+Revisión asistida realizada, pendiente lectura personal del autor:
+[`E4_REVISION.md`](E4_REVISION.md). Detalle operativo:
+[`handoff/E4_2026-11-16.md`](handoff/E4_2026-11-16.md). Suite: 43 aprobadas.

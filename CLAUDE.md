@@ -3,7 +3,7 @@
 - Especificación vigente: `docs/REQUIREMENTS.md` (v1.2). Contexto de traspaso:
   `docs/handoff/SONORA_Contexto_Claude/`. Documentos de `docs/` con la nota "anterior a v1.2"
   ceden ante ella.
-- Raíz Windows `B:\University\2027-1\SONORA`; remoto `https://github.com/BrunoRuizJuar/Sonora.git`.
+- Raíz Windows actual `B:\SONORA` (equipo de continuación); remoto `https://github.com/BrunoRuizJuar/Sonora.git`.
   En WSL, descubrir la ruta montada real; no asumir `/mnt/b`. No hacer push ni desplegar sin pedirlo.
 - Python: usar el venv existente `.venv` (Python 3.14). Pruebas: `.venv\Scripts\python.exe -m pytest -q`.
 - Recomendador de contenido ítem a ítem (Letras, Audio, Mixto con alpha = peso de letras).
@@ -26,3 +26,10 @@
   Prioridad del usuario: PLN completo (E1–E5) antes del audio; un solo trabajo pesado a la vez.
 
 - Continuación más reciente: `docs/handoff/MIGRACION_2026-11-16.md`; E3 ejecutada, revisión final pendiente; nuevo equipo 25 GB RAM.
+- E3: revisión asistida y lista para revisión del autor en `docs/E3_REVISION.md`, también
+  incorporada al notebook por `build_e3.py`. No cerrar E3 hasta la revisión personal del usuario.
+- E4 implementada usando anotaciones existentes; continuación en
+  `docs/handoff/E4_2026-11-16.md`, revisión del autor en `docs/E4_REVISION.md`.
+  El usuario autorizó E4 conservando E3 pendiente de su revisión personal.
+- E4: cierre técnico/documental completado. Pendientes de revisión humana del proyecto
+  centralizados en `TODO-human.md`; no marcar casillas ni aprobar contenido en nombre del usuario.
