@@ -132,6 +132,31 @@ def pos_lexicon(annotation_dir: Path, aligned_dir: Path, doc_stats_dir: Path, ou
             "path": "word_pos.parquet, group_pos.parquet"}
 
 
+CLITICS = frozenset({"'m", "'s", "'re", "'ve", "'ll", "'d", "n't"})
+NEG_HEADS = frozenset({"ca", "wo", "ai", "sha"})  # can't, won't, ain't, shan't (spaCy split)
+
+
+def function_words(stop: set[str], vocabulary) -> set[str]:
+    """Stopwords extended with contractions made only of function words.
+
+    The regex tokenizer keeps ``i'm``/``don't`` as one token while spaCy's list only has the
+    pieces (``i``, ``'m``, ``do``, ``n't``). A contraction counts as functional when its clitic is
+    in :data:`CLITICS` and its head is a stopword (or ``ca/wo/ai/sha`` before ``n't``).
+    ``y'all`` or ``baby's`` stay lexical.
+    """
+    out = set(stop)
+    for w in vocabulary:
+        if "'" not in w:
+            continue
+        head, tail = w.split("'", 1)
+        clitic = "'" + tail
+        if tail == "t" and head.endswith("n"):
+            head, clitic = head[:-1], "n't"
+        if clitic in CLITICS and (head in stop or (clitic == "n't" and head in NEG_HEADS)):
+            out.add(w)
+    return out
+
+
 # --------------------------------------------------------------------------- vocables
 
 def vocable_candidates(word_pos, min_count: int = 100, split: str = "train",

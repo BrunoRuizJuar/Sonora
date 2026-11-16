@@ -64,10 +64,13 @@ S = json.loads((NLP / "frequency/ngram_summary.json").read_text(encoding="utf-8"
 O = S["orders"]
 manifest = json.loads((ROOT / "manifests/nlp" / f"{RUN}.json").read_text(encoding="utf-8"))
 lex = pq.read_table(NLP / "lexicon/lexicon.parquet")
+lex_count = dict(zip(lex["word"].to_pylist(), lex["count"].to_pylist()))
 VOC = yaml.safe_load((ROOT / "config/vocables.yaml").read_text(encoding="utf-8"))
 VOCABLES = set(VOC["vocables"])
 from spacy.lang.en.stop_words import STOP_WORDS
-STOP = {w.lower() for w in STOP_WORDS}
+from sonora.nlp.frequency import function_words
+STOP_SPACY = {w.lower() for w in STOP_WORDS}
+STOP = function_words(STOP_SPACY, lex["word"].to_pylist())  # + contracciones funcionales (i'm, don't)
 
 def fmt(n): return f"{n:,}".replace(",", " ")
 def show(rows, cols=None):
@@ -81,7 +84,9 @@ def show(rows, cols=None):
     lines += ["| " + " | ".join(cell(r[c]) for c in cols) + " |" for r in rows]
     display(Markdown("\n".join(lines)))
 print("Resumen de n-gramas:", S["version"], "|", S["partitions"], "particiones |", S["note"])
-print("Stopwords spaCy:", len(STOP), "| vocablos:", len(VOCABLES), f"({VOC['version']})")
+print("Stopwords spaCy:", len(STOP_SPACY), "| + contracciones funcionales del léxico:", len(STOP - STOP_SPACY),
+      "| vocablos:", len(VOCABLES), f"({VOC['version']})")
+print("Ejemplos de contracciones añadidas:", ", ".join(sorted(STOP - STOP_SPACY, key=lambda w: -int(lex_count.get(w, 0)))[:15]))
 """),
 md(r"""
 ## 1. Universo de tokens y reconciliación (E2-01)
@@ -108,7 +113,9 @@ md(r"""
 ## 2. Frecuencias absolutas y relativas con y sin palabras funcionales (E2-01)
 
 Tres políticas sobre el **mismo** universo de tokens: (a) todas las palabras; (b) sin las 326
-*stopwords* de spaCy 3.8 (palabras funcionales y algunos adverbios frecuentes); (c) sin
+*stopwords* de spaCy 3.8 (palabras funcionales y algunos adverbios frecuentes) **más las
+contracciones formadas sólo por ellas** (`i'm`, `don't`, `it's`: el tokenizador regex no las separa
+y la lista de spaCy sólo contiene las piezas `'m`, `n't`); (c) sin
 stopwords ni vocablos/muletillas (sección 3). La frecuencia relativa se expresa por millón de
 tokens del universo completo, de modo que las tres columnas son comparables.
 
@@ -167,7 +174,8 @@ print(f"Candidatos (train, ≥100): {len(cand)} | por criterio: {dict(reasons)}"
 print(f"Lista final: {len(VOCABLES)} vocablos | excluidos en revisión: {len(VOC['excluded'])}")
 show([{"forma": c["form"], "frecuencia train": c["count"], "POS mayoritario": c["majority_upos"],
        "% INTJ": 100 * c["intj_share"], "criterio": ", ".join(c["reasons"]),
-       "decisión": "vocablo" if c["form"] in VOCABLES else "excluido: " + VOC["excluded"].get(c["form"], "?")}
+       "decisión": "vocablo" if c["form"] in VOCABLES else ("excluido en revisión: " + VOC["excluded"][c["form"]]
+                  if c["form"] in VOC["excluded"] else "no admitido: sólo patrón y su reducción no es vocablo")}
       for c in cand[:40]])
 voc_tokens = int(counts[is_voc].sum())
 print(f"Los vocablos suman {fmt(voc_tokens)} tokens ({100*voc_tokens/N:.2f} % del universo completo).")
@@ -259,9 +267,9 @@ for o in ("1", "2", "3"):
     fv, cum = rank_freq(o)
     r_hi = int(cum[np.searchsorted(-fv, -10, side="right") - 1])  # último rango con f ≥ 10
     fits[o] = zipf_fit(o, 1, r_hi); fits[o]["r_hi"] = r_hi
-    fits[o + "c"] = zipf_fit(o, 10, r_hi); fits[o + "c"]["r_hi"] = r_hi
+    fits[o + "c"] = zipf_fit(o, 10, 10_000)  # tramo central clásico, igual para los tres órdenes
 show([{"orden": o, "tramo de rangos": f"1–{fmt(fits[o]['r_hi'])}", "α (Zipf, desde r=1)": fits[o]["alpha"], "R²": fits[o]["r2"],
-       "α (desde r=10)": fits[o + "c"]["alpha"], "R² (r≥10)": fits[o + "c"]["r2"],
+       "α (10 ≤ r ≤ 10 000)": fits[o + "c"]["alpha"], "R² central": fits[o + "c"]["r2"],
        "Zipf–Mandelbrot b": fits[o]["zm_b"], "α ZM": fits[o]["zm_alpha"], "R² ZM": fits[o]["zm_r2"]} for o in ("1", "2", "3")])
 print("Tramo: rangos con frecuencia ≥ 10 (por encima, la meseta de frecuencias 1–9 es escalonada).")
 """),
@@ -273,7 +281,10 @@ for i, o in enumerate(("1", "2", "3")):
     ax.loglog(cum, fv, drawstyle="steps-post", color=viz.CATEGORICAL[i], label=f"{names[o]} ({fmt(int(cum[-1]))} tipos)")
 f1 = fits["1"]
 ax.loglog(10 ** np.log10(f1["ranks"]), 10 ** f1["pred"], color=viz.TEXT, linestyle="--", linewidth=1,
-          label=f"ajuste Zipf unigramas α={f1['alpha']:.2f}")
+          label=f"recta 1 ≤ r ≤ {fmt(f1['r_hi'])}: α={f1['alpha']:.2f}")
+fc = fits["1c"]
+ax.loglog(fc["ranks"], 10 ** fc["pred"], color=viz.TEXT, linestyle=":", linewidth=1.6,
+          label=f"recta 10 ≤ r ≤ 10 000: α={fc['alpha']:.2f}")
 ax.set_xlabel("rango (log)"); ax.set_ylabel("frecuencia (log)"); ax.set_title("Rango–frecuencia del corpus completo")
 ax.legend(loc="lower left")
 viz.caption(ax, "Universo: corpus completo, n-gramas dentro del verso sin marcadores. Escalones = tipos empatados.")
@@ -368,14 +379,14 @@ LO = {t: logodds(t) for t in viz.TAG_ORDER}
 show([{"tag": t, "más características (z)": ", ".join(vocab[i] for i in np.argsort(-LO[t][0])[:12])} for t in viz.TAG_ORDER])
 """),
 code(r"""
-fig, axes = plt.subplots(1, 5, figsize=(14, 4.4))
+fig, axes = plt.subplots(1, 5, figsize=(16, 4.6))
 for ax, t in zip(axes, viz.TAG_ORDER):
     z, d = LO[t]; idx = np.argsort(-z)[:10][::-1]
     ax.barh([vocab[i] for i in idx], z[idx], color=viz.TAG_COLORS[t], height=0.7)
     ax.set_title(t, color=viz.TEXT, fontsize=11); ax.grid(axis="y", visible=False); ax.set_xlabel("z log-odds")
 fig.suptitle("Palabras de contenido más características de cada tag (frente al resto)", x=0.01, ha="left", fontweight="bold")
 viz.caption(axes[0], "Universo: corpus completo; palabras con ≥ 1 000 ocurrencias, sin stopwords ni vocablos.")
-fig.tight_layout(); viz.save(fig, FIG / "e2_logodds_tags.png"); plt.show()
+fig.subplots_adjust(wspace=0.75, top=0.85); viz.save(fig, FIG / "e2_logodds_tags.png"); plt.show()
 """),
 md(r"""
 ## 7. Modelo de lenguaje de n-gramas con KenLM (E2-05)
@@ -395,7 +406,9 @@ recomendación (VAL-06).
 """),
 code(r"""
 res_path = NLP / "lm/results.json"
-LM = json.loads(res_path.read_text(encoding="utf-8"))
+LM = json.loads(res_path.read_text(encoding="utf-8")) if res_path.exists() else {}
+LM_READY = any("eval" in v for v in LM.values())
+print("Resultados KenLM:", "disponibles" if LM_READY else "PENDIENTES (ngram_lm.py train/eval aún no ejecutado)")
 fr = manifest["frequency"]
 print("Vocabulario:", fr["lm-vocab"])
 tot = fr["lm-export"]["totals"]
@@ -406,39 +419,107 @@ show([{"conjunto": "train", "letras": tr["docs"], "versos": tr["lines"], "tokens
       {"conjunto": "validation", "letras": sum(v["docs"] for v in val.values()), "versos": sum(v["lines"] for v in val.values()),
        "tokens": vt, "<oov>": vo, "% <oov>": 100 * vo / vt}])
 rows = []
-for key in sorted(LM, key=lambda k: int(k[1:])):
+for key in sorted(LM, key=lambda k: int(k[1:])) if LM_READY else []:
     e = LM[key]
     if "eval" not in e: continue
     rows.append({"orden": e["train"]["order"], **{f"{n}-gramas": e["train"]["ngram_counts"].get(f"{n}-gram", 0) for n in range(1, 5)},
                  "binario MB": e["train"]["files_bytes"].get(f"{key}.binary", 0) / 2**20,
                  "PPL validation": e["eval"]["validation"]["ppl_incl_oov"],
                  "OOV KenLM": e["eval"]["validation"]["kenlm_oovs"]})
-show(rows)
-best = min(rows, key=lambda r: r["PPL validation"]); BEST = f"o{best['orden']}"
-print("Orden elegido por validation:", best["orden"])
+if rows:
+    show(rows)
+    best = min(rows, key=lambda r: r["PPL validation"]); BEST = f"o{best['orden']}"
+    print("Orden elegido por validation:", best["orden"])
 """),
 code(r"""
-ev = LM[BEST]["eval"]
-show([{"tag": t, "tokens (incl. </s>)": ev[f"validation.{t}"]["tokens_incl_eos"],
-       "PPL": ev[f"validation.{t}"]["ppl_incl_oov"]} for t in viz.TAG_ORDER])
-fig, ax = plt.subplots(figsize=(8, 3.8))
-for i, key in enumerate(sorted((k for k in LM if "eval" in LM[k]), key=lambda k: int(k[1:]))):
-    vals = [LM[key]["eval"][f"validation.{t}"]["ppl_incl_oov"] for t in viz.TAG_ORDER]
-    ax.plot(viz.TAG_ORDER, vals, marker="o", color=viz.CATEGORICAL[i], label=f"orden {key[1:]}")
-ax.set_ylabel("perplejidad en validation"); ax.set_title("Perplejidad por tag y orden del modelo"); ax.legend()
-viz.caption(ax, "Modelo aprendido sólo con train; evaluado en todas las letras de validation de cada tag.")
-viz.save(fig, FIG / "e2_perplejidad_tags.png"); plt.show()
+if LM_READY:
+    ev = LM[BEST]["eval"]
+    show([{"tag": t, "tokens (incl. </s>)": ev[f"validation.{t}"]["tokens_incl_eos"],
+           "PPL": ev[f"validation.{t}"]["ppl_incl_oov"]} for t in viz.TAG_ORDER])
+    fig, ax = plt.subplots(figsize=(8, 3.8))
+    for i, key in enumerate(sorted((k for k in LM if "eval" in LM[k]), key=lambda k: int(k[1:]))):
+        vals = [LM[key]["eval"][f"validation.{t}"]["ppl_incl_oov"] for t in viz.TAG_ORDER]
+        ax.plot(viz.TAG_ORDER, vals, marker="o", color=viz.CATEGORICAL[i], label=f"orden {key[1:]}")
+    ax.set_ylabel("perplejidad en validation"); ax.set_title("Perplejidad por tag y orden del modelo"); ax.legend()
+    viz.caption(ax, "Modelo aprendido sólo con train; evaluado en todas las letras de validation de cada tag.")
+    viz.save(fig, FIG / "e2_perplejidad_tags.png"); plt.show()
+else:
+    print("Pendiente: requiere los resultados de KenLM.")
 """),
 code(r"""
-# Ejemplos ilustrativos (frases construidas a mano, no del corpus): log10 P por token.
-ex = LM[BEST].get("examples", [])
-for e in ex:
-    print(f"{e['total_log10']:8.2f}  {e['sentence']}")
+if LM_READY:
+    # Ejemplos ilustrativos (frases construidas a mano, no del corpus): log10 P por token.
+    ex = LM[BEST].get("examples", [])
+    for e in ex:
+        print(f"{e['total_log10']:8.2f}  {e['sentence']}")
+else:
+    print("Pendiente: requiere los resultados de KenLM.")
 """),
 md(r"""
 ## 8. Hallazgos e interpretación
 
-*(se completa con las cifras verificadas de las celdas anteriores)*
+Todas las cifras proceden de las celdas anteriores (corpus completo salvo que se indique).
+
+1. **Universo reconciliado.** 902 376 353 tokens regex y 1 277 145 tipos; los totales por split
+   (train 631 669 490 · validation 90 048 892 · test 180 657 971) y por tag coinciden exactamente
+   con el léxico y con el conteo de n-gramas, así que todas las tablas comparten denominador.
+
+2. **Las palabras funcionales dominan la frecuencia, no el vocabulario.** Las 326 stopwords de
+   spaCy más 807 contracciones formadas sólo por ellas (`i'm`, `don't`, `can't`…) suman el 56,6 %
+   de los tokens; las diez palabras más frecuentes cubren el 22,1 %. Sin ellas aparece el
+   contenido propio del género: `like` (en el 53,9 % de las letras), `know`, `got`, `love`,
+   `time`, `want`, `baby`, `life`. Sin ampliar la lista con contracciones, `i'm` y `don't`
+   encabezaban falsamente el top «de contenido»: la política de stopwords debe ajustarse a la
+   tokenización usada.
+
+3. **Vocablos: un 1,7 % de los tokens, muy desigual entre tags.** La lista (424 formas, derivada
+   sólo de train y revisada) suma 15 442 494 tokens. El POS de spaCy no basta para encontrarlos:
+   `ooh`, `la` y `na` se etiquetan mayoritariamente como `PROPN`/`PART` y se recuperaron por
+   autorrepetición (`na na`). El R&B usa 29,2 vocablos por cada 1 000 tokens, el pop 19,5, el rap
+   15,6 y rock y country unos 12,5–12,7; el rap tiene además menos palabras funcionales (54,0 %
+   frente a 58,6–59,2 %), coherente con versos más densos léxicamente.
+
+4. **n-gramas: la repetición domina el extremo frecuente.** Los tipos pasan de 1,28 M (orden 1) a
+   25,9 M y 105,3 M; los hapax son el 51,6 %, 58,1 % y 66,7 % de los tipos, y en trigramas
+   suponen ya el 10,9 % de las ocurrencias (dispersión que el modelo de lenguaje deberá
+   suavizar). Cuatro de los seis trigramas más frecuentes son vocablos repetidos
+   (`oh oh oh` 450 177, `la la la`, `yeah yeah yeah`, `na na na`). Al filtrar, los bigramas de
+   contenido son colocaciones (`feel like` 328 820, `far away`, `brand new`, `run away`) y los
+   trigramas de contenido vuelven a ser repeticiones de palabras léxicas (`love love love`,
+   `baby baby baby`, `money money money`).
+
+5. **Zipf aproxima, pero no se cumple como ley exacta.** Una recta sobre los rangos 1–197 878
+   (frecuencia ≥ 10) da α = 1,36 con R² = 0,978, pero los residuos forman un arco sistemático:
+   las diez palabras más frecuentes quedan a 0,27 veces del ajuste, los rangos 10–100 000 un
+   ~20 % por encima y la cola (> 100 000) a 0,34 veces. En el tramo central (10–10 000) α = 1,23
+   (R² 0,992), más empinado que el α ≈ 1 clásico; Zipf–Mandelbrot (b ≈ 39) absorbe la cabeza
+   plana y sube a R² 0,995. Bigramas y trigramas son más planos (α central 0,74 y 0,55). El
+   espectro confirma la cola larga: V(1) = 659 589 tipos hapax (51,6 %) y V(2)/V(1) = 0,26.
+
+6. **Patrón adicional (E2-04): frecuencia ≠ difusión.** Los vocablos se concentran en pocas
+   letras que los repiten mucho: `na` aparece en el 1,05 % de las letras, pero 12,8 veces en cada
+   una; `la` 9,9 y `da` 6,8 veces. Entre las palabras con ≥ 100 000 ocurrencias, la mediana de
+   ocurrencias por letra es 4,13 para vocablos, 1,88 para stopwords y 1,69 para el resto. Es la
+   huella cuantitativa del estribillo: una frecuencia bruta alta puede venir de pocas canciones.
+   Para los modelos de E5 esto justifica una tf sublineal o binaria y usar la frecuencia
+   documental, no sólo la total. Formas criollas como `dey`, `dem` o `mi` muestran la misma
+   concentración.
+
+7. **Diferencias léxicas entre tags.** Con log-odds y prior de Dirichlet: country = `old`,
+   `whiskey`, `town`, `beer`, `cowboy`, `tennessee` (lugar y vida rural); rock = `death`,
+   `blood`, `fear`, `darkness`, `burn`; rap = palabras malsonantes, insultos raciales
+   reapropiados y `money`; R&B = `baby`, `love`, `girl`, `babe`; pop = `love`, `heart`,
+   `night`, `tonight`, `dance`. Son contrastes contra «el resto», dominado por pop (42 % de las
+   letras), y el tag es la etiqueta de la fuente, no un género verificado.
+
+8. **Limitaciones.** (a) La lista de vocablos es heurística: formas ambiguas con uso léxico
+   (`aye`, `ya`, `yo`, `yea`, `o`) quedaron fuera a propósito y aparecen en los trigramas de
+   contenido; (b) los tokens regex no separan contracciones, a diferencia de spaCy (E3), por lo
+   que las cifras de ambos no son directamente comparables; (c) spaCy `en_core_web_sm` comete
+   errores de POS en vocablos (los etiqueta como nombres propios), lo que se analizará en E3;
+   (d) el modelo de lenguaje (sección 7) depende de KenLM en WSL y sus resultados se reportan
+   sólo cuando `pipelines/nlp/ngram_lm.py` termina; mientras falten, la sección 7 lo indica
+   explícitamente.
 """),
 ]
 

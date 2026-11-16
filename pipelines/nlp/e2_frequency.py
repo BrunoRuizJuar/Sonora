@@ -100,7 +100,10 @@ def main(argv=None) -> int:
         elif args.command == "group-unigrams":
             result = fq.group_unigrams(corpus, freq_dir / "group_unigrams", workers=args.workers)
         elif args.command == "ngram-summary":
-            excluded = stopwords() | vocables()
+            import pyarrow.parquet as pq
+
+            lexwords = pq.read_table(nlp_dir / "lexicon" / "lexicon.parquet", columns=["word"])["word"].to_pylist()
+            excluded = fq.function_words(stopwords(), lexwords) | vocables()
             result = fq.ngram_summary(nlp_dir / "ngrams" / "counts", excluded, freq_dir / "ngram_summary.json",
                                       workers=args.workers)
         elif args.command == "lm-vocab":

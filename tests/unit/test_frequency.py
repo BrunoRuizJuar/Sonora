@@ -108,3 +108,10 @@ def test_select_vocables_reductions_and_review():
     got = fq.select_vocables(cand, include={"huh": "manual"}, exclude={"please": "lexical"})
     assert got == sorted(["oh", "la", "hehe", "huh", "ooooh", "lalala", "hehehe"])
     assert {"oh", "ooh"} <= fq.reductions("ooooh")
+
+
+def test_function_words_contractions():
+    stop = {"i", "do", "it", "you", "all"}
+    got = fq.function_words(stop, ["i'm", "don't", "can't", "ain't", "it's", "y'all", "baby's", "love"])
+    assert {"i'm", "don't", "can't", "ain't", "it's"} <= got
+    assert "y'all" not in got and "baby's" not in got and "love" not in got

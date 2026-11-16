@@ -55,9 +55,75 @@
       "finished_utc": "2026-11-14T23:50:23+00:00"
     },
     "vocables": {
-      "vocables": 426,
+      "vocables": 424,
       "path": "config/vocables.yaml",
-      "finished_utc": "2026-11-15T00:46:27+00:00"
+      "finished_utc": "2026-11-16T03:53:21+00:00"
+    },
+    "group-unigrams": {
+      "version": "frequency-v1",
+      "rows": 4128532,
+      "tokens_by_tag_total": 902376353,
+      "seconds": 351.5,
+      "finished_utc": "2026-11-15T00:52:26+00:00"
+    },
+    "ngram-summary": {
+      "version": "frequency-v1",
+      "partitions": 256,
+      "top_k": 2000,
+      "excluded_words": 1557,
+      "seconds": 206.9,
+      "note": "descriptive: n-grams with <s>/</s> removed; within-verse n-grams only",
+      "finished_utc": "2026-11-16T03:57:07+00:00"
+    },
+    "lm-vocab": {
+      "min_count": 2,
+      "types": 497831,
+      "train_tokens_covered": 631139981,
+      "path": "data/processed/nlp/lyrics_full_v1/lm/vocab_train_min2.txt",
+      "finished_utc": "2026-11-15T00:56:30+00:00"
+    },
+    "lm-export": {
+      "totals": {
+        "train": {
+          "docs": 2208832,
+          "lines": 91731600,
+          "tokens": 631669490,
+          "mapped_oov": 529509
+        },
+        "validation.country": {
+          "docs": 8481,
+          "lines": 267480,
+          "tokens": 1920613,
+          "mapped_oov": 1652
+        },
+        "validation.pop": {
+          "docs": 133780,
+          "lines": 4769917,
+          "tokens": 30124415,
+          "mapped_oov": 50122
+        },
+        "validation.rap": {
+          "docs": 95527,
+          "lines": 5322685,
+          "tokens": 40933947,
+          "mapped_oov": 94071
+        },
+        "validation.rb": {
+          "docs": 15277,
+          "lines": 707789,
+          "tokens": 4615469,
+          "mapped_oov": 5758
+        },
+        "validation.rock": {
+          "docs": 62224,
+          "lines": 2017310,
+          "tokens": 12454448,
+          "mapped_oov": 17043
+        }
+      },
+      "seconds": 326.0,
+      "vocab": "vocab_train_min2.txt",
+      "finished_utc": "2026-11-15T01:01:57+00:00"
     }
   }
 }

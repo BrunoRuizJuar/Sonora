@@ -3,7 +3,7 @@
 version: vocables-v1
 derived_from: train split of lyrics_full_v1 (spaCy POS + n-gram counts)
 candidates_sha256: 434c271ebc025c570307956a52bbb0db10d252840f08eb2698cfb3b9736ed504
-review_sha256: 785f6cab8b4fb73ff0711b6f256b5855dc46469a9b56968a0a1833da186e9dc0
+review_sha256: a2f0d02336956cfa357e91fc1ce534cd0aa0c9f9455eeb739aeb7664e9228ecc
 rule: base = candidatos con POS mayoritario INTJ (spaCy, train, frecuencia regex >= 100) o con autorrepetición
   >= 0.2 (bigrama "w w" en el verso, frecuencia >= 1000), menos `exclude`, más `include`; las formas de
   sílaba repetida o alargadas (>= 3 letras iguales) entran sólo si una de sus reducciones (colapsar letras
@@ -11,7 +11,7 @@ rule: base = candidatos con POS mayoritario INTJ (spaCy, train, frecuencia regex
 excluded:
   well: adverbio y marcador discursivo léxico (además es stopword)
   please: cortesía, contenido léxico
-  true: afirmación léxica
+  'yes': afirmación léxica
   hello: saludo léxico
   hi: saludo léxico
   bye: despedida léxica
@@ -107,7 +107,7 @@ included_manually:
   yuh: ad-lib (variante de yeah); spaCy PROPN 91 %
   woo: grito/ad-lib; spaCy PROPN 84 %
   ugh: interjección; spaCy PROPN/NOUN
-count: 426
+count: 424
 vocables:
 - aa
 - aaa
@@ -527,8 +527,6 @@ vocables:
 - yeeeah
 - yeeeeah
 - yeeeeeah
-- 'yes'
-- yesss
 - yey
 - yi
 - yip

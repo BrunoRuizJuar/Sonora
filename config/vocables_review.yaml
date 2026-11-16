@@ -21,7 +21,7 @@ exclude:
   # interjecciones o marcadores con contenido léxico
   well: "adverbio y marcador discursivo léxico (además es stopword)"
   please: "cortesía, contenido léxico"
-  yes: "afirmación léxica"
+  "yes": "afirmación léxica"
   hello: "saludo léxico"
   hi: "saludo léxico"
   bye: "despedida léxica"
