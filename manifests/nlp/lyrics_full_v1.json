@@ -125,5 +125,199 @@
       "vocab": "vocab_train_min2.txt",
       "finished_utc": "2026-11-15T01:01:57+00:00"
     }
+  },
+  "ngram_lm": {
+    "results": "data/processed/nlp/lyrics_full_v1/lm/results.json",
+    "o2": {
+      "train": {
+        "order": 2,
+        "smoothing": "interpolated modified Kneser-Ney (lmplz defaults)",
+        "pruning": "none",
+        "ngram_counts": {
+          "1-gram": 497835,
+          "2-gram": 20487313
+        },
+        "kenlm_commit": "4cb443e60b7bf2c0ddf3c745378f76cb59e254e5",
+        "lmplz_seconds": 187.6,
+        "build_binary_seconds": 13.4,
+        "files_bytes": {
+          "o2.arpa": 502487752,
+          "o2.binary": 144246981
+        },
+        "model_path_wsl": "$HOME/sonora_lm/lyrics_full_v1/o2.binary",
+        "input": "train.*.txt (verses, <oov> for train count < min_count)",
+        "finished_utc": "2026-11-16T04:04:43+00:00"
+      },
+      "examples": [
+        {
+          "sentence": "i love you",
+          "total_log10": -4.7653294
+        },
+        {
+          "sentence": "you love i",
+          "total_log10": -7.529371
+        },
+        {
+          "sentence": "i love you baby",
+          "total_log10": -6.8473616
+        },
+        {
+          "sentence": "love baby i you",
+          "total_log10": -11.212575
+        },
+        {
+          "sentence": "na na na na",
+          "total_log10": -4.736131
+        },
+        {
+          "sentence": "the of and to",
+          "total_log10": -13.844786
+        },
+        {
+          "sentence": "i can't stop thinking about you",
+          "total_log10": -8.685862
+        },
+        {
+          "sentence": "you about thinking stop can't i",
+          "total_log10": -19.090227
+        }
+      ],
+      "eval": {
+        "validation": {
+          "ppl_incl_oov": 153.52728092950912,
+          "ppl_excl_oov": 153.52728092950912,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 103134073
+        },
+        "validation.pop": {
+          "ppl_incl_oov": 123.94060420005137,
+          "ppl_excl_oov": 123.94060420005137,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 34894332
+        },
+        "validation.rap": {
+          "ppl_incl_oov": 194.90818450531242,
+          "ppl_excl_oov": 194.90818450531242,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 46256632
+        },
+        "validation.rock": {
+          "ppl_incl_oov": 140.65387315697663,
+          "ppl_excl_oov": 140.65387315697663,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 14471758
+        },
+        "validation.rb": {
+          "ppl_incl_oov": 104.80286969602854,
+          "ppl_excl_oov": 104.80286969602854,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 5323258
+        },
+        "validation.country": {
+          "ppl_incl_oov": 135.7458438514466,
+          "ppl_excl_oov": 135.7458438514466,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 2188093
+        },
+        "note": "perplexity per token incl. </s>; <oov> is an in-vocabulary class",
+        "finished_utc": "2026-11-16T04:07:25+00:00"
+      }
+    },
+    "o3": {
+      "train": {
+        "order": 3,
+        "smoothing": "interpolated modified Kneser-Ney (lmplz defaults)",
+        "pruning": "none",
+        "ngram_counts": {
+          "1-gram": 497835,
+          "2-gram": 20487313,
+          "3-gram": 92126560
+        },
+        "kenlm_commit": "4cb443e60b7bf2c0ddf3c745378f76cb59e254e5",
+        "lmplz_seconds": 469.1,
+        "build_binary_seconds": 81.8,
+        "files_bytes": {
+          "o3.arpa": 3269227407,
+          "o3.binary": 871131945
+        },
+        "model_path_wsl": "$HOME/sonora_lm/lyrics_full_v1/o3.binary",
+        "input": "train.*.txt (verses, <oov> for train count < min_count)",
+        "finished_utc": "2026-11-16T04:16:46+00:00"
+      },
+      "examples": [
+        {
+          "sentence": "i love you",
+          "total_log10": -3.7457361
+        },
+        {
+          "sentence": "you love i",
+          "total_log10": -8.720694
+        },
+        {
+          "sentence": "i love you baby",
+          "total_log10": -5.0153813
+        },
+        {
+          "sentence": "love baby i you",
+          "total_log10": -12.827906
+        },
+        {
+          "sentence": "na na na na",
+          "total_log10": -4.504757
+        },
+        {
+          "sentence": "the of and to",
+          "total_log10": -13.304523
+        },
+        {
+          "sentence": "i can't stop thinking about you",
+          "total_log10": -6.398817
+        },
+        {
+          "sentence": "you about thinking stop can't i",
+          "total_log10": -22.989511
+        }
+      ],
+      "eval": {
+        "validation": {
+          "ppl_incl_oov": 97.4457121634264,
+          "ppl_excl_oov": 97.4457121634264,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 103134073
+        },
+        "validation.pop": {
+          "ppl_incl_oov": 74.28195222777629,
+          "ppl_excl_oov": 74.28195222777629,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 34894332
+        },
+        "validation.rap": {
+          "ppl_incl_oov": 131.18157264086582,
+          "ppl_excl_oov": 131.18157264086582,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 46256632
+        },
+        "validation.rock": {
+          "ppl_incl_oov": 87.59482152816734,
+          "ppl_excl_oov": 87.59482152816734,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 14471758
+        },
+        "validation.rb": {
+          "ppl_incl_oov": 63.7697649240455,
+          "ppl_excl_oov": 63.7697649240455,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 5323258
+        },
+        "validation.country": {
+          "ppl_incl_oov": 78.22410774597124,
+          "ppl_excl_oov": 78.22410774597124,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 2188093
+        },
+        "note": "perplexity per token incl. </s>; <oov> is an in-vocabulary class",
+        "finished_utc": "2026-11-16T04:18:21+00:00"
+      }
+    }
   }
 }

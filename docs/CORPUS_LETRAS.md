@@ -227,6 +227,13 @@ Todo sobre `lyrics_full_v1` (3 155 772 letras canónicas). Salidas bajo `data/pr
 | Anotación spaCy (`spacy-lines-gdrop-v1`) | (hecho) | `pipelines/nlp/annotate_corpus.py annotate` | 1 033 733 693 tokens, 144 457 653 oraciones, 5 243 419 g-dropping normalizados; 11 GB en `spacy_sm_v1/{tokens,sentences,docs}` |
 | n-gramas 1–3 por split (`ngrams-lines-v1`) | (hecho) | `pipelines/nlp/count_ngrams.py` | 179 404 316 filas; train 631 669 490 / validation 90 048 892 / test 180 657 971 tokens; reconcilia con el léxico |
 | E1 notebook | (hecho) | `notebooks/evidencias/build_e1.py` | `notebooks/evidencias/E1_construccion_exploracion.ipynb`, figuras en `reports/figures/E1/` |
+| Léxico POS por split (`frequency-v1`) | (hecho) | `pipelines/nlp/e2_frequency.py pos-lexicon` | 1 033 733 693 tokens spaCy; 3 236 971 filas `(split, lower, lemma, upos)` y agregados por tag/década |
+| Vocablos (`vocables-v1`, sólo train) | (hecho) | `e2_frequency.py vocable-candidates` / `vocables` | 731 candidatos → 424 vocablos; 1,71 % de los tokens del corpus |
+| Unigramas por tag y década | (hecho) | `e2_frequency.py group-unigrams` | 4 128 532 filas; suma por tag = 902 376 353 tokens |
+| Resumen de n-gramas (totales, espectro, top-K) | (hecho) | `e2_frequency.py ngram-summary` | tipos 1 277 145 / 25 877 889 / 105 251 805 (órdenes 1–3) |
+| Texto y vocabulario del LM (train ≥ 2) | (hecho) | `e2_frequency.py lm-vocab` / `lm-export` | 497 831 tipos; `<oov>` 0,084 % train, 0,187 % validation |
+| E2 notebook, secciones 1–6 | (hecho) | `notebooks/evidencias/build_e2.py` | `notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb`, figuras en `reports/figures/E2/` |
+| E2-05 KenLM (órdenes por validation) | en curso | `pipelines/nlp/ngram_lm.py train/eval --order N` | pendiente de resultados |
 
 Decisiones de la anotación: spaCy 3.8.18 + `en_core_web_sm` 3.8.0 sin NER; todo salto de verso es
 frontera de oración (en una muestra de 400 letras la segmentación por defecto unía versos en el

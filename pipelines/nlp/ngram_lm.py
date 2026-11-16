@@ -48,8 +48,8 @@ def parse_query(text: str) -> dict:
     out = {}
     for key, pat in (("ppl_incl_oov", r"Perplexity including OOVs:\s*([\d.einf+-]+)"),
                      ("ppl_excl_oov", r"Perplexity excluding OOVs:\s*([\d.einf+-]+)"),
-                     ("kenlm_oovs", r"OOVs:\s*(\d+)"), ("tokens_incl_eos", r"Tokens:\s*(\d+)")):
-        m = re.search(pat, text)
+                     ("kenlm_oovs", r"^OOVs:\s*(\d+)"), ("tokens_incl_eos", r"^Tokens:\s*(\d+)")):
+        m = re.search(pat, text, re.M)
         out[key] = (float(m.group(1)) if "ppl" in key else int(m.group(1))) if m else None
     return out
 
