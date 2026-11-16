@@ -1,0 +1,1366 @@
+{
+  "version": "e3-morphology-v1",
+  "docs": 3155772,
+  "tokens": 1033733693,
+  "global_pos": [
+    {
+      "group": "all",
+      "upos": "PRON",
+      "count": 185818230,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 17.97544486150361,
+      "pct_nonpunct": 19.471247648486777
+    },
+    {
+      "group": "all",
+      "upos": "VERB",
+      "count": 159154194,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 15.396053652669325,
+      "pct_nonpunct": 16.677215823599806
+    },
+    {
+      "group": "all",
+      "upos": "NOUN",
+      "count": 146979569,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 14.218320443193681,
+      "pct_nonpunct": 15.401479108195412
+    },
+    {
+      "group": "all",
+      "upos": "PUNCT",
+      "count": 79196665,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 7.661225084979406,
+      "pct_nonpunct": null
+    },
+    {
+      "group": "all",
+      "upos": "ADP",
+      "count": 78510983,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 7.594894461856338,
+      "pct_nonpunct": 8.226893524489686
+    },
+    {
+      "group": "all",
+      "upos": "AUX",
+      "count": 75380981,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 7.292108355415673,
+      "pct_nonpunct": 7.898911474061917
+    },
+    {
+      "group": "all",
+      "upos": "DET",
+      "count": 66877498,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 6.469509357474333,
+      "pct_nonpunct": 7.007860992267438
+    },
+    {
+      "group": "all",
+      "upos": "ADV",
+      "count": 49459463,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 4.784545897547716,
+      "pct_nonpunct": 5.182685534321195
+    },
+    {
+      "group": "all",
+      "upos": "ADJ",
+      "count": 46440536,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 4.4925048215488514,
+      "pct_nonpunct": 4.866342647782543
+    },
+    {
+      "group": "all",
+      "upos": "PROPN",
+      "count": 44732914,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 4.327315081525547,
+      "pct_nonpunct": 4.68740686278446
+    },
+    {
+      "group": "all",
+      "upos": "PART",
+      "count": 33419929,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 3.232934093790827,
+      "pct_nonpunct": 3.501958413627366
+    },
+    {
+      "group": "all",
+      "upos": "CCONJ",
+      "count": 24602151,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 2.3799312305089004,
+      "pct_nonpunct": 2.5779740491902574
+    },
+    {
+      "group": "all",
+      "upos": "SCONJ",
+      "count": 22359077,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 2.162943623817822,
+      "pct_nonpunct": 2.342930106796221
+    },
+    {
+      "group": "all",
+      "upos": "INTJ",
+      "count": 13809402,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 1.3358761636107377,
+      "pct_nonpunct": 1.447039325579135
+    },
+    {
+      "group": "all",
+      "upos": "NUM",
+      "count": 6233893,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 0.6030463205575326,
+      "pct_nonpunct": 0.6532280197544028
+    },
+    {
+      "group": "all",
+      "upos": "X",
+      "count": 542307,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 0.05246099683818664,
+      "pct_nonpunct": 0.05682646906338478
+    },
+    {
+      "group": "all",
+      "upos": "SYM",
+      "count": 215901,
+      "total": 1033733693,
+      "nonpunct_total": 954321127,
+      "pct_all": 0.020885553161514296,
+      "pct_nonpunct": null
+    }
+  ],
+  "lemma": {
+    "tokens": 954321127,
+    "changed_tokens": 177278975,
+    "changed_pct": 18.576448742918796,
+    "surface_types": 1503152,
+    "lemma_types": 1450635,
+    "reduction_pct": 3.4937917123484485,
+    "top_changes": [
+      {
+        "lower": "me",
+        "lemma": "I",
+        "count_sum": 13916368
+      },
+      {
+        "lower": "n't",
+        "lemma": "not",
+        "count_sum": 13851892
+      },
+      {
+        "lower": "'m",
+        "lemma": "be",
+        "count_sum": 10292562
+      },
+      {
+        "lower": "'s",
+        "lemma": "be",
+        "count_sum": 8875219
+      },
+      {
+        "lower": "is",
+        "lemma": "be",
+        "count_sum": 6351972
+      },
+      {
+        "lower": "got",
+        "lemma": "get",
+        "count_sum": 5003509
+      },
+      {
+        "lower": "'re",
+        "lemma": "be",
+        "count_sum": 3545661
+      },
+      {
+        "lower": "'ll",
+        "lemma": "will",
+        "count_sum": 3129954
+      },
+      {
+        "lower": "was",
+        "lemma": "be",
+        "count_sum": 2952572
+      },
+      {
+        "lower": "ca",
+        "lemma": "can",
+        "count_sum": 2593846
+      },
+      {
+        "lower": "are",
+        "lemma": "be",
+        "count_sum": 2503011
+      },
+      {
+        "lower": "ai",
+        "lemma": "be",
+        "count_sum": 2419291
+      },
+      {
+        "lower": "'ve",
+        "lemma": "have",
+        "count_sum": 2110293
+      },
+      {
+        "lower": "been",
+        "lemma": "be",
+        "count_sum": 1678193
+      },
+      {
+        "lower": "them",
+        "lemma": "they",
+        "count_sum": 1338494
+      },
+      {
+        "lower": "gon",
+        "lemma": "go",
+        "count_sum": 1232561
+      },
+      {
+        "lower": "na",
+        "lemma": "to",
+        "count_sum": 1232561
+      },
+      {
+        "lower": "had",
+        "lemma": "have",
+        "count_sum": 1126739
+      },
+      {
+        "lower": "did",
+        "lemma": "do",
+        "count_sum": 1116989
+      },
+      {
+        "lower": "wo",
+        "lemma": "will",
+        "count_sum": 1096843
+      },
+      {
+        "lower": "said",
+        "lemma": "say",
+        "count_sum": 1078440
+      },
+      {
+        "lower": "us",
+        "lemma": "we",
+        "count_sum": 1077574
+      },
+      {
+        "lower": "am",
+        "lemma": "be",
+        "count_sum": 1072943
+      },
+      {
+        "lower": "ta",
+        "lemma": "to",
+        "count_sum": 1018931
+      },
+      {
+        "lower": "better",
+        "lemma": "well",
+        "count_sum": 908316
+      }
+    ]
+  },
+  "tag_spread": [
+    {
+      "POS": "PRON",
+      "mínimo tag": "country",
+      "mínimo %": 18.59367618417761,
+      "máximo tag": "rb",
+      "máximo %": 22.613535102624905,
+      "diferencia pp": 4.019858918447294
+    },
+    {
+      "POS": "VERB",
+      "mínimo tag": "country",
+      "mínimo %": 16.122993891279158,
+      "máximo tag": "rb",
+      "máximo %": 17.61369450574827,
+      "diferencia pp": 1.4907006144691124
+    },
+    {
+      "POS": "NOUN",
+      "mínimo tag": "rb",
+      "mínimo %": 12.760794606227975,
+      "máximo tag": "rap",
+      "máximo %": 16.432308243113088,
+      "diferencia pp": 3.6715136368851127
+    },
+    {
+      "POS": "ADP",
+      "mínimo tag": "rb",
+      "mínimo %": 7.2991977168851765,
+      "máximo tag": "rock",
+      "máximo %": 8.683358686184624,
+      "diferencia pp": 1.3841609692994474
+    },
+    {
+      "POS": "AUX",
+      "mínimo tag": "rap",
+      "mínimo %": 6.997191695989277,
+      "máximo tag": "pop",
+      "máximo %": 8.713429956232284,
+      "diferencia pp": 1.7162382602430073
+    },
+    {
+      "POS": "DET",
+      "mínimo tag": "rb",
+      "mínimo %": 5.356790095758006,
+      "máximo tag": "country",
+      "máximo %": 7.606328417201593,
+      "diferencia pp": 2.2495383214435867
+    },
+    {
+      "POS": "ADV",
+      "mínimo tag": "rap",
+      "mínimo %": 4.583350444781972,
+      "máximo tag": "country",
+      "máximo %": 5.741741352965365,
+      "diferencia pp": 1.1583909081833923
+    },
+    {
+      "POS": "ADJ",
+      "mínimo tag": "rb",
+      "mínimo %": 4.481017378223766,
+      "máximo tag": "country",
+      "máximo %": 5.109992460367209,
+      "diferencia pp": 0.6289750821434437
+    },
+    {
+      "POS": "PROPN",
+      "mínimo tag": "rock",
+      "mínimo %": 3.0550180721250304,
+      "máximo tag": "rap",
+      "máximo %": 6.0463010703509745,
+      "diferencia pp": 2.991282998225944
+    },
+    {
+      "POS": "PART",
+      "mínimo tag": "rap",
+      "mínimo %": 3.3048174150584106,
+      "máximo tag": "rb",
+      "máximo %": 3.8418848295510406,
+      "diferencia pp": 0.53706741449263
+    },
+    {
+      "POS": "CCONJ",
+      "mínimo tag": "rb",
+      "mínimo %": 2.253806132117565,
+      "máximo tag": "country",
+      "máximo %": 3.3408255225246286,
+      "diferencia pp": 1.0870193904070637
+    },
+    {
+      "POS": "SCONJ",
+      "mínimo tag": "rock",
+      "mínimo %": 2.238885488270776,
+      "máximo tag": "country",
+      "máximo %": 2.5847516532307044,
+      "diferencia pp": 0.3458661649599284
+    },
+    {
+      "POS": "INTJ",
+      "mínimo tag": "rock",
+      "mínimo %": 1.1423885262958426,
+      "máximo tag": "rb",
+      "máximo %": 2.4256980291146513,
+      "diferencia pp": 1.2833095028188086
+    },
+    {
+      "POS": "NUM",
+      "mínimo tag": "rock",
+      "mínimo %": 0.49986848898033454,
+      "máximo tag": "rap",
+      "máximo %": 0.7870817247546517,
+      "diferencia pp": 0.2872132357743171
+    },
+    {
+      "POS": "X",
+      "mínimo tag": "country",
+      "mínimo %": 0.027710636419487466,
+      "máximo tag": "pop",
+      "máximo %": 0.06437225768763646,
+      "diferencia pp": 0.036661621268148994
+    }
+  ],
+  "sample_docs": 5000,
+  "sample_parts": [
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00001-of-00010\\part-00000.parquet",
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00002-of-00010\\part-00000.parquet",
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00003-of-00010\\part-00000.parquet",
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00004-of-00010\\part-00000.parquet",
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00005-of-00010\\part-00000.parquet",
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00006-of-00010\\part-00000.parquet",
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00007-of-00010\\part-00000.parquet",
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00008-of-00010\\part-00000.parquet",
+    "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00009-of-00010\\part-00000.parquet"
+  ],
+  "examples": [
+    {
+      "criterion": "slang gonna",
+      "file": "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+      "lyrics_id": "lyr_94b5237c6f7464b6c4b5",
+      "sent_i": 0,
+      "line_i": 0,
+      "tok_i": 5,
+      "text": "gon",
+      "upos": "VERB",
+      "lemma": "go",
+      "gdrop": false,
+      "context": "\" Look , I was gon na go easy on you not to hurt your feelings \"",
+      "annotation": [
+        {
+          "tok_i": 0,
+          "text": "\"",
+          "upos": "PUNCT",
+          "lemma": "\""
+        },
+        {
+          "tok_i": 1,
+          "text": "Look",
+          "upos": "VERB",
+          "lemma": "look"
+        },
+        {
+          "tok_i": 2,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 3,
+          "text": "I",
+          "upos": "PRON",
+          "lemma": "I"
+        },
+        {
+          "tok_i": 4,
+          "text": "was",
+          "upos": "AUX",
+          "lemma": "be"
+        },
+        {
+          "tok_i": 5,
+          "text": "gon",
+          "upos": "VERB",
+          "lemma": "go"
+        },
+        {
+          "tok_i": 6,
+          "text": "na",
+          "upos": "PART",
+          "lemma": "to"
+        },
+        {
+          "tok_i": 7,
+          "text": "go",
+          "upos": "VERB",
+          "lemma": "go"
+        },
+        {
+          "tok_i": 8,
+          "text": "easy",
+          "upos": "ADV",
+          "lemma": "easy"
+        },
+        {
+          "tok_i": 9,
+          "text": "on",
+          "upos": "ADP",
+          "lemma": "on"
+        },
+        {
+          "tok_i": 10,
+          "text": "you",
+          "upos": "PRON",
+          "lemma": "you"
+        },
+        {
+          "tok_i": 11,
+          "text": "not",
+          "upos": "PART",
+          "lemma": "not"
+        },
+        {
+          "tok_i": 12,
+          "text": "to",
+          "upos": "PART",
+          "lemma": "to"
+        },
+        {
+          "tok_i": 13,
+          "text": "hurt",
+          "upos": "VERB",
+          "lemma": "hurt"
+        },
+        {
+          "tok_i": 14,
+          "text": "your",
+          "upos": "PRON",
+          "lemma": "your"
+        },
+        {
+          "tok_i": 15,
+          "text": "feelings",
+          "upos": "NOUN",
+          "lemma": "feeling"
+        },
+        {
+          "tok_i": 16,
+          "text": "\"",
+          "upos": "PUNCT",
+          "lemma": "\""
+        }
+      ]
+    },
+    {
+      "criterion": "posesivo/auxiliar ambiguo",
+      "file": "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+      "lyrics_id": "lyr_94b5237c6f7464b6c4b5",
+      "sent_i": 3,
+      "line_i": 2,
+      "tok_i": 41,
+      "text": "'s",
+      "upos": "PART",
+      "lemma": "'s",
+      "gdrop": false,
+      "context": "\" Something 's wrong , I can feel it \" ( Six minutes , Slim Shady , you 're on ! )",
+      "annotation": [
+        {
+          "tok_i": 39,
+          "text": "\"",
+          "upos": "PUNCT",
+          "lemma": "\""
+        },
+        {
+          "tok_i": 40,
+          "text": "Something",
+          "upos": "PRON",
+          "lemma": "something"
+        },
+        {
+          "tok_i": 41,
+          "text": "'s",
+          "upos": "PART",
+          "lemma": "'s"
+        },
+        {
+          "tok_i": 42,
+          "text": "wrong",
+          "upos": "NOUN",
+          "lemma": "wrong"
+        },
+        {
+          "tok_i": 43,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 44,
+          "text": "I",
+          "upos": "PRON",
+          "lemma": "I"
+        },
+        {
+          "tok_i": 45,
+          "text": "can",
+          "upos": "AUX",
+          "lemma": "can"
+        },
+        {
+          "tok_i": 46,
+          "text": "feel",
+          "upos": "VERB",
+          "lemma": "feel"
+        },
+        {
+          "tok_i": 47,
+          "text": "it",
+          "upos": "PRON",
+          "lemma": "it"
+        },
+        {
+          "tok_i": 48,
+          "text": "\"",
+          "upos": "PUNCT",
+          "lemma": "\""
+        },
+        {
+          "tok_i": 49,
+          "text": "(",
+          "upos": "PUNCT",
+          "lemma": "("
+        },
+        {
+          "tok_i": 50,
+          "text": "Six",
+          "upos": "NUM",
+          "lemma": "six"
+        },
+        {
+          "tok_i": 51,
+          "text": "minutes",
+          "upos": "NOUN",
+          "lemma": "minute"
+        },
+        {
+          "tok_i": 52,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 53,
+          "text": "Slim",
+          "upos": "PROPN",
+          "lemma": "Slim"
+        },
+        {
+          "tok_i": 54,
+          "text": "Shady",
+          "upos": "PROPN",
+          "lemma": "Shady"
+        },
+        {
+          "tok_i": 55,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 56,
+          "text": "you",
+          "upos": "PRON",
+          "lemma": "you"
+        },
+        {
+          "tok_i": 57,
+          "text": "'re",
+          "upos": "AUX",
+          "lemma": "be"
+        },
+        {
+          "tok_i": 58,
+          "text": "on",
+          "upos": "ADP",
+          "lemma": "on"
+        },
+        {
+          "tok_i": 59,
+          "text": "!",
+          "upos": "PUNCT",
+          "lemma": "!"
+        },
+        {
+          "tok_i": 60,
+          "text": ")",
+          "upos": "PUNCT",
+          "lemma": ")"
+        }
+      ]
+    },
+    {
+      "criterion": "nombre propio",
+      "file": "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+      "lyrics_id": "lyr_94b5237c6f7464b6c4b5",
+      "sent_i": 3,
+      "line_i": 2,
+      "tok_i": 53,
+      "text": "Slim",
+      "upos": "PROPN",
+      "lemma": "Slim",
+      "gdrop": false,
+      "context": "\" Something 's wrong , I can feel it \" ( Six minutes , Slim Shady , you 're on ! )",
+      "annotation": [
+        {
+          "tok_i": 39,
+          "text": "\"",
+          "upos": "PUNCT",
+          "lemma": "\""
+        },
+        {
+          "tok_i": 40,
+          "text": "Something",
+          "upos": "PRON",
+          "lemma": "something"
+        },
+        {
+          "tok_i": 41,
+          "text": "'s",
+          "upos": "PART",
+          "lemma": "'s"
+        },
+        {
+          "tok_i": 42,
+          "text": "wrong",
+          "upos": "NOUN",
+          "lemma": "wrong"
+        },
+        {
+          "tok_i": 43,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 44,
+          "text": "I",
+          "upos": "PRON",
+          "lemma": "I"
+        },
+        {
+          "tok_i": 45,
+          "text": "can",
+          "upos": "AUX",
+          "lemma": "can"
+        },
+        {
+          "tok_i": 46,
+          "text": "feel",
+          "upos": "VERB",
+          "lemma": "feel"
+        },
+        {
+          "tok_i": 47,
+          "text": "it",
+          "upos": "PRON",
+          "lemma": "it"
+        },
+        {
+          "tok_i": 48,
+          "text": "\"",
+          "upos": "PUNCT",
+          "lemma": "\""
+        },
+        {
+          "tok_i": 49,
+          "text": "(",
+          "upos": "PUNCT",
+          "lemma": "("
+        },
+        {
+          "tok_i": 50,
+          "text": "Six",
+          "upos": "NUM",
+          "lemma": "six"
+        },
+        {
+          "tok_i": 51,
+          "text": "minutes",
+          "upos": "NOUN",
+          "lemma": "minute"
+        },
+        {
+          "tok_i": 52,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 53,
+          "text": "Slim",
+          "upos": "PROPN",
+          "lemma": "Slim"
+        },
+        {
+          "tok_i": 54,
+          "text": "Shady",
+          "upos": "PROPN",
+          "lemma": "Shady"
+        },
+        {
+          "tok_i": 55,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 56,
+          "text": "you",
+          "upos": "PRON",
+          "lemma": "you"
+        },
+        {
+          "tok_i": 57,
+          "text": "'re",
+          "upos": "AUX",
+          "lemma": "be"
+        },
+        {
+          "tok_i": 58,
+          "text": "on",
+          "upos": "ADP",
+          "lemma": "on"
+        },
+        {
+          "tok_i": 59,
+          "text": "!",
+          "upos": "PUNCT",
+          "lemma": "!"
+        },
+        {
+          "tok_i": 60,
+          "text": ")",
+          "upos": "PUNCT",
+          "lemma": ")"
+        }
+      ]
+    },
+    {
+      "criterion": "negación contraída",
+      "file": "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+      "lyrics_id": "lyr_94b5237c6f7464b6c4b5",
+      "sent_i": 4,
+      "line_i": 3,
+      "tok_i": 80,
+      "text": "n't",
+      "upos": "PART",
+      "lemma": "not",
+      "gdrop": false,
+      "context": "\" Just a feeling I 've got , like something 's about to happen , but I do n't know what .",
+      "annotation": [
+        {
+          "tok_i": 62,
+          "text": "\"",
+          "upos": "PUNCT",
+          "lemma": "\""
+        },
+        {
+          "tok_i": 63,
+          "text": "Just",
+          "upos": "ADV",
+          "lemma": "just"
+        },
+        {
+          "tok_i": 64,
+          "text": "a",
+          "upos": "DET",
+          "lemma": "a"
+        },
+        {
+          "tok_i": 65,
+          "text": "feeling",
+          "upos": "NOUN",
+          "lemma": "feeling"
+        },
+        {
+          "tok_i": 66,
+          "text": "I",
+          "upos": "PRON",
+          "lemma": "I"
+        },
+        {
+          "tok_i": 67,
+          "text": "'ve",
+          "upos": "AUX",
+          "lemma": "have"
+        },
+        {
+          "tok_i": 68,
+          "text": "got",
+          "upos": "VERB",
+          "lemma": "get"
+        },
+        {
+          "tok_i": 69,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 70,
+          "text": "like",
+          "upos": "ADP",
+          "lemma": "like"
+        },
+        {
+          "tok_i": 71,
+          "text": "something",
+          "upos": "PRON",
+          "lemma": "something"
+        },
+        {
+          "tok_i": 72,
+          "text": "'s",
+          "upos": "AUX",
+          "lemma": "be"
+        },
+        {
+          "tok_i": 73,
+          "text": "about",
+          "upos": "ADJ",
+          "lemma": "about"
+        },
+        {
+          "tok_i": 74,
+          "text": "to",
+          "upos": "PART",
+          "lemma": "to"
+        },
+        {
+          "tok_i": 75,
+          "text": "happen",
+          "upos": "VERB",
+          "lemma": "happen"
+        },
+        {
+          "tok_i": 76,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 77,
+          "text": "but",
+          "upos": "CCONJ",
+          "lemma": "but"
+        },
+        {
+          "tok_i": 78,
+          "text": "I",
+          "upos": "PRON",
+          "lemma": "I"
+        },
+        {
+          "tok_i": 79,
+          "text": "do",
+          "upos": "AUX",
+          "lemma": "do"
+        },
+        {
+          "tok_i": 80,
+          "text": "n't",
+          "upos": "PART",
+          "lemma": "not"
+        },
+        {
+          "tok_i": 81,
+          "text": "know",
+          "upos": "VERB",
+          "lemma": "know"
+        },
+        {
+          "tok_i": 82,
+          "text": "what",
+          "upos": "PRON",
+          "lemma": "what"
+        },
+        {
+          "tok_i": 83,
+          "text": ".",
+          "upos": "PUNCT",
+          "lemma": "."
+        }
+      ]
+    },
+    {
+      "criterion": "g-dropping normalizado",
+      "file": "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+      "lyrics_id": "lyr_94b5237c6f7464b6c4b5",
+      "sent_i": 9,
+      "line_i": 8,
+      "tok_i": 133,
+      "text": "beginnin'",
+      "upos": "VERB",
+      "lemma": "begin",
+      "gdrop": true,
+      "context": "I 'm beginnin' to feel like a Rap God , Rap God",
+      "annotation": [
+        {
+          "tok_i": 131,
+          "text": "I",
+          "upos": "PRON",
+          "lemma": "I"
+        },
+        {
+          "tok_i": 132,
+          "text": "'m",
+          "upos": "AUX",
+          "lemma": "be"
+        },
+        {
+          "tok_i": 133,
+          "text": "beginnin'",
+          "upos": "VERB",
+          "lemma": "begin"
+        },
+        {
+          "tok_i": 134,
+          "text": "to",
+          "upos": "PART",
+          "lemma": "to"
+        },
+        {
+          "tok_i": 135,
+          "text": "feel",
+          "upos": "VERB",
+          "lemma": "feel"
+        },
+        {
+          "tok_i": 136,
+          "text": "like",
+          "upos": "ADP",
+          "lemma": "like"
+        },
+        {
+          "tok_i": 137,
+          "text": "a",
+          "upos": "DET",
+          "lemma": "a"
+        },
+        {
+          "tok_i": 138,
+          "text": "Rap",
+          "upos": "PROPN",
+          "lemma": "Rap"
+        },
+        {
+          "tok_i": 139,
+          "text": "God",
+          "upos": "PROPN",
+          "lemma": "God"
+        },
+        {
+          "tok_i": 140,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 141,
+          "text": "Rap",
+          "upos": "PROPN",
+          "lemma": "Rap"
+        },
+        {
+          "tok_i": 142,
+          "text": "God",
+          "upos": "PROPN",
+          "lemma": "God"
+        }
+      ]
+    },
+    {
+      "criterion": "interjección",
+      "file": "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+      "lyrics_id": "lyr_94b5237c6f7464b6c4b5",
+      "sent_i": 42,
+      "line_i": 43,
+      "tok_i": 526,
+      "text": "Well",
+      "upos": "INTJ",
+      "lemma": "well",
+      "gdrop": false,
+      "context": "Well , to be truthful the blueprint 's",
+      "annotation": [
+        {
+          "tok_i": 526,
+          "text": "Well",
+          "upos": "INTJ",
+          "lemma": "well"
+        },
+        {
+          "tok_i": 527,
+          "text": ",",
+          "upos": "PUNCT",
+          "lemma": ","
+        },
+        {
+          "tok_i": 528,
+          "text": "to",
+          "upos": "PART",
+          "lemma": "to"
+        },
+        {
+          "tok_i": 529,
+          "text": "be",
+          "upos": "AUX",
+          "lemma": "be"
+        },
+        {
+          "tok_i": 530,
+          "text": "truthful",
+          "upos": "ADJ",
+          "lemma": "truthful"
+        },
+        {
+          "tok_i": 531,
+          "text": "the",
+          "upos": "DET",
+          "lemma": "the"
+        },
+        {
+          "tok_i": 532,
+          "text": "blueprint",
+          "upos": "NOUN",
+          "lemma": "blueprint"
+        },
+        {
+          "tok_i": 533,
+          "text": "'s",
+          "upos": "PART",
+          "lemma": "'s"
+        }
+      ]
+    },
+    {
+      "criterion": "vocablo PROPN",
+      "file": "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+      "lyrics_id": "lyr_0c2a202b3c00dfad766c",
+      "sent_i": 33,
+      "line_i": 34,
+      "tok_i": 365,
+      "text": "Yeah",
+      "upos": "PROPN",
+      "lemma": "Yeah",
+      "gdrop": false,
+      "context": "You really ai n't never got ta fuck him for a thang ( Yeah )",
+      "annotation": [
+        {
+          "tok_i": 352,
+          "text": "You",
+          "upos": "PRON",
+          "lemma": "you"
+        },
+        {
+          "tok_i": 353,
+          "text": "really",
+          "upos": "ADV",
+          "lemma": "really"
+        },
+        {
+          "tok_i": 354,
+          "text": "ai",
+          "upos": "AUX",
+          "lemma": "be"
+        },
+        {
+          "tok_i": 355,
+          "text": "n't",
+          "upos": "PART",
+          "lemma": "not"
+        },
+        {
+          "tok_i": 356,
+          "text": "never",
+          "upos": "ADV",
+          "lemma": "never"
+        },
+        {
+          "tok_i": 357,
+          "text": "got",
+          "upos": "VERB",
+          "lemma": "get"
+        },
+        {
+          "tok_i": 358,
+          "text": "ta",
+          "upos": "PART",
+          "lemma": "to"
+        },
+        {
+          "tok_i": 359,
+          "text": "fuck",
+          "upos": "VERB",
+          "lemma": "fuck"
+        },
+        {
+          "tok_i": 360,
+          "text": "him",
+          "upos": "PRON",
+          "lemma": "he"
+        },
+        {
+          "tok_i": 361,
+          "text": "for",
+          "upos": "ADP",
+          "lemma": "for"
+        },
+        {
+          "tok_i": 362,
+          "text": "a",
+          "upos": "DET",
+          "lemma": "a"
+        },
+        {
+          "tok_i": 363,
+          "text": "thang",
+          "upos": "PROPN",
+          "lemma": "thang"
+        },
+        {
+          "tok_i": 364,
+          "text": "(",
+          "upos": "PUNCT",
+          "lemma": "("
+        },
+        {
+          "tok_i": 365,
+          "text": "Yeah",
+          "upos": "PROPN",
+          "lemma": "Yeah"
+        },
+        {
+          "tok_i": 366,
+          "text": ")",
+          "upos": "PUNCT",
+          "lemma": ")"
+        }
+      ]
+    },
+    {
+      "criterion": "ridin",
+      "file": "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+      "lyrics_id": "lyr_95301e309a7ad7dd1298",
+      "sent_i": 23,
+      "line_i": 25,
+      "tok_i": 265,
+      "text": "ridin'",
+      "upos": "VERB",
+      "lemma": "rid",
+      "gdrop": true,
+      "context": "I 'm ridin' around in a coupe ( Coupe )",
+      "annotation": [
+        {
+          "tok_i": 263,
+          "text": "I",
+          "upos": "PRON",
+          "lemma": "I"
+        },
+        {
+          "tok_i": 264,
+          "text": "'m",
+          "upos": "AUX",
+          "lemma": "be"
+        },
+        {
+          "tok_i": 265,
+          "text": "ridin'",
+          "upos": "VERB",
+          "lemma": "rid"
+        },
+        {
+          "tok_i": 266,
+          "text": "around",
+          "upos": "ADP",
+          "lemma": "around"
+        },
+        {
+          "tok_i": 267,
+          "text": "in",
+          "upos": "ADP",
+          "lemma": "in"
+        },
+        {
+          "tok_i": 268,
+          "text": "a",
+          "upos": "DET",
+          "lemma": "a"
+        },
+        {
+          "tok_i": 269,
+          "text": "coupe",
+          "upos": "NOUN",
+          "lemma": "coupe"
+        },
+        {
+          "tok_i": 270,
+          "text": "(",
+          "upos": "PUNCT",
+          "lemma": "("
+        },
+        {
+          "tok_i": 271,
+          "text": "Coupe",
+          "upos": "PROPN",
+          "lemma": "Coupe"
+        },
+        {
+          "tok_i": 272,
+          "text": ")",
+          "upos": "PUNCT",
+          "lemma": ")"
+        }
+      ]
+    },
+    {
+      "criterion": "fragmento sin verbo",
+      "file": "data\\processed\\nlp\\lyrics_full_v1\\spacy_sm_v1\\tokens\\train-00000-of-00010\\part-00000.parquet",
+      "lyrics_id": "lyr_94b5237c6f7464b6c4b5",
+      "sent_i": 43,
+      "line_i": 44,
+      "tok_i": 535,
+      "text": "Simply",
+      "upos": "ADV",
+      "lemma": "simply",
+      "gdrop": false,
+      "context": "Simply rage and youthful exuberance",
+      "annotation": [
+        {
+          "tok_i": 535,
+          "text": "Simply",
+          "upos": "ADV",
+          "lemma": "simply"
+        },
+        {
+          "tok_i": 536,
+          "text": "rage",
+          "upos": "NOUN",
+          "lemma": "rage"
+        },
+        {
+          "tok_i": 537,
+          "text": "and",
+          "upos": "CCONJ",
+          "lemma": "and"
+        },
+        {
+          "tok_i": 538,
+          "text": "youthful",
+          "upos": "ADJ",
+          "lemma": "youthful"
+        },
+        {
+          "tok_i": 539,
+          "text": "exuberance",
+          "upos": "NOUN",
+          "lemma": "exuberance"
+        }
+      ]
+    }
+  ],
+  "missing_criteria": []
+}

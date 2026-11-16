@@ -24,3 +24,5 @@
 - Un solo proceso escribe en una misma `--run-id` (lock en `runtime/locks/`).
 - Estado y siguiente paso más reciente: `docs/handoff/ESTADO_2026-11-14.md` (añadido 2026-11-14).
   Prioridad del usuario: PLN completo (E1–E5) antes del audio; un solo trabajo pesado a la vez.
+
+- Continuación más reciente: `docs/handoff/MIGRACION_2026-11-16.md`; E3 ejecutada, revisión final pendiente; nuevo equipo 25 GB RAM.
