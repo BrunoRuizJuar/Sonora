@@ -1,13 +1,13 @@
 # Índice del artículo SONORA
 
-**Borrador parcial: primera entrega.** [Artículo integrado](ARTICULO_COMPLETO.md). Sólo se enlazan secciones existentes para evitar enlaces vacíos. Título provisional: *Estructura lingüística y representaciones textuales para la recuperación de canciones en SONORA*. Autoría y afiliación pendientes de información confirmada.
+**Borrador parcial: segunda entrega, hallazgos revalidados y citas por celda.** [Artículo integrado](ARTICULO_COMPLETO.md). Sólo se enlazan secciones existentes para evitar enlaces vacíos. Título provisional: *Estructura lingüística y representaciones textuales para la recuperación de canciones en SONORA*. Autoría y afiliación pendientes de información confirmada.
 
 | Sección prevista | Estado |
 |---|---|
 | `01_RESUMEN.md` | Título provisional; resumen definitivo al final |
 | [02_INTRODUCCION.md](02_INTRODUCCION.md) | Primera versión sustentada; evaluación principal pendiente |
 | `03_FUNDAMENTOS_Y_TRABAJOS_RELACIONADOS.md` | Por redactar; publicaciones primarias por verificar |
-| [04_CORPUS_Y_PREPARACION.md](04_CORPUS_Y_PREPARACION.md) | Primera versión; pendientes idioma, procedencia y reconciliación |
+| [04_CORPUS_Y_PREPARACION.md](04_CORPUS_Y_PREPARACION.md) | Revalidada; 180 tokens reconciliados; pendientes idioma/procedencia/demo actual |
 | `05_ANALISIS_ESTADISTICO.md` | Siguiente sección; E2 con resultados disponibles |
 | `06_ANALISIS_MORFOSINTACTICO.md` | Por redactar; agregados completos, revisión personal pendiente |
 | `07_ANALISIS_SINTACTICO.md` | Por redactar; agregados completos, revisión personal pendiente |
@@ -29,3 +29,10 @@
 - [Procedimiento de esta entrega](construir_entrega.py)
 
 Los archivos previstos sin texto no se crean como secciones vacías. Resumen y conclusiones no se presentan como definitivos.
+
+
+
+- [Fact checks por hallazgo](00_FACT_CHECKS.md)
+- [Citas a E1–E5 e identificadores de celda](00_CITAS_NOTEBOOKS.md)
+- [Revalidación independiente](revalidacion_independiente.json)
+- [Revisión cruzada con SONORA](revision_cruzada_sonora.json)

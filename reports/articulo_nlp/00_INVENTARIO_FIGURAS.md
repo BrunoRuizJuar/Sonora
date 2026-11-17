@@ -14,14 +14,14 @@ Los assets de marca, portadas y fondos de apps/web son ilustraciones de interfaz
 | `reports/figures/E2/e2_perplejidad_tags.png` | 05/10 | x tag; y perplejidad; curvas órdenes 2/3/4 KenLM | Ajuste train y evaluación validation con finales de verso; no relevancia |
 | `reports/figures/E2/e2_top_palabras_politicas.png` | 05 | Ranking de frecuencias bajo tres políticas de filtrado | Corpus completo; lista de stopwords/vocablos modifica universo retenido |
 | `reports/figures/E2/e2_zipf.png` | 05 | Rango–frecuencia; ajustes logarítmicos Zipf y Mandelbrot | Uni/bi/trigramas completos; tramos de ajuste distintos; R² no prueba ley universal |
-| `reports/figures/E3/pos_decadas.png` | 06 | Evolución descriptiva POS por década y tag | Años válidos; umbral de soporte; no causalidad |
+| `reports/figures/E3/pos_decadas.png` | 06 | Evolución descriptiva global de seis POS por década; no desagregada por tag en la figura | Años válidos; umbral de soporte; no causalidad |
 | `reports/figures/E3/pos_global.png` | 06 | Barras POS global; conteos y porcentajes en notebook | Tokens spaCy; especificar denominador al seleccionar |
 | `reports/figures/E3/pos_tags.png` | 06 | Mapa de calor POS por tag | Excluir PUNCT/SYM/SPACE según código; no exactitud de anotación |
 | `reports/figures/E4/arbol_coordination.png` | 07 | Árbol cabeza→dependiente; etiquetas de dependencia, token, POS e índice; sin ejes numéricos | Cuatro casos dirigidos del shard 0; ver e4_examples.json; no precisión del parser |
 | `reports/figures/E4/arbol_fragment.png` | 07 | Árbol cabeza→dependiente; etiquetas de dependencia, token, POS e índice; sin ejes numéricos | Cuatro casos dirigidos del shard 0; ver e4_examples.json; no precisión del parser |
 | `reports/figures/E4/arbol_subordinate.png` | 07 | Árbol cabeza→dependiente; etiquetas de dependencia, token, POS e índice; sin ejes numéricos | Cuatro casos dirigidos del shard 0; ver e4_examples.json; no precisión del parser |
 | `reports/figures/E4/arbol_transitive.png` | 07 | Árbol cabeza→dependiente; etiquetas de dependencia, token, POS e índice; sin ejes numéricos | Cuatro casos dirigidos del shard 0; ver e4_examples.json; no precisión del parser |
-| `reports/figures/E4/comparacion_decadas.png` | 07 | Métricas sintácticas por década y tag | Años válidos y composición variable; no seguimiento longitudinal |
+| `reports/figures/E4/comparacion_decadas.png` | 07 | Métricas sintácticas globales por década; no desagregadas por tag en la figura | Años válidos y composición variable; no seguimiento longitudinal |
 | `reports/figures/E4/comparacion_tags.png` | 07 | Métricas sintácticas por tag | Medias por segmento y por arco; no complejidad artística |
 | `reports/figures/E4/distribuciones.png` | 07 | Histogramas de longitud sin puntuación y profundidad | Segmentos completos; truncamiento visual declarado; medias no truncadas |
 | `reports/figures/E5/pca_validation.png` | 08 | PCA: x componente 1, y componente 2; colores por tag; dos componentes | Muestra 2000 validation; 23,323 % y 9,852 % de varianza; no calidad semántica |
@@ -52,3 +52,35 @@ Celdas base cero. El código íntegro de cada celda está en auditoria_notebooks
 - `notebooks/evidencias/E5_semantica.ipynb`, celda 5, output 1: PNG guardado; parámetros y fuente de datos en esa celda.
 
 La copia seleccionada es figuras/e1_longitud_por_tag.png, procedente de reports/figures/E1/e1_longitud_por_tag.png; E1 celda 28. El hash de copia se registra en verificacion_entrega.json. La figura E5 procede de packages/sonora/src/sonora/nlp/semantic_analysis.py y e5_analysis.json, y también está incrustada en E5_semantica.ipynb, celda 5.
+
+
+
+## Procedencia precisa por notebook
+
+Índices base cero; ordinal desde uno e ID se dan para desambiguar. «Generada» identifica código de gráfica; «mostrada» identifica una imagen preexistente que el notebook carga. Sólo Figura 1 se incluye en el artículo actual.
+
+| Imagen | Notebook y celda | Ordinal / ID | Relación con el notebook |
+|---|---|---|---|
+| `e1_longitud_letras.png` | [13, E1, celda 27](../../notebooks/evidencias/E1_construccion_exploracion.ipynb) | 28 / `838986fd` | Generada y guardada por código de celda |
+| `e1_longitud_por_tag.png` | [13, E1, celda 28](../../notebooks/evidencias/E1_construccion_exploracion.ipynb) | 29 / `6e450d0a` | Generada y guardada por código de celda |
+| `e1_letras_por_decada.png` | [13, E1, celda 29](../../notebooks/evidencias/E1_construccion_exploracion.ipynb) | 30 / `e1f9abae` | Generada y guardada por código de celda |
+| `e1_repeticion_por_tag.png` | [13, E1, celda 30](../../notebooks/evidencias/E1_construccion_exploracion.ipynb) | 31 / `de117d38` | Generada y guardada por código de celda |
+| `e2_zipf.png` | [14, E2, celda 15](../../notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb) | 16 / `d27a1060` | Generada y guardada por código de celda |
+| `e2_top_palabras_politicas.png` | [14, E2, celda 6](../../notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb) | 7 / `b5b6dbde` | Generada y guardada por código de celda |
+| `e2_perplejidad_tags.png` | [14, E2, celda 26](../../notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb) | 27 / `58033b93` | Generada y guardada por código de celda |
+| `e2_logodds_tags.png` | [14, E2, celda 23](../../notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb) | 24 / `1c1c52ae` | Generada y guardada por código de celda |
+| `e2_espectro.png` | [14, E2, celda 17](../../notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb) | 18 / `2573313f` | Generada y guardada por código de celda |
+| `e2_difusion_repeticion.png` | [14, E2, celda 20](../../notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb) | 21 / `b7cfbc65` | Generada y guardada por código de celda |
+| `pos_global.png` | [15, E3, celda 3](../../notebooks/evidencias/E3_morfosintaxis.ipynb) | 4 / `48319be1` | Generada y guardada por código de celda |
+| `pos_tags.png` | [15, E3, celda 5](../../notebooks/evidencias/E3_morfosintaxis.ipynb) | 6 / `77b710c3` | Generada y guardada por código de celda |
+| `pos_decadas.png` | [15, E3, celda 5](../../notebooks/evidencias/E3_morfosintaxis.ipynb) | 6 / `77b710c3` | Generada y guardada por código de celda |
+| `distribuciones.png` | [16, E4, celda 3](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb) | 4 / `e7a854fa` | Generada y guardada por código de celda |
+| `comparacion_tags.png` | [16, E4, celda 5](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb) | 6 / `6ae76f8f` | Generada y guardada por código de celda |
+| `comparacion_decadas.png` | [16, E4, celda 5](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb) | 6 / `6ae76f8f` | Generada y guardada por código de celda |
+| `arbol_transitive.png` | [16, E4, celda 7](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb) | 8 / `16aaaf6e` | Generada por pipeline; mostrada por Image en celda |
+| `arbol_subordinate.png` | [16, E4, celda 7](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb) | 8 / `16aaaf6e` | Generada por pipeline; mostrada por Image en celda |
+| `arbol_fragment.png` | [16, E4, celda 7](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb) | 8 / `16aaaf6e` | Generada por pipeline; mostrada por Image en celda |
+| `arbol_coordination.png` | [16, E4, celda 7](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb) | 8 / `16aaaf6e` | Generada por pipeline; mostrada por Image en celda |
+| `pca_validation.png` | [17, E5, celda 5](../../notebooks/evidencias/E5_semantica.ipynb) | 6 / `6d079148` | Generada por pipeline; mostrada por Image en celda |
+
+La procedencia del árbol E4 reside además en e4_examples.json; la PCA E5 en e5_analysis.json. Para incluir otra figura deberá revisarse visualmente y añadir pie, universo, parámetros y límite. No se atribuye una imagen externa a una extracción del output si sólo se copió su PNG guardado.

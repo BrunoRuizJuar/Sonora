@@ -17,12 +17,12 @@ PLN sobre todas las letras canónicas aceptadas como inglesas de los diez Parque
 
 ## Contradicciones y riesgos de interpretación
 
-1. R06 frente a R07: preparación 902 376 173 palabras; léxico posterior 902 376 353 tokens (+180). El código de preparación aplica regex al texto sin lower y el léxico aplica lower antes de regex. Es una diferencia de procedimiento comprobada; NO se ha probado que explique los 180 casos. Se conservan ambas unidades. [PENDIENTE: reconciliación exacta por casos, sin corrida completa para redactar.]
+1. R06 frente a R07: diferencia de 180 tokens RESUELTA mediante metadatos de todos los shards y recálculo de sólo 56 letras discrepantes. La expansión U+0130 al aplicar lower introduce una marca combinante que separa tokens regex; el control por sustitución recupera todos los conteos previos. Ver revalidacion_independiente.json, word_count; no se modificaron textos ni se infiere idioma.
 2. E1 celda 22 rotula bytes UTF-8, pero suma n_chars_original. No usar 4 620 787 538 como bytes medidos. [PENDIENTE: reportar tamaño real sólo con medición válida.]
 3. E1 celda 31 afirma que las letras multilingües quedan en revisión «por diseño». Los detectores sobre extractos no garantizan eso; E4 conserva un pasaje de idioma incierto en letra aceptada. Se redacta aceptación automática de inglés predominante, sin pureza monolingüe garantizada.
 4. E1 celda 31 interpreta duplicación como covers y no scraping. Los hashes no distinguen esas causas; el artículo no adopta la generalización.
 5. Handoff original y requisitos conservan pendientes históricos ya ejecutados: E2–E4 y ajuste E5. Se toma el artefacto actual por etapa; no se confunde requisito con resultado.
-6. 886 pistas / 850 localizadores / 849 letras no se contradicen: son grabaciones, filas de fuente y textos canónicos. catalog_eligible=0 en quality_report; no equivale a catálogo reproducible musicalmente.
+6. 886 pistas / 850 localizadores / 849 letras son unidades diferentes y resultados históricos del reporte. El equipo actual no contiene demo_links, medium_prioritarios ni audio en las rutas documentadas; data/raw/genius sólo contiene .gitkeep. No se acredita disponibilidad actual de originales ni de demo. catalog_eligible=0 es estado del reporte histórico.
 7. El snapshot remoto Genius carece de revisión registrada; hashes identifican la copia local, no reconstruyen por sí solos su descarga original. Etiqueta de licencia en una tarjeta no acredita derechos sobre todas las letras ni reproducción de audio.
 8. docs/E5_RESULTADOS.md declara E5-04 completado como descripción, pero e5_analysis.json limita contextos a 2000 letras de validation. Se conserva ese avance sin equipararlo al análisis completo solicitado por el usuario. El cierre local declarado y el cierre de alcance del artículo son distintos; sigue pendiente ampliar o localizar evidencia contextual de cobertura completa.
 
@@ -35,3 +35,13 @@ La auditoría inicial registra todos los notebooks localizados con celdas, códi
 ## Siguiente acción
 
 Redactar 05_ANALISIS_ESTADISTICO.md a partir de E2 y resultados KenLM existentes; comprobar tramos de Zipf, denominadores y afirmaciones contra sus tablas, sin repetir cálculo pesado. Después abordar E3, E4 y E5 con sus límites. Resumen y conclusiones definitivos se escribirán al estabilizar resultados y argumento. La versión integrada actual es un borrador parcial, no un artículo terminado.
+
+
+
+## Segunda entrega: revisión crítica con SONORA
+
+Se utilizó exclusivamente la sesión de apoyo **Document SONORA project** (`01a1e751-d65d-7ce1-bc85-282069bb1d6c`), con cuatro rondas documentadas. Se revisaron individualmente R01–R19 y once objeciones metodológicas. [Fact checks](00_FACT_CHECKS.md) y [registro del intercambio](revision_cruzada_sonora.json). Las respuestas se contrastaron con código y artefactos; repetir un reporte entre sesiones no se contó como revalidación independiente.
+
+La revalidación propia confirmó IDs, grupos, conteos de particiones, ausencia de solapamiento de grupos registrados, exclusiones, tamaños por tag, medianas y años dudosos. La diferencia de 180 tokens quedó explicada en 56 letras. El tiempo y el procedimiento están en revalidacion_independiente.json. No se ejecutaron pipelines, notebooks ni entrenamiento. Se corrigieron la actualidad de demo/audio, la confusión entre 886 comprobaciones y 850 localizadores, la generalización train-only y el alcance de metadatos canónicos.
+
+Las citas inline distinguen E1–E5 y celda base cero. 00_CITAS_NOTEBOOKS.md conserva ordinal, ID y ejecución. Todas las figuras candidatas tienen notebook/celda de generación o visualización; Figura 1 mantiene origen externo y hash. Resumen/conclusiones y secciones siguientes siguen pendientes. El constructor histórico construir_entrega.py se bloqueó para evitar que sobrescriba estas correcciones; esta revisión se aplica con actualizar_revalidacion.py.

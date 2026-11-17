@@ -21,3 +21,25 @@ body{font-family:Open,Mono,Arial,sans-serif}
 .brand img{width:44px;height:58px}
 @media(max-width:900px){.brand img{width:35px;height:47px}}
 @media(max-width:640px){.brand img{width:34px;height:45px}}
+/* Text catalog controls inherit the approved palette and responsive shell. */
+#free-text-form{margin-top:24px;margin-bottom:20px}
+#free-text-form .search-label{display:block;margin-bottom:10px}
+label[for="text-strategy"]{display:block;margin-bottom:10px}
+#text-strategy{max-width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:6px;background:var(--panel,#2b2019);color:var(--text,#f2e2c4);font:inherit}
+#free-text{font:inherit;resize:vertical;min-height:76px}
+[data-mode]:disabled{opacity:.4;cursor:not-allowed}
+.lyrics-comparison{margin:32px 0;padding:28px;border:1px solid var(--line);border-radius:12px;background:var(--panel,#2b2019)}
+.lyrics-comparison[hidden]{display:none}
+.lyrics-comparison .section-header{align-items:flex-start;gap:16px}
+.lyrics-comparison h2{font-family:var(--font-display,serif);font-size:clamp(24px,3vw,36px);margin:8px 0}
+.lyrics-columns{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.lyrics-panel{min-width:0;padding:22px;border:1px solid var(--line);border-radius:8px;background:var(--surface,#1b1410)}
+.lyrics-panel h3{font-size:22px;margin:12px 0 6px;overflow-wrap:anywhere}
+.lyrics-panel header p{margin:0 0 20px;opacity:.75}
+.lyrics-panel [role=status]{font-size:13px;opacity:.75;line-height:1.6}
+.lyrics-text{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.9;font-size:15px;max-height:65vh;overflow-y:auto;padding-right:12px;scrollbar-color:var(--accent) transparent}
+.lyrics-text:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.compare-lyrics{margin:14px 0 4px;text-align:left;line-height:1.5;color:var(--accent,#d97732);background:transparent;border:0;cursor:pointer;font:inherit;font-size:13px}
+.compare-lyrics:disabled{opacity:.5;cursor:not-allowed}
+.song-card .compare-lyrics{position:relative;z-index:2}
+@media(max-width:650px){.lyrics-comparison{padding:18px;margin:24px 0}.lyrics-columns{grid-template-columns:minmax(0,1fr);gap:16px}.lyrics-panel{padding:18px}.lyrics-text{max-height:55vh}.lyrics-comparison .section-header{flex-wrap:wrap}}

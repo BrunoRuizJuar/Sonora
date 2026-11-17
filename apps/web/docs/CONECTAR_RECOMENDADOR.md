@@ -1,66 +1,17 @@
-# Conectar SONORA al recomendador real
+﻿# Conectar SONORA al recomendador real
 
-La versión entregada es una interfaz estática con datos de muestra. `serve.py` entrega sus archivos y un diagnóstico en `/__sonora_health`; no ejecuta modelos ni implementa las rutas `/api` de esta propuesta.
+La web usa `/api/v1` en el mismo origen. Ejecutar desde la raíz:
 
-## Trabajo que falta
-
-1. Construir el catálogo con identificadores estables: título, artista, idioma, composición original y relación entre covers.
-2. Preparar los vectores y resultados de similitud de letras y música según los modelos del proyecto.
-3. Exponer esos resultados mediante un backend. Mantener claves y archivos del modelo fuera de `public`.
-4. Sustituir el arreglo `songs` de `public/app.js` y la selección de muestra de `render()` por llamadas a la API. Las ponderaciones reales deben afectar el ranking, no solo la explicación.
-5. Añadir los estados de carga, error y catálogo vacío para las peticiones a la API.
-
-## Contrato sugerido; aún no implementado
-
-`GET /api/search?q=Brillas%20Leon%20Larregui`
-
-Respuesta propuesta:
-
-```json
-{
-  "songs": [
-    {"id": "song_001", "title": "Brillas", "artist": "León Larregui", "language": "es", "cover_url": "/assets/covers/brillas.svg"}
-  ]
-}
+```powershell
+.\scripts\Start-SONORA-Web.ps1
 ```
 
-`POST /api/recommend`
+Abrir http://127.0.0.1:8010/. La API sirve únicamente `public/` y sus rutas.
+`serve.py` continúa como servidor estático; no utilizarlo para el flujo integrado.
 
-Solicitud propuesta:
+Contrato, construcción del release, identidad, ejemplos, pruebas y límites:
+[API_TEXTO_WEB.md](../../../docs/API_TEXTO_WEB.md).
 
-```json
-{
-  "song_id": "song_001",
-  "mode": "mixed",
-  "weights": {"lyrics": 0.6, "music": 0.4},
-  "exploration": 0.5,
-  "max_per_artist": 1,
-  "exclude_covers": true,
-  "language": "all",
-  "limit": 12
-}
-```
-
-`mode` puede ser `lyrics`, `music` o `mixed`; los pesos mixtos deben sumar 1. `language` puede ser `es`, `en` o `all`. El control actual guarda el porcentaje de música; el de letras se obtiene como 100 menos ese valor. El backend debe validar los parámetros.
-
-Respuesta propuesta:
-
-```json
-{
-  "seed_id": "song_001",
-  "recommendations": [
-    {
-      "id": "song_002",
-      "title": "Canción del catálogo",
-      "artist": "Artista del catálogo",
-      "language": "es",
-      "cover_url": "/assets/covers/eres.svg",
-      "reason": "Explicación respaldada por los resultados del modelo."
-    }
-  ]
-}
-```
-
-Los nombres genéricos de esa respuesta son un esquema de integración, no resultados reales. Servir la interfaz y la API desde el mismo origen simplifica las peticiones. Si se usan orígenes distintos, habrá que configurar las URL y CORS del backend.
-
-Los guardados actuales son locales. Una base de datos y cuentas solo hacen falta si después se desea sincronizar bibliotecas, registrar evaluaciones o almacenar usuarios.
+`public/app.js` consulta título/artista, selecciona semilla y solicita ranking real.
+También ofrece texto libre en inglés y estrategias SGNS/TF-IDF separadas.
+Música, Mixto y covers no están disponibles; no se simulan canciones ni audio.

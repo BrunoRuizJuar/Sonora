@@ -12,7 +12,7 @@ dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "pydantic>=2,<3"]
 [project.optional-dependencies]
 data = ["numpy", "pandas", "pyarrow", "datasets", "httpx"]
 corpus = ["numpy", "pyarrow>=15", "pyyaml>=6", "lingua-language-detector>=2.1", "psutil", "pytest"]
-nlp = ["numpy", "scikit-learn", "gensim"]
+nlp = ["numpy", "scipy", "scikit-learn", "gensim"]
 audio = ["librosa", "soundfile"]
 services = ["opensearch-py", "httpx", "redis", "rq"]
 

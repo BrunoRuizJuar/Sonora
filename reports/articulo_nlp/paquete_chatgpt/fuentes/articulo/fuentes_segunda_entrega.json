@@ -1,0 +1,62 @@
+{
+  "sources": [
+    {
+      "path": "packages/sonora/src/sonora/ingestion/lyrics_corpus.py",
+      "sha256": "6318bc4da9f001a2797995d7fe35d592296d8d684e34cc558b8a469312a1a58c"
+    },
+    {
+      "path": "packages/sonora/src/sonora/nlp/annotate.py",
+      "sha256": "ea2502bc83c316e8ca199d55d483bf6b7c8200fde7e92b9eaebf97f950a10ec5"
+    },
+    {
+      "path": "pipelines/nlp/annotate_corpus.py",
+      "sha256": "0a2e45decca0ecc123171d6769f5446c4b7497dffb5f46ade9750a2925415abf"
+    },
+    {
+      "path": "packages/sonora/src/sonora/nlp/semantics.py",
+      "sha256": "abc47a3de415af300be8e9283f9ae21a64a5ac7b4cb35a9e036a7093047ff18d"
+    },
+    {
+      "path": "packages/sonora/src/sonora/preprocessing/lyrics_text.py",
+      "sha256": "8bdacf7a72a6a902c2bb38598587c2f225fe9d88080a7e98d7ad7e6e117db16f"
+    },
+    {
+      "path": "packages/sonora/src/sonora/nlp/doc_stats.py",
+      "sha256": "c1632006d140a3be6c54425a1166ce275db1798e9ef8d8d40174a66deedf22c2"
+    },
+    {
+      "path": "reports/articulo_nlp/revalidar_hallazgos.py",
+      "sha256": "1a586c23dde0642a716d4370d05785be5a5bac2f43982b4e0c9619a531ed04cd"
+    },
+    {
+      "path": "reports/articulo_nlp/actualizar_revalidacion.py",
+      "sha256": "1dce6c1579397bcf10337600f9571609249303f5690adb085d7b65b8da8fb344"
+    },
+    {
+      "path": "reports/articulo_nlp/finalizar_revision.py",
+      "sha256": "6814e44afcedeef371b0b732ac9672005df52e787b8fa719362cb63a68c09ffd"
+    },
+    {
+      "path": "notebooks/evidencias/E1_construccion_exploracion.ipynb",
+      "sha256": "0042d469b7e1fb95490fe642b5c3d76b2052ffc90536a8a42d7e8144460d05d6"
+    },
+    {
+      "path": "notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb",
+      "sha256": "cac056b511313b5a0411fe0611c5675b72b6bef452d99da5b5ee2ed8790a686a"
+    },
+    {
+      "path": "notebooks/evidencias/E3_morfosintaxis.ipynb",
+      "sha256": "8dfc8d715215914f86e11ca27b515e6fe289fa5936cee229a16a53cb79a1021b"
+    },
+    {
+      "path": "notebooks/evidencias/E4_sintaxis_dependencias.ipynb",
+      "sha256": "6b6c3403b9ee5a455b050ef81676740e42d700031b190218796a75f6bcb8c7d8"
+    },
+    {
+      "path": "notebooks/evidencias/E5_semantica.ipynb",
+      "sha256": "128fb74f286db1056fd843c72714442393aa81dc17dc479fb8eea1e1bd6d816f"
+    }
+  ],
+  "verified_utc": "2026-11-17T02:44:40.996472+00:00",
+  "notes": "Hashes al finalizar. No se releen corpus ni modelos grandes."
+}

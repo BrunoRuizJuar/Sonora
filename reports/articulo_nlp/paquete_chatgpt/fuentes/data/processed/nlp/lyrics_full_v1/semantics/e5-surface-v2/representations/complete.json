@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "docs": 3155772,
+    "docs_test": 631651,
+    "embedding_unavailable": 0,
+    "topics_unavailable": 0,
+    "tokens": 902376353,
+    "covered_tokens": 738990323,
+    "docs_train": 2208832,
+    "docs_validation": 315289
+  },
+  "space_id": "ec76a8c38600ad837729631f95a54d58ac2c983ae46c7259aded6897235d9479",
+  "lyrics_id_policy": "canonical lyrics; track mapping belongs to verified catalog"
+}

@@ -1,0 +1,193 @@
+{
+  "generated_utc": "2026-11-17T02:49:17.416523+00:00",
+  "status": "borrador parcial; no LaTeX/PDF generado",
+  "main": "SONORA_MANUSCRITO_Y_EVIDENCIAS.md",
+  "source_root": "B:\\SONORA",
+  "files": [
+    {
+      "path": "figuras/e1_longitud_por_tag.png",
+      "bytes": 82302,
+      "sha256": "b66256898b22bf6d6d577dd545726e9d37c819c0a51348920c5f5da8ccbb565c"
+    },
+    {
+      "path": "fuentes/apps/api/src/sonora_api/main.py",
+      "bytes": 4212,
+      "sha256": "4289ea349d015b32546db5ca8383ff4a953bad0376dda74cf9ec93d8adc5a9c2"
+    },
+    {
+      "path": "fuentes/articulo/00_CITAS_NOTEBOOKS.md",
+      "bytes": 6155,
+      "sha256": "1be65d0eaf0033952f8f24a00f34b0536c8c3e537091ad852d4044b96d38e041"
+    },
+    {
+      "path": "fuentes/articulo/00_FACT_CHECKS.md",
+      "bytes": 7253,
+      "sha256": "12e02a5d967a3d793b2157c0b8a57d309e268927fe6960f71b880b1e8e3af2ea"
+    },
+    {
+      "path": "fuentes/articulo/fuentes_segunda_entrega.json",
+      "bytes": 2454,
+      "sha256": "f955718785eb27ae8277b56ea4dfc02ede7763fb2070d60cab9cb7b51d905770"
+    },
+    {
+      "path": "fuentes/articulo/INDICE.md",
+      "bytes": 2573,
+      "sha256": "a8fe8a02d402f22916c61fe91b61c520bdb617fa6bc3aff32c37d47d1cf88f8f"
+    },
+    {
+      "path": "fuentes/articulo/resultados_verificados.json",
+      "bytes": 22556,
+      "sha256": "bdcf9963d982aa0533b789eeb25422017ad513c3ec10feeb980ee4493ccdf70f"
+    },
+    {
+      "path": "fuentes/articulo/revalidacion_independiente.json",
+      "bytes": 93783,
+      "sha256": "c02ae4e465af8dabe939ab7580bebb88f93fa7b3186daaba4c399f2aaf83bc3b"
+    },
+    {
+      "path": "fuentes/articulo/revalidar_hallazgos.py",
+      "bytes": 10613,
+      "sha256": "1a586c23dde0642a716d4370d05785be5a5bac2f43982b4e0c9619a531ed04cd"
+    },
+    {
+      "path": "fuentes/articulo/revision_cruzada_sonora.json",
+      "bytes": 2290,
+      "sha256": "94b48eeb80a526f45b863b996ee406ef83c9d0f59d36a2692de8f56e52071476"
+    },
+    {
+      "path": "fuentes/articulo/verificacion_segunda_entrega.json",
+      "bytes": 939,
+      "sha256": "0a5a1b7f8a13120c7796c3fab6f68d84594adf7a287e204cef9bf4fa0b256c99"
+    },
+    {
+      "path": "fuentes/artifacts/models/lyrics_full_v1/e5-surface-v2/trained.json",
+      "bytes": 4712,
+      "sha256": "718af792781b4d69aee8c6786ef17f4bd308835e6f304316b3d128e3791c633c"
+    },
+    {
+      "path": "fuentes/config/lyrics_corpus.yaml",
+      "bytes": 2773,
+      "sha256": "734865c9322c09aca11bf2c298a1f2764e0ce7be06f4198bcd61c6062e0dafd0"
+    },
+    {
+      "path": "fuentes/config/ranking.yaml",
+      "bytes": 353,
+      "sha256": "2009d9a6640be8b88c4d3bc198195440e63c7a65ba3fd79cace674ef14566e23"
+    },
+    {
+      "path": "fuentes/data/processed/nlp/lyrics_full_v1/semantics/e5-surface-v2/representations/complete.json",
+      "bytes": 425,
+      "sha256": "cf7cca062303087ce91c4a6250d1276c845af6758544fa627831fee2051cdd77"
+    },
+    {
+      "path": "fuentes/docs/CORPUS_LETRAS.md",
+      "bytes": 18370,
+      "sha256": "ab69659e720e9bdf2d84c2fb5f0d0923e3e04e7aec544298c3f6618121e98011"
+    },
+    {
+      "path": "fuentes/docs/E4_REVISION.md",
+      "bytes": 8335,
+      "sha256": "3ea2a7185259494768be55597f9919a35d0de3aaf50c12f36ff8e3f9ab4e7162"
+    },
+    {
+      "path": "fuentes/docs/E5_METODO.md",
+      "bytes": 9477,
+      "sha256": "8bc36426bf3a3bc070811e922da326ceeb70e2b13dd1fcdd43ad368bb2b00cc6"
+    },
+    {
+      "path": "fuentes/docs/REQUIREMENTS.md",
+      "bytes": 83146,
+      "sha256": "7c60f6b8997a1acf00c97e19364e2ec3c89ac267f1cd4f94a635b55d26c7bb09"
+    },
+    {
+      "path": "fuentes/manifests/nlp/lyrics_full_v1.json",
+      "bytes": 12663,
+      "sha256": "defcd94e2a2eeeaf2c29c471bf1e3c1f303527c36acaa5a7c7a5ed3145e34405"
+    },
+    {
+      "path": "fuentes/manifests/runs/lyrics_full_v1.json",
+      "bytes": 12044,
+      "sha256": "46a1aa2de5c9951ceb2a6f9be9bb359b8327ffaea2f4ba98c0d70d341b1433c0"
+    },
+    {
+      "path": "fuentes/manifests/sources/genius_snapshot.json",
+      "bytes": 5018,
+      "sha256": "41482726523b6b60e35a3ee4eb0ec08887d0bfa0565bce4984c53e4072f6a927"
+    },
+    {
+      "path": "fuentes/manifests/splits/lyrics_full_v1.json",
+      "bytes": 2569,
+      "sha256": "3dba866202d20aff03936d3d9c3fa96fa595eb128f56d4e0d24cd74abe6d047a"
+    },
+    {
+      "path": "fuentes/notebooks/evidencias/E1_construccion_exploracion.ipynb",
+      "bytes": 309916,
+      "sha256": "0042d469b7e1fb95490fe642b5c3d76b2052ffc90536a8a42d7e8144460d05d6"
+    },
+    {
+      "path": "fuentes/notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb",
+      "bytes": 599609,
+      "sha256": "cac056b511313b5a0411fe0611c5675b72b6bef452d99da5b5ee2ed8790a686a"
+    },
+    {
+      "path": "fuentes/notebooks/evidencias/E3_morfosintaxis.ipynb",
+      "bytes": 313227,
+      "sha256": "8dfc8d715215914f86e11ca27b515e6fe289fa5936cee229a16a53cb79a1021b"
+    },
+    {
+      "path": "fuentes/notebooks/evidencias/E4_sintaxis_dependencias.ipynb",
+      "bytes": 477682,
+      "sha256": "6b6c3403b9ee5a455b050ef81676740e42d700031b190218796a75f6bcb8c7d8"
+    },
+    {
+      "path": "fuentes/notebooks/evidencias/E5_semantica.ipynb",
+      "bytes": 372571,
+      "sha256": "128fb74f286db1056fd843c72714442393aa81dc17dc479fb8eea1e1bd6d816f"
+    },
+    {
+      "path": "fuentes/packages/sonora/src/sonora/ingestion/lyrics_corpus.py",
+      "bytes": 64184,
+      "sha256": "6318bc4da9f001a2797995d7fe35d592296d8d684e34cc558b8a469312a1a58c"
+    },
+    {
+      "path": "fuentes/packages/sonora/src/sonora/nlp/language.py",
+      "bytes": 5422,
+      "sha256": "7392b00cb19dcbd440723a99901077110f7351dfd79c3693eb9951433ef3eaed"
+    },
+    {
+      "path": "fuentes/packages/sonora/src/sonora/nlp/lexicon.py",
+      "bytes": 3118,
+      "sha256": "4fbc6125bc31e6fbab5ebde51b40a0cadf69430ac4d377fcdc64a3457bcc4b7e"
+    },
+    {
+      "path": "fuentes/packages/sonora/src/sonora/preprocessing/lyrics_text.py",
+      "bytes": 6235,
+      "sha256": "8bdacf7a72a6a902c2bb38598587c2f225fe9d88080a7e98d7ad7e6e117db16f"
+    },
+    {
+      "path": "fuentes/packages/sonora/src/sonora/recommendation/lyrics.py",
+      "bytes": 4387,
+      "sha256": "7d8fbaedfe175d864b2213afecd13d3d4eab60c32eb5829724f10fbc2317f691"
+    },
+    {
+      "path": "fuentes/reports/corpus/lyrics_full_v1/quality_report.json",
+      "bytes": 8546,
+      "sha256": "bb9f97b12a87be7eaac59b58a8a340fdfc0f2b616767150e542b3916b80350bc"
+    },
+    {
+      "path": "LEEME.md",
+      "bytes": 2453,
+      "sha256": "18f88b1e04274d7b5ab368de4aa1fa7e21805483c5fcabaffb58d6d9d95cc9fa"
+    },
+    {
+      "path": "PROMPT_PARA_CHATGPT.md",
+      "bytes": 3780,
+      "sha256": "f1767766f0b67a90dd83e51817c7fa6c2ec8e5181b4404867813b7a5784a402a"
+    },
+    {
+      "path": "SONORA_MANUSCRITO_Y_EVIDENCIAS.md",
+      "bytes": 78803,
+      "sha256": "b8f741e417ef199c8bcc2676dabbc11f0ccc5e5e72c9f9c8f92b0222474275d9"
+    }
+  ]
+}

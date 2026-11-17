@@ -48,7 +48,7 @@
 <section id="design-brief" class="design-brief" hidden>
  <div><span class="overline">DIRECCIÓN VISUAL <b id="brief-number">01</b></span><h2 id="brief-title">Radio Ocaso</h2><p id="brief-copy"></p></div>
  <div><h3>Tipografías</h3><p id="brief-type"></p><h3>Color y textura</h3><p id="brief-texture"></p><div id="swatches" class="swatches"></div></div>
- <p class="brief-footnote">Las tres propuestas comparten contenido y controles. Las recomendaciones son ejemplos editoriales y las portadas son ilustraciones propias de muestra. Esta maqueta aún no está conectada al recomendador.</p>
+ <p class="brief-footnote">Las tres propuestas conservan el diseño con recomendaciones reales del catálogo textual E5. Sin portadas ni audio verificados.</p>
 </section>
 <div class="app-shell">
 <aside class="sidebar">
@@ -61,13 +61,13 @@
  </nav>
  <div class="sidebar-rule"></div>
  <div class="nav-caption">TUS RUTAS</div>
- <button class="route-link" data-query="Hasta la Raíz"><span class="route-dot"></span> Un poco más de raíz <svg><use href="#i-arrow"/></svg></button>
+ <button class="route-link" data-query="Evil dudes demo"><span class="route-dot"></span> Un poco más de raíz <svg><use href="#i-arrow"/></svg></button>
  <button class="route-link" data-query="Bloom"><span class="route-dot pale"></span> Al otro lado del mapa <svg><use href="#i-arrow"/></svg></button>
  <div class="station-card"><svg><use href="#i-sun"/></svg><p>Sin prisa.<br>Sin la misma canción.</p><span>Hay mucho por escuchar.</span><div class="tiny-landscape"></div></div>
  <div class="sidebar-bottom"><span class="live-dot"></span> HECHO PARA DESCUBRIR <span>↗</span></div>
 </aside>
 <main>
- <header class="app-topbar"><div><span class="live-dot"></span> TU ESTACIÓN DE DESCUBRIMIENTOS</div><span class="catalog-label">Catálogo de muestra <span>ES / EN</span></span></header>
+ <header class="app-topbar"><div><span class="live-dot"></span> TU ESTACIÓN DE DESCUBRIMIENTOS</div><span class="catalog-label">Cargando catálogo textual…</span></header>
  <section class="hero">
   <div class="hero-image" aria-hidden="true"></div>
   <div class="hero-text"><div class="hero-eyebrow"><span></span> BUENA MÚSICA, NUEVOS HORIZONTES</div><h1>Una canción.<br><em>Mil caminos.</em></h1><p>Parte de lo que te mueve.<br>Encuentra algo que todavía no conoces.</p></div>
@@ -80,6 +80,13 @@
    <div class="search-field"><svg><use href="#i-search"/></svg><input id="song-search" type="search" placeholder="Busca una canción y su artista" aria-controls="search-results" aria-expanded="false"><span class="search-shortcut" aria-hidden="true">/</span><button class="primary-button" type="submit">Encontrar mi ruta <svg><use href="#i-arrow"/></svg></button></div>
    <div id="search-results" class="search-results" hidden></div>
   </form>
+  <form id="free-text-form">
+   <label for="free-text" class="search-label">O DESCRIBE UNA LETRA EN INGLÉS</label>
+   <div class="search-field"><textarea id="free-text" maxlength="10000" required rows="2" placeholder="Leaving home, missing my family…" style="width:100%;background:transparent;color:inherit;border:0;padding:12px"></textarea><button class="primary-button" type="submit">Buscar afinidad</button></div>
+  </form>
+  <label class="field-caption" for="text-strategy">ESTRATEGIA TEXTUAL</label>
+  <select id="text-strategy"><option value="sgns">SGNS · Afinidad semántica</option><option value="tfidf">TF-IDF · Vocabulario compartido</option></select>
+  <p id="version-note" class="mode-explanation" role="status"></p>
   <div class="controls-row">
    <div class="mode-block"><span class="field-caption">DESCUBRIR POR</span><div class="mode-tabs" role="group" aria-label="Modo de recomendación"><button data-mode="lyrics" aria-pressed="false"><svg><use href="#i-lyrics"/></svg>Letras</button><button data-mode="music" aria-pressed="false"><svg><use href="#i-music"/></svg>Música</button><button data-mode="mixed" class="selected" aria-pressed="true"><svg><use href="#i-mix"/></svg>Mixto</button></div></div>
    <div class="mix-block" id="mix-block"><label for="mix-range"><span>Letras <b id="lyrics-percent">50%</b></span><span>Música <b id="music-percent">50%</b></span></label><input id="mix-range" type="range" min="0" max="100" step="5" value="50" aria-label="Peso de la música en el modo mixto"><div class="range-endpoints"><span>Más significado</span><span>Más sonido</span></div></div>
@@ -93,11 +100,18 @@
    <label class="language-filter">Idioma<select id="language"><option value="all">Español e inglés</option><option value="es">Español</option><option value="en">Inglés</option></select></label>
   </div>
  </section>
+ <section id="lyrics-comparison" class="lyrics-comparison" aria-labelledby="lyrics-comparison-title" hidden>
+  <div class="section-header"><div><div class="section-eyebrow">DOS CANCIONES, DOS HISTORIAS</div><h2 id="lyrics-comparison-title" tabindex="-1">Letras frente a frente</h2><p>Lee la letra de partida junto a la canción que elegiste.</p></div><button id="close-lyrics" class="text-button" type="button">Cerrar letras</button></div>
+  <div class="lyrics-columns">
+   <article class="lyrics-panel" aria-labelledby="lyrics-origin-title"><header><div class="section-eyebrow" id="lyrics-origin-label">CANCIÓN DE PARTIDA</div><h3 id="lyrics-origin-title"></h3><p id="lyrics-origin-artist"></p></header><p id="lyrics-origin-status" role="status"></p><div id="lyrics-origin-text" class="lyrics-text" tabindex="0" role="region" aria-label="Letra de la canción de partida"></div></article>
+   <article class="lyrics-panel" aria-labelledby="lyrics-selected-title"><header><div class="section-eyebrow">CANCIÓN SELECCIONADA</div><h3 id="lyrics-selected-title"></h3><p id="lyrics-selected-artist"></p></header><p id="lyrics-selected-status" role="status"></p><div id="lyrics-selected-text" class="lyrics-text" tabindex="0" role="region" aria-label="Letra de la canción seleccionada"></div></article>
+  </div>
+ </section>
  <section class="recommendations" aria-labelledby="recommendation-title">
-  <div class="section-header"><div><div class="section-eyebrow" id="section-eyebrow">EL SIGUIENTE TRAMO</div><h2 id="recommendation-title">Si te mueve <span>Hasta la Raíz</span></h2><p id="recommendation-subtitle">Natalia Lafourcade como punto de partida. El resto, por descubrir.</p></div><button id="refresh-route" class="text-button">Otra ruta <svg><use href="#i-arrow"/></svg></button></div>
+  <div class="section-header"><div><div class="section-eyebrow" id="section-eyebrow">EL SIGUIENTE TRAMO</div><h2 id="recommendation-title">Explora las letras</h2><p id="recommendation-subtitle">Busca título y artista, o escribe una consulta en inglés.</p></div><button id="refresh-route" class="text-button">Recalcular la ruta <svg><use href="#i-arrow"/></svg></button></div>
   <div id="song-grid" class="song-grid"></div>
   <div class="empty-state" id="empty-state" hidden><img src="assets/brand/cactus-sonora.svg" alt=""><h3 id="empty-title">Tu mapa empieza aquí</h3><p id="empty-copy">Guarda una canción con el corazón para volver a encontrarla.</p><button class="secondary-button" id="back-discover">Seguir descubriendo</button></div>
-  <div class="section-footer"><span><svg><use href="#i-compass"/></svg> Nuevas composiciones. Nuevos caminos.</span><span>PORTADAS ILUSTRATIVAS · NO OFICIALES</span></div>
+  <div class="section-footer"><span><svg><use href="#i-compass"/></svg> Nuevas letras. Nuevos caminos.</span><span>SIN AUDIO NI PORTADAS</span></div>
  </section>
  <footer class="app-footer"><span>SONORA</span> Una estación en el desierto. Un mundo por escuchar.<a href="assets/brand/cactus-sonora.svg" id="download-logo" download>Logo SVG ↗</a></footer>
 </main>

@@ -1,0 +1,32 @@
+{
+  "session_title": "Document SONORA project",
+  "session_id": "01a1e751-d65d-7ce1-bc85-282069bb1d6c",
+  "old_support_not_used": "Continue E5 work",
+  "purpose": "Crítica de evidencia y formulaciones; respuestas contrastadas con código/artefactos",
+  "rounds": [
+    {
+      "round": 1,
+      "request": "Revisar cifras, actualidad, universos y referencias de Introducción/Corpus y R01–R19",
+      "response": "No hay evidencia independiente de demo ni MP3; 886/850/849 procede del reporte. KenLM en E2 c25, límites en c28. E5 c0/c5 limita muestra; closure local no resuelve alcance.",
+      "action": "Calificar evidencia histórica y no llamarla disponibilidad actual; mantener alcance E5 pendiente."
+    },
+    {
+      "round": 2,
+      "request": "Buscar objeciones en reglas de grupos, metadatos canónicos, dependencia de g-dropping y política E5",
+      "response": "Acotar train-only a KenLM/E5; léxico de g-dropping completo; spaCy preentrenado. Union-find usa todas las filas aceptadas y transitividad. Metadatos agregados son los del canónico. 886 comprobaciones no son 886 localizadores distintos; has_lyrics sola no demuestra accepted. E5 conserva stopwords/superficie.",
+      "action": "Objeciones aceptadas y cotejadas con lyrics_corpus.py, annotate_corpus.py y semantics.py; correcciones en §§4.4–4.7."
+    },
+    {
+      "round": 3,
+      "request": "Cuestionar la explicación Unicode y los límites del no solapamiento",
+      "response": "Control de conteos no prueba identidad de secuencias ni calidad; no contar 180 caracteres sin medición; no determinar idioma. Cero grupos solapados no elimina casi duplicados/covers; SHA no valida reglas.",
+      "action": "Texto limita conclusión a conteos de 56 casos y grupos registrados. No se corrige ni excluye ninguna letra."
+    },
+    {
+      "round": 4,
+      "request": "Releer las formulaciones corregidas en §§4.5–4.7",
+      "response": "No se detecta inferencia material indebida. Sustituir uniforme por valor normalizado; corregir punto antes de La revalidación; §4.1 debe atribuir entrada a ejecución histórica. Revisión de formulaciones, sin repetir cálculos.",
+      "action": "Ajustes aplicados y revisada atribución histórica en §4.1."
+    }
+  ]
+}

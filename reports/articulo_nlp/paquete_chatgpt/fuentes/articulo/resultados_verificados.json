@@ -1,0 +1,461 @@
+{
+  "captured_utc": "2026-11-17T02:24:52.708807+00:00",
+  "records": [
+    {
+      "id": "R01",
+      "source": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "location": "source_records_read",
+      "value": 3179588,
+      "unit": "registros",
+      "denominator": "10 Parquet",
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "Ingesta lyrics-corpus-1.0.0",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Snapshot remoto sin revisión; SHA-256 locales en manifiesto.",
+      "revalidation_status": "Corroborado desde salidas procesadas; entrada original no disponible",
+      "revalidation_evidence": "3 177 443 registros representados + 2145 exclusiones/revisión = 3 179 588; data/raw/genius sin Parquet",
+      "notebook_locator": "[13, E1, celdas 3, 6](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    },
+    {
+      "id": "R02",
+      "source": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "location": "accepted_source_records",
+      "value": 3177443,
+      "unit": "registros",
+      "denominator": 3179588,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "lyrics-views-v1; reglas de config/lyrics_corpus.yaml",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Aceptación automática; no validación humana de todas las letras.",
+      "revalidation_status": "Revalidado desde metadatos",
+      "revalidation_evidence": "Suma n_source_records de canónicas = 3 177 443",
+      "notebook_locator": "[13, E1, celdas 6, 14](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    },
+    {
+      "id": "R03",
+      "source": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "location": "canonical_lyrics",
+      "value": 3155772,
+      "unit": "letras",
+      "denominator": 3179588,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "lyrics-views-v1; reglas de config/lyrics_corpus.yaml",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Aceptación automática; no validación humana de todas las letras.",
+      "revalidation_status": "Revalidado desde metadatos e IDs",
+      "revalidation_evidence": "Diez shards: 3 155 772 filas; cobertura exacta una vez en split",
+      "notebook_locator": "[13, E1, celdas 14, 22](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    },
+    {
+      "id": "R04",
+      "source": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "location": "accepted_duplicate_source_records",
+      "value": 21671,
+      "unit": "registros",
+      "denominator": 3177443,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "lyrics-views-v1; reglas de config/lyrics_corpus.yaml",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Aceptación automática; no validación humana de todas las letras.",
+      "revalidation_status": "Revalidado; denominador aclarado",
+      "revalidation_evidence": "3 177 443 aceptados menos 3 155 772 canónicas = 21 671; denominador de duplicación: aceptados",
+      "notebook_locator": "[13, E1, celda 14](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    },
+    {
+      "id": "R05",
+      "source": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "location": "exclusion_or_review_rule_counts",
+      "value": {
+        "language_uncertain": 1914,
+        "non_english": 155,
+        "placeholder_text": 75,
+        "too_few_words": 1
+      },
+      "unit": "registros por regla",
+      "denominator": 3179588,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "Lingua 2.2.0; py3langid 0.4.0; mínimo 5 palabras",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "1914 en revisión no pertenecen al corpus aceptado.",
+      "revalidation_status": "Revalidado desde exclusions.parquet",
+      "revalidation_evidence": "1914 review; 155 no inglés, 75 placeholders y 1 texto corto",
+      "notebook_locator": "[13, E1, celdas 6, 11](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    },
+    {
+      "id": "R06",
+      "source": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "location": "canonical_total_words",
+      "value": 902376173,
+      "unit": "palabras regex antes de minúsculas",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "preprocessing/lyrics_text.py: build_views",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Diferencia de +180 reconciliada en 56 letras; control mecánico no demuestra calidad lingüística ni identidad de secuencias.",
+      "revalidation_status": "Reconciliado con casos; pendiente anterior resuelto",
+      "revalidation_evidence": "56 letras; diferencia +180. Control U+0130 antes de lower recupera conteo previo en cada caso",
+      "notebook_locator": "No figura la explicación de U+0130 en el notebook; fuente primaria del hallazgo nuevo: [18]"
+    },
+    {
+      "id": "R07",
+      "source": "manifests/nlp/lyrics_full_v1.json",
+      "location": "lexicon.tokens / lexicon.types",
+      "value": {
+        "tokens": 902376353,
+        "types": 1277145
+      },
+      "unit": "tokens / tipos",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "regex-words-v1; text.lower() antes de regex",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "No confundir con tokenización spaCy ni R06.",
+      "revalidation_status": "Revalidado desde count y doc_stats",
+      "revalidation_evidence": "902 376 353 tokens; 1 277 145 filas/tipos del léxico",
+      "notebook_locator": "[13, E1, celda 22](../../notebooks/evidencias/E1_construccion_exploracion.ipynb); [14, E2, celda 3](../../notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb)"
+    },
+    {
+      "id": "R08",
+      "source": "manifests/splits/lyrics_full_v1.json",
+      "location": "by_split / actual_fraction_lyrics / groups",
+      "value": {
+        "counts": {
+          "train": {
+            "lyrics": 2208832,
+            "groups": 2201895,
+            "source_records": 2223978
+          },
+          "test": {
+            "lyrics": 631651,
+            "groups": 629609,
+            "source_records": 635945
+          },
+          "validation": {
+            "lyrics": 315289,
+            "groups": 314286,
+            "source_records": 317520
+          }
+        },
+        "fractions": {
+          "train": 0.69993,
+          "test": 0.20016,
+          "validation": 0.09991
+        },
+        "groups": 3145790
+      },
+      "unit": "letras, grupos y fracciones",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "SHA-256 de 42:group_id; umbrales 0,70 y 0,90",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "No hay solapamiento de grupos registrados; no se descartan casi duplicados no detectados.",
+      "revalidation_status": "Revalidado directamente en el Parquet",
+      "revalidation_evidence": "3 145 790 grupos, máximo 24 letras; 0 multisbplit; 2 208 832/631 651/315 289 letras y 2 201 895/629 609/314 286 grupos; SHA coincide. No descarta duplicados no detectados",
+      "notebook_locator": "[13, E1, celda 25](../../notebooks/evidencias/E1_construccion_exploracion.ipynb); asignación por grupos en manifiesto/código, no demostrada por esa celda sola"
+    },
+    {
+      "id": "R09",
+      "source": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "location": "demo",
+      "value": {
+        "selection_rows": 886,
+        "distinct_genius_locators": 850,
+        "in_processed_scope": 886,
+        "locator_verified": 886,
+        "locator_check": {
+          "title_artist_normalized_equal": 886
+        },
+        "lyrics_status": {
+          "accepted": 886
+        },
+        "lyrics_exclusion_rule": {},
+        "has_lyrics": 886,
+        "distinct_lyrics_ids": 849,
+        "recordings_per_lyrics_id_max": 3,
+        "by_split_recordings": {
+          "train": 575,
+          "validation": 101,
+          "test": 210
+        },
+        "by_split_lyrics": {
+          "validation": 96,
+          "test": 201,
+          "train": 552
+        },
+        "has_audio_file": 886,
+        "fma_audio_dirs_found": [
+          "data/raw/fma/fma_medium"
+        ],
+        "original_status": {
+          "exact_unique_candidate": 787,
+          "exact_ambiguous": 99
+        },
+        "catalog_eligible": 0
+      },
+      "unit": "grabaciones / localizadores / letras",
+      "denominator": 886,
+      "universe": "Demo histórica de lyrics_full_v1: 886 grabaciones; archivos fuente/demo/audio no presentes en rutas previstas del equipo actual",
+      "origin": "datos reales; no fixture",
+      "method": "Coincidencia normalizada título+artista; herencia de split",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Cifras históricas del reporte, no catálogo local revalidado.",
+      "revalidation_status": "Acotado a resultado histórico; actualidad no verificable",
+      "revalidation_evidence": "886 grabaciones, 850 localizadores y 849 letras en quality_report.demo; tablas/audio ausentes en rutas previstas",
+      "notebook_locator": "Sin celda E1–E5 que revalide demo; citar [4], claves demo, y [18]"
+    },
+    {
+      "id": "R10",
+      "source": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "location": "canonical_tag_counts",
+      "value": {
+        "pop": 1336051,
+        "rap": 959763,
+        "rock": 621148,
+        "rb": 153552,
+        "country": 85258
+      },
+      "unit": "letras por tag",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "Etiqueta de fuente de letra canónica",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Tags no son géneros verificados; selección de registro canónico pierde multiplicidad de metadatos.",
+      "revalidation_status": "Revalidado desde metadatos canónicos",
+      "revalidation_evidence": "Cinco conteos coinciden; tag del primer canónico no representa todas las etiquetas originales",
+      "notebook_locator": "[13, E1, celda 25](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    },
+    {
+      "id": "R11",
+      "source": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "location": "canonical_n_words.p50 / canonical_n_lines.p50 / canonical_n_stanzas.p50",
+      "value": {
+        "palabras": 242,
+        "versos": 37,
+        "estrofas": 6
+      },
+      "unit": "medianas por letra",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "lyrics-views-v1",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Medianas marginales; no describen necesariamente una misma canción.",
+      "revalidation_status": "Revalidado desde columnas numéricas",
+      "revalidation_evidence": "Medianas 242 palabras, 37 versos, 6 estrofas; marginales, no una canción típica íntegra",
+      "notebook_locator": "[13, E1, celdas 20, 23](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    },
+    {
+      "id": "R12",
+      "source": "notebooks/evidencias/E1_construccion_exploracion.ipynb",
+      "location": "cells[19].outputs: tabla default/lines",
+      "value": {
+        "default_segments": 4746,
+        "default_crossing": 3018,
+        "forced_segments": 16955,
+        "forced_crossing": 0
+      },
+      "unit": "segmentos",
+      "denominator": 400,
+      "universe": "Muestra real: primeras 400 letras del shard 5",
+      "origin": "datos reales; no fixture",
+      "method": "spaCy en_core_web_sm, sin NER; batch 16; dos políticas",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Muestra dirigida; cruzar versos no equivale por sí solo a error.",
+      "revalidation_status": "Corroborado en output; no reanotado",
+      "revalidation_evidence": "Tabla 4746/3018 vs 16955/0 en muestra 400. No se repite spaCy; no mide precisión",
+      "notebook_locator": "[13, E1, celda 19](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    },
+    {
+      "id": "R13",
+      "source": "notebooks/evidencias/E1_construccion_exploracion.ipynb",
+      "location": "cells[24].outputs: year",
+      "value": {
+        "below_1900": 1673,
+        "above_2022": 392
+      },
+      "unit": "letras con año dudoso",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "Comparaciones del metadato year",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "No determina fecha verdadera ni motivo del error.",
+      "revalidation_status": "Revalidado desde year",
+      "revalidation_evidence": "1673 anteriores a 1900, 392 posteriores a 2022; no reconstruye fechas reales",
+      "notebook_locator": "[13, E1, celda 24](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    },
+    {
+      "id": "R14",
+      "source": "reports/nlp/lyrics_full_v1/e3_summary.json",
+      "location": "version / docs / tokens / sample_docs",
+      "value": {
+        "version": "e3-morphology-v1",
+        "docs": 3155772,
+        "tokens": 1033733693,
+        "sample_docs": 5000
+      },
+      "unit": "conteos; ver campos",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "spaCy 3.8.18; en_core_web_sm 3.8.0; spacy-lines-gdrop-v1",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Agregados completos; ejemplos dirigidos y revisión humana pendientes; no precisión lingüística.",
+      "revalidation_status": "Corroborado entre reportes y notebook",
+      "revalidation_evidence": "Suma POS = 1 033 733 693; docs coincide con corpus. Anotaciones individuales no releídas; ejemplos de 3 letras",
+      "notebook_locator": "[15, E3, celdas 1, 3, 9](../../notebooks/evidencias/E3_morfosintaxis.ipynb)"
+    },
+    {
+      "id": "R15",
+      "source": "reports/nlp/lyrics_full_v1/e4_summary.json",
+      "location": "version / docs / global_metrics",
+      "value": {
+        "version": "e4-syntax-v2",
+        "docs": 3155772,
+        "global_metrics": {
+          "sentences": 144457653,
+          "tokens": 1033733693,
+          "words": 953078393,
+          "depth_sum": 352665192.0,
+          "arcs": 809010838,
+          "distance_sum": 1566244066.5843844,
+          "sentence_distance_sum": 236684401.1796149,
+          "sentences_with_arcs": 133427079,
+          "no_arcs": 11030574,
+          "no_words": 1186993,
+          "zero_depth": 10901195,
+          "nonverbal_roots": 40981827,
+          "mean_words": 6.5976317156419535,
+          "mean_depth": 2.4413050099879445,
+          "mean_dependency_distance": 1.9359988680205844,
+          "mean_sentence_dependency_distance": 1.7738858030431357
+        }
+      },
+      "unit": "conteos; ver campos",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "spaCy 3.8.18; en_core_web_sm 3.8.0; spacy-lines-gdrop-v1",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Agregados completos; ejemplos dirigidos y revisión humana pendientes; no precisión lingüística.",
+      "revalidation_status": "Corroborado entre artefactos; no reparseado",
+      "revalidation_evidence": "Tokens E4 coinciden con E3; global_metrics guardadas, sin recalcular todos los arcos",
+      "notebook_locator": "[16, E4, celdas 1, 5, 7, 9](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb)"
+    },
+    {
+      "id": "R16",
+      "source": "data/processed/nlp/lyrics_full_v1/semantics/e5-surface-v2/representations/complete.json",
+      "location": "counts / space_id",
+      "value": {
+        "counts": {
+          "docs": 3155772,
+          "docs_test": 631651,
+          "embedding_unavailable": 0,
+          "topics_unavailable": 0,
+          "tokens": 902376353,
+          "covered_tokens": 738990323,
+          "docs_train": 2208832,
+          "docs_validation": 315289
+        },
+        "space_id": "ec76a8c38600ad837729631f95a54d58ac2c983ae46c7259aded6897235d9479",
+        "lyrics_id_policy": "canonical lyrics; track mapping belongs to verified catalog"
+      },
+      "unit": "documentos y tokens; identificador de espacio",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "SGNS propio 128 dimensiones; 3 épocas; TF-IDF agregado, normalizado L2; LDA",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Disponibilidad no mide calidad; transformar test no equivale a evaluarlo.",
+      "revalidation_status": "Corroborado entre manifiestos y notebook",
+      "revalidation_evidence": "counts y space_id iguales a auditoría E5; no se releen todos los vectores/modelos",
+      "notebook_locator": "[17, E5, celdas 1, 3](../../notebooks/evidencias/E5_semantica.ipynb)"
+    },
+    {
+      "id": "R17",
+      "source": "reports/nlp/lyrics_full_v1/e5_analysis.json",
+      "location": "scope / n_projected / projection",
+      "value": {
+        "scope": "bottom-SHA256 sample of <=2000 validation lyrics; models fitted on full train",
+        "n_projected": 2000,
+        "variance_ratio": [
+          0.23323145508766174,
+          0.09852376580238342
+        ]
+      },
+      "unit": "letras y fracciones de varianza",
+      "denominator": 2000,
+      "universe": "Muestra real de 2000 letras de validation; modelos ajustados con todo train",
+      "origin": "datos reales; no fixture",
+      "method": "PCA 2 componentes; full SVD; seed 42",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Proyección y contextos sobre muestra; falta análisis semántico contextual sobre todo el corpus pertinente.",
+      "revalidation_status": "Muestra y pertenencia revalidadas; alcance completo pendiente",
+      "revalidation_evidence": "2000 IDs distintos, todos validation; PCA/contextos no son corpus completo",
+      "notebook_locator": "[17, E5, celdas 5, 7](../../notebooks/evidencias/E5_semantica.ipynb)"
+    },
+    {
+      "id": "R18",
+      "source": "reports/nlp/lyrics_full_v1/e5_verification.json",
+      "location": "unique_ids / token_coverage_by_split / max_embedding_norm_error / max_topic_sum_error",
+      "value": {
+        "unique_ids": 3155772,
+        "token_coverage_by_split": {
+          "train": 0.8190104400958166,
+          "test": 0.8187780875719013,
+          "validation": 0.8187510846885268
+        },
+        "max_embedding_norm_error": 1.7881393432617188e-07,
+        "max_topic_sum_error": 1.0132789611816406e-06
+      },
+      "unit": "IDs; fracciones; errores absolutos",
+      "denominator": 3155772,
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "Auditoría guardada de representaciones y checkpoints; mismo space_id que R16",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Es evidencia de la otra sesión, no auditoría repetida aquí; integridad numérica no equivale a calidad semántica.",
+      "revalidation_status": "Auditoría previa corroborada documentalmente",
+      "revalidation_evidence": "Valores de norma/cobertura guardados coinciden con notebook. No se repite validación de vectores",
+      "notebook_locator": "[17, E5, celda 1](../../notebooks/evidencias/E5_semantica.ipynb)"
+    },
+    {
+      "id": "R19",
+      "source": "notebooks/evidencias/E1_construccion_exploracion.ipynb",
+      "location": "cells[25].outputs: mediana palabras por tag",
+      "value": {
+        "pop": 204,
+        "rap": 408,
+        "rock": 187,
+        "rb": 284,
+        "country": 215
+      },
+      "unit": "palabras regex por letra; mediana",
+      "denominator": {
+        "pop": 1336051,
+        "rap": 959763,
+        "rock": 621148,
+        "rb": 153552,
+        "country": 85258
+      },
+      "universe": "lyrics_full_v1; corpus real completo",
+      "origin": "datos reales; no fixture",
+      "method": "doc-stats-v1; agrupación por tag; universo completo",
+      "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
+      "limitations": "Medianas guardadas; no significancia ni etiquetas de género validadas.",
+      "revalidation_status": "Revalidado desde doc_stats por tag",
+      "revalidation_evidence": "204/408/187/284/215 palabras; sin significancia inferida",
+      "notebook_locator": "[13, E1, celdas 25, 28](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
+    }
+  ],
+  "revalidated_utc": "2026-11-17T02:36:32.474630+00:00"
+}

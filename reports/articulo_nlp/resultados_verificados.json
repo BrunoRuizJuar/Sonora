@@ -12,7 +12,10 @@
       "origin": "datos reales; no fixture",
       "method": "Ingesta lyrics-corpus-1.0.0",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Snapshot remoto sin revisión; SHA-256 locales en manifiesto."
+      "limitations": "Snapshot remoto sin revisión; SHA-256 locales en manifiesto.",
+      "revalidation_status": "Corroborado desde salidas procesadas; entrada original no disponible",
+      "revalidation_evidence": "3 177 443 registros representados + 2145 exclusiones/revisión = 3 179 588; data/raw/genius sin Parquet",
+      "notebook_locator": "[13, E1, celdas 3, 6](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     },
     {
       "id": "R02",
@@ -25,7 +28,10 @@
       "origin": "datos reales; no fixture",
       "method": "lyrics-views-v1; reglas de config/lyrics_corpus.yaml",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Aceptación automática; no validación humana de todas las letras."
+      "limitations": "Aceptación automática; no validación humana de todas las letras.",
+      "revalidation_status": "Revalidado desde metadatos",
+      "revalidation_evidence": "Suma n_source_records de canónicas = 3 177 443",
+      "notebook_locator": "[13, E1, celdas 6, 14](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     },
     {
       "id": "R03",
@@ -38,7 +44,10 @@
       "origin": "datos reales; no fixture",
       "method": "lyrics-views-v1; reglas de config/lyrics_corpus.yaml",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Aceptación automática; no validación humana de todas las letras."
+      "limitations": "Aceptación automática; no validación humana de todas las letras.",
+      "revalidation_status": "Revalidado desde metadatos e IDs",
+      "revalidation_evidence": "Diez shards: 3 155 772 filas; cobertura exacta una vez en split",
+      "notebook_locator": "[13, E1, celdas 14, 22](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     },
     {
       "id": "R04",
@@ -46,12 +55,15 @@
       "location": "accepted_duplicate_source_records",
       "value": 21671,
       "unit": "registros",
-      "denominator": 3179588,
+      "denominator": 3177443,
       "universe": "lyrics_full_v1; corpus real completo",
       "origin": "datos reales; no fixture",
       "method": "lyrics-views-v1; reglas de config/lyrics_corpus.yaml",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Aceptación automática; no validación humana de todas las letras."
+      "limitations": "Aceptación automática; no validación humana de todas las letras.",
+      "revalidation_status": "Revalidado; denominador aclarado",
+      "revalidation_evidence": "3 177 443 aceptados menos 3 155 772 canónicas = 21 671; denominador de duplicación: aceptados",
+      "notebook_locator": "[13, E1, celda 14](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     },
     {
       "id": "R05",
@@ -69,7 +81,10 @@
       "origin": "datos reales; no fixture",
       "method": "Lingua 2.2.0; py3langid 0.4.0; mínimo 5 palabras",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "1914 en revisión no pertenecen al corpus aceptado."
+      "limitations": "1914 en revisión no pertenecen al corpus aceptado.",
+      "revalidation_status": "Revalidado desde exclusions.parquet",
+      "revalidation_evidence": "1914 review; 155 no inglés, 75 placeholders y 1 texto corto",
+      "notebook_locator": "[13, E1, celdas 6, 11](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     },
     {
       "id": "R06",
@@ -82,7 +97,10 @@
       "origin": "datos reales; no fixture",
       "method": "preprocessing/lyrics_text.py: build_views",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Difiere en 180 de regex-words-v1; causa exacta pendiente."
+      "limitations": "Diferencia de +180 reconciliada en 56 letras; control mecánico no demuestra calidad lingüística ni identidad de secuencias.",
+      "revalidation_status": "Reconciliado con casos; pendiente anterior resuelto",
+      "revalidation_evidence": "56 letras; diferencia +180. Control U+0130 antes de lower recupera conteo previo en cada caso",
+      "notebook_locator": "No figura la explicación de U+0130 en el notebook; fuente primaria del hallazgo nuevo: [18]"
     },
     {
       "id": "R07",
@@ -98,7 +116,10 @@
       "origin": "datos reales; no fixture",
       "method": "regex-words-v1; text.lower() antes de regex",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "No confundir con tokenización spaCy ni R06."
+      "limitations": "No confundir con tokenización spaCy ni R06.",
+      "revalidation_status": "Revalidado desde count y doc_stats",
+      "revalidation_evidence": "902 376 353 tokens; 1 277 145 filas/tipos del léxico",
+      "notebook_locator": "[13, E1, celda 22](../../notebooks/evidencias/E1_construccion_exploracion.ipynb); [14, E2, celda 3](../../notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb)"
     },
     {
       "id": "R08",
@@ -135,7 +156,10 @@
       "origin": "datos reales; no fixture",
       "method": "SHA-256 de 42:group_id; umbrales 0,70 y 0,90",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Fracciones en manifiesto redondeadas; no detección exhaustiva de casi duplicados."
+      "limitations": "No hay solapamiento de grupos registrados; no se descartan casi duplicados no detectados.",
+      "revalidation_status": "Revalidado directamente en el Parquet",
+      "revalidation_evidence": "3 145 790 grupos, máximo 24 letras; 0 multisbplit; 2 208 832/631 651/315 289 letras y 2 201 895/629 609/314 286 grupos; SHA coincide. No descarta duplicados no detectados",
+      "notebook_locator": "[13, E1, celda 25](../../notebooks/evidencias/E1_construccion_exploracion.ipynb); asignación por grupos en manifiesto/código, no demostrada por esa celda sola"
     },
     {
       "id": "R09",
@@ -178,11 +202,14 @@
       },
       "unit": "grabaciones / localizadores / letras",
       "denominator": 886,
-      "universe": "lyrics_full_v1; corpus real completo",
+      "universe": "Demo histórica de lyrics_full_v1: 886 grabaciones; archivos fuente/demo/audio no presentes en rutas previstas del equipo actual",
       "origin": "datos reales; no fixture",
       "method": "Coincidencia normalizada título+artista; herencia de split",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Existencia de audio no demuestra decodificación, licencia ni correspondencia auditiva. Estado de este reporte, no validación nueva."
+      "limitations": "Cifras históricas del reporte, no catálogo local revalidado.",
+      "revalidation_status": "Acotado a resultado histórico; actualidad no verificable",
+      "revalidation_evidence": "886 grabaciones, 850 localizadores y 849 letras en quality_report.demo; tablas/audio ausentes en rutas previstas",
+      "notebook_locator": "Sin celda E1–E5 que revalide demo; citar [4], claves demo, y [18]"
     },
     {
       "id": "R10",
@@ -201,7 +228,10 @@
       "origin": "datos reales; no fixture",
       "method": "Etiqueta de fuente de letra canónica",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Tags no son géneros verificados; selección de registro canónico pierde multiplicidad de metadatos."
+      "limitations": "Tags no son géneros verificados; selección de registro canónico pierde multiplicidad de metadatos.",
+      "revalidation_status": "Revalidado desde metadatos canónicos",
+      "revalidation_evidence": "Cinco conteos coinciden; tag del primer canónico no representa todas las etiquetas originales",
+      "notebook_locator": "[13, E1, celda 25](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     },
     {
       "id": "R11",
@@ -218,7 +248,10 @@
       "origin": "datos reales; no fixture",
       "method": "lyrics-views-v1",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Medianas marginales; no describen necesariamente una misma canción."
+      "limitations": "Medianas marginales; no describen necesariamente una misma canción.",
+      "revalidation_status": "Revalidado desde columnas numéricas",
+      "revalidation_evidence": "Medianas 242 palabras, 37 versos, 6 estrofas; marginales, no una canción típica íntegra",
+      "notebook_locator": "[13, E1, celdas 20, 23](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     },
     {
       "id": "R12",
@@ -236,7 +269,10 @@
       "origin": "datos reales; no fixture",
       "method": "spaCy en_core_web_sm, sin NER; batch 16; dos políticas",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Muestra dirigida; cruzar versos no equivale por sí solo a error."
+      "limitations": "Muestra dirigida; cruzar versos no equivale por sí solo a error.",
+      "revalidation_status": "Corroborado en output; no reanotado",
+      "revalidation_evidence": "Tabla 4746/3018 vs 16955/0 en muestra 400. No se repite spaCy; no mide precisión",
+      "notebook_locator": "[13, E1, celda 19](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     },
     {
       "id": "R13",
@@ -252,7 +288,10 @@
       "origin": "datos reales; no fixture",
       "method": "Comparaciones del metadato year",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "No determina fecha verdadera ni motivo del error."
+      "limitations": "No determina fecha verdadera ni motivo del error.",
+      "revalidation_status": "Revalidado desde year",
+      "revalidation_evidence": "1673 anteriores a 1900, 392 posteriores a 2022; no reconstruye fechas reales",
+      "notebook_locator": "[13, E1, celda 24](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     },
     {
       "id": "R14",
@@ -270,7 +309,10 @@
       "origin": "datos reales; no fixture",
       "method": "spaCy 3.8.18; en_core_web_sm 3.8.0; spacy-lines-gdrop-v1",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Agregados completos; ejemplos dirigidos y revisión humana pendientes; no precisión lingüística."
+      "limitations": "Agregados completos; ejemplos dirigidos y revisión humana pendientes; no precisión lingüística.",
+      "revalidation_status": "Corroborado entre reportes y notebook",
+      "revalidation_evidence": "Suma POS = 1 033 733 693; docs coincide con corpus. Anotaciones individuales no releídas; ejemplos de 3 letras",
+      "notebook_locator": "[15, E3, celdas 1, 3, 9](../../notebooks/evidencias/E3_morfosintaxis.ipynb)"
     },
     {
       "id": "R15",
@@ -304,7 +346,10 @@
       "origin": "datos reales; no fixture",
       "method": "spaCy 3.8.18; en_core_web_sm 3.8.0; spacy-lines-gdrop-v1",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Agregados completos; ejemplos dirigidos y revisión humana pendientes; no precisión lingüística."
+      "limitations": "Agregados completos; ejemplos dirigidos y revisión humana pendientes; no precisión lingüística.",
+      "revalidation_status": "Corroborado entre artefactos; no reparseado",
+      "revalidation_evidence": "Tokens E4 coinciden con E3; global_metrics guardadas, sin recalcular todos los arcos",
+      "notebook_locator": "[16, E4, celdas 1, 5, 7, 9](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb)"
     },
     {
       "id": "R16",
@@ -330,7 +375,10 @@
       "origin": "datos reales; no fixture",
       "method": "SGNS propio 128 dimensiones; 3 épocas; TF-IDF agregado, normalizado L2; LDA",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Disponibilidad no mide calidad; transformar test no equivale a evaluarlo."
+      "limitations": "Disponibilidad no mide calidad; transformar test no equivale a evaluarlo.",
+      "revalidation_status": "Corroborado entre manifiestos y notebook",
+      "revalidation_evidence": "counts y space_id iguales a auditoría E5; no se releen todos los vectores/modelos",
+      "notebook_locator": "[17, E5, celdas 1, 3](../../notebooks/evidencias/E5_semantica.ipynb)"
     },
     {
       "id": "R17",
@@ -350,7 +398,10 @@
       "origin": "datos reales; no fixture",
       "method": "PCA 2 componentes; full SVD; seed 42",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Proyección y contextos sobre muestra; falta análisis semántico contextual sobre todo el corpus pertinente."
+      "limitations": "Proyección y contextos sobre muestra; falta análisis semántico contextual sobre todo el corpus pertinente.",
+      "revalidation_status": "Muestra y pertenencia revalidadas; alcance completo pendiente",
+      "revalidation_evidence": "2000 IDs distintos, todos validation; PCA/contextos no son corpus completo",
+      "notebook_locator": "[17, E5, celdas 5, 7](../../notebooks/evidencias/E5_semantica.ipynb)"
     },
     {
       "id": "R18",
@@ -372,7 +423,10 @@
       "origin": "datos reales; no fixture",
       "method": "Auditoría guardada de representaciones y checkpoints; mismo space_id que R16",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Es evidencia de la otra sesión, no auditoría repetida aquí; integridad numérica no equivale a calidad semántica."
+      "limitations": "Es evidencia de la otra sesión, no auditoría repetida aquí; integridad numérica no equivale a calidad semántica.",
+      "revalidation_status": "Auditoría previa corroborada documentalmente",
+      "revalidation_evidence": "Valores de norma/cobertura guardados coinciden con notebook. No se repite validación de vectores",
+      "notebook_locator": "[17, E5, celda 1](../../notebooks/evidencias/E5_semantica.ipynb)"
     },
     {
       "id": "R19",
@@ -397,7 +451,11 @@
       "origin": "datos reales; no fixture",
       "method": "doc-stats-v1; agrupación por tag; universo completo",
       "status": "verificado documentalmente en artefacto guardado; sin repetir procesamiento",
-      "limitations": "Medianas guardadas; no significancia ni etiquetas de género validadas."
+      "limitations": "Medianas guardadas; no significancia ni etiquetas de género validadas.",
+      "revalidation_status": "Revalidado desde doc_stats por tag",
+      "revalidation_evidence": "204/408/187/284/215 palabras; sin significancia inferida",
+      "notebook_locator": "[13, E1, celdas 25, 28](../../notebooks/evidencias/E1_construccion_exploracion.ipynb)"
     }
-  ]
+  ],
+  "revalidated_utc": "2026-11-17T02:36:32.474630+00:00"
 }

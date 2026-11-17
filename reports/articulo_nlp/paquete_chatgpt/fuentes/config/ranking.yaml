@@ -1,0 +1,15 @@
+# Defaults for experiments; tune on validation.
+default_mode: lyrics
+lyrics_weight: 0.5
+exploration: 0.2
+top_k: 10
+max_top_k: 50
+max_per_artist: 1
+exclude_known_covers: true
+candidates_per_signal: 500
+max_candidate_budget: 5000
+missing_modality_policy: explicit_error
+text_score:
+  embedding_weight: 0.8
+  topic_weight: 0.2
+  status: initial_hypothesis

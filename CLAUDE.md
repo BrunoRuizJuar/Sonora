@@ -22,8 +22,10 @@
 - No cambiar el diseño web aprobado (sepia rojizo, terracota, viejo oeste; Smokum/Rubik
   Distressed/Ovo; banners día [06:00,18:00)).
 - Un solo proceso escribe en una misma `--run-id` (lock en `runtime/locks/`).
-- Estado y siguiente paso más reciente: `docs/handoff/E5_2026-11-16.md`, con prompt
-  para la siguiente sesión. Prioridad del usuario: PLN completo (E1–E5) antes del audio.
+- Estado y siguiente paso más reciente: `docs/handoff/API_TEXTO_WEB_2026-11-16.md`,
+  con prompt de reinicio. Prioridad del usuario: API y web con recomendación textual
+  real (mismo tema o vocabulario similar), usando artefactos PLN completos antes de audio.
+  Reutilizar la web estática existente en `apps/web/public`; no asumir que falta interfaz.
   Paralelismo E5 autorizado con directorios y locks independientes, según se detalla abajo.
 
 - Continuación más reciente: `docs/handoff/MIGRACION_2026-11-16.md`; E3 ejecutada, revisión final pendiente; nuevo equipo 25 GB RAM.

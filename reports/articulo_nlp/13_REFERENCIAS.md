@@ -1,6 +1,6 @@
 # 13. Referencias verificadas de esta entrega
 
-Sistema único de citas numéricas [n], conservado en las secciones y en el integrado. Las entradas internas son evidencia de implementación, no publicaciones revisadas por pares. Fecha de consulta externa: 16 de noviembre de 2026, hora local. No se atribuye autoría institucional al artículo.
+Sistema único de citas numéricas [n], conservado en las secciones y en el integrado. Enlaces como [13, E1, celda 22] añaden evidencia y localizador al número bibliográfico. Toda celda se numera desde cero; el ordinal desde uno, ID y contador de ejecución se distinguen en el mapa de citas. Las entradas internas son evidencia de implementación, no publicaciones revisadas por pares. Fecha de consulta externa: 16 de noviembre de 2026, hora local. No se atribuye autoría institucional al artículo.
 
 [1] SONORA. *Especificación de requisitos académicos, funcionales y técnicos*, v1.2, 12 de noviembre de 2026. Documento interno: [docs/REQUIREMENTS.md](../../docs/REQUIREMENTS.md), §§2–5, 13 y 15.
 
@@ -20,7 +20,7 @@ Sistema único de citas numéricas [n], conservado en las secciones y en el inte
 
 [9] SONORA. *Manifiestos de la entrada Genius y de la corrida completa*. [genius_snapshot.json](../../manifests/sources/genius_snapshot.json) y [lyrics_full_v1.json](../../manifests/runs/lyrics_full_v1.json). Hashes y procedencia de la copia local.
 
-[10] SONORA. *Configuración y preparación lingüística*. [lyrics_corpus.yaml](../../config/lyrics_corpus.yaml); [lyrics_text.py](../../packages/sonora/src/sonora/preprocessing/lyrics_text.py), build_views/dedup_key/language_excerpt; [language.py](../../packages/sonora/src/sonora/nlp/language.py), needs_secondary/decide. Fuentes de software local.
+[10] SONORA. *Configuración y preparación lingüística*. [lyrics_corpus.yaml](../../config/lyrics_corpus.yaml); [lyrics_text.py](../../packages/sonora/src/sonora/preprocessing/lyrics_text.py), build_views/dedup_key/language_excerpt; [lyrics_corpus.py](../../packages/sonora/src/sonora/ingestion/lyrics_corpus.py), _group_roots y consolidación; [language.py](../../packages/sonora/src/sonora/nlp/language.py), needs_secondary/decide. Fuentes de software local.
 
 [11] SONORA. *Revisión lingüística y cierre de E4*, 16 de noviembre de 2026. [E4_REVISION.md](../../docs/E4_REVISION.md), ejemplo lyr_9b869033ae33f65fdae4, sent_i=56, line_i=61; revisión del autor pendiente.
 
@@ -29,3 +29,14 @@ Sistema único de citas numéricas [n], conservado en las secciones y en el inte
 [13] SONORA. *Evidencia 1 — Construcción y exploración del corpus de letras*. [Notebook ejecutado](../../notebooks/evidencias/E1_construccion_exploracion.ipynb), celdas base cero 15, 19–25 y 28. [Manifiesto NLP](../../manifests/nlp/lyrics_full_v1.json), lexicon y annotations; [lexicon.py](../../packages/sonora/src/sonora/nlp/lexicon.py), count_file. Las salidas son evidencia guardada con las reservas registradas en los controles.
 
 Pendientes bibliográficos: publicaciones primarias de TF-IDF/recuperación, SGNS, LDA, spaCy, KenLM, Zipf y antecedentes específicos de recuperación musical. No se incluyen referencias no comprobadas ni citas secundarias como si se hubieran leído los originales.
+
+
+[14] SONORA. *Evidencia 2 — Estadística del corpus y modelo de lenguaje de n-gramas*. [Notebook E2](../../notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb). Celdas e IDs exactos de esta versión en [00_CITAS_NOTEBOOKS.md](00_CITAS_NOTEBOOKS.md); SHA-256 en revalidacion_independiente.json. Fuente de evidencia guardada, no publicación metodológica.
+
+[15] SONORA. *Evidencia 3 — Morfosintaxis*. [Notebook E3](../../notebooks/evidencias/E3_morfosintaxis.ipynb). Celdas e IDs exactos de esta versión en [00_CITAS_NOTEBOOKS.md](00_CITAS_NOTEBOOKS.md); SHA-256 en revalidacion_independiente.json. Fuente de evidencia guardada, no publicación metodológica.
+
+[16] SONORA. *Evidencia 4 — Sintaxis y dependencias*. [Notebook E4](../../notebooks/evidencias/E4_sintaxis_dependencias.ipynb). Celdas e IDs exactos de esta versión en [00_CITAS_NOTEBOOKS.md](00_CITAS_NOTEBOOKS.md); SHA-256 en revalidacion_independiente.json. Fuente de evidencia guardada, no publicación metodológica.
+
+[17] SONORA. *Evidencia 5 — Semántica*. [Notebook E5](../../notebooks/evidencias/E5_semantica.ipynb). Celdas e IDs exactos de esta versión en [00_CITAS_NOTEBOOKS.md](00_CITAS_NOTEBOOKS.md); SHA-256 en revalidacion_independiente.json. Fuente de evidencia guardada, no publicación metodológica.
+
+[18] SONORA, auditoría para el artículo. *Revalidación independiente de conteos, particiones y casos Unicode*, 16 de noviembre de 2026, hora local. [Procedimiento](revalidar_hallazgos.py) y [resultados](revalidacion_independiente.json). Lectura de metadatos de los diez shards; texto sólo en 56 letras discrepantes. Sin ejecución de pipelines ni cambios al corpus.

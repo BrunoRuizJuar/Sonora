@@ -1,0 +1,3284 @@
+{
+  "captured_utc": "2026-11-17T02:36:32.474630+00:00",
+  "procedure": "reports/articulo_nlp/revalidar_hallazgos.py",
+  "scope": "Lectura de columnas de metadatos; texto sólo de discrepancias; sin modificación de originales",
+  "corpus_shards": [
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00000-of-00010.parquet",
+      "rows": 317650,
+      "metadata_word_differences": 7
+    },
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00001-of-00010.parquet",
+      "rows": 317280,
+      "metadata_word_differences": 4
+    },
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00002-of-00010.parquet",
+      "rows": 316697,
+      "metadata_word_differences": 4
+    },
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00003-of-00010.parquet",
+      "rows": 316051,
+      "metadata_word_differences": 1
+    },
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00004-of-00010.parquet",
+      "rows": 315324,
+      "metadata_word_differences": 4
+    },
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet",
+      "rows": 314693,
+      "metadata_word_differences": 8
+    },
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00006-of-00010.parquet",
+      "rows": 314428,
+      "metadata_word_differences": 4
+    },
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+      "rows": 314178,
+      "metadata_word_differences": 11
+    },
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00008-of-00010.parquet",
+      "rows": 314416,
+      "metadata_word_differences": 6
+    },
+    {
+      "path": "data/processed/lyrics/lyrics_full_v1/corpus/train-00009-of-00010.parquet",
+      "rows": 315055,
+      "metadata_word_differences": 7
+    }
+  ],
+  "split": {
+    "rows": 3155772,
+    "unique_lyrics_ids": 3155772,
+    "groups": 3145790,
+    "groups_in_multiple_splits": 0,
+    "counts": {
+      "validation": 315289,
+      "train": 2208832,
+      "test": 631651
+    },
+    "sha256": "bf0c427873b2fda3b2ffc59799f4c99fbee268f94732254bdd4d5318272bf134",
+    "manifest_sha256": "bf0c427873b2fda3b2ffc59799f4c99fbee268f94732254bdd4d5318272bf134",
+    "maximum_registered_group_size": 24,
+    "groups_by_split": {
+      "validation": 314286,
+      "train": 2201895,
+      "test": 629609
+    }
+  },
+  "word_count": {
+    "before_lower": 902376173,
+    "after_lower": 902376353,
+    "delta": 180,
+    "documents_differing": 56,
+    "sum_recomputed_deltas": 180,
+    "cases": [
+      {
+        "lyrics_id": "lyr_0a8dd53366170a5be8a1",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00000-of-00010.parquet",
+        "row_zero_based": 48608,
+        "row_group_zero_based": 2,
+        "stored_before_lower": 488,
+        "stored_after_lower": 490,
+        "recomputed_before_lower": 488,
+        "recomputed_after_lower": 490,
+        "control_dotted_I_replaced_before_lower": 488,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": ", bro\nİncitti"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": ", bro\nİncitti"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_d74ad5c42fdb9f2fe714",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00000-of-00010.parquet",
+        "row_zero_based": 53117,
+        "row_group_zero_based": 2,
+        "stored_before_lower": 479,
+        "stored_after_lower": 482,
+        "recomputed_before_lower": 479,
+        "recomputed_after_lower": 482,
+        "control_dotted_I_replaced_before_lower": 479,
+        "delta": 3,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ready\nİnside "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ready\nİnside "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ready\nİnside "
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_371c88af0f6788ec616f",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00000-of-00010.parquet",
+        "row_zero_based": 54071,
+        "row_group_zero_based": 2,
+        "stored_before_lower": 659,
+        "stored_after_lower": 660,
+        "recomputed_before_lower": 659,
+        "recomputed_after_lower": 660,
+        "control_dotted_I_replaced_before_lower": 659,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ith a İrem\nI'"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_1af0c9e8e002a1995ed0",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00000-of-00010.parquet",
+        "row_zero_based": 149735,
+        "row_group_zero_based": 7,
+        "stored_before_lower": 361,
+        "stored_after_lower": 364,
+        "recomputed_before_lower": 361,
+        "recomputed_after_lower": 364,
+        "control_dotted_I_replaced_before_lower": 361,
+        "delta": 3,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "e job\nİ'm be "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "polis\nİf you "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ommon\nİn the "
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_57c0d7a737151a4a8763",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00000-of-00010.parquet",
+        "row_zero_based": 157945,
+        "row_group_zero_based": 7,
+        "stored_before_lower": 291,
+        "stored_after_lower": 292,
+        "recomputed_before_lower": 291,
+        "recomputed_after_lower": 292,
+        "control_dotted_I_replaced_before_lower": 291,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "rtain\nİt's ti"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_4593fd8b4d9a0038b096",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00000-of-00010.parquet",
+        "row_zero_based": 249840,
+        "row_group_zero_based": 12,
+        "stored_before_lower": 131,
+        "stored_after_lower": 133,
+        "recomputed_before_lower": 131,
+        "recomputed_after_lower": 133,
+        "control_dotted_I_replaced_before_lower": 131,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "n the İstiklâ"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "n the İstiklâ"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_ed706706817a62eccc07",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00000-of-00010.parquet",
+        "row_zero_based": 274292,
+        "row_group_zero_based": 13,
+        "stored_before_lower": 3144,
+        "stored_after_lower": 3145,
+        "recomputed_before_lower": 3144,
+        "recomputed_after_lower": 3145,
+        "control_dotted_I_replaced_before_lower": 3144,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "pstar\nİf i wa"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_91c062167168092e9f27",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00001-of-00010.parquet",
+        "row_zero_based": 145143,
+        "row_group_zero_based": 7,
+        "stored_before_lower": 166,
+        "stored_after_lower": 167,
+        "recomputed_before_lower": 166,
+        "recomputed_after_lower": 167,
+        "control_dotted_I_replaced_before_lower": 166,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " like İbrahim"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_05d8d089ed9e481c1cdc",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00001-of-00010.parquet",
+        "row_zero_based": 162498,
+        "row_group_zero_based": 8,
+        "stored_before_lower": 191,
+        "stored_after_lower": 193,
+        "recomputed_before_lower": 191,
+        "recomputed_after_lower": 193,
+        "control_dotted_I_replaced_before_lower": 191,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "andım\nİnat iç"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "usted\nİçime i"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_f3e35b4be2cea8f99a63",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00001-of-00010.parquet",
+        "row_zero_based": 182172,
+        "row_group_zero_based": 9,
+        "stored_before_lower": 460,
+        "stored_after_lower": 462,
+        "recomputed_before_lower": 460,
+        "recomputed_after_lower": 462,
+        "control_dotted_I_replaced_before_lower": 460,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "nbul\n\nİstanbu"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ul to İzmir u"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_3eb081ac39b47a98ebfb",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00001-of-00010.parquet",
+        "row_zero_based": 182637,
+        "row_group_zero_based": 9,
+        "stored_before_lower": 341,
+        "stored_after_lower": 342,
+        "recomputed_before_lower": 341,
+        "recomputed_after_lower": 342,
+        "control_dotted_I_replaced_before_lower": 341,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "-two (İzmir)\n"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_f61c9a6a3f9875576717",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00002-of-00010.parquet",
+        "row_zero_based": 89468,
+        "row_group_zero_based": 4,
+        "stored_before_lower": 254,
+        "stored_after_lower": 257,
+        "recomputed_before_lower": 254,
+        "recomputed_after_lower": 257,
+        "control_dotted_I_replaced_before_lower": 254,
+        "delta": 3,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " from İstanbu"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "l\nThe İslambu"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "from\n\nİstanbu"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_aa8b61a67c3c3c76a67d",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00002-of-00010.parquet",
+        "row_zero_based": 191006,
+        "row_group_zero_based": 9,
+        "stored_before_lower": 420,
+        "stored_after_lower": 422,
+        "recomputed_before_lower": 420,
+        "recomputed_after_lower": 422,
+        "control_dotted_I_replaced_before_lower": 420,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "yeah\n\nİt's re"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "e wow\nİt's re"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_e96415a58f37878f817f",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00002-of-00010.parquet",
+        "row_zero_based": 191529,
+        "row_group_zero_based": 9,
+        "stored_before_lower": 413,
+        "stored_after_lower": 414,
+        "recomputed_before_lower": 413,
+        "recomputed_after_lower": 414,
+        "control_dotted_I_replaced_before_lower": 413,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "peace İhsan, "
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_2b37f865bf6b6a9db37e",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00002-of-00010.parquet",
+        "row_zero_based": 247298,
+        "row_group_zero_based": 12,
+        "stored_before_lower": 460,
+        "stored_after_lower": 461,
+        "recomputed_before_lower": 460,
+        "recomputed_after_lower": 461,
+        "control_dotted_I_replaced_before_lower": 460,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "fe in İzmir\nS"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_58d37caca0c9cecb177c",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00003-of-00010.parquet",
+        "row_zero_based": 123497,
+        "row_group_zero_based": 6,
+        "stored_before_lower": 114,
+        "stored_after_lower": 122,
+        "recomputed_before_lower": 114,
+        "recomputed_after_lower": 122,
+        "control_dotted_I_replaced_before_lower": 114,
+        "delta": 8,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "!\n\nHEPİMİZ YA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\nHEPİMİZ YAPA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "IZ\nHEPİMİZ YA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\nHEPİMİZ YAPA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "IZ\nHEPİMİZ YA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\nHEPİMİZ YAPA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "IZ\nHEPİMİZ YA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\nHEPİMİZ YAPA"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_b005239db30f9cd7e0fb",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00004-of-00010.parquet",
+        "row_zero_based": 31468,
+        "row_group_zero_based": 1,
+        "stored_before_lower": 394,
+        "stored_after_lower": 395,
+        "recomputed_before_lower": 394,
+        "recomputed_after_lower": 395,
+        "control_dotted_I_replaced_before_lower": 394,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ality\nİnşalla"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_b415cc9f58b414210812",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00004-of-00010.parquet",
+        "row_zero_based": 112948,
+        "row_group_zero_based": 5,
+        "stored_before_lower": 356,
+        "stored_after_lower": 362,
+        "recomputed_before_lower": 356,
+        "recomputed_after_lower": 362,
+        "control_dotted_I_replaced_before_lower": 356,
+        "delta": 6,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " hard\nİ mix t"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "hardt\nİf he a"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " hard\nİ mix t"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "hardt\nİf he a"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "it go\nİ got h"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " show\nİ got b"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "t now\nİ never"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " hard\nİ mix t"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "hardt\nİf he a"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " hard\nİ mix t"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "hardt\nİf he a"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " hard\nİ mix t"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "hardt\nİf he a"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " hard\nİ mix t"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "hardt\nİf he a"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_38d5df7b48089e76eb32",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00004-of-00010.parquet",
+        "row_zero_based": 137332,
+        "row_group_zero_based": 6,
+        "stored_before_lower": 799,
+        "stored_after_lower": 800,
+        "recomputed_before_lower": 799,
+        "recomputed_after_lower": 800,
+        "control_dotted_I_replaced_before_lower": 799,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "şehir-İstanbu"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_88f8d40261dfe82d3237",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00004-of-00010.parquet",
+        "row_zero_based": 301912,
+        "row_group_zero_based": 15,
+        "stored_before_lower": 553,
+        "stored_after_lower": 555,
+        "recomputed_before_lower": 553,
+        "recomputed_after_lower": 555,
+        "control_dotted_I_replaced_before_lower": 553,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " that\nİs this"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " for, İf you "
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_e85996c02fa735c548c3",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet",
+        "row_zero_based": 7618,
+        "row_group_zero_based": 0,
+        "stored_before_lower": 270,
+        "stored_after_lower": 271,
+        "recomputed_before_lower": 270,
+        "recomputed_after_lower": 271,
+        "control_dotted_I_replaced_before_lower": 270,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " your İnscrip"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_22419fec6315b4a79074",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet",
+        "row_zero_based": 58968,
+        "row_group_zero_based": 2,
+        "stored_before_lower": 244,
+        "stored_after_lower": 245,
+        "recomputed_before_lower": 244,
+        "recomputed_after_lower": 245,
+        "control_dotted_I_replaced_before_lower": 244,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "mile\nLİve you"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_b2c9748b43d66c5d105a",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet",
+        "row_zero_based": 78889,
+        "row_group_zero_based": 3,
+        "stored_before_lower": 123,
+        "stored_after_lower": 124,
+        "recomputed_before_lower": 123,
+        "recomputed_after_lower": 124,
+        "control_dotted_I_replaced_before_lower": 123,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "free\n\nİf the "
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_d91cf954f82b6a38d91e",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet",
+        "row_zero_based": 79674,
+        "row_group_zero_based": 4,
+        "stored_before_lower": 594,
+        "stored_after_lower": 596,
+        "recomputed_before_lower": 594,
+        "recomputed_after_lower": 596,
+        "control_dotted_I_replaced_before_lower": 594,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "hemen\nİşimiz "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "remem\nİşimi y"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_392ec41d3aab5aefabe6",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet",
+        "row_zero_based": 147601,
+        "row_group_zero_based": 7,
+        "stored_before_lower": 670,
+        "stored_after_lower": 671,
+        "recomputed_before_lower": 670,
+        "recomputed_after_lower": 671,
+        "control_dotted_I_replaced_before_lower": 670,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ate\nDÜİZ\n\nSta"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_c307f0e194ad73c0ac0e",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet",
+        "row_zero_based": 204478,
+        "row_group_zero_based": 10,
+        "stored_before_lower": 348,
+        "stored_after_lower": 350,
+        "recomputed_before_lower": 348,
+        "recomputed_after_lower": 350,
+        "control_dotted_I_replaced_before_lower": 348,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "novel\nİn real"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ishes\nİt's ge"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_5e5e1e144abc3fe07c6c",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet",
+        "row_zero_based": 249415,
+        "row_group_zero_based": 12,
+        "stored_before_lower": 101,
+        "stored_after_lower": 102,
+        "recomputed_before_lower": 101,
+        "recomputed_after_lower": 102,
+        "control_dotted_I_replaced_before_lower": 101,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "İnönü\nS"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_4534452b3b1d21018124",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00005-of-00010.parquet",
+        "row_zero_based": 301964,
+        "row_group_zero_based": 15,
+        "stored_before_lower": 232,
+        "stored_after_lower": 236,
+        "recomputed_before_lower": 232,
+        "recomputed_after_lower": 236,
+        "control_dotted_I_replaced_before_lower": 232,
+        "delta": 4,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "allen\nİn ever"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "allen\nİn ever"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "allen\nİn ever"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "allen\nİn ever"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_1ea3e9b69db49f4a51af",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00006-of-00010.parquet",
+        "row_zero_based": 92719,
+        "row_group_zero_based": 4,
+        "stored_before_lower": 156,
+        "stored_after_lower": 158,
+        "recomputed_before_lower": 156,
+        "recomputed_after_lower": 158,
+        "control_dotted_I_replaced_before_lower": 156,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "sires\nİn subs"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " wind\nİ rush "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "hrows\nİn my f"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_cffc1dee647ddc35ba70",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00006-of-00010.parquet",
+        "row_zero_based": 158758,
+        "row_group_zero_based": 8,
+        "stored_before_lower": 808,
+        "stored_after_lower": 810,
+        "recomputed_before_lower": 808,
+        "recomputed_after_lower": 810,
+        "control_dotted_I_replaced_before_lower": 808,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " know\nİllumin"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " hero\nİllumin"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_c256efc49774240f186d",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00006-of-00010.parquet",
+        "row_zero_based": 198489,
+        "row_group_zero_based": 10,
+        "stored_before_lower": 285,
+        "stored_after_lower": 288,
+        "recomputed_before_lower": 285,
+        "recomputed_after_lower": 288,
+        "control_dotted_I_replaced_before_lower": 285,
+        "delta": 3,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "LE GELİRİM SA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " GELİRİM SANA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "JA\nBENİM ZAMA"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_a34175055ddcdc615676",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00006-of-00010.parquet",
+        "row_zero_based": 294033,
+        "row_group_zero_based": 14,
+        "stored_before_lower": 483,
+        "stored_after_lower": 484,
+        "recomputed_before_lower": 483,
+        "recomputed_after_lower": 484,
+        "control_dotted_I_replaced_before_lower": 483,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "İntro:\n"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_c40bee31ae74687955d0",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 14433,
+        "row_group_zero_based": 0,
+        "stored_before_lower": 304,
+        "stored_after_lower": 305,
+        "recomputed_before_lower": 304,
+        "recomputed_after_lower": 305,
+        "control_dotted_I_replaced_before_lower": 304,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ttend İbo Sho"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_1678e11243acc23454da",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 66133,
+        "row_group_zero_based": 3,
+        "stored_before_lower": 539,
+        "stored_after_lower": 541,
+        "recomputed_before_lower": 539,
+        "recomputed_after_lower": 541,
+        "control_dotted_I_replaced_before_lower": 539,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "kadaş\nİnsanla"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "m de. İkimiz "
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_d7d51ed8dd5ef5edcc45",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 79354,
+        "row_group_zero_based": 4,
+        "stored_before_lower": 195,
+        "stored_after_lower": 196,
+        "recomputed_before_lower": 195,
+        "recomputed_after_lower": 196,
+        "control_dotted_I_replaced_before_lower": 195,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "feast\nİn unbe"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_1e994feed08f0a982af7",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 83055,
+        "row_group_zero_based": 4,
+        "stored_before_lower": 591,
+        "stored_after_lower": 648,
+        "recomputed_before_lower": 591,
+        "recomputed_after_lower": 648,
+        "control_dotted_I_replaced_before_lower": 591,
+        "delta": 57,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "T3M)\n\nİ HAVE "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "EN HAVİNG LOT"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "OTTA DİFFEREN"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " B*TCHİES ON "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "N MY SİDE AND"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "D NOW İM COOL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "COOL NİGGA\nİ "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "NİGGA\nİ HAVE "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "BEEN FİGHTİNG"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " FİGHTİNG LOT"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "OTTA NİGGAS F"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " B*TCHİES NOW"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "S NOW İ THİNK"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "W İ THİNK İM "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "THİNK İM COOL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "COOL NİGGA( O"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "GODD)\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ON ME\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "*TCH)\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ON ME\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ING , İM DREA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " DREAMİNG\nCHE"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "L OF MİNE, Nİ"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "İNE, NİGGAA\n\n"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "T3M)\n\nİ HAVE "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "EN HAVİNG LOT"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "OTTA DİFFEREN"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " B*TCHİES ON "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "N MY SİDE AND"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "D NOW İM COOL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "COOL NİGGA\nİ "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "NİGGA\nİ HAVE "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "BEEN FİGHTİNG"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " FİGHTİNG LOT"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "OTTA NİGGAS F"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " B*TCHİES NOW"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "S NOW İ THİNK"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "W İ THİNK İM "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "THİNK İM COOL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "COOL NİGGA( O"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "GODD)\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ON ME\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "*TCH)\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ON ME\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "2 (SHRİEKİN)\n"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "SHRİEKİN)\n-Bo"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ST3M)\nİ HAVE "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "EN HAVİNG LOT"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "OTTA DİFFEREN"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " B*TCHİES ON "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "N MY SİDE AND"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "D NOW İM COOL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "COOL NİGGA\nİ "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "NİGGA\nİ HAVE "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "BEEN FİGHTİNG"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " FİGHTİNG LOT"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "OTTA NİGGAS F"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " B*TCHİES NOW"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "S NOW İ THİNK"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "W İ THİNK İM "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "THİNK İM COOL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "COOL NİGGA( O"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "GODD)\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ON ME\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "*TCH)\nİTS ALL"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ON ME\nİTS ALL"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_8ac3370a37a583b60e94",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 159355,
+        "row_group_zero_based": 8,
+        "stored_before_lower": 317,
+        "stored_after_lower": 319,
+        "recomputed_before_lower": 317,
+        "recomputed_after_lower": 319,
+        "control_dotted_I_replaced_before_lower": 317,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "(İntro)\n"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "east!\nİnside "
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_bc0c9ad512e8705b6a6a",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 159464,
+        "row_group_zero_based": 8,
+        "stored_before_lower": 147,
+        "stored_after_lower": 150,
+        "recomputed_before_lower": 147,
+        "recomputed_after_lower": 150,
+        "control_dotted_I_replaced_before_lower": 147,
+        "delta": 3,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "(İntro)\n"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "yeah)\nİt's mo"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "yeah)\nİt's mo"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_e148dc47e1b44da395b4",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 163564,
+        "row_group_zero_based": 8,
+        "stored_before_lower": 265,
+        "stored_after_lower": 266,
+        "recomputed_before_lower": 265,
+        "recomputed_after_lower": 266,
+        "control_dotted_I_replaced_before_lower": 265,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ut me\nİs that"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_0738eb53b9fed7d71ee4",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 173371,
+        "row_group_zero_based": 8,
+        "stored_before_lower": 169,
+        "stored_after_lower": 170,
+        "recomputed_before_lower": 169,
+        "recomputed_after_lower": 170,
+        "control_dotted_I_replaced_before_lower": 169,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "es...\nİllusio"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_bfd5d3a06f7ab7d51242",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 196950,
+        "row_group_zero_based": 9,
+        "stored_before_lower": 401,
+        "stored_after_lower": 402,
+        "recomputed_before_lower": 401,
+        "recomputed_after_lower": 402,
+        "control_dotted_I_replaced_before_lower": 401,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "dream\nİts har"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_eda0a07cf5b8eb33b30d",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 206551,
+        "row_group_zero_based": 10,
+        "stored_before_lower": 147,
+        "stored_after_lower": 150,
+        "recomputed_before_lower": 147,
+        "recomputed_after_lower": 150,
+        "control_dotted_I_replaced_before_lower": 147,
+        "delta": 3,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "t the İzmir b"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "nkara\nİstanbu"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "rings\nİzmir h"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_8c25511da48269040aee",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00007-of-00010.parquet",
+        "row_zero_based": 303991,
+        "row_group_zero_based": 15,
+        "stored_before_lower": 232,
+        "stored_after_lower": 233,
+        "recomputed_before_lower": 232,
+        "recomputed_after_lower": 233,
+        "control_dotted_I_replaced_before_lower": 232,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " ya ! İn your"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_e2eb096979069b0914b4",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00008-of-00010.parquet",
+        "row_zero_based": 51180,
+        "row_group_zero_based": 2,
+        "stored_before_lower": 241,
+        "stored_after_lower": 253,
+        "recomputed_before_lower": 241,
+        "recomputed_after_lower": 253,
+        "control_dotted_I_replaced_before_lower": 241,
+        "delta": 12,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ay\n\nTHİS İS F"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\nTHİS İS FOR "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "EMALE İ JUST "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "D YOU İN MY P"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " MY PRİSON TH"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " ONE WİTCH BE"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "BEATS İN SİDE"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "S İN SİDE OF "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "EASE GİVE ME "
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " MUCH İV CHAN"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " MUCH İM İN T"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "CH İM İN TO Y"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "O ME\n\nİ REALY"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " YOU GİRL"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_214b0bb7e28dd65d84f4",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00008-of-00010.parquet",
+        "row_zero_based": 81610,
+        "row_group_zero_based": 4,
+        "stored_before_lower": 728,
+        "stored_after_lower": 730,
+        "recomputed_before_lower": 728,
+        "recomputed_after_lower": 730,
+        "control_dotted_I_replaced_before_lower": 728,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "hymes\nİf he w"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "kills\nİf you "
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_db23c6fd3a55a21a7576",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00008-of-00010.parquet",
+        "row_zero_based": 108218,
+        "row_group_zero_based": 5,
+        "stored_before_lower": 127,
+        "stored_after_lower": 128,
+        "recomputed_before_lower": 127,
+        "recomputed_after_lower": 128,
+        "control_dotted_I_replaced_before_lower": 127,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "vibe\nLİve the"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_b5e47876bb5abb7c9005",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00008-of-00010.parquet",
+        "row_zero_based": 118145,
+        "row_group_zero_based": 5,
+        "stored_before_lower": 116,
+        "stored_after_lower": 124,
+        "recomputed_before_lower": 116,
+        "recomputed_after_lower": 124,
+        "control_dotted_I_replaced_before_lower": 116,
+        "delta": 8,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "!\n\nHEPİMİZ YA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\nHEPİMİZ YAPA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "IZ\nHEPİMİZ YA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\nHEPİMİZ YAPA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "IZ\nHEPİMİZ YA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\nHEPİMİZ YAPA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "IZ\nHEPİMİZ YA"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\nHEPİMİZ YAPA"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_ed348227467e8a29ca5f",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00008-of-00010.parquet",
+        "row_zero_based": 170934,
+        "row_group_zero_based": 8,
+        "stored_before_lower": 179,
+        "stored_after_lower": 180,
+        "recomputed_before_lower": 179,
+        "recomputed_after_lower": 180,
+        "control_dotted_I_replaced_before_lower": 179,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "sphew\nİ ain't"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ture\n\nİf life"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_649ce9e3dd0ae49033be",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00008-of-00010.parquet",
+        "row_zero_based": 234758,
+        "row_group_zero_based": 11,
+        "stored_before_lower": 156,
+        "stored_after_lower": 162,
+        "recomputed_before_lower": 156,
+        "recomputed_after_lower": 162,
+        "control_dotted_I_replaced_before_lower": 156,
+        "delta": 6,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "dramatİc\nCall"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "dramatİc\n\nI d"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "dramatİc I se"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "dramatİc\nI wa"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "dramatİc I le"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "dramatİc I se"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_d3f59f09330485f2f596",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00009-of-00010.parquet",
+        "row_zero_based": 26270,
+        "row_group_zero_based": 1,
+        "stored_before_lower": 123,
+        "stored_after_lower": 124,
+        "recomputed_before_lower": 123,
+        "recomputed_after_lower": 124,
+        "control_dotted_I_replaced_before_lower": 123,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "THAT BİH\nRUN "
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_32f3872cb11f02fcd13c",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00009-of-00010.parquet",
+        "row_zero_based": 232042,
+        "row_group_zero_based": 11,
+        "stored_before_lower": 412,
+        "stored_after_lower": 414,
+        "recomputed_before_lower": 412,
+        "recomputed_after_lower": 414,
+        "control_dotted_I_replaced_before_lower": 412,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "l\nNew İsmo Ge"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "grade\nİso,Rag"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_aedddca031ac7b0daf64",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00009-of-00010.parquet",
+        "row_zero_based": 240569,
+        "row_group_zero_based": 12,
+        "stored_before_lower": 105,
+        "stored_after_lower": 106,
+        "recomputed_before_lower": 105,
+        "recomputed_after_lower": 106,
+        "control_dotted_I_replaced_before_lower": 105,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ntral İzmir w"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_69a51bb7045e0ff017ff",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00009-of-00010.parquet",
+        "row_zero_based": 253449,
+        "row_group_zero_based": 12,
+        "stored_before_lower": 208,
+        "stored_after_lower": 210,
+        "recomputed_before_lower": 208,
+        "recomputed_after_lower": 210,
+        "control_dotted_I_replaced_before_lower": 208,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\n\nx2\nSİCK-FUC"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "\n\nx2\nSİCK-FUC"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_97857ec69e093d746c6e",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00009-of-00010.parquet",
+        "row_zero_based": 286286,
+        "row_group_zero_based": 14,
+        "stored_before_lower": 423,
+        "stored_after_lower": 426,
+        "recomputed_before_lower": 423,
+        "recomputed_after_lower": 426,
+        "control_dotted_I_replaced_before_lower": 423,
+        "delta": 3,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " I am İsmo Ge"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "is is İsmo Ge"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": " gate\nİsmo Ai"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_7ed8e2668079d360fb33",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00009-of-00010.parquet",
+        "row_zero_based": 297651,
+        "row_group_zero_based": 15,
+        "stored_before_lower": 375,
+        "stored_after_lower": 377,
+        "recomputed_before_lower": 375,
+        "recomputed_after_lower": 377,
+        "control_dotted_I_replaced_before_lower": 375,
+        "delta": 2,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "ike ''İsmo,na"
+          },
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "is it,İsmo ri"
+          }
+        ]
+      },
+      {
+        "lyrics_id": "lyr_5ea5e71d6fd35bff7bad",
+        "file": "data/processed/lyrics/lyrics_full_v1/corpus/train-00009-of-00010.parquet",
+        "row_zero_based": 312949,
+        "row_group_zero_based": 15,
+        "stored_before_lower": 265,
+        "stored_after_lower": 266,
+        "recomputed_before_lower": 265,
+        "recomputed_after_lower": 266,
+        "control_dotted_I_replaced_before_lower": 265,
+        "delta": 1,
+        "expanded_characters": [
+          {
+            "codepoint": "U+0130",
+            "lower_codepoints": [
+              "U+0069",
+              "U+0307"
+            ],
+            "context": "lting\nİs all "
+          }
+        ]
+      }
+    ]
+  },
+  "canonical_id_membership": {
+    "corpus_ids_cover_split_once": true
+  },
+  "corpus_metadata": {
+    "rows": 3155772,
+    "accepted_source_records_sum": 3177443,
+    "duplicate_source_records": 21671,
+    "tag_counts": {
+      "rap": 959763,
+      "pop": 1336051,
+      "rb": 153552,
+      "rock": 621148,
+      "country": 85258
+    },
+    "language_status_counts": {
+      "en": 3155772
+    },
+    "language_reason_counts": {
+      "primary_en_high_conf": 3136899,
+      "both_detectors_en": 18873
+    },
+    "year": {
+      "below_1900": 1673,
+      "above_2022": 392
+    },
+    "n_chars_original_sum": 4620787538,
+    "median_words_after_lower": 242.0,
+    "median_lines": 37.0,
+    "median_stanzas": 6.0,
+    "median_words_by_tag": {
+      "country": 215.0,
+      "pop": 204.0,
+      "rap": 408.0,
+      "rb": 284.0,
+      "rock": 187.0
+    }
+  },
+  "lexicon": {
+    "types": 1277145,
+    "tokens": 902376353
+  },
+  "demo_current_presence": {
+    "data/processed/demo/lyrics_full_v1/demo_links.parquet": false,
+    "data/interim/matching/SONORA_Revision_Matching/medium_prioritarios.json": false,
+    "data/raw/fma/fma_medium": false,
+    "data/raw/genius": true
+  },
+  "raw_genius_parquet_files": [],
+  "exclusions": {
+    "rows": 2145,
+    "status_counts": {
+      "review": 1914,
+      "excluded": 231
+    },
+    "rule_counts": {
+      "language_uncertain": 1914,
+      "non_english": 155,
+      "placeholder_text": 75,
+      "too_few_words": 1
+    }
+  },
+  "e3_e4": {
+    "e3_docs": 3155772,
+    "e4_docs": 3155772,
+    "e3_tokens": 1033733693,
+    "e4_tokens": 1033733693,
+    "sum_global_pos": 1033733693,
+    "e3_sample_docs": 5000,
+    "unique_example_lyrics": 3
+  },
+  "e5": {
+    "same_space_ids": true,
+    "same_counts": true,
+    "sample_ids_unique": 2000,
+    "sample_split_counts": {
+      "validation": 2000
+    },
+    "n_projected": 2000,
+    "context_scope": "bottom-SHA256 sample of <=2000 validation lyrics; models fitted on full train",
+    "context_minimum_support": {
+      "documents": 10,
+      "occurrences": 20
+    },
+    "query_counts": 5,
+    "train_candidates": 2208832,
+    "note": "No se releen vectores/modelos; la verificación numérica original sigue siendo evidencia documental."
+  },
+  "notebooks": {
+    "E1": {
+      "path": "notebooks/evidencias/E1_construccion_exploracion.ipynb",
+      "sha256": "0042d469b7e1fb95490fe642b5c3d76b2052ffc90536a8a42d7e8144460d05d6",
+      "cells": [
+        {
+          "index_zero_based": 0,
+          "ordinal_one_based": 1,
+          "id": "14c036f6",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 1,
+          "ordinal_one_based": 2,
+          "id": "c7f64d86",
+          "execution_count": 1,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 2,
+          "ordinal_one_based": 3,
+          "id": "576e85db",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 3,
+          "ordinal_one_based": 4,
+          "id": "9bc980bb",
+          "execution_count": 2,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 4,
+          "ordinal_one_based": 5,
+          "id": "0267b34d",
+          "execution_count": 3,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 5,
+          "ordinal_one_based": 6,
+          "id": "cb6974fc",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 6,
+          "ordinal_one_based": 7,
+          "id": "a45f1813",
+          "execution_count": 4,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 7,
+          "ordinal_one_based": 8,
+          "id": "3dfb907b",
+          "execution_count": 5,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 8,
+          "ordinal_one_based": 9,
+          "id": "0e006390",
+          "execution_count": 6,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 9,
+          "ordinal_one_based": 10,
+          "id": "a5b2a2d3",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 10,
+          "ordinal_one_based": 11,
+          "id": "0a634d7a",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 11,
+          "ordinal_one_based": 12,
+          "id": "badcbee7",
+          "execution_count": 7,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 12,
+          "ordinal_one_based": 13,
+          "id": "d5bb6218",
+          "execution_count": 8,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 13,
+          "ordinal_one_based": 14,
+          "id": "17ec676c",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 14,
+          "ordinal_one_based": 15,
+          "id": "1b97b987",
+          "execution_count": 9,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 15,
+          "ordinal_one_based": 16,
+          "id": "853367fb",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 16,
+          "ordinal_one_based": 17,
+          "id": "5c311146",
+          "execution_count": 10,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 17,
+          "ordinal_one_based": 18,
+          "id": "ae9949e7",
+          "execution_count": 11,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 18,
+          "ordinal_one_based": 19,
+          "id": "3561ce18",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 19,
+          "ordinal_one_based": 20,
+          "id": "78ae3643",
+          "execution_count": 12,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 20,
+          "ordinal_one_based": 21,
+          "id": "a5e867af",
+          "execution_count": 13,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 21,
+          "ordinal_one_based": 22,
+          "id": "a4fa13ed",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 22,
+          "ordinal_one_based": 23,
+          "id": "0862941e",
+          "execution_count": 14,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 23,
+          "ordinal_one_based": 24,
+          "id": "e0543ae0",
+          "execution_count": 15,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 24,
+          "ordinal_one_based": 25,
+          "id": "4bed3b94",
+          "execution_count": 16,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 25,
+          "ordinal_one_based": 26,
+          "id": "aa2f3f3f",
+          "execution_count": 17,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 26,
+          "ordinal_one_based": 27,
+          "id": "9fb752b5",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 27,
+          "ordinal_one_based": 28,
+          "id": "838986fd",
+          "execution_count": 18,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 28,
+          "ordinal_one_based": 29,
+          "id": "6e450d0a",
+          "execution_count": 19,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 29,
+          "ordinal_one_based": 30,
+          "id": "e1f9abae",
+          "execution_count": 20,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 30,
+          "ordinal_one_based": 31,
+          "id": "de117d38",
+          "execution_count": 21,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 31,
+          "ordinal_one_based": 32,
+          "id": "193d77ab",
+          "execution_count": null,
+          "type": "markdown"
+        }
+      ]
+    },
+    "E2": {
+      "path": "notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb",
+      "sha256": "cac056b511313b5a0411fe0611c5675b72b6bef452d99da5b5ee2ed8790a686a",
+      "cells": [
+        {
+          "index_zero_based": 0,
+          "ordinal_one_based": 1,
+          "id": "43e3c2ac",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 1,
+          "ordinal_one_based": 2,
+          "id": "aa4bf3f7",
+          "execution_count": 1,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 2,
+          "ordinal_one_based": 3,
+          "id": "a8cd9ba1",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 3,
+          "ordinal_one_based": 4,
+          "id": "b1201f6c",
+          "execution_count": 2,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 4,
+          "ordinal_one_based": 5,
+          "id": "24e600fd",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 5,
+          "ordinal_one_based": 6,
+          "id": "3aa5925e",
+          "execution_count": 3,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 6,
+          "ordinal_one_based": 7,
+          "id": "b5b6dbde",
+          "execution_count": 4,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 7,
+          "ordinal_one_based": 8,
+          "id": "9a86e567",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 8,
+          "ordinal_one_based": 9,
+          "id": "13b10d54",
+          "execution_count": 5,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 9,
+          "ordinal_one_based": 10,
+          "id": "3a3d5327",
+          "execution_count": 6,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 10,
+          "ordinal_one_based": 11,
+          "id": "7f7f1c08",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 11,
+          "ordinal_one_based": 12,
+          "id": "8b337301",
+          "execution_count": 7,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 12,
+          "ordinal_one_based": 13,
+          "id": "615dec9b",
+          "execution_count": 8,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 13,
+          "ordinal_one_based": 14,
+          "id": "80d65ce9",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 14,
+          "ordinal_one_based": 15,
+          "id": "3de13293",
+          "execution_count": 9,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 15,
+          "ordinal_one_based": 16,
+          "id": "d27a1060",
+          "execution_count": 10,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 16,
+          "ordinal_one_based": 17,
+          "id": "48906361",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 17,
+          "ordinal_one_based": 18,
+          "id": "2573313f",
+          "execution_count": 11,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 18,
+          "ordinal_one_based": 19,
+          "id": "5b1a954e",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 19,
+          "ordinal_one_based": 20,
+          "id": "51d14a6c",
+          "execution_count": 12,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 20,
+          "ordinal_one_based": 21,
+          "id": "b7cfbc65",
+          "execution_count": 13,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 21,
+          "ordinal_one_based": 22,
+          "id": "b9c955a0",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 22,
+          "ordinal_one_based": 23,
+          "id": "39af9e77",
+          "execution_count": 14,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 23,
+          "ordinal_one_based": 24,
+          "id": "1c1c52ae",
+          "execution_count": 15,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 24,
+          "ordinal_one_based": 25,
+          "id": "9efa86f2",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 25,
+          "ordinal_one_based": 26,
+          "id": "a1e17295",
+          "execution_count": 16,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 26,
+          "ordinal_one_based": 27,
+          "id": "58033b93",
+          "execution_count": 17,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 27,
+          "ordinal_one_based": 28,
+          "id": "144ee93c",
+          "execution_count": 18,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 28,
+          "ordinal_one_based": 29,
+          "id": "2f299d9f",
+          "execution_count": null,
+          "type": "markdown"
+        }
+      ]
+    },
+    "E3": {
+      "path": "notebooks/evidencias/E3_morfosintaxis.ipynb",
+      "sha256": "8dfc8d715215914f86e11ca27b515e6fe289fa5936cee229a16a53cb79a1021b",
+      "cells": [
+        {
+          "index_zero_based": 0,
+          "ordinal_one_based": 1,
+          "id": "607e12db",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 1,
+          "ordinal_one_based": 2,
+          "id": "fee85a28",
+          "execution_count": 1,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 2,
+          "ordinal_one_based": 3,
+          "id": "dbf2e936",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 3,
+          "ordinal_one_based": 4,
+          "id": "48319be1",
+          "execution_count": 2,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 4,
+          "ordinal_one_based": 5,
+          "id": "5ed5b4f7",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 5,
+          "ordinal_one_based": 6,
+          "id": "77b710c3",
+          "execution_count": 3,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 6,
+          "ordinal_one_based": 7,
+          "id": "2aa0b276",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 7,
+          "ordinal_one_based": 8,
+          "id": "21023f25",
+          "execution_count": 4,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 8,
+          "ordinal_one_based": 9,
+          "id": "cd5bcc16",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 9,
+          "ordinal_one_based": 10,
+          "id": "5d68e089",
+          "execution_count": 5,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 10,
+          "ordinal_one_based": 11,
+          "id": "9a6671bd",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 11,
+          "ordinal_one_based": 12,
+          "id": "6941f168",
+          "execution_count": null,
+          "type": "markdown"
+        }
+      ]
+    },
+    "E4": {
+      "path": "notebooks/evidencias/E4_sintaxis_dependencias.ipynb",
+      "sha256": "6b6c3403b9ee5a455b050ef81676740e42d700031b190218796a75f6bcb8c7d8",
+      "cells": [
+        {
+          "index_zero_based": 0,
+          "ordinal_one_based": 1,
+          "id": "ccc33d89",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 1,
+          "ordinal_one_based": 2,
+          "id": "891963e9",
+          "execution_count": 1,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 2,
+          "ordinal_one_based": 3,
+          "id": "3235dbe9",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 3,
+          "ordinal_one_based": 4,
+          "id": "e7a854fa",
+          "execution_count": 2,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 4,
+          "ordinal_one_based": 5,
+          "id": "e7067275",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 5,
+          "ordinal_one_based": 6,
+          "id": "6ae76f8f",
+          "execution_count": 3,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 6,
+          "ordinal_one_based": 7,
+          "id": "d8820153",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 7,
+          "ordinal_one_based": 8,
+          "id": "16aaaf6e",
+          "execution_count": 4,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 8,
+          "ordinal_one_based": 9,
+          "id": "276795ab",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 9,
+          "ordinal_one_based": 10,
+          "id": "587e16da",
+          "execution_count": 5,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 10,
+          "ordinal_one_based": 11,
+          "id": "d20cf8b7",
+          "execution_count": null,
+          "type": "markdown"
+        }
+      ]
+    },
+    "E5": {
+      "path": "notebooks/evidencias/E5_semantica.ipynb",
+      "sha256": "128fb74f286db1056fd843c72714442393aa81dc17dc479fb8eea1e1bd6d816f",
+      "cells": [
+        {
+          "index_zero_based": 0,
+          "ordinal_one_based": 1,
+          "id": "b0e5a8ac",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 1,
+          "ordinal_one_based": 2,
+          "id": "25b0bcbd",
+          "execution_count": 1,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 2,
+          "ordinal_one_based": 3,
+          "id": "42e5ca9d",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 3,
+          "ordinal_one_based": 4,
+          "id": "544fa661",
+          "execution_count": 2,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 4,
+          "ordinal_one_based": 5,
+          "id": "4f361ba2",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 5,
+          "ordinal_one_based": 6,
+          "id": "6d079148",
+          "execution_count": 3,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 6,
+          "ordinal_one_based": 7,
+          "id": "fc55edfa",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 7,
+          "ordinal_one_based": 8,
+          "id": "85db111b",
+          "execution_count": 4,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 8,
+          "ordinal_one_based": 9,
+          "id": "df805767",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 9,
+          "ordinal_one_based": 10,
+          "id": "932a5245",
+          "execution_count": 5,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 10,
+          "ordinal_one_based": 11,
+          "id": "42aef672",
+          "execution_count": null,
+          "type": "markdown"
+        },
+        {
+          "index_zero_based": 11,
+          "ordinal_one_based": 12,
+          "id": "dbfd0934",
+          "execution_count": 6,
+          "type": "code"
+        },
+        {
+          "index_zero_based": 12,
+          "ordinal_one_based": 13,
+          "id": "f8c88348",
+          "execution_count": null,
+          "type": "markdown"
+        }
+      ]
+    }
+  },
+  "elapsed_seconds": 16.518
+}

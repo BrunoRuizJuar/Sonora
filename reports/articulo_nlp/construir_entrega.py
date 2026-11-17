@@ -8,6 +8,8 @@ from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'reports/articulo_nlp'
+if (OUT/'revalidacion_independiente.json').exists():
+    raise SystemExit('Constructor histórico de primera entrega: no ejecutar después de la revalidación; sobrescribiría correcciones editoriales posteriores. Usar los procedimientos de revisión posteriores.')
 OUT.mkdir(parents=True, exist_ok=True)
 def read(p): return (ROOT/p).read_text(encoding='utf-8')
 def js(p): return json.loads(read(p))

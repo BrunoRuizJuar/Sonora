@@ -1,0 +1,420 @@
+{
+  "lexicon": {
+    "version": "regex-words-v1",
+    "token_definition": "[^\\W\\d_]+(?:'[^\\W\\d_]+)*",
+    "lowercased": true,
+    "view": "lyrics_analysis",
+    "docs": 3155772,
+    "tokens": 902376353,
+    "types": 1277145,
+    "seconds": 323.4,
+    "finished_utc": "2026-11-14T04:32:59+00:00",
+    "path": "data/processed/nlp/lyrics_full_v1/lexicon/lexicon.parquet"
+  },
+  "annotations": {
+    "spacy_sm_v1": {
+      "config": {
+        "annotation_version": "spacy-lines-gdrop-v1",
+        "model": "en_core_web_sm",
+        "model_version": "3.8.0",
+        "spacy": "3.8.18",
+        "sentence_policy": "line_break_forced_boundary_plus_parser",
+        "text_view": "lyrics_analysis",
+        "docs_per_task": 500,
+        "corpus_run_id": "lyrics_full_v1",
+        "gdrop_forms_sha256": "8d9d55bd487582412f1f29136590fee06d10ebc0915acfea0991c1212864da1e"
+      },
+      "hash": "d65d6e681e45581486a0b6bc3b8f3f6534c2e875c00fba791fb484dc265d8c7c",
+      "gdrop_forms": 5431,
+      "workers": 1,
+      "status": "complete",
+      "started_utc": "2026-11-15T00:42:00+00:00",
+      "path": "data/processed/nlp/lyrics_full_v1/spacy_sm_v1",
+      "tasks_total": 6317,
+      "tasks_done_this_session": 0,
+      "tasks_remaining": 0,
+      "words_this_session": 0,
+      "seconds_this_session": 8.7,
+      "finished_utc": "2026-11-15T00:44:26+00:00"
+    }
+  },
+  "frequency": {
+    "pos-lexicon": {
+      "version": "frequency-v1",
+      "tokens": 1033733693,
+      "rows": 3236971,
+      "group_rows": 3256,
+      "seconds": 242.2,
+      "path": "word_pos.parquet, group_pos.parquet",
+      "finished_utc": "2026-11-14T23:46:36+00:00"
+    },
+    "vocable-candidates": {
+      "candidates": 731,
+      "path": "data/processed/nlp/lyrics_full_v1/frequency/vocable_candidates.json",
+      "rule": "train only; count>=100 and (majority INTJ or repeated syllable or elongation) or (self-repetition share>=0.2 and count>=1000)",
+      "finished_utc": "2026-11-14T23:50:23+00:00"
+    },
+    "vocables": {
+      "vocables": 424,
+      "path": "config/vocables.yaml",
+      "finished_utc": "2026-11-16T03:53:21+00:00"
+    },
+    "group-unigrams": {
+      "version": "frequency-v1",
+      "rows": 4128532,
+      "tokens_by_tag_total": 902376353,
+      "seconds": 351.5,
+      "finished_utc": "2026-11-15T00:52:26+00:00"
+    },
+    "ngram-summary": {
+      "version": "frequency-v1",
+      "partitions": 256,
+      "top_k": 2000,
+      "excluded_words": 1557,
+      "seconds": 206.9,
+      "note": "descriptive: n-grams with <s>/</s> removed; within-verse n-grams only",
+      "finished_utc": "2026-11-16T03:57:07+00:00"
+    },
+    "lm-vocab": {
+      "min_count": 2,
+      "types": 497831,
+      "train_tokens_covered": 631139981,
+      "path": "data/processed/nlp/lyrics_full_v1/lm/vocab_train_min2.txt",
+      "finished_utc": "2026-11-15T00:56:30+00:00"
+    },
+    "lm-export": {
+      "totals": {
+        "train": {
+          "docs": 2208832,
+          "lines": 91731600,
+          "tokens": 631669490,
+          "mapped_oov": 529509
+        },
+        "validation.country": {
+          "docs": 8481,
+          "lines": 267480,
+          "tokens": 1920613,
+          "mapped_oov": 1652
+        },
+        "validation.pop": {
+          "docs": 133780,
+          "lines": 4769917,
+          "tokens": 30124415,
+          "mapped_oov": 50122
+        },
+        "validation.rap": {
+          "docs": 95527,
+          "lines": 5322685,
+          "tokens": 40933947,
+          "mapped_oov": 94071
+        },
+        "validation.rb": {
+          "docs": 15277,
+          "lines": 707789,
+          "tokens": 4615469,
+          "mapped_oov": 5758
+        },
+        "validation.rock": {
+          "docs": 62224,
+          "lines": 2017310,
+          "tokens": 12454448,
+          "mapped_oov": 17043
+        }
+      },
+      "seconds": 326.0,
+      "vocab": "vocab_train_min2.txt",
+      "finished_utc": "2026-11-15T01:01:57+00:00"
+    }
+  },
+  "ngram_lm": {
+    "results": "data/processed/nlp/lyrics_full_v1/lm/results.json",
+    "o2": {
+      "train": {
+        "order": 2,
+        "smoothing": "interpolated modified Kneser-Ney (lmplz defaults)",
+        "pruning": "none",
+        "ngram_counts": {
+          "1-gram": 497835,
+          "2-gram": 20487313
+        },
+        "kenlm_commit": "4cb443e60b7bf2c0ddf3c745378f76cb59e254e5",
+        "lmplz_seconds": 187.6,
+        "build_binary_seconds": 13.4,
+        "files_bytes": {
+          "o2.arpa": 502487752,
+          "o2.binary": 144246981
+        },
+        "model_path_wsl": "$HOME/sonora_lm/lyrics_full_v1/o2.binary",
+        "input": "train.*.txt (verses, <oov> for train count < min_count)",
+        "finished_utc": "2026-11-16T04:04:43+00:00"
+      },
+      "examples": [
+        {
+          "sentence": "i love you",
+          "total_log10": -4.7653294
+        },
+        {
+          "sentence": "you love i",
+          "total_log10": -7.529371
+        },
+        {
+          "sentence": "i love you baby",
+          "total_log10": -6.8473616
+        },
+        {
+          "sentence": "love baby i you",
+          "total_log10": -11.212575
+        },
+        {
+          "sentence": "na na na na",
+          "total_log10": -4.736131
+        },
+        {
+          "sentence": "the of and to",
+          "total_log10": -13.844786
+        },
+        {
+          "sentence": "i can't stop thinking about you",
+          "total_log10": -8.685862
+        },
+        {
+          "sentence": "you about thinking stop can't i",
+          "total_log10": -19.090227
+        }
+      ],
+      "eval": {
+        "validation": {
+          "ppl_incl_oov": 153.52728092950912,
+          "ppl_excl_oov": 153.52728092950912,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 103134073
+        },
+        "validation.pop": {
+          "ppl_incl_oov": 123.94060420005137,
+          "ppl_excl_oov": 123.94060420005137,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 34894332
+        },
+        "validation.rap": {
+          "ppl_incl_oov": 194.90818450531242,
+          "ppl_excl_oov": 194.90818450531242,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 46256632
+        },
+        "validation.rock": {
+          "ppl_incl_oov": 140.65387315697663,
+          "ppl_excl_oov": 140.65387315697663,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 14471758
+        },
+        "validation.rb": {
+          "ppl_incl_oov": 104.80286969602854,
+          "ppl_excl_oov": 104.80286969602854,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 5323258
+        },
+        "validation.country": {
+          "ppl_incl_oov": 135.7458438514466,
+          "ppl_excl_oov": 135.7458438514466,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 2188093
+        },
+        "note": "perplexity per token incl. </s>; <oov> is an in-vocabulary class",
+        "finished_utc": "2026-11-16T04:07:25+00:00"
+      }
+    },
+    "o3": {
+      "train": {
+        "order": 3,
+        "smoothing": "interpolated modified Kneser-Ney (lmplz defaults)",
+        "pruning": "none",
+        "ngram_counts": {
+          "1-gram": 497835,
+          "2-gram": 20487313,
+          "3-gram": 92126560
+        },
+        "kenlm_commit": "4cb443e60b7bf2c0ddf3c745378f76cb59e254e5",
+        "lmplz_seconds": 469.1,
+        "build_binary_seconds": 81.8,
+        "files_bytes": {
+          "o3.arpa": 3269227407,
+          "o3.binary": 871131945
+        },
+        "model_path_wsl": "$HOME/sonora_lm/lyrics_full_v1/o3.binary",
+        "input": "train.*.txt (verses, <oov> for train count < min_count)",
+        "finished_utc": "2026-11-16T04:16:46+00:00"
+      },
+      "examples": [
+        {
+          "sentence": "i love you",
+          "total_log10": -3.7457361
+        },
+        {
+          "sentence": "you love i",
+          "total_log10": -8.720694
+        },
+        {
+          "sentence": "i love you baby",
+          "total_log10": -5.0153813
+        },
+        {
+          "sentence": "love baby i you",
+          "total_log10": -12.827906
+        },
+        {
+          "sentence": "na na na na",
+          "total_log10": -4.504757
+        },
+        {
+          "sentence": "the of and to",
+          "total_log10": -13.304523
+        },
+        {
+          "sentence": "i can't stop thinking about you",
+          "total_log10": -6.398817
+        },
+        {
+          "sentence": "you about thinking stop can't i",
+          "total_log10": -22.989511
+        }
+      ],
+      "eval": {
+        "validation": {
+          "ppl_incl_oov": 97.4457121634264,
+          "ppl_excl_oov": 97.4457121634264,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 103134073
+        },
+        "validation.pop": {
+          "ppl_incl_oov": 74.28195222777629,
+          "ppl_excl_oov": 74.28195222777629,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 34894332
+        },
+        "validation.rap": {
+          "ppl_incl_oov": 131.18157264086582,
+          "ppl_excl_oov": 131.18157264086582,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 46256632
+        },
+        "validation.rock": {
+          "ppl_incl_oov": 87.59482152816734,
+          "ppl_excl_oov": 87.59482152816734,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 14471758
+        },
+        "validation.rb": {
+          "ppl_incl_oov": 63.7697649240455,
+          "ppl_excl_oov": 63.7697649240455,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 5323258
+        },
+        "validation.country": {
+          "ppl_incl_oov": 78.22410774597124,
+          "ppl_excl_oov": 78.22410774597124,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 2188093
+        },
+        "note": "perplexity per token incl. </s>; <oov> is an in-vocabulary class",
+        "finished_utc": "2026-11-16T04:18:21+00:00"
+      }
+    },
+    "o4": {
+      "train": {
+        "order": 4,
+        "smoothing": "interpolated modified Kneser-Ney (lmplz defaults)",
+        "pruning": "none",
+        "ngram_counts": {
+          "1-gram": 497835,
+          "2-gram": 20487313,
+          "3-gram": 92126560,
+          "4-gram": 183348026
+        },
+        "kenlm_commit": "4cb443e60b7bf2c0ddf3c745378f76cb59e254e5",
+        "lmplz_seconds": 880.8,
+        "build_binary_seconds": 406.1,
+        "files_bytes": {
+          "o4.arpa": 10188941813,
+          "o4.binary": 2708006337
+        },
+        "model_path_wsl": "$HOME/sonora_lm/lyrics_full_v1/o4.binary",
+        "input": "train.*.txt (verses, <oov> for train count < min_count)",
+        "finished_utc": "2026-11-16T04:41:50+00:00"
+      },
+      "examples": [
+        {
+          "sentence": "i love you",
+          "total_log10": -3.7497206
+        },
+        {
+          "sentence": "you love i",
+          "total_log10": -8.26025
+        },
+        {
+          "sentence": "i love you baby",
+          "total_log10": -5.0025816
+        },
+        {
+          "sentence": "love baby i you",
+          "total_log10": -12.868809
+        },
+        {
+          "sentence": "na na na na",
+          "total_log10": -4.3512125
+        },
+        {
+          "sentence": "the of and to",
+          "total_log10": -13.752985
+        },
+        {
+          "sentence": "i can't stop thinking about you",
+          "total_log10": -5.781642
+        },
+        {
+          "sentence": "you about thinking stop can't i",
+          "total_log10": -22.195885
+        }
+      ],
+      "eval": {
+        "validation": {
+          "ppl_incl_oov": 82.34480829554562,
+          "ppl_excl_oov": 82.34480829554562,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 103134073
+        },
+        "validation.pop": {
+          "ppl_incl_oov": 60.429886104702966,
+          "ppl_excl_oov": 60.429886104702966,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 34894332
+        },
+        "validation.rap": {
+          "ppl_incl_oov": 114.61372537377059,
+          "ppl_excl_oov": 114.61372537377059,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 46256632
+        },
+        "validation.rock": {
+          "ppl_incl_oov": 73.83283553775449,
+          "ppl_excl_oov": 73.83283553775449,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 14471758
+        },
+        "validation.rb": {
+          "ppl_incl_oov": 53.716983056999354,
+          "ppl_excl_oov": 53.716983056999354,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 5323258
+        },
+        "validation.country": {
+          "ppl_incl_oov": 61.33927739618115,
+          "ppl_excl_oov": 61.33927739618115,
+          "kenlm_oovs": 0,
+          "tokens_incl_eos": 2188093
+        },
+        "note": "perplexity per token incl. </s>; <oov> is an in-vocabulary class",
+        "finished_utc": "2026-11-16T04:44:15+00:00"
+      }
+    }
+  }
+}

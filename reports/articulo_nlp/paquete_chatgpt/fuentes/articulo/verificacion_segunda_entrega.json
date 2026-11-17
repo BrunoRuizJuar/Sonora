@@ -1,0 +1,28 @@
+{
+  "verified_utc": "2026-11-17T02:42:09.531873+00:00",
+  "records_reviewed": 19,
+  "methodological_objections": 11,
+  "peer_rounds": 4,
+  "notebooks_cited": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5"
+  ],
+  "broken_local_links": [],
+  "integrated_matches_sections": true,
+  "figure_external_copy_identical": true,
+  "figure_sha256": "b66256898b22bf6d6d577dd545726e9d37c819c0a51348920c5f5da8ccbb565c",
+  "notebook_cells_zero_based": true,
+  "raw_inputs_currently_absent": true,
+  "limits": "Revisión humana de idioma/anotación/relevancia pendiente; no se revalidaron todos los vectores ni todos los parses.",
+  "final_editorial_check_utc": "2026-11-17T02:44:41.004550+00:00",
+  "notebook_hashes_unchanged": true,
+  "inline_E1_E5_citations_present": true,
+  "duplicated_editorial_insertions_removed": {
+    "02_INTRODUCCION.md": 1,
+    "04_CORPUS_Y_PREPARACION.md": 1,
+    "13_REFERENCIAS.md": 2
+  }
+}
