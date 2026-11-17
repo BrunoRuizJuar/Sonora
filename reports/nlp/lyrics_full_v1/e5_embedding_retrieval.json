@@ -1,0 +1,522 @@
+{
+  "queries": [
+    {
+      "query": {
+        "lyrics_id": "lyr_edc300ca1b86e86572b2",
+        "title": "Evil dudes demo",
+        "artist": "The Nicholas Project",
+        "tag": "rock",
+        "year": 2012
+      },
+      "neighbors": [
+        {
+          "lyrics_id": "lyr_4b5afd0dbcaad55c3787",
+          "split": "train",
+          "tag": "pop",
+          "year": 1966,
+          "title": "Jealous Girl",
+          "artist": "Tages",
+          "cosine": 0.941381573677063
+        },
+        {
+          "lyrics_id": "lyr_583c17af710fd1c3be85",
+          "split": "train",
+          "tag": "pop",
+          "year": 2004,
+          "title": "Girl",
+          "artist": "Superbus",
+          "cosine": 0.9400311708450317
+        },
+        {
+          "lyrics_id": "lyr_085ae63c12623e599f45",
+          "split": "train",
+          "tag": "rock",
+          "year": 1964,
+          "title": "Jealous Girl",
+          "artist": "Johnny Kidd & The Pirates",
+          "cosine": 0.938199520111084
+        },
+        {
+          "lyrics_id": "lyr_3b5c8d21c04fd41e82f2",
+          "split": "train",
+          "tag": "rb",
+          "year": 2019,
+          "title": "Smile",
+          "artist": "Barfeye",
+          "cosine": 0.9371011257171631
+        },
+        {
+          "lyrics_id": "lyr_ae60914b8bcbc7f9605d",
+          "split": "train",
+          "tag": "pop",
+          "year": 1997,
+          "title": "Not You Again",
+          "artist": "Imogen Heap",
+          "cosine": 0.9365276098251343
+        },
+        {
+          "lyrics_id": "lyr_6483d479c72c483a0849",
+          "split": "train",
+          "tag": "pop",
+          "year": 2016,
+          "title": "You Make Me Happy",
+          "artist": "Chowdar",
+          "cosine": 0.9358077049255371
+        },
+        {
+          "lyrics_id": "lyr_0a2c41668d792dc7c5b6",
+          "split": "train",
+          "tag": "pop",
+          "year": 2005,
+          "title": "Don’t Say You Love Me Single Mix",
+          "artist": "Erasure",
+          "cosine": 0.9357063174247742
+        },
+        {
+          "lyrics_id": "lyr_790b741d34a35220e09a",
+          "split": "train",
+          "tag": "country",
+          "year": 2018,
+          "title": "See You Smile",
+          "artist": "Peter Harper",
+          "cosine": 0.9352005124092102
+        },
+        {
+          "lyrics_id": "lyr_d2817daf727374b8be65",
+          "split": "train",
+          "tag": "pop",
+          "year": 2020,
+          "title": "Melody",
+          "artist": "Sofie & MISS WORLD",
+          "cosine": 0.9351003170013428
+        },
+        {
+          "lyrics_id": "lyr_d6e3a6ea117c9210d1db",
+          "split": "train",
+          "tag": "rock",
+          "year": 2022,
+          "title": "YENA - SMILEY ft. BIBI English Translation",
+          "artist": "Genius English Translations",
+          "cosine": 0.9349077939987183
+        }
+      ],
+      "shared_neighbor_ids_with_tfidf": [
+        "lyr_583c17af710fd1c3be85"
+      ]
+    },
+    {
+      "query": {
+        "lyrics_id": "lyr_15c965067a70c0fe209c",
+        "title": "Eat For Two MTV Unplugged",
+        "artist": "10,000 Maniacs",
+        "tag": "pop",
+        "year": 1993
+      },
+      "neighbors": [
+        {
+          "lyrics_id": "lyr_7633385cdeca9f3aa0c8",
+          "split": "train",
+          "tag": "pop",
+          "year": 2002,
+          "title": "Wandering Daughter",
+          "artist": "Kimya Dawson",
+          "cosine": 0.9629358649253845
+        },
+        {
+          "lyrics_id": "lyr_ff9fa20ed20f01cb9d8d",
+          "split": "train",
+          "tag": "pop",
+          "year": 2010,
+          "title": "Go Long",
+          "artist": "Joanna Newsom",
+          "cosine": 0.9627977609634399
+        },
+        {
+          "lyrics_id": "lyr_31b0692041f8d15cbaa9",
+          "split": "train",
+          "tag": "rap",
+          "year": 2021,
+          "title": "Blame Yourself",
+          "artist": "Logan182",
+          "cosine": 0.9627445936203003
+        },
+        {
+          "lyrics_id": "lyr_33d177c0141c1049d916",
+          "split": "train",
+          "tag": "rap",
+          "year": 2007,
+          "title": "The Ballad of Noah",
+          "artist": "k-os",
+          "cosine": 0.9624509215354919
+        },
+        {
+          "lyrics_id": "lyr_a8bb1b660917e44cc26a",
+          "split": "train",
+          "tag": "rock",
+          "year": 2018,
+          "title": "Bad Idea",
+          "artist": "The Devil Makes Three",
+          "cosine": 0.9624389410018921
+        },
+        {
+          "lyrics_id": "lyr_551a9d7cd9e51cb7ae99",
+          "split": "train",
+          "tag": "pop",
+          "year": 2006,
+          "title": "Supersede",
+          "artist": "Jackie Greene",
+          "cosine": 0.9623875021934509
+        },
+        {
+          "lyrics_id": "lyr_2e13a4dfce49822b1c4e",
+          "split": "train",
+          "tag": "pop",
+          "year": 2007,
+          "title": "For What Its Worth",
+          "artist": "Ryan Bingham",
+          "cosine": 0.9621710777282715
+        },
+        {
+          "lyrics_id": "lyr_cf24f290289dd47a848a",
+          "split": "train",
+          "tag": "pop",
+          "year": 2004,
+          "title": "The Moon Looked Down And Laughed",
+          "artist": "Virgin Prunes",
+          "cosine": 0.9620581269264221
+        },
+        {
+          "lyrics_id": "lyr_4b69162ff38e46b9e74d",
+          "split": "train",
+          "tag": "pop",
+          "year": 2015,
+          "title": "Queen Of Fortune",
+          "artist": "Monks Of Doom",
+          "cosine": 0.9619963765144348
+        },
+        {
+          "lyrics_id": "lyr_a8d7c3b2519ec6ae71f8",
+          "split": "train",
+          "tag": "rap",
+          "year": 2021,
+          "title": "Az in manzareh",
+          "artist": "Koorosh",
+          "cosine": 0.961937665939331
+        }
+      ],
+      "shared_neighbor_ids_with_tfidf": []
+    },
+    {
+      "query": {
+        "lyrics_id": "lyr_6eb1350e292960e4d3fb",
+        "title": "Plug Music",
+        "artist": "HS87",
+        "tag": "rap",
+        "year": 2014
+      },
+      "neighbors": [
+        {
+          "lyrics_id": "lyr_e301e5c9d0097727221a",
+          "split": "train",
+          "tag": "rap",
+          "year": 2020,
+          "title": "Hibachi",
+          "artist": "Smoke DZA",
+          "cosine": 0.9830380082130432
+        },
+        {
+          "lyrics_id": "lyr_e63b8fa6d0a892593dbc",
+          "split": "train",
+          "tag": "rap",
+          "year": 2016,
+          "title": "Fucc Em",
+          "artist": "Nipsey Hussle",
+          "cosine": 0.9825803637504578
+        },
+        {
+          "lyrics_id": "lyr_9e35be37d1978c966b71",
+          "split": "train",
+          "tag": "rap",
+          "year": 2016,
+          "title": "Vinyls",
+          "artist": "Layzie Louis",
+          "cosine": 0.9825294017791748
+        },
+        {
+          "lyrics_id": "lyr_73647a5086a6b34f2feb",
+          "split": "train",
+          "tag": "rap",
+          "year": 2020,
+          "title": "Congrats Freestyle",
+          "artist": "Russ",
+          "cosine": 0.9820489883422852
+        },
+        {
+          "lyrics_id": "lyr_657ec68754be425882b7",
+          "split": "train",
+          "tag": "rap",
+          "year": 2016,
+          "title": "Hard",
+          "artist": "Audio Push",
+          "cosine": 0.9818823933601379
+        },
+        {
+          "lyrics_id": "lyr_330d1880d95e819805cc",
+          "split": "train",
+          "tag": "rap",
+          "year": 2019,
+          "title": "Mama / Show Love",
+          "artist": "Logic",
+          "cosine": 0.9816533923149109
+        },
+        {
+          "lyrics_id": "lyr_c97b93370fcd335c9c26",
+          "split": "train",
+          "tag": "rap",
+          "year": 2019,
+          "title": "HOLD",
+          "artist": "Danny Ali",
+          "cosine": 0.9816321134567261
+        },
+        {
+          "lyrics_id": "lyr_27103ed17de9abd44a0e",
+          "split": "train",
+          "tag": "rap",
+          "year": 2016,
+          "title": "Come Up",
+          "artist": "K.i.D Music",
+          "cosine": 0.9815544486045837
+        },
+        {
+          "lyrics_id": "lyr_768a74223242ccd1b9af",
+          "split": "train",
+          "tag": "rap",
+          "year": 2021,
+          "title": "Hot 97 Outro",
+          "artist": "Chip",
+          "cosine": 0.9815512299537659
+        },
+        {
+          "lyrics_id": "lyr_ad699ecbfb54b12fb35f",
+          "split": "train",
+          "tag": "rap",
+          "year": 2014,
+          "title": "Chicago Conscious Remix",
+          "artist": "Reem (Rap)",
+          "cosine": 0.9814881682395935
+        }
+      ],
+      "shared_neighbor_ids_with_tfidf": []
+    },
+    {
+      "query": {
+        "lyrics_id": "lyr_c7ae2a9804278ee4fca3",
+        "title": "The Way You Were",
+        "artist": "Desmond Michael",
+        "tag": "rb",
+        "year": 2021
+      },
+      "neighbors": [
+        {
+          "lyrics_id": "lyr_f373b1191ddc8a004546",
+          "split": "train",
+          "tag": "rap",
+          "year": 2014,
+          "title": "Walk Away",
+          "artist": "Peltsman",
+          "cosine": 0.9686486721038818
+        },
+        {
+          "lyrics_id": "lyr_4e2268030a2645d97b45",
+          "split": "train",
+          "tag": "rap",
+          "year": 2022,
+          "title": "Im Sorry",
+          "artist": "Drippin So Pretty",
+          "cosine": 0.9668978452682495
+        },
+        {
+          "lyrics_id": "lyr_5faa72892dbd906cc69b",
+          "split": "train",
+          "tag": "rap",
+          "year": 2017,
+          "title": "Is This Life",
+          "artist": "Ty Sciullo",
+          "cosine": 0.9661386013031006
+        },
+        {
+          "lyrics_id": "lyr_5806c702b3237ece1e16",
+          "split": "train",
+          "tag": "rap",
+          "year": 2018,
+          "title": "Talk Back",
+          "artist": "Mustafa Khan",
+          "cosine": 0.9656822681427002
+        },
+        {
+          "lyrics_id": "lyr_5542cef0f2396c07a4c2",
+          "split": "train",
+          "tag": "rap",
+          "year": 2016,
+          "title": "When You Come Home",
+          "artist": "Vertix",
+          "cosine": 0.9655451774597168
+        },
+        {
+          "lyrics_id": "lyr_d03243dfc4c94cc33f3a",
+          "split": "train",
+          "tag": "rb",
+          "year": 2014,
+          "title": "The Happening / Runaway",
+          "artist": "Juvon Taylor",
+          "cosine": 0.9650333523750305
+        },
+        {
+          "lyrics_id": "lyr_5e98b3c610ec3264133a",
+          "split": "train",
+          "tag": "pop",
+          "year": 2015,
+          "title": "A back home feat. neon hitch",
+          "artist": "Gym Class Heroes",
+          "cosine": 0.9649600982666016
+        },
+        {
+          "lyrics_id": "lyr_22b9c2e5a10977cd1425",
+          "split": "train",
+          "tag": "pop",
+          "year": 2005,
+          "title": "Goodbye Almond Eyes",
+          "artist": "Tokyo Rose (Band)",
+          "cosine": 0.9646257162094116
+        },
+        {
+          "lyrics_id": "lyr_8a86b5b0b765b6de6d68",
+          "split": "train",
+          "tag": "rb",
+          "year": 2016,
+          "title": "Say It to Me",
+          "artist": "Mike Naran",
+          "cosine": 0.9645918011665344
+        },
+        {
+          "lyrics_id": "lyr_851f4fa93f226b10fb51",
+          "split": "train",
+          "tag": "pop",
+          "year": 2005,
+          "title": "Make-Believe",
+          "artist": "Last November",
+          "cosine": 0.9645369648933411
+        }
+      ],
+      "shared_neighbor_ids_with_tfidf": []
+    },
+    {
+      "query": {
+        "lyrics_id": "lyr_99e2f1f42b99ea8a6117",
+        "title": "Ive Gotten Used To The Cryin",
+        "artist": "Roger Miller",
+        "tag": "country",
+        "year": 1978
+      },
+      "neighbors": [
+        {
+          "lyrics_id": "lyr_58ea5de130130868e4c4",
+          "split": "train",
+          "tag": "pop",
+          "year": 1959,
+          "title": "I’ve Cried Before",
+          "artist": "Dion and The Belmonts",
+          "cosine": 0.947725772857666
+        },
+        {
+          "lyrics_id": "lyr_247d984a31b30d125e9f",
+          "split": "train",
+          "tag": "rock",
+          "year": 1977,
+          "title": "Mississippi Delta City Blues",
+          "artist": "Chicago",
+          "cosine": 0.9467711448669434
+        },
+        {
+          "lyrics_id": "lyr_b3ea1b641100e546ea67",
+          "split": "train",
+          "tag": "pop",
+          "year": 1963,
+          "title": "Ive Cried Before",
+          "artist": "Dion",
+          "cosine": 0.9464793801307678
+        },
+        {
+          "lyrics_id": "lyr_4bad42e9ffec164dd778",
+          "split": "train",
+          "tag": "pop",
+          "year": 1957,
+          "title": "On My Mind",
+          "artist": "Flatt & Scruggs",
+          "cosine": 0.9448109269142151
+        },
+        {
+          "lyrics_id": "lyr_15b3ed55fcf5b3130960",
+          "split": "train",
+          "tag": "country",
+          "year": 2013,
+          "title": "Waitin For the Day",
+          "artist": "Zachary Lucky",
+          "cosine": 0.9445262551307678
+        },
+        {
+          "lyrics_id": "lyr_3116bb1070561ba77287",
+          "split": "train",
+          "tag": "pop",
+          "year": 2004,
+          "title": "Who Youre With",
+          "artist": "Language of Flowers",
+          "cosine": 0.9444910883903503
+        },
+        {
+          "lyrics_id": "lyr_d094bbed029a26165771",
+          "split": "train",
+          "tag": "rock",
+          "year": 1975,
+          "title": "Mississippi Delta City Blues Live In Japan",
+          "artist": "Chicago",
+          "cosine": 0.9443111419677734
+        },
+        {
+          "lyrics_id": "lyr_165c3502e56e00312e5a",
+          "split": "train",
+          "tag": "pop",
+          "year": 2019,
+          "title": "BRKN",
+          "artist": "Madison Ryann Ward",
+          "cosine": 0.9433945417404175
+        },
+        {
+          "lyrics_id": "lyr_f4444ad3951049fb7d3c",
+          "split": "train",
+          "tag": "pop",
+          "year": 1968,
+          "title": "On My Mind",
+          "artist": "Skeeter Davis",
+          "cosine": 0.9433115124702454
+        },
+        {
+          "lyrics_id": "lyr_bd5e8a92b27bed64241b",
+          "split": "train",
+          "tag": "pop",
+          "year": 1968,
+          "title": "Id Do It All Again",
+          "artist": "Eloise Laws",
+          "cosine": 0.9432557821273804
+        }
+      ],
+      "shared_neighbor_ids_with_tfidf": []
+    }
+  ],
+  "train_candidates": 2208832,
+  "available_candidates": 2208832,
+  "space_id": "ec76a8c38600ad837729631f95a54d58ac2c983ae46c7259aded6897235d9479",
+  "k": 10,
+  "scope": "same validation seeds as baseline; all available train embeddings",
+  "limits": "cosines and neighbor overlap describe rankings, not recommendation relevance"
+}

@@ -4,7 +4,8 @@ Actualizado: 2026-11-16. Raíz actual: `B:\SONORA`.
 
 E1 y E2 cerradas. E3 revisada de forma asistida; falta tu lectura personal.
 **E4 tiene implementación, ejecución y cierre técnico/documental completos**;
-su revisión personal sigue pendiente. No se marcan estas casillas en tu nombre.
+su revisión personal sigue pendiente. **E5 también tiene ejecución y cierre
+técnico/documental completos**; falta tu revisión H12. No se marcan estas casillas en tu nombre.
 Los pendientes de lectura no requieren repetir el corpus ni la anotación spaCy
 y no impiden preparar E5. Si encuentras un problema sistemático, primero se prueba
 una corrección pequeña y se registra qué resultados quedarían afectados.
@@ -47,13 +48,17 @@ una corrección pequeña y se registra qué resultados quedarían afectados.
 
 ## Antes del cierre académico
 
-- [ ] **H12 — Revisar el contenido de E5 cuando estén sus resultados reales.**
-  Consultar `docs/handoff/E5_2026-11-16.md` para distinguir ejecución de implementación.
-  Cuando existan vecinos, contextos y tópicos reales: confirmar o corregir sus
+- [ ] **H12 — Revisar los resultados reales de E5.**
+  Abrir [E5_RESULTADOS.md](docs/E5_RESULTADOS.md) y
+  [el notebook E5](notebooks/evidencias/E5_semantica.ipynb), especialmente sección 6.
+  Confirmar o corregir las cinco lecturas de vecinos, la figura PCA, los conceptos y
+  la limitación temática de LDA (masa funcional concentrada y estabilidad reducida).
+  Los vecinos, contextos y tópicos ya están ejecutados: confirmar o corregir sus
   interpretaciones, registrar fallos y valorar si las etiquetas temáticas son defendibles.
   Distinguir el modelo estático de sus contextos por década/tag y la muestra de figuras
   del corpus completo. No usar PCA, coherencia o perplexity como juicios de recomendación.
-  La revisión humana no sustituye ejecutar y comprobar las etapas técnicas pendientes.
+  Las etapas técnicas ya están ejecutadas y auditadas; esta revisión confirma el
+  contenido, sin sustituir la futura evaluación independiente del recomendador.
 
 - [ ] **H07 — Aclarar el requisito de 150–300 páginas con el profesor.**
   Registrar el criterio aceptado para este corpus digital o la aclaración recibida.
@@ -96,9 +101,9 @@ las casillas que todavía no hayas revisado; no confundir ejecución con aprobac
 
 ## Seguimiento técnico que puede hacer el agente
 
-- Continuar E5 según `docs/handoff/E5_2026-11-16.md`: caché completa y vocabulario/IDF
-  ya ajustados con train; verificar recuperación, entrenamiento propio, tópicos,
-  exportación y análisis reales. Validation selecciona; test sigue reservado.
+- E5 terminada y auditada según `docs/E5_RESULTADOS.md`: entrenamiento propio,
+  tópicos, exportación, análisis y recuperación reales completos. No relanzar para
+  revisar documentación. Validation seleccionó; test sigue reservado para relevancia.
 - Gensim 4.4.0 ya compilado y verificado, con Build Tools y Cython 3.3.1;
   procedimiento/hashes en el handoff. Python/spaCy/modelo conservan sus versiones.
 - Mantener el ZIP y los datos locales fuera de Git; no repetir ingesta, anotación o

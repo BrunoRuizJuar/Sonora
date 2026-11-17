@@ -34,10 +34,13 @@
   El usuario autorizó E4 conservando E3 pendiente de su revisión personal.
 - E4: cierre técnico/documental completado. Pendientes de revisión humana del proyecto
   centralizados en `TODO-human.md`; no marcar casillas ni aprobar contenido en nombre del usuario.
-- E5 en curso: `docs/handoff/E5_2026-11-16.md`, protocolo `docs/E5_METODO.md`.
+- E5 con cierre técnico/documental completado: resultados `docs/E5_RESULTADOS.md`,
+  notebook ejecutado `notebooks/evidencias/E5_semantica.ipynb`, protocolo `docs/E5_METODO.md`.
+  Auditoría real `reports/nlp/lyrics_full_v1/e5_verification.json`; revisión personal H12 pendiente.
   Gensim 4.4.0 compilado y verificado en Python 3.14; no reinstalar Build Tools.
   Caché completa y vocabulario/IDF train-only en `semantics/e5-surface-v2/`.
-  Consultar el handoff antes de asumir que entrenamiento, exportación o análisis terminaron.
+  Entrenamiento, exportación, análisis y recuperación terminaron; no repetirlos para
+  revisar resultados. Tópicos LDA limitados, excluidos del ranking sin ablación.
 - Para esta corrida E5 el usuario autorizó varios trabajos simultáneos: coordinador
   `pipelines/nlp/run_e5_models.py --parallel --workers 4`, tres subruns independientes
   con locks propios (dos candidatos SGNS y LDA). No lanzar copias del coordinador ni

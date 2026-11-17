@@ -1,6 +1,8 @@
 # E5 — protocolo de representaciones semánticas
 
-Fecha: 2026-11-16. Implementación inicial, ejecución por etapas.
+Fecha: 2026-11-16. Protocolo ejecutado; cierre técnico/documental completado.
+Resultados, revisión asistida y matriz de evidencia en
+[E5_RESULTADOS.md](E5_RESULTADOS.md); revisión personal H12 pendiente.
 El estado ejecutado y las limitaciones se registran en
 [el handoff E5](handoff/E5_2026-11-16.md). Este protocolo no certifica resultados pendientes.
 
@@ -135,5 +137,9 @@ para que reanudar exportación no cambie resultados por saltar shards anteriores
 
 Las pruebas sintéticas comprueban aislamiento de splits, IDF, pooling, ceros/OOV,
 recarga de SGNS/LDA, selección repetida y cobertura de exportación/recuperación.
-Sus métricas no son resultados del corpus real. Falta verificar la ejecución real de
-cada etapa antes de declarar cubiertos E5-01…05.
+Sus métricas no son resultados del corpus real. La ejecución real posterior se
+verificó mediante `scripts/verify_e5_results.py`: hashes de las diez representaciones
+y checkpoints, 3 155 772 IDs únicos, splits, cobertura, normas y tópicos finitos.
+Salida: `reports/nlp/lyrics_full_v1/e5_verification.json`. Los resultados ejecutados
+y cobertura E5-01…05 están en `E5_RESULTADOS.md` y el notebook E5. Esto no sustituye
+juicios independientes sobre el recomendador ni la revisión personal del autor.

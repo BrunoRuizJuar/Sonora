@@ -1,0 +1,117 @@
+{
+  "captured_utc": "2026-11-17T02:24:52.708807+00:00",
+  "notebooks": [
+    {
+      "file": "notebooks/evidencias/E1_construccion_exploracion.ipynb",
+      "sha256": "0042d469b7e1fb95490fe642b5c3d76b2052ffc90536a8a42d7e8144460d05d6",
+      "execution_counts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "strictly_increasing": true,
+      "errors": 0,
+      "code_without_output": []
+    },
+    {
+      "file": "notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb",
+      "sha256": "cac056b511313b5a0411fe0611c5675b72b6bef452d99da5b5ee2ed8790a686a",
+      "execution_counts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "strictly_increasing": true,
+      "errors": 0,
+      "code_without_output": []
+    },
+    {
+      "file": "notebooks/evidencias/E3_morfosintaxis.ipynb",
+      "sha256": "8dfc8d715215914f86e11ca27b515e6fe289fa5936cee229a16a53cb79a1021b",
+      "execution_counts": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "strictly_increasing": true,
+      "errors": 0,
+      "code_without_output": []
+    },
+    {
+      "file": "notebooks/evidencias/E4_sintaxis_dependencias.ipynb",
+      "sha256": "6b6c3403b9ee5a455b050ef81676740e42d700031b190218796a75f6bcb8c7d8",
+      "execution_counts": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "strictly_increasing": true,
+      "errors": 0,
+      "code_without_output": []
+    },
+    {
+      "file": "notebooks/evidencias/E5_semantica.ipynb",
+      "sha256": "128fb74f286db1056fd843c72714442393aa81dc17dc479fb8eea1e1bd6d816f",
+      "execution_counts": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "strictly_increasing": true,
+      "errors": 0,
+      "code_without_output": []
+    }
+  ],
+  "embedded_png_count": 21,
+  "results_records": 19,
+  "reconciliation_checks_passed": true,
+  "small_source_hashes_computed_not_raw_corpus": true,
+  "figure_copy_equal": true,
+  "figure_sha256": "b66256898b22bf6d6d577dd545726e9d37c819c0a51348920c5f5da8ccbb565c",
+  "limitations": [
+    "No pipelines rerun",
+    "Not all semantic assertions independently verified",
+    "Only selected E1 ECDF visually reviewed",
+    "Source files may change in another active session"
+  ]
+}

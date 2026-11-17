@@ -1,0 +1,306 @@
+{
+  "captured_utc": "2026-11-17T02:24:52.708807+00:00",
+  "root": "B:\\SONORA",
+  "files": [
+    {
+      "path": "CLAUDE.md",
+      "sha256": "c44b3176fc309806f8eb5568a0789df29afa294340c12af23b2ca29705edcc79",
+      "bytes": 3861
+    },
+    {
+      "path": "TODO-human.md",
+      "sha256": "2dc6883ca0baf64a82260ed6c83db6123d8ac43f09f5ed39e1fd9b4a68ffb0aa",
+      "bytes": 7068
+    },
+    {
+      "path": "apps/api/src/sonora_api/main.py",
+      "sha256": "d348d41eb35744a4ef4c0d07ab8caf25d17c16c898fdcd4df016f4c799ca23e6",
+      "bytes": 679
+    },
+    {
+      "path": "artifacts/models/lyrics_full_v1/e5-surface-v2/lda/lda_selection.json",
+      "sha256": "c3340d94de81e4efee8fc2796c79c666a717df8801fcd802f7d0dd0c2fc75968",
+      "bytes": 27668
+    },
+    {
+      "path": "artifacts/models/lyrics_full_v1/e5-surface-v2/sgns_selection.json",
+      "sha256": "9fa56d2c18273ee8caf688895d5f6c4a615e38b622c401205301013c4ae140c4",
+      "bytes": 862
+    },
+    {
+      "path": "artifacts/models/lyrics_full_v1/e5-surface-v2/trained.json",
+      "sha256": "718af792781b4d69aee8c6786ef17f4bd308835e6f304316b3d128e3791c633c",
+      "bytes": 4712
+    },
+    {
+      "path": "config/lyrics_corpus.yaml",
+      "sha256": "734865c9322c09aca11bf2c298a1f2764e0ce7be06f4198bcd61c6062e0dafd0",
+      "bytes": 2773
+    },
+    {
+      "path": "config/nlp_annotation.yaml",
+      "sha256": "e4d8597c3760370ea477a7a56bcaf9ff7b972f491223d712df41a399d0762f09",
+      "bytes": 769
+    },
+    {
+      "path": "config/ranking.yaml",
+      "sha256": "2009d9a6640be8b88c4d3bc198195440e63c7a65ba3fd79cace674ef14566e23",
+      "bytes": 353
+    },
+    {
+      "path": "config/sources.yaml",
+      "sha256": "e71a2fe8b867a8ded3c87e28e5484ebf5930b6a31f23a95fd8d826ebb53bbc42",
+      "bytes": 1304
+    },
+    {
+      "path": "data/processed/nlp/lyrics_full_v1/semantics/e5-surface-v2/representations/complete.json",
+      "sha256": "cf7cca062303087ce91c4a6250d1276c845af6758544fa627831fee2051cdd77",
+      "bytes": 425
+    },
+    {
+      "path": "data/processed/nlp/lyrics_full_v1/semantics/e5-surface-v2/representations/config.json",
+      "sha256": "2819342343bea4cf552d6c17f6b5d76da68599aea4eac0bf8d6d6df3e9a7485a",
+      "bytes": 1103
+    },
+    {
+      "path": "docs/ARQUITECTURA_SONORA.md",
+      "sha256": "82ee9497614ed5aa34aa77a01d926eea6ae55ece2353f0bdc366a2b0408f7d6a",
+      "bytes": 18362
+    },
+    {
+      "path": "docs/CONTRATO_API.md",
+      "sha256": "0559df5a80aa8376a7f2eb90afdd15925da63c6ce444f6a9824f948198826d94",
+      "bytes": 2739
+    },
+    {
+      "path": "docs/CORPUS_LETRAS.md",
+      "sha256": "ab69659e720e9bdf2d84c2fb5f0d0923e3e04e7aec544298c3f6618121e98011",
+      "bytes": 18370
+    },
+    {
+      "path": "docs/DATOS_Y_FUENTES.md",
+      "sha256": "a06e10377e23f016f278d9bb2de3b4265cecf9e7614fbf882cb3615cc7a929b5",
+      "bytes": 4077
+    },
+    {
+      "path": "docs/E3_REVISION.md",
+      "sha256": "3f8d4a921b616e75ef24399da2d7ab7e3522ead3b1e0f3d125f567d4b86b668e",
+      "bytes": 9146
+    },
+    {
+      "path": "docs/E4_REVISION.md",
+      "sha256": "3ea2a7185259494768be55597f9919a35d0de3aaf50c12f36ff8e3f9ab4e7162",
+      "bytes": 8335
+    },
+    {
+      "path": "docs/E5_METODO.md",
+      "sha256": "8bc36426bf3a3bc070811e922da326ceeb70e2b13dd1fcdd43ad368bb2b00cc6",
+      "bytes": 9477
+    },
+    {
+      "path": "docs/E5_RECOMMENDATIONS.md",
+      "sha256": "ddd54725b6169976c4e622fef709a1596ab537e3c3d38d4ebc85fbd39247f7ea",
+      "bytes": 3042
+    },
+    {
+      "path": "docs/E5_RESULTADOS.md",
+      "sha256": "126bf531f88af4b46cd27e0bf9fbdc5cd76083fa62ac44485d170f097e4f180f",
+      "bytes": 12151
+    },
+    {
+      "path": "docs/E5_REVISION.md",
+      "sha256": "7a13afc667e9903c040f8e2c904d953002129d7395c00f9bbe698f0b8fb601dc",
+      "bytes": 587
+    },
+    {
+      "path": "docs/ESTRUCTURA.md",
+      "sha256": "51a3bde66aa82ca005809fa9e71054655d7afdea00609bee2489ae4471357d5f",
+      "bytes": 3193
+    },
+    {
+      "path": "docs/PLAN_IMPLEMENTACION.md",
+      "sha256": "8811cdcd01f37df05c97155e5e0b82cf87d058ce98808b20ea61ab17a6d7144c",
+      "bytes": 2250
+    },
+    {
+      "path": "docs/REQUIREMENTS.md",
+      "sha256": "7c60f6b8997a1acf00c97e19364e2ec3c89ac267f1cd4f94a635b55d26c7bb09",
+      "bytes": 83146
+    },
+    {
+      "path": "docs/WINDOWS.md",
+      "sha256": "3de7811138243700e8be6b61d34ab37c4001d9f65c482aa3198f5d36a62e5e8b",
+      "bytes": 4104
+    },
+    {
+      "path": "docs/handoff/E4_2026-11-16.md",
+      "sha256": "3634dc45a79de4105aabcca7482e8c8f80867c374ed8d9d7895318761534c0b4",
+      "bytes": 3596
+    },
+    {
+      "path": "docs/handoff/E5_2026-11-16.md",
+      "sha256": "dc465ce97c1b9eed61c43c71e3425aa001a0ae0ee1bf9939c7e9fc12005785ca",
+      "bytes": 22168
+    },
+    {
+      "path": "docs/handoff/ENTORNO_2026-11-16.md",
+      "sha256": "bd15cf818826384256f74f5d7b975cc82bc6d9382894094c30b955787047ceca",
+      "bytes": 5428
+    },
+    {
+      "path": "docs/handoff/ESTADO_2026-11-14.md",
+      "sha256": "28aa5ae38087a79b433d30863389e1759cb72ecf16717ba673f20ee1c0109480",
+      "bytes": 11007
+    },
+    {
+      "path": "docs/handoff/MIGRACION_2026-11-16.md",
+      "sha256": "1109f9a52dee012adf8d66d09f55efcc72477272c47856bfd6bada99aa880666",
+      "bytes": 5069
+    },
+    {
+      "path": "docs/handoff/SONORA_Contexto_Claude/ARQUITECTURA_ACTUAL.md",
+      "sha256": "6adec4c134abb10f24bb2708641b79508ebf6d49f38d6485242a2604900b8cf2",
+      "bytes": 4496
+    },
+    {
+      "path": "docs/handoff/SONORA_Contexto_Claude/ESTADO_Y_DATOS.md",
+      "sha256": "6d0e068bf03e550a7d8e795aff43f590cf9d38d0608c6015b519debc377e2db7",
+      "bytes": 3482
+    },
+    {
+      "path": "docs/handoff/SONORA_Contexto_Claude/PROMPT_INICIO.md",
+      "sha256": "3acb9488ef427d20f3c40ce4f32d7d383836d53e4f148b6164beeeea2f8280ce",
+      "bytes": 5121
+    },
+    {
+      "path": "docs/handoff/SONORA_Contexto_Claude/REQUISITOS_SONORA.md",
+      "sha256": "7c60f6b8997a1acf00c97e19364e2ec3c89ac267f1cd4f94a635b55d26c7bb09",
+      "bytes": 83146
+    },
+    {
+      "path": "docs/handoff/SONORA_Contexto_Claude/SIGUIENTE_ETAPA.md",
+      "sha256": "f00641bd55ac883898b6cd210d9db45433e9152f33b69aed7af3986d1fcd2857",
+      "bytes": 6384
+    },
+    {
+      "path": "docs/handoff/SONORA_Contexto_Claude/USO_Y_UBICACION.md",
+      "sha256": "023c05a59f4bf5b9d2a28adb966366e56b116452dc26b1125ef1bfd1ced62472",
+      "bytes": 3586
+    },
+    {
+      "path": "manifests/nlp/lyrics_full_v1.json",
+      "sha256": "defcd94e2a2eeeaf2c29c471bf1e3c1f303527c36acaa5a7c7a5ed3145e34405",
+      "bytes": 12663
+    },
+    {
+      "path": "manifests/runs/lyrics_full_v1.json",
+      "sha256": "46a1aa2de5c9951ceb2a6f9be9bb359b8327ffaea2f4ba98c0d70d341b1433c0",
+      "bytes": 12044
+    },
+    {
+      "path": "manifests/sources/fma_medium_checksums_verification.json",
+      "sha256": "4628a844adb8d77973c0a688a169d0048cc484c53d66dd14d9aaa7f3ad2a59e6",
+      "bytes": 300
+    },
+    {
+      "path": "manifests/sources/genius_snapshot.json",
+      "sha256": "41482726523b6b60e35a3ee4eb0ec08887d0bfa0565bce4984c53e4072f6a927",
+      "bytes": 5018
+    },
+    {
+      "path": "manifests/splits/lyrics_full_v1.json",
+      "sha256": "3dba866202d20aff03936d3d9c3fa96fa595eb128f56d4e0d24cd74abe6d047a",
+      "bytes": 2569
+    },
+    {
+      "path": "notebooks/evidencias/E1_construccion_exploracion.ipynb",
+      "sha256": "0042d469b7e1fb95490fe642b5c3d76b2052ffc90536a8a42d7e8144460d05d6",
+      "bytes": 309916
+    },
+    {
+      "path": "notebooks/evidencias/E2_estadistica_modelos_lenguaje.ipynb",
+      "sha256": "cac056b511313b5a0411fe0611c5675b72b6bef452d99da5b5ee2ed8790a686a",
+      "bytes": 599609
+    },
+    {
+      "path": "notebooks/evidencias/E3_morfosintaxis.ipynb",
+      "sha256": "8dfc8d715215914f86e11ca27b515e6fe289fa5936cee229a16a53cb79a1021b",
+      "bytes": 313227
+    },
+    {
+      "path": "notebooks/evidencias/E4_sintaxis_dependencias.ipynb",
+      "sha256": "6b6c3403b9ee5a455b050ef81676740e42d700031b190218796a75f6bcb8c7d8",
+      "bytes": 477682
+    },
+    {
+      "path": "notebooks/evidencias/E5_semantica.ipynb",
+      "sha256": "128fb74f286db1056fd843c72714442393aa81dc17dc479fb8eea1e1bd6d816f",
+      "bytes": 372571
+    },
+    {
+      "path": "packages/sonora/src/sonora/nlp/language.py",
+      "sha256": "7392b00cb19dcbd440723a99901077110f7351dfd79c3693eb9951433ef3eaed",
+      "bytes": 5422
+    },
+    {
+      "path": "packages/sonora/src/sonora/nlp/lexicon.py",
+      "sha256": "4fbc6125bc31e6fbab5ebde51b40a0cadf69430ac4d377fcdc64a3457bcc4b7e",
+      "bytes": 3118
+    },
+    {
+      "path": "packages/sonora/src/sonora/preprocessing/lyrics_text.py",
+      "sha256": "8bdacf7a72a6a902c2bb38598587c2f225fe9d88080a7e98d7ad7e6e117db16f",
+      "bytes": 6235
+    },
+    {
+      "path": "packages/sonora/src/sonora/recommendation/lyrics.py",
+      "sha256": "7d8fbaedfe175d864b2213afecd13d3d4eab60c32eb5829724f10fbc2317f691",
+      "bytes": 4387
+    },
+    {
+      "path": "reports/corpus/lyrics_full_v1/quality_report.json",
+      "sha256": "bb9f97b12a87be7eaac59b58a8a340fdfc0f2b616767150e542b3916b80350bc",
+      "bytes": 8546
+    },
+    {
+      "path": "reports/nlp/lyrics_full_v1/e3_summary.json",
+      "sha256": "cf88006a4477c61da2019e819c90ab74500a609983e9db86d0f3c551ab992aeb",
+      "bytes": 32405
+    },
+    {
+      "path": "reports/nlp/lyrics_full_v1/e4_examples.json",
+      "sha256": "d372cd7681ff2a5b660ab109d0b77d540d5be6a0b5d928ec0a02c0b04b71757f",
+      "bytes": 17169
+    },
+    {
+      "path": "reports/nlp/lyrics_full_v1/e4_summary.json",
+      "sha256": "b4a526743bef627d92ead02363ff0f8348c9b8c93902102211c65ecb3a2270b1",
+      "bytes": 67534
+    },
+    {
+      "path": "reports/nlp/lyrics_full_v1/e5_analysis.json",
+      "sha256": "2e716a62674b90ededd58d20f1ef7c29b538771c87312621abf30a26897ceb03",
+      "bytes": 580007
+    },
+    {
+      "path": "reports/nlp/lyrics_full_v1/e5_embedding_retrieval.json",
+      "sha256": "ed104e16dd8fb229bcda018dd561643b795ae23c7d9f5e2eb08ba1687dccd83b",
+      "bytes": 15340
+    },
+    {
+      "path": "reports/nlp/lyrics_full_v1/e5_tfidf_retrieval.json",
+      "sha256": "afa0bc3b916be86a5cb68d36760686fe60ba945b521a82bddfe304ae833922e3",
+      "bytes": 47013
+    },
+    {
+      "path": "reports/nlp/lyrics_full_v1/e5_verification.json",
+      "sha256": "64b2dac1ad5c36a538fe770b1e3288fe9839861e8d00f3861049b79360931972",
+      "bytes": 47605
+    },
+    {
+      "path": "runtime/e5_status.json",
+      "sha256": "97eed5e88c8039ccf3f37d3ef8535b731d02ab32808b799ea40e3742f5d949bb",
+      "bytes": 329
+    }
+  ]
+}
