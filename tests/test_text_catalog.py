@@ -108,6 +108,7 @@ def test_incomplete_release_refused(release):
 
 
 def test_original_lyrics_identity_lines_and_api(release, tmp_path):
+    from sonora.nlp.semantics import signature
     from sonora.recommendation.lyric_text import build_lyric_index, LyricTextStore
     _, root = release
     manifest = json.loads((root/'release.json').read_text('utf-8'))
@@ -116,7 +117,8 @@ def test_original_lyrics_identity_lines_and_api(release, tmp_path):
     original = '<script>not markup</script>\nFirst line\n\nLast line'
     pq.write_table(pa.Table.from_pylist([{'lyrics_id': key, 'lyrics_original': original if key=='seed' else key+'\nSecond verse'} for key in ('seed','near','second','other','empty')]), corpus/'part.parquet', row_group_size=2)
     index = tmp_path/'lyric-index'
-    build_lyric_index(corpus,index,manifest['space_id'],5)
+    archived = signature(corpus/'part.parquet') | {'path': r'B:\SONORA\corpus\part.parquet'}
+    build_lyric_index(corpus,index,manifest['space_id'],5,[archived])
     with TestClient(create_app(root, lyric_index=index)) as client:
         response = client.get('/api/v1/tracks/seed/lyrics')
         assert response.status_code == 200
@@ -137,3 +139,5 @@ def test_original_lyrics_identity_lines_and_api(release, tmp_path):
         stream.write(b'changed')
     with pytest.raises(ValueError, match='changed'):
         LyricTextStore(index,manifest['space_id'],5)
+    with pytest.raises(ValueError, match='frozen E5 inputs'):
+        build_lyric_index(corpus,index,manifest['space_id'],5,[archived])

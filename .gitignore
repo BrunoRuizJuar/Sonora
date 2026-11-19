@@ -20,6 +20,8 @@ data/**
 !data/**/
 !data/**/.gitkeep
 !data/README.md
+!data/evaluation/emotion-pilot/anotacion.json
+!data/evaluation/emotion-pilot/diseno.json
 artifacts/**
 !artifacts/**/
 !artifacts/**/.gitkeep

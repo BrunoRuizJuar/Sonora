@@ -1,7 +1,7 @@
 """Indexed access to original canonical lyrics, without scanning per request."""
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 import sqlite3
 
 import pyarrow.parquet as pq
@@ -17,6 +17,8 @@ def build_lyric_index(corpus, target, space_id, expected_rows, expected_sources=
     temp = target / 'lyrics.building.sqlite'
     try:
         os.write(fd, str(os.getpid()).encode())
+        if expected_sources is not None:
+            expected_sources = {PureWindowsPath(item['path']).name: item for item in expected_sources}
         temp.unlink(missing_ok=True)
         db = sqlite3.connect(temp)
         try:
@@ -25,8 +27,10 @@ def build_lyric_index(corpus, target, space_id, expected_rows, expected_sources=
             sources, total = [], 0
             for path in sorted(corpus.glob('*.parquet')):
                 sig = signature(path)
-                if expected_sources is not None and sig not in expected_sources:
-                    raise ValueError('Corpus differs from frozen E5 inputs')
+                if expected_sources is not None:
+                    expected = expected_sources.get(path.name)
+                    if expected is None or sig != expected | {'path': sig['path']}:
+                        raise ValueError(f'Corpus differs from frozen E5 inputs: {path.name}')
                 source_id = len(sources)
                 sources.append(sig | {'mtime_ns': path.stat().st_mtime_ns})
                 reader = pq.ParquetFile(path)

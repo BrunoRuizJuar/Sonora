@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anotación de letras · SONORA</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="anotacion.css">
+  <script src="anotacion.js" defer></script>
+</head>
+<body class="annotation-page">
+  <header class="annotation-header">
+    <a href="index.html" class="annotation-brand">
+      <img src="assets/brand/cactus-sonora-transparente.png" alt="">
+      SONORA
+    </a>
+  </header>
+  <main>
+    <section class="annotation-intro" aria-labelledby="page-title">
+      <div>
+        <h1 id="page-title">Anotación de letras</h1>
+        <p>Lee las dos letras y valora qué tanto se parecen en tema y emoción.</p>
+      </div>
+      <div class="annotation-file">
+        <label for="pilot-file">Archivo del piloto</label>
+        <input id="pilot-file" type="file" accept=".json,application/json">
+      </div>
+    </section>
+    <p id="load-status" role="status"></p>
+
+    <section id="annotation-workspace" hidden aria-label="Comparaciones del piloto">
+      <div class="annotation-progress">
+        <div>
+          <label for="progress">Progreso</label>
+          <span id="progress-count" role="status"></span>
+        </div>
+        <progress id="progress" value="0" max="1"></progress>
+      </div>
+
+      <div class="annotation-lyrics">
+        <article class="annotation-track">
+          <p class="track-role">Letra de referencia</p>
+          <h2 id="query-title"></h2>
+          <p id="query-artist" class="track-artist"></p>
+          <div id="query-text" class="annotation-text" tabindex="0" lang="en" role="region" aria-labelledby="query-title"></div>
+        </article>
+        <article class="annotation-track">
+          <p class="track-role">Letra para comparar</p>
+          <h2 id="candidate-title"></h2>
+          <p id="candidate-artist" class="track-artist"></p>
+          <div id="candidate-text" class="annotation-text" tabindex="0" lang="en" role="region" aria-labelledby="candidate-title"></div>
+        </article>
+      </div>
+
+      <div class="annotation-review">
+        <h2 id="pair-heading" tabindex="-1"></h2>
+        <p class="annotation-scale">Usa 0 si no hay similitud y 5 si es muy alta. Puedes elegir medias estrellas.</p>
+        <div class="annotation-ratings">
+          <fieldset id="theme-rating">
+            <legend>Relevancia temática</legend>
+            <p id="theme-help">¿Qué tanto se parecen los temas de las letras?</p>
+          </fieldset>
+          <fieldset id="emotion-rating">
+            <legend>Afinidad emocional</legend>
+            <p id="emotion-help">¿Qué tanto se parecen las emociones que expresan?</p>
+          </fieldset>
+        </div>
+        <label for="notes">Notas <span>(opcional)</span></label>
+        <textarea id="notes" rows="2" maxlength="2000"></textarea>
+        <div class="annotation-actions">
+          <button id="previous" type="button">← Anterior</button>
+          <button id="next" type="button">Siguiente →</button>
+          <button id="next-pending" type="button">Ir a pendiente</button>
+          <button id="export" type="button" class="annotation-primary">Exportar valoraciones</button>
+        </div>
+        <p id="save-status" role="status"></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,7 +1,8 @@
 """Read-only audit of completed real E5 artifacts; writes a separate report."""
+import argparse
 from collections import Counter, defaultdict
 import json
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 import sys
 
 import numpy as np
@@ -15,10 +16,19 @@ from sonora.storage.runs import config_hash, file_sha256, write_json_atomic, utc
 from sonora.nlp.semantics import signature
 
 
+def verify_signature(path, expected):
+    assert path.name == PureWindowsPath(expected['path']).name, path
+    actual = signature(path)
+    assert actual == expected | {'path': actual['path']}, path
+
+
 def main():
     cache = ROOT / 'data/processed/nlp/lyrics_full_v1/semantics/e5-surface-v2'
     models = ROOT / 'artifacts/models/lyrics_full_v1/e5-surface-v2'
     reports = ROOT / 'reports/nlp/lyrics_full_v1'
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--output', type=Path, default=reports / 'e5_verification.json')
+    args = parser.parse_args()
     read = lambda p: json.loads(p.read_text(encoding='utf-8'))
     complete = read(cache / 'representations/complete.json')
     spec = read(cache / 'representations/config.json')
@@ -30,7 +40,7 @@ def main():
     assert len(files) == 10
     for path in files:
         marker = read(path.with_suffix('.json'))
-        assert signature(path) == marker['output'], path
+        verify_signature(path, marker['output'])
         local = Counter()
         for batch in pq.ParquetFile(path).iter_batches(batch_size=4096):
             ids = batch.column('lyrics_id').to_pylist()
@@ -69,9 +79,12 @@ def main():
     assert norm_error < 1e-5 and topic_error < 1e-5
     prepared = read(cache / 'prepared.json')
     assert all(counts[f'docs_{s}'] == n for s, n in prepared['docs'].items())
+    verify_signature(cache / 'baseline/vocabulary.parquet', spec['vocabulary'])
     trained = read(models / 'trained.json')
-    assert signature(Path(trained['sgns']['path'])) == spec['sgns']
-    assert signature(Path(trained['lda']['path'])) == spec['lda']
+    for family in ('sgns', 'lda'):
+        archived = PureWindowsPath(trained[family]['path'])
+        relative = archived.parts[archived.parts.index(models.name) + 1:]
+        verify_signature(models.joinpath(*relative), spec[family])
     checkpoint_counts = {}
     for subdir, pattern, expected in [
         ('sgns5/sgns-window5', 'epoch-*.json', 4),
@@ -83,7 +96,7 @@ def main():
         checkpoints = sorted((models / subdir).glob(pattern))
         assert len(checkpoints) == expected
         for marker in checkpoints:
-            assert signature(marker.with_suffix('.model')) == read(marker)['model'], marker
+            verify_signature(marker.with_suffix('.model'), read(marker)['model'])
         checkpoint_counts[subdir] = len(checkpoints)
     analysis = read(reports / 'e5_analysis.json')
     sample = read(cache / 'samples/validation-2000.json')['rows']
@@ -103,6 +116,9 @@ def main():
         assert all(r['split'] == 'train' and np.isfinite(r['cosine']) for r in q['neighbors'])
     examples = []
     for source in sorted((cache / 'documents').glob('*.parquet')):
+        marker = read(cache / 'checkpoints' / source.with_suffix('.json').name)
+        verify_signature(source, marker['documents'])
+        verify_signature(cache / 'counts' / source.name, marker['counts'])
         for batch in pq.ParquetFile(source).iter_batches(batch_size=4096):
             found = batch.filter(pc.is_in(batch.column('lyrics_id'), value_set=pa.array(sorted(selected_ids))))
             for row in found.to_pylist():
@@ -117,7 +133,7 @@ def main():
               'validation_sample_size': 2000, 'retrieval_queries': len(semantic['queries']),
               'retrieval_excerpt_review_material': examples,
               'report_sha256': {p.name: file_sha256(p) for p in [reports/'e5_analysis.json', reports/'e5_embedding_retrieval.json', reports/'e5_tfidf_retrieval.json']}}
-    write_json_atomic(reports / 'e5_verification.json', result)
+    write_json_atomic(args.output, result)
 
 
 if __name__ == '__main__':
