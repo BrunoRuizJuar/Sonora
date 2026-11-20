@@ -93,7 +93,8 @@ def test_api_contract_and_readiness(release, tmp_path):
         assert client.post('/api/v1/recommendations',json={'track_id':'seed','exclude_known_covers':True}).status_code == 409
         assert client.post('/api/v1/recommendations',json={'track_id':'missing'}).status_code == 404
         assert client.get('/CLAUDE.md').status_code == 404
-        assert 'app.js' in client.get('/').text
+        assert 'player.js' in client.get('/').text
+        assert 'app.js' in client.get('/letras.html').text
     with TestClient(create_app(tmp_path/'absent')) as client:
         assert client.get('/api/v1/health/live').status_code == 200
         assert client.get('/api/v1/health/ready').status_code == 503

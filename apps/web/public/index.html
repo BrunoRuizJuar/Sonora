@@ -1,123 +1,61 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
-<!--
-           .-=======-.
-          /  .---.   \
-         |  /     \  |
-         | [|     |] |
-    _       |  .  |       _
-   | |      |     |      | |
-   | |______|     |      | |
-   |________      |______| |
-            |      ________|
-            |     |          ¡AJÚA!
-            |     |       SONORA suena por aquí.
-         ___|_____|___
-       ~~~~~~~~~~~~~~~~
--->
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SONORA · Tres direcciones visuales</title>
-<meta name="description" content="Tres rutas de diseño para una estación de descubrimiento musical en el desierto: Radio Ocaso, Archivo del Desierto y Frecuencia Cobre.">
-<link rel="icon" type="image/svg+xml" href="assets/brand/cactus-sonora.svg">
-<link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SONORA</title>
+<link rel="icon" href="/assets/brand/cactus-sonora.svg">
+<link rel="stylesheet" href="/sonora.css">
+<script src="/player.js" defer></script>
 </head>
-<body data-theme="ocaso">
-<svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
-<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
-<symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m16 8-2 6-6 2 2-6 6-2Z"/></symbol>
-<symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.5 5.5a5 5 0 0 0-7.1 0L12 7l-1.4-1.5a5 5 0 0 0-7.1 7.1L12 21l8.5-8.4a5 5 0 0 0 0-7.1Z"/></symbol>
-<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
-<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h5m4 0h7M4 17h11m4 0h1M9 4v6m6 4v6"/></symbol>
-<symbol id="i-lyrics" viewBox="0 0 24 24"><path d="M5 5h14M5 10h14M5 15h9M5 20h6"/></symbol>
-<symbol id="i-music" viewBox="0 0 24 24"><path d="M8 17V5l12-2v12M8 8l12-2"/><ellipse cx="5" cy="18" rx="3" ry="2.5"/><ellipse cx="17" cy="16" rx="3" ry="2.5"/></symbol>
-<symbol id="i-mix" viewBox="0 0 24 24"><path d="M3 6h3c5 0 7 12 12 12h3m-4-4 4 4-4 4M3 18h3c5 0 7-12 12-12h3m-4-4 4 4-4 4"/></symbol>
-<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></symbol>
-<symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
-<symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></symbol>
-</defs></svg>
-<header class="studio-bar">
- <a class="studio-id" href="?direccion=ocaso"><span class="studio-dot"></span> SONORA <span>/ Estudio visual</span></a>
- <nav class="directions" aria-label="Direcciones visuales">
-  <button data-direction="ocaso" aria-pressed="true"><span>01</span> Radio Ocaso</button>
-  <button data-direction="archivo" aria-pressed="false"><span>02</span> Archivo del Desierto</button>
-  <button data-direction="cobre" aria-pressed="false"><span>03</span> Frecuencia Cobre</button>
- </nav>
- <a class="mobile-link" href="mobile.html">Móvil ↗</a><button class="brief-toggle" aria-expanded="false" aria-controls="design-brief">Ver concepto <span>↗</span></button>
+<body>
+<header class="site-header">
+ <a class="brand" href="/"><img src="/assets/brand/cactus-sonora.svg" alt="">SONORA</a>
+ <a href="#saved">Guardadas</a>
 </header>
-<section id="design-brief" class="design-brief" hidden>
- <div><span class="overline">DIRECCIÓN VISUAL <b id="brief-number">01</b></span><h2 id="brief-title">Radio Ocaso</h2><p id="brief-copy"></p></div>
- <div><h3>Tipografías</h3><p id="brief-type"></p><h3>Color y textura</h3><p id="brief-texture"></p><div id="swatches" class="swatches"></div></div>
- <p class="brief-footnote">Las tres propuestas conservan el diseño con recomendaciones reales del catálogo textual E5. Sin portadas ni audio verificados.</p>
-</section>
-<div class="app-shell">
-<aside class="sidebar">
- <a class="brand" href="?direccion=ocaso" aria-label="SONORA, inicio"><img id="brand-mark" src="assets/brand/cactus-sonora.svg" alt="Cactus con audífonos"><span>SONORA<small>ENCUENTRA TU FRECUENCIA</small></span></a>
- <div class="nav-caption">TU ESTACIÓN</div>
- <nav class="app-nav" aria-label="Navegación principal">
-  <button class="nav-link active" data-page="discover" aria-label="Descubrir"><svg><use href="#i-compass"/></svg><span>Descubrir</span><i></i></button>
-  <button class="nav-link" data-page="search" aria-label="Buscar"><svg><use href="#i-search"/></svg><span>Buscar</span></button>
-  <button class="nav-link" data-page="saved" aria-label="Guardadas"><svg><use href="#i-heart"/></svg><span>Guardadas</span><small id="saved-count">0</small></button>
-  <a class="nav-link" href="anotacion.html" aria-label="Anotar letras" title="Anotar letras"><svg aria-hidden="true"><use href="#i-lyrics"/></svg><span>Anotar letras</span></a>
- </nav>
- <div class="sidebar-rule"></div>
- <div class="nav-caption">TUS RUTAS</div>
- <button class="route-link" data-query="Evil dudes demo"><span class="route-dot"></span> Un poco más de raíz <svg><use href="#i-arrow"/></svg></button>
- <button class="route-link" data-query="Bloom"><span class="route-dot pale"></span> Al otro lado del mapa <svg><use href="#i-arrow"/></svg></button>
- <div class="station-card"><svg><use href="#i-sun"/></svg><p>Sin prisa.<br>Sin la misma canción.</p><span>Hay mucho por escuchar.</span><div class="tiny-landscape"></div></div>
- <div class="sidebar-bottom"><span class="live-dot"></span> HECHO PARA DESCUBRIR <span>↗</span></div>
-</aside>
 <main>
- <header class="app-topbar"><div><span class="live-dot"></span> TU ESTACIÓN DE DESCUBRIMIENTOS</div><span class="catalog-label">Cargando catálogo textual…</span></header>
- <section class="hero">
-  <div class="hero-image" aria-hidden="true"></div>
-  <div class="hero-text"><div class="hero-eyebrow"><span></span> BUENA MÚSICA, NUEVOS HORIZONTES</div><h1>Una canción.<br><em>Mil caminos.</em></h1><p>Parte de lo que te mueve.<br>Encuentra algo que todavía no conoces.</p></div>
-  <div class="hero-stamp" aria-hidden="true">EST. <b>SONORA</b> 2026 <span>EXPLORACIÓN MUSICAL</span></div>
-  <span class="hero-coordinate" aria-hidden="true">29° 04′ N · 110° 57′ O</span>
- </section>
- <section class="discovery-console" aria-label="Configurar tu descubrimiento">
-  <form id="search-form" autocomplete="off">
-   <label for="song-search" class="search-label">¿CON QUÉ CANCIÓN EMPEZAMOS?</label>
-   <div class="search-field"><svg><use href="#i-search"/></svg><input id="song-search" type="search" placeholder="Busca una canción y su artista" aria-controls="search-results" aria-expanded="false"><span class="search-shortcut" aria-hidden="true">/</span><button class="primary-button" type="submit">Encontrar mi ruta <svg><use href="#i-arrow"/></svg></button></div>
-   <div id="search-results" class="search-results" hidden></div>
+ <section class="discovery" aria-labelledby="search-title">
+  <h1 id="search-title">Encuentra tu frecuencia</h1>
+  <form id="search" role="search" aria-label="Buscar canciones">
+   <label for="query">Título o artista</label>
+   <div class="search-row"><input id="query" type="search" maxlength="200" required placeholder="Ej. Freeway Kurt Vile"><button class="primary">Buscar</button></div>
   </form>
-  <form id="free-text-form">
-   <label for="free-text" class="search-label">O DESCRIBE UNA LETRA EN INGLÉS</label>
-   <div class="search-field"><textarea id="free-text" maxlength="10000" required rows="2" placeholder="Leaving home, missing my family…" style="width:100%;background:transparent;color:inherit;border:0;padding:12px"></textarea><button class="primary-button" type="submit">Buscar afinidad</button></div>
-  </form>
-  <label class="field-caption" for="text-strategy">ESTRATEGIA TEXTUAL</label>
-  <select id="text-strategy"><option value="sgns">SGNS · Afinidad semántica</option><option value="tfidf">TF-IDF · Vocabulario compartido</option></select>
-  <p id="version-note" class="mode-explanation" role="status"></p>
-  <div class="controls-row">
-   <div class="mode-block"><span class="field-caption">DESCUBRIR POR</span><div class="mode-tabs" role="group" aria-label="Modo de recomendación"><button data-mode="lyrics" aria-pressed="false"><svg><use href="#i-lyrics"/></svg>Letras</button><button data-mode="music" aria-pressed="false"><svg><use href="#i-music"/></svg>Música</button><button data-mode="mixed" class="selected" aria-pressed="true"><svg><use href="#i-mix"/></svg>Mixto</button></div></div>
-   <div class="mix-block" id="mix-block"><label for="mix-range"><span>Letras <b id="lyrics-percent">50%</b></span><span>Música <b id="music-percent">50%</b></span></label><input id="mix-range" type="range" min="0" max="100" step="5" value="50" aria-label="Peso de la música en el modo mixto"><div class="range-endpoints"><span>Más significado</span><span>Más sonido</span></div></div>
-   <button id="filter-toggle" class="filter-button" aria-expanded="false" aria-controls="filters"><svg><use href="#i-sliders"/></svg>Ajustar ruta<span id="filter-count">2</span></button>
-  </div>
-  <p id="mode-explanation" class="mode-explanation">Un poco de lo que dice. Un poco de cómo suena.</p>
-  <div id="filters" class="filters" hidden>
-   <div class="explore-filter"><label for="exploration">Ganas de explorar <b id="explore-value">Equilibrado</b></label><input id="exploration" type="range" min="0" max="100" step="10" value="50"><span>De caminos familiares a nuevos territorios.</span></div>
-   <label class="check-control"><input id="limit-artists" type="checkbox" checked><span>Máximo una canción por artista</span></label>
-   <label class="check-control"><input id="exclude-covers" type="checkbox" checked><span>Excluir covers</span></label>
-   <label class="language-filter">Idioma<select id="language"><option value="all">Español e inglés</option><option value="es">Español</option><option value="en">Inglés</option></select></label>
-  </div>
+  <button id="example" class="text-button" type="button">Probar con «Freeway» de Kurt Vile</button>
+  <p id="search-status" role="status"></p>
+  <ul id="results" class="track-list"></ul>
  </section>
- <section id="lyrics-comparison" class="lyrics-comparison" aria-labelledby="lyrics-comparison-title" hidden>
-  <div class="section-header"><div><div class="section-eyebrow">DOS CANCIONES, DOS HISTORIAS</div><h2 id="lyrics-comparison-title" tabindex="-1">Letras frente a frente</h2><p>Lee la letra de partida junto a la canción que elegiste.</p></div><button id="close-lyrics" class="text-button" type="button">Cerrar letras</button></div>
-  <div class="lyrics-columns">
-   <article class="lyrics-panel" aria-labelledby="lyrics-origin-title"><header><div class="section-eyebrow" id="lyrics-origin-label">CANCIÓN DE PARTIDA</div><h3 id="lyrics-origin-title"></h3><p id="lyrics-origin-artist"></p></header><p id="lyrics-origin-status" role="status"></p><div id="lyrics-origin-text" class="lyrics-text" tabindex="0" role="region" aria-label="Letra de la canción de partida"></div></article>
-   <article class="lyrics-panel" aria-labelledby="lyrics-selected-title"><header><div class="section-eyebrow">CANCIÓN SELECCIONADA</div><h3 id="lyrics-selected-title"></h3><p id="lyrics-selected-artist"></p></header><p id="lyrics-selected-status" role="status"></p><div id="lyrics-selected-text" class="lyrics-text" tabindex="0" role="region" aria-label="Letra de la canción seleccionada"></div></article>
+ <section class="player" aria-labelledby="player-title">
+  <div class="now">
+   <small>EN REPRODUCCIÓN</small>
+   <h2 id="player-title">Elige una canción</h2>
+   <p id="artist"></p>
   </div>
+  <audio id="audio" preload="none"></audio>
+  <div class="timeline">
+   <span id="elapsed">0:00</span><input id="seek" type="range" min="0" max="0" step="0.1" value="0" aria-label="Posición de reproducción" disabled><span id="duration">0:00</span>
+  </div>
+  <div class="transport">
+   <button id="previous" type="button" disabled>⏮ Atrás</button>
+   <button id="toggle" type="button" class="primary" disabled>▶ Reproducir</button>
+   <button id="next" type="button" disabled>Siguiente ⏭</button>
+  </div>
+  <div class="player-actions">
+   <button id="save" type="button" disabled aria-pressed="false">♡ Guardar</button>
+   <button id="lyrics" type="button" disabled aria-expanded="false" aria-controls="comparison">Letras</button>
+  </div>
+  <p id="up-next" class="up-next">La siguiente canción aparecerá aquí.</p>
+  <p id="player-status" role="status"></p>
+  <small id="license"></small>
  </section>
- <section class="recommendations" aria-labelledby="recommendation-title">
-  <div class="section-header"><div><div class="section-eyebrow" id="section-eyebrow">EL SIGUIENTE TRAMO</div><h2 id="recommendation-title">Explora las letras</h2><p id="recommendation-subtitle">Busca título y artista, o escribe una consulta en inglés.</p></div><button id="refresh-route" class="text-button">Recalcular la ruta <svg><use href="#i-arrow"/></svg></button></div>
-  <div id="song-grid" class="song-grid"></div>
-  <div class="empty-state" id="empty-state" hidden><img src="assets/brand/cactus-sonora.svg" alt=""><h3 id="empty-title">Tu mapa empieza aquí</h3><p id="empty-copy">Guarda una canción con el corazón para volver a encontrarla.</p><button class="secondary-button" id="back-discover">Seguir descubriendo</button></div>
-  <div class="section-footer"><span><svg><use href="#i-compass"/></svg> Nuevas letras. Nuevos caminos.</span><span>SIN AUDIO NI PORTADAS</span></div>
+ <section id="comparison" class="comparison" aria-labelledby="comparison-title" hidden>
+  <h2 id="comparison-title">Letras lado a lado</h2>
+  <div id="lyric-columns" class="lyric-columns"></div>
  </section>
- <footer class="app-footer"><span>SONORA</span> Una estación en el desierto. Un mundo por escuchar.<a href="assets/brand/cactus-sonora.svg" id="download-logo" download>Logo SVG ↗</a></footer>
+ <section id="saved" aria-labelledby="saved-title">
+  <h2 id="saved-title">Guardadas</h2>
+  <p id="saved-empty">Las canciones que guardes aparecerán aquí.</p>
+  <ul id="saved-list" class="track-list"></ul>
+ </section>
 </main>
-</div>
-<div class="toast" id="toast" role="status" hidden></div>
-<dialog id="song-dialog"><button class="dialog-close" aria-label="Cerrar detalle"><svg><use href="#i-close"/></svg></button><div id="dialog-content"></div></dialog>
-<script src="app.js"></script>
-</body></html>
+</body>
+</html>
