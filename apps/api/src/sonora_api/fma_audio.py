@@ -96,7 +96,7 @@ class AudioCatalog:
                             and row['locator_check'] == 'title_artist_normalized_equal' and row['lyrics_id']):
                         self.lyrics_ids[int(row['fma_track_id'])] = row['lyrics_id']
 
-    def related(self, track_id: int) -> list[dict]:
+    def related(self, track_id: int, eligible=None, limit=20) -> list[dict]:
         origin = self.recordings[track_id]
 
         def relevance(track):
@@ -108,10 +108,11 @@ class AudioCatalog:
             return overlap * 4 + genre + artist * 0.5, both_have_lyrics
 
         ranked = sorted(
-            (track for track in self.ordered if track.track_id != track_id),
+            (track for track in self.ordered if track.track_id != track_id
+             and (eligible is None or track.track_id in eligible)),
             key=relevance, reverse=True,
         )
-        return [track.public() for track in ranked[:20]]
+        return [track.public() for track in ranked[:limit]]
 
     def search(self, query: str, limit: int) -> list[dict]:
         query = query.strip()

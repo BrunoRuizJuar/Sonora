@@ -24,7 +24,9 @@ def test_fma_metadata_join_search_and_mp3_ranges(tmp_path):
     (audio_folder / '000004.mp3').write_bytes(mp3)
     (audio_folder / '000005.mp3').write_bytes(mp3)
 
-    with TestClient(create_app(release=tmp_path / 'missing-release', fma_directory=tmp_path)) as client:
+    app_options = dict(release=tmp_path / 'missing-release', fma_directory=tmp_path,
+                       ratings_path=tmp_path / 'ratings.sqlite3')
+    with TestClient(create_app(**app_options)) as client:
         response = client.get('/api/v1/fma/tracks', params={'q': 'rio jose'})
         assert response.status_code == 200
         assert response.json() == {'catalog_size': 2, 'items': [{
@@ -46,3 +48,10 @@ def test_fma_metadata_join_search_and_mp3_ranges(tmp_path):
         assert client.get('/api/v1/fma/tracks/3/related').status_code == 404
         assert client.get('/api/v1/fma/tracks/4/lyrics').status_code == 404
         assert client.get('/api/v1/health/ready').status_code == 503
+        assert client.get('/api/v1/fma/tracks/2').json() == response.json()['items'][0]
+        pair = {'query_id': 2, 'candidate_id': 4, 'rater_id': 'a' * 32}
+        scores = {'emotion': 4, 'theme': 3, 'music_vibe': 4.5}
+        assert client.post('/api/v1/audio/ratings', json=pair | scores).json() == {'rating': scores}
+
+    with TestClient(create_app(**app_options)) as client:
+        assert client.get('/api/v1/audio/ratings', params=pair).json() == {'rating': scores}

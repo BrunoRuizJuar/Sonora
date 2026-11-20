@@ -4,18 +4,100 @@ const byId = id => document.getElementById(id);
 const audio = byId('audio');
 const queue = [];
 let position = -1, upcoming = null, queueRequest, searchRequest, lyricRequest;
+const ratingForm = byId('player-rating');
+const ratingFields = ratingForm.querySelector('fieldset');
+const ratingAxes = ['emotion', 'theme', 'music_vibe'];
+const ratingWrites = new Map();
+let ratingRequest, ratingContext;
+for (const axis of ratingAxes) {
+ const select = ratingForm.elements.namedItem(axis);
+ select.add(new Option('Sin calificar', ''));
+ for (let grade = 0; grade <= 5; grade += 0.5) select.add(new Option(grade.toLocaleString('es'), String(grade)));
+}
 let saved = [];
-try {
- const stored = JSON.parse(localStorage.getItem('sonora-saved-music') || '[]');
- if (Array.isArray(stored)) saved = stored.filter(track => track && Number.isInteger(track.track_id));
-} catch {}
+let savedReady = false;
 
 async function get(path, signal) {
- const response = await fetch('/api/v1/fma/tracks' + path, {signal});
+ const response = await fetch('/api/v1/songs' + path, {signal});
  const data = await response.json();
  if (!response.ok) throw new Error(data.detail || 'El catálogo no está disponible.');
  return data;
 }
+
+function browserId() {
+ const key = 'sonora-rater-id';
+ const stored = localStorage.getItem(key);
+ if (stored && /^[0-9a-f]{32}$/.test(stored)) return stored;
+ const id = Array.from(crypto.getRandomValues(new Uint8Array(16)), byte => byte.toString(16).padStart(2, '0')).join('');
+ localStorage.setItem(key, id);
+ return id;
+}
+
+async function ratingApi(suffix, options) {
+ const response = await fetch('/api/v1/song-ratings' + suffix, options);
+ if (!response.ok) throw new Error('Calificación no disponible');
+ return (await response.json()).rating;
+}
+
+async function loadRating() {
+ ratingRequest?.abort();
+ const controller = new AbortController();
+ ratingRequest = controller;
+ ratingContext = null;
+ const current = queue[position];
+ const panel = byId('player-feedback');
+ panel.hidden = !upcoming || current.track_id === upcoming.track_id;
+ ratingForm.reset();
+ ratingFields.disabled = true;
+ if (panel.hidden) return;
+ byId('feedback-pair').textContent = current.title + ' → ' + upcoming.title;
+ const status = byId('feedback-status');
+ status.textContent = 'Buscando tu calificación…';
+ try {
+  const pair = {query_id: current.track_id, candidate_id: upcoming.track_id, rater_id: browserId()};
+  const key = new URLSearchParams(pair).toString();
+  await ratingWrites.get(key)?.catch(() => {});
+  const rating = await ratingApi('?' + key, {signal: controller.signal});
+  if (controller.signal.aborted) return;
+  ratingContext = {pair, key, rank: upcoming.rank || 0};
+  for (const axis of ratingAxes) ratingForm.elements.namedItem(axis).value = rating?.[axis] ?? '';
+  ratingFields.disabled = false;
+  status.textContent = rating ? 'Tu calificación guardada.' : '';
+ } catch {
+  if (!controller.signal.aborted) status.textContent = 'No se pudo cargar tu calificación.';
+ }
+}
+
+ratingForm.addEventListener('submit', async event => {
+ event.preventDefault();
+ const context = ratingContext;
+ if (!context || ratingFields.disabled) return;
+ const scores = Object.fromEntries(ratingAxes.map(axis => {
+  const value = ratingForm.elements.namedItem(axis).value;
+  return [axis, value === '' ? null : Number(value)];
+ }));
+ const status = byId('feedback-status');
+ if (Object.values(scores).every(value => value === null)) {
+  status.textContent = 'Califica al menos una escala.';
+  return;
+ }
+ ratingFields.disabled = true;
+ status.textContent = 'Guardando…';
+ const write = ratingApi('', {
+  method: 'POST', headers: {'Content-Type': 'application/json'},
+  body: JSON.stringify({...context.pair, rank: context.rank, ...scores}),
+ });
+ ratingWrites.set(context.key, write);
+ try {
+  await write;
+  if (context === ratingContext) status.textContent = 'Calificación guardada.';
+ } catch {
+  if (context === ratingContext) status.textContent = 'No se pudo guardar. Inténtalo de nuevo.';
+ } finally {
+  ratingWrites.delete(context.key);
+  if (context === ratingContext) ratingFields.disabled = false;
+ }
+});
 
 function renderTracks(list, tracks) {
  list.replaceChildren(...tracks.map(track => {
@@ -58,13 +140,15 @@ async function search() {
 
 function weightedChoice(tracks) {
  let draw = Math.random() * (tracks.length * (tracks.length + 1) / 2);
- return tracks.find((track, rank) => (draw -= tracks.length - rank) < 0) || null;
+ const index = tracks.findIndex((_, rank) => (draw -= tracks.length - rank) < 0);
+ return index < 0 ? null : {...tracks[index], rank: index + 1};
 }
 
 function renderUpcoming() {
  byId('next').disabled = !upcoming;
  byId('up-next').textContent = upcoming ? 'Siguiente · ' + upcoming.title + ' — ' + upcoming.artist : 'Buscando la siguiente canción…';
  if (!byId('comparison').hidden) showLyrics();
+ loadRating();
 }
 
 async function prepareUpcoming() {
@@ -98,16 +182,24 @@ function selectTrack() {
  byId('player-title').textContent = track.title;
  byId('artist').textContent = track.artist;
  byId('license').textContent = track.license;
- byId('toggle').disabled = false;
- byId('save').disabled = false;
+ byId('toggle').disabled = !track.audio_url;
+ byId('save').disabled = !savedReady;
  byId('lyrics').disabled = false;
  byId('previous').disabled = position < 1;
- byId('player-status').textContent = '';
- audio.src = track.audio_url;
+ byId('player-status').textContent = track.audio_url ? '' : 'Letra disponible · sin audio';
+ audio.pause();
+ if (track.audio_url) {
+  audio.src = track.audio_url;
+ } else {
+  audio.removeAttribute('src');
+  audio.load();
+  byId('comparison').hidden = false;
+  byId('lyrics').setAttribute('aria-expanded', 'true');
+ }
  updateTimeline();
  renderSaved();
  prepareUpcoming();
- play();
+ if (track.audio_url) play();
 }
 
 function advance() {
@@ -197,3 +289,36 @@ audio.addEventListener('ended', advance);
 audio.addEventListener('error', () => {byId('player-status').textContent = 'No se pudo reproducir esta canción.';});
 for (const event of ['timeupdate', 'loadedmetadata', 'emptied']) audio.addEventListener(event, updateTimeline);
 renderSaved();
+
+async function restoreSaved() {
+ try {
+  const stored = JSON.parse(localStorage.getItem('sonora-saved-music') || '[]');
+  if (!Array.isArray(stored)) return;
+  const checked = await Promise.allSettled(stored.filter(track => track?.track_id)
+   .map(track => get('/' + encodeURIComponent(track.track_id))));
+  const available = checked.filter(result => result.status === 'fulfilled').map(result => result.value);
+  saved = [...new Map([...available, ...saved].map(track => [track.track_id, track])).values()];
+  renderSaved();
+ } catch {} finally {
+  savedReady = true;
+  if (position >= 0) byId('save').disabled = false;
+ }
+}
+restoreSaved();
+
+async function openSelectedTrack() {
+ const id = new URLSearchParams(location.search).get('cancion');
+ if (!id) return;
+ const status = byId('player-status');
+ status.textContent = 'Cargando canción…';
+ try {
+  const track = await get('/' + encodeURIComponent(id));
+  if (position >= 0) return;
+  queue.push(track);
+  position = 0;
+  selectTrack();
+ } catch {
+  if (position < 0) status.textContent = 'No se pudo abrir la canción. Vuelve al portal para buscar otra.';
+ }
+}
+openSelectedTrack();

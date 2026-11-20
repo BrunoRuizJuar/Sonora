@@ -20,7 +20,7 @@
 <title>SONORA · Tres direcciones visuales</title>
 <meta name="description" content="Tres rutas de diseño para una estación de descubrimiento musical en el desierto: Radio Ocaso, Archivo del Desierto y Frecuencia Cobre.">
 <link rel="icon" type="image/svg+xml" href="assets/brand/cactus-sonora.svg">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=fma-2">
 </head>
 <body data-theme="ocaso">
 <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
@@ -48,7 +48,7 @@
 <section id="design-brief" class="design-brief" hidden>
  <div><span class="overline">DIRECCIÓN VISUAL <b id="brief-number">01</b></span><h2 id="brief-title">Radio Ocaso</h2><p id="brief-copy"></p></div>
  <div><h3>Tipografías</h3><p id="brief-type"></p><h3>Color y textura</h3><p id="brief-texture"></p><div id="swatches" class="swatches"></div></div>
- <p class="brief-footnote">Las tres propuestas conservan el diseño con recomendaciones reales del catálogo textual E5. Sin portadas ni audio verificados.</p>
+ <p class="brief-footnote">Las tres propuestas conservan las recomendaciones del catálogo textual E5 y el acceso a los clips de FMA.</p>
 </section>
 <div class="app-shell">
 <aside class="sidebar">
@@ -56,9 +56,11 @@
  <div class="nav-caption">TU ESTACIÓN</div>
  <nav class="app-nav" aria-label="Navegación principal">
   <button class="nav-link active" data-page="discover" aria-label="Descubrir"><svg><use href="#i-compass"/></svg><span>Descubrir</span><i></i></button>
-  <button class="nav-link" data-page="search" aria-label="Buscar"><svg><use href="#i-search"/></svg><span>Buscar</span></button>
+  <button class="nav-link" data-page="search" aria-label="Buscar letras"><svg><use href="#i-search"/></svg><span>Buscar letras</span></button>
   <button class="nav-link" data-page="saved" aria-label="Guardadas"><svg><use href="#i-heart"/></svg><span>Guardadas</span><small id="saved-count">0</small></button>
   <a class="nav-link" href="anotacion.html" aria-label="Anotar letras" title="Anotar letras"><svg aria-hidden="true"><use href="#i-lyrics"/></svg><span>Anotar letras</span></a>
+  <a class="nav-link" id="fma-link" href="#fma-audio"><svg aria-hidden="true"><use href="#i-music"/></svg><span>Buscar música</span></a>
+  <a class="nav-link" href="/reproductor.html#saved"><svg aria-hidden="true"><use href="#i-heart"/></svg><span>Música guardada</span></a>
  </nav>
  <div class="sidebar-rule"></div>
  <div class="nav-caption">TUS RUTAS</div>
@@ -69,6 +71,23 @@
 </aside>
 <main>
  <header class="app-topbar"><div><span class="live-dot"></span> TU ESTACIÓN DE DESCUBRIMIENTOS</div><span class="catalog-label">Cargando catálogo textual…</span></header>
+ <section id="fma-audio" class="fma-audio" aria-labelledby="fma-title">
+  <header class="fma-heading">
+   <span class="fma-icon" aria-hidden="true"><svg><use href="#i-music"/></svg></span>
+   <div><h2 id="fma-title">Busca una canción</h2><p>Elige una pista para abrir el reproductor.</p></div>
+  </header>
+  <form id="fma-search" role="search" aria-label="Buscar música">
+   <label for="fma-query">Título o artista</label>
+   <div class="fma-search-row">
+    <input id="fma-query" name="query" type="search" maxlength="200" autocomplete="off" placeholder="Por ejemplo, Kurt Vile" aria-controls="fma-results">
+    <button class="primary-button" type="submit"><svg aria-hidden="true"><use href="#i-search"/></svg>Buscar canciones</button>
+   </div>
+  </form>
+  <button id="fma-example" class="fma-example" type="button">Probar con «Freeway» de Kurt Vile</button>
+  <p id="fma-status" class="fma-status" role="status"></p>
+  <p id="fma-local-link" class="fma-status" hidden><a href="http://127.0.0.1:8010/#fma-audio">Abrir el servidor local de SONORA</a></p>
+  <div id="fma-results" class="fma-results"></div>
+ </section>
  <section class="hero">
   <div class="hero-image" aria-hidden="true"></div>
   <div class="hero-text"><div class="hero-eyebrow"><span></span> BUENA MÚSICA, NUEVOS HORIZONTES</div><h1>Una canción.<br><em>Mil caminos.</em></h1><p>Parte de lo que te mueve.<br>Encuentra algo que todavía no conoces.</p></div>
@@ -107,6 +126,19 @@
    <article class="lyrics-panel" aria-labelledby="lyrics-origin-title"><header><div class="section-eyebrow" id="lyrics-origin-label">CANCIÓN DE PARTIDA</div><h3 id="lyrics-origin-title"></h3><p id="lyrics-origin-artist"></p></header><p id="lyrics-origin-status" role="status"></p><div id="lyrics-origin-text" class="lyrics-text" tabindex="0" role="region" aria-label="Letra de la canción de partida"></div></article>
    <article class="lyrics-panel" aria-labelledby="lyrics-selected-title"><header><div class="section-eyebrow">CANCIÓN SELECCIONADA</div><h3 id="lyrics-selected-title"></h3><p id="lyrics-selected-artist"></p></header><p id="lyrics-selected-status" role="status"></p><div id="lyrics-selected-text" class="lyrics-text" tabindex="0" role="region" aria-label="Letra de la canción seleccionada"></div></article>
   </div>
+  <form id="recommendation-rating" class="recommendation-rating" hidden>
+   <fieldset disabled>
+    <legend>Califica esta recomendación</legend>
+    <p id="rating-help">Usa 0 si no hay parecido y 5 si es muy alto. Puedes dejar escalas pendientes.</p>
+    <div class="rating-fields" aria-describedby="rating-help">
+     <label>Relevancia temática <select name="theme"></select></label>
+     <label>Sentimiento <select name="emotion"></select></label>
+     <label>Vibras musicales <select name="music_vibe"></select></label>
+     <button class="primary-button" type="submit">Guardar calificación</button>
+    </div>
+   </fieldset>
+   <p id="rating-status" role="status"></p>
+  </form>
  </section>
  <section class="recommendations" aria-labelledby="recommendation-title">
   <div class="section-header"><div><div class="section-eyebrow" id="section-eyebrow">EL SIGUIENTE TRAMO</div><h2 id="recommendation-title">Explora las letras</h2><p id="recommendation-subtitle">Busca título y artista, o escribe una consulta en inglés.</p></div><button id="refresh-route" class="text-button">Recalcular la ruta <svg><use href="#i-arrow"/></svg></button></div>
@@ -119,5 +151,5 @@
 </div>
 <div class="toast" id="toast" role="status" hidden></div>
 <dialog id="song-dialog"><button class="dialog-close" aria-label="Cerrar detalle"><svg><use href="#i-close"/></svg></button><div id="dialog-content"></div></dialog>
-<script src="app.js"></script>
+<script src="app.js?v=lyrics-first-1"></script>
 </body></html>

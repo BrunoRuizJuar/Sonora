@@ -1,5 +1,11 @@
 ﻿# Piloto emocional de SONORA
 
+## Calificaciones en el recomendador
+
+En el portal de SONORA, busca y selecciona una canción para abrir el reproductor. Cuando se prepare la siguiente pista, puedes calificar el par en sentimiento, temática y vibras musicales, de 0 a 5 en pasos de 0.5. Puedes guardar una parte y completar las demás después. El mismo navegador puede recuperar y actualizar su calificación para ese par. El recomendador textual conserva su formulario de comparación.
+
+Las valoraciones de la web se guardan en la tabla `recommendation_ratings` de `runtime/feedback/ratings.sqlite3`. Para usar otra ubicación, configura `SONORA_RATINGS_DB` en el servidor. La tabla conserva los IDs de las pistas o de las letras según el catálogo, el identificador del catálogo, el identificador del navegador, la estrategia, la posición, las tres escalas (`emotion`, `theme`, `music_vibe`) y la fecha de actualización. En el reproductor, la posición 0 indica que el par no figura en las 20 primeras recomendaciones. Cada navegador conserva una valoración por par y catálogo. Extrae la tabla para futuros ajustes por lotes.
+
 ## Anotación
 
 1. Abre `apps/web/public/anotacion.html` o visita `/anotacion.html` en el servidor local de SONORA. Carga el [archivo de anotación del piloto](../data/evaluation/emotion-pilot/anotacion.json).

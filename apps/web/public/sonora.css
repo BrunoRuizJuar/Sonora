@@ -11,6 +11,7 @@ button:not(:disabled):hover{border-color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .primary{background:var(--accent);color:#28170e;font-weight:700;border-color:transparent}
 .site-header{max-width:76rem;margin:auto;padding:1rem clamp(1rem,4vw,3rem);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+.site-header nav{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:.35rem .9rem}
 .brand{display:flex;align-items:center;gap:.65rem;letter-spacing:.13em;font-weight:700;text-decoration:none}
 .brand img{width:2.25rem}
 main{max-width:76rem;margin:auto;padding:clamp(1rem,4vw,3rem);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);align-items:start;gap:1rem}
@@ -34,7 +35,12 @@ label{display:block;margin-bottom:.45rem}
 .player-actions button[aria-pressed=true]{color:var(--accent)}
 .up-next{border-top:1px solid var(--line);padding-top:.8rem;margin-top:1rem}
 [role=status]:empty,#license:empty{display:none}
-.comparison,#saved{grid-column:1/-1}
+.comparison,#saved,#player-feedback{grid-column:1/-1}
+#player-rating fieldset{min-width:0;margin:0;padding:0;border:0}
+#player-rating legend{margin-bottom:.55rem;color:var(--muted)}
+.rating-fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,10rem),1fr));gap:.6rem}
+.rating-fields select{display:block;width:100%;margin:.3rem 0;padding:.5rem;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink)}
+#feedback-status{margin-top:.6rem}
 .lyric-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem}
 .lyric-columns article{min-width:0;background:#211711;padding:clamp(.45rem,2vw,1rem);border-radius:8px}
 .lyric-columns p{white-space:pre-wrap;max-height:25rem;overflow:auto}

@@ -79,6 +79,27 @@ def test_frozen_query_and_oov(release):
         c.close()
 
 
+def test_recommendation_ratings_persist_per_browser(release, tmp_path):
+    _, target = release
+    path = tmp_path / 'feedback' / 'ratings.sqlite3'
+    route = '/api/v1/recommendations/ratings'
+    with TestClient(create_app(target, ratings_path=path)) as client:
+        result = client.post('/api/v1/recommendations', json={'track_id': 'seed'}).json()
+        key = dict(release_id=result['release_id'], query_id='seed',
+                   candidate_id=result['items'][0]['id'], rater_id='a' * 32)
+        rating = dict(key, strategy=result['strategy'], rank=1, theme=0, emotion=2.5)
+        assert client.get(route, params=key).json() == {'rating': None}
+        assert client.post(route, json=rating).json() == {'rating': {'theme': 0, 'emotion': 2.5, 'music_vibe': None}}
+        assert client.post(route, json=rating | {'theme': None, 'emotion': 3}).status_code == 200
+        assert client.post(route, json=rating | {'theme': 0.25}).status_code == 422
+        assert client.post(route, json=rating | {'theme': None, 'emotion': None}).status_code == 422
+        assert client.post(route, json=rating | {'candidate_id': 'missing'}).status_code == 404
+        assert client.post(route, json=rating | {'release_id': 'stale'}).status_code == 409
+    with TestClient(create_app(target, ratings_path=path)) as client:
+        assert client.get(route, params=key).json() == {'rating': {'theme': None, 'emotion': 3, 'music_vibe': None}}
+        assert client.get(route, params=key | {'rater_id': 'b' * 32}).json() == {'rating': None}
+
+
 def test_api_contract_and_readiness(release, tmp_path):
     _, root = release
     with TestClient(create_app(root)) as client:
@@ -93,7 +114,8 @@ def test_api_contract_and_readiness(release, tmp_path):
         assert client.post('/api/v1/recommendations',json={'track_id':'seed','exclude_known_covers':True}).status_code == 409
         assert client.post('/api/v1/recommendations',json={'track_id':'missing'}).status_code == 404
         assert client.get('/CLAUDE.md').status_code == 404
-        assert 'player.js' in client.get('/').text
+        assert 'app.js' in client.get('/').text
+        assert 'player.js' in client.get('/reproductor.html').text
         assert 'app.js' in client.get('/letras.html').text
     with TestClient(create_app(tmp_path/'absent')) as client:
         assert client.get('/api/v1/health/live').status_code == 200
@@ -116,7 +138,9 @@ def test_original_lyrics_identity_lines_and_api(release, tmp_path):
     corpus = tmp_path/'originals'
     corpus.mkdir()
     original = '<script>not markup</script>\nFirst line\n\nLast line'
-    pq.write_table(pa.Table.from_pylist([{'lyrics_id': key, 'lyrics_original': original if key=='seed' else key+'\nSecond verse'} for key in ('seed','near','second','other','empty')]), corpus/'part.parquet', row_group_size=2)
+    texts = {key: key+'\nSecond verse' for key in ('seed','near','second','other','empty')}
+    texts.update(seed=original, near=' ')
+    pq.write_table(pa.Table.from_pylist([{'lyrics_id': key, 'lyrics_original': text} for key, text in texts.items()]), corpus/'part.parquet', row_group_size=2)
     index = tmp_path/'lyric-index'
     archived = signature(corpus/'part.parquet') | {'path': r'B:\SONORA\corpus\part.parquet'}
     build_lyric_index(corpus,index,manifest['space_id'],5,[archived])
@@ -130,6 +154,12 @@ def test_original_lyrics_identity_lines_and_api(release, tmp_path):
         assert data['view'] == 'original'
         assert client.get('/api/v1/tracks/other/lyrics').json()['text'] == 'other\nSecond verse'
         assert client.get('/api/v1/tracks/missing/lyrics').status_code == 404
+        assert client.get('/api/v1/songs', params={'q': 'near'}).json() == {'items': []}
+        assert client.get('/api/v1/songs/near').status_code == 409
+        assert client.get('/api/v1/songs/seed').json()['audio_url'] is None
+        assert client.get('/api/v1/songs/seed/lyrics').json()['text'] == original
+        related = client.get('/api/v1/songs/seed/related').json()['items']
+        assert related and all(item['track_id'] != 'near' for item in related)
     with pytest.raises(ValueError, match='another catalog'):
         LyricTextStore(index,'wrong-space',5)
     with TestClient(create_app(root, lyric_index=tmp_path/'absent')) as client:

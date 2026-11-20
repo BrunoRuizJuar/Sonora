@@ -6,12 +6,12 @@
 <title>SONORA</title>
 <link rel="icon" href="/assets/brand/cactus-sonora.svg">
 <link rel="stylesheet" href="/sonora.css">
-<script src="/player.js" defer></script>
+<script src="/player.js?v=lyrics-first-1" defer></script>
 </head>
 <body>
 <header class="site-header">
  <a class="brand" href="/"><img src="/assets/brand/cactus-sonora.svg" alt="">SONORA</a>
- <a href="#saved">Guardadas</a>
+ <nav><a href="/#fma-audio">Volver al portal</a> <a href="#saved">Guardadas</a></nav>
 </header>
 <main>
  <section class="discovery" aria-labelledby="search-title">
@@ -50,6 +50,22 @@
  <section id="comparison" class="comparison" aria-labelledby="comparison-title" hidden>
   <h2 id="comparison-title">Letras lado a lado</h2>
   <div id="lyric-columns" class="lyric-columns"></div>
+ </section>
+ <section id="player-feedback" aria-labelledby="feedback-title" hidden>
+  <h2 id="feedback-title">Califica la recomendación</h2>
+  <p id="feedback-pair"></p>
+  <form id="player-rating">
+   <fieldset disabled>
+    <legend>Similitud de 0 a 5</legend>
+    <div class="rating-fields">
+     <label>Sentimiento <select name="emotion"></select></label>
+     <label>Temática <select name="theme"></select></label>
+     <label>Vibras musicales <select name="music_vibe"></select></label>
+    </div>
+    <button type="submit" class="primary">Guardar calificación</button>
+   </fieldset>
+   <p id="feedback-status" role="status"></p>
+  </form>
  </section>
  <section id="saved" aria-labelledby="saved-title">
   <h2 id="saved-title">Guardadas</h2>

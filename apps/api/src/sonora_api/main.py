@@ -18,10 +18,14 @@ ROOT = Path(__file__).resolve().parents[4]
 
 
 from sonora_api.fma_audio import AudioCatalog
-from sonora_api.schemas.recommendations import RecommendationRequest
+from sonora_api.ratings import read_rating, save_rating
+from sonora_api.schemas.recommendations import AudioRating, RaterId, RecommendationRating, RecommendationRequest, SongRating
 
 
-def create_app(release=None, lyric_index=None, fma_directory=None):
+def create_app(release=None, lyric_index=None, ratings_path=None, fma_directory=None):
+    ratings_path = Path(ratings_path or os.environ.get(
+        'SONORA_RATINGS_DB', ROOT / 'runtime/feedback/ratings.sqlite3'
+    ))
     fma_directory = Path(fma_directory or os.environ.get(
         'SONORA_FMA_DIRECTORY', ROOT / 'data/raw/fma'
     ))
@@ -51,6 +55,11 @@ def create_app(release=None, lyric_index=None, fma_directory=None):
                 app.state.fma = AudioCatalog(metadata, fma_directory / 'fma_medium', links)
             except (OSError, ValueError, KeyError, IndexError, csv.Error) as exc:
                 logging.getLogger(__name__).warning('Catálogo FMA no disponible: %s', exc)
+        app.state.recording_by_lyric = {}
+        if app.state.fma:
+            for track_id, lyric_id in sorted(app.state.fma.lyrics_ids.items()):
+                if track_id in app.state.fma.recordings:
+                    app.state.recording_by_lyric.setdefault(lyric_id, track_id)
         yield
         if app.state.catalog:
             app.state.catalog.close()
@@ -100,6 +109,13 @@ def create_app(release=None, lyric_index=None, fma_directory=None):
         except KeyError:
             raise HTTPException(404, 'Pista desconocida.')
 
+    @app.get('/api/v1/fma/tracks/{track_id}')
+    def audio_detail(track_id: int):
+        recording = fma_catalog().recordings.get(track_id)
+        if recording is None:
+            raise HTTPException(404, 'Pista desconocida.')
+        return recording.public()
+
     @app.get('/api/v1/fma/tracks/{track_id}/lyrics')
     def audio_lyrics(track_id: int):
         identifier = fma_catalog().lyrics_ids.get(track_id)
@@ -148,18 +164,175 @@ def create_app(release=None, lyric_index=None, fma_directory=None):
             except (OSError, ValueError):
                 raise HTTPException(409, 'No se pudo recuperar la letra original de esta canción')
 
+    def song_id(identifier):
+        if identifier.isascii() and identifier.isdigit():
+            audio = app.state.fma
+            identifier = audio.lyrics_ids.get(int(identifier)) if audio else None
+            if not identifier:
+                raise HTTPException(404, 'Esta canción no tiene letra disponible.')
+        return identifier
+
+    def song_public(lyric):
+        identifier = lyric['lyrics_id']
+        recording_id = app.state.recording_by_lyric.get(identifier)
+        recording = app.state.fma.recordings[recording_id].public() if recording_id is not None else {}
+        return recording | {
+            'track_id': identifier, 'id': identifier, 'lyrics_id': identifier,
+            'title': lyric['title'], 'artist': lyric['artist'], 'split': lyric['split'],
+            'recording_id': recording_id, 'audio_url': recording.get('audio_url'),
+        }
+
+    def songs_with_lyrics(items, limit):
+        songs = []
+        for item in items:
+            try:
+                songs.append(song_public(lyrics(item['lyrics_id'])))
+            except HTTPException as error:
+                if error.status_code == 503:
+                    raise
+                continue
+            if len(songs) == limit:
+                break
+        return songs
+
+    @app.get('/api/v1/songs')
+    def songs_search(q: str = Query(min_length=1, max_length=200), limit: int = Query(default=12, ge=1, le=20)):
+        service = catalog()
+        with app.state.lock:
+            items = service.search(q, limit * 2)
+        query = q.strip().casefold()
+        items.sort(key=lambda item: (
+            query not in (item['title'].casefold(), f"{item['title']} {item['artist']}".casefold()),
+            item['title'].casefold(),
+        ))
+        return {'items': songs_with_lyrics(items, limit)}
+
+    @app.get('/api/v1/songs/{identifier}')
+    def song_detail(identifier: str):
+        return song_public(lyrics(song_id(identifier)))
+
+    @app.get('/api/v1/songs/{identifier}/lyrics')
+    def song_lyrics(identifier: str):
+        return lyrics(song_id(identifier))
+
+    @app.get('/api/v1/songs/{identifier}/related')
+    def song_related(identifier: str):
+        origin = song_detail(identifier)
+        canonical = origin['track_id']
+        if origin['recording_id'] is not None:
+            audio = fma_catalog()
+            eligible = set(app.state.recording_by_lyric.values())
+            items = [{'lyrics_id': audio.lyrics_ids[item['track_id']]} for item in
+                     audio.related(origin['recording_id'], eligible, limit=40)]
+            return {'items': songs_with_lyrics(items, 20)}
+        with app.state.lock:
+            try:
+                items = catalog().recommend(identifier=canonical, top_k=40)['items']
+            except ValueError:
+                return {'items': []}
+        return {'items': songs_with_lyrics(items, 20)}
+
     @app.post('/api/v1/recommendations')
-    def recommend(request: RecommendationRequest):
+    def recommend(request: RecommendationRequest, require_lyrics: bool = False):
         service = catalog()
         if request.mode != 'lyrics' or request.exclude_known_covers:
             raise HTTPException(409, 'Audio, Mixto y exclusiÃ³n de covers no estÃ¡n disponibles')
         with app.state.lock:
             try:
-                return service.recommend(identifier=request.track_id, text=request.text, strategy=request.strategy, top_k=request.top_k, splits=tuple(request.candidate_splits), max_per_artist=request.max_per_artist)
+                result = service.recommend(identifier=request.track_id, text=request.text, strategy=request.strategy, top_k=min(50, request.top_k * 2) if require_lyrics else request.top_k, splits=tuple(request.candidate_splits), max_per_artist=request.max_per_artist)
             except KeyError:
                 raise HTTPException(404, 'Letra desconocida')
             except ValueError as exc:
                 raise HTTPException(422, str(exc))
+        if require_lyrics:
+            valid = {song['track_id'] for song in songs_with_lyrics(result['items'], request.top_k)}
+            result['items'] = [item for item in result['items'] if item['lyrics_id'] in valid]
+            result['total_returned'] = len(result['items'])
+        return result
+
+    @app.get('/api/v1/recommendations/ratings')
+    def get_rating(rater_id: RaterId, release_id: str = Query(min_length=1, max_length=100),
+                   query_id: str = Query(min_length=1, max_length=100),
+                   candidate_id: str = Query(min_length=1, max_length=100)):
+        if release_id != catalog().manifest['release_id']:
+            raise HTTPException(409, 'Actualiza la lista de recomendaciones.')
+        return rating_response(release_id, query_id, candidate_id, rater_id)
+
+    def rating_response(release_id, query_id, candidate_id, rater_id):
+        try:
+            rating = read_rating(ratings_path, (release_id, query_id, candidate_id, rater_id))
+        except (OSError, sqlite3.Error):
+            raise HTTPException(503, 'No se pudieron consultar las calificaciones.')
+        return JSONResponse({'rating': rating}, headers={'Cache-Control': 'no-store'})
+
+    @app.post('/api/v1/recommendations/ratings')
+    def rate(rating: RecommendationRating):
+        service = catalog()
+        if rating.release_id != service.manifest['release_id']:
+            raise HTTPException(409, 'Actualiza la lista de recomendaciones.')
+        if rating.query_id == rating.candidate_id:
+            raise HTTPException(422, 'Elige dos canciones distintas.')
+        with app.state.lock:
+            try:
+                for identifier in (rating.query_id, rating.candidate_id):
+                    _, row = service.locate(identifier)
+                    if not row['available']:
+                        raise KeyError(identifier)
+            except KeyError:
+                raise HTTPException(404, 'Letra desconocida o no disponible.')
+        return persist_rating(rating.model_dump())
+
+    def persist_rating(values):
+        try:
+            save_rating(ratings_path, values)
+        except (OSError, sqlite3.Error):
+            raise HTTPException(503, 'No se pudo guardar la calificación. Inténtalo de nuevo.')
+        return {'rating': {axis: values[axis] for axis in ('theme', 'emotion', 'music_vibe')}}
+
+    audio_release = 'fma-medium-genre-v1'
+
+    @app.get('/api/v1/audio/ratings')
+    def get_audio_rating(rater_id: RaterId, query_id: int = Query(gt=0), candidate_id: int = Query(gt=0)):
+        return rating_response(audio_release, str(query_id), str(candidate_id), rater_id)
+
+    @app.post('/api/v1/audio/ratings')
+    def rate_audio(rating: AudioRating):
+        if rating.query_id == rating.candidate_id:
+            raise HTTPException(422, 'Elige dos canciones distintas.')
+        audio = fma_catalog()
+        if rating.query_id not in audio.recordings or rating.candidate_id not in audio.recordings:
+            raise HTTPException(404, 'Pista desconocida.')
+        rank = next((index for index, item in enumerate(audio.related(rating.query_id), 1)
+                     if item['track_id'] == rating.candidate_id), 0)
+        return persist_rating(rating.model_dump() | {
+            'release_id': audio_release, 'strategy': 'genre_artist', 'rank': rank,
+            'query_id': str(rating.query_id), 'candidate_id': str(rating.candidate_id),
+        })
+
+    def song_pair(query_id, candidate_id):
+        first, second = song_detail(query_id), song_detail(candidate_id)
+        if first['track_id'] == second['track_id']:
+            raise HTTPException(422, 'Elige dos canciones distintas.')
+        if first['recording_id'] is not None and second['recording_id'] is not None:
+            return audio_release, str(first['recording_id']), str(second['recording_id'])
+        return catalog().manifest['release_id'], first['track_id'], second['track_id']
+
+    @app.get('/api/v1/song-ratings')
+    def get_song_rating(query_id: str, candidate_id: str, rater_id: RaterId):
+        return rating_response(*song_pair(query_id, candidate_id), rater_id)
+
+    @app.post('/api/v1/song-ratings')
+    def rate_song(rating: SongRating):
+        release, query_id, candidate_id = song_pair(rating.query_id, rating.candidate_id)
+        return persist_rating(rating.model_dump() | {
+            'release_id': release, 'query_id': query_id, 'candidate_id': candidate_id,
+            'strategy': 'genre_artist' if release == audio_release else 'sgns',
+        })
+
+    @app.get('/index.html', include_in_schema=False)
+    @app.get('/')
+    def portal():
+        return FileResponse(ROOT / 'apps/web/public/letras.html')
 
     app.mount('/', StaticFiles(directory=ROOT / 'apps/web/public', html=True), name='web')
     return app

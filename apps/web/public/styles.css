@@ -42,4 +42,39 @@ label[for="text-strategy"]{display:block;margin-bottom:10px}
 .compare-lyrics{margin:14px 0 4px;text-align:left;line-height:1.5;color:var(--accent,#d97732);background:transparent;border:0;cursor:pointer;font:inherit;font-size:13px}
 .compare-lyrics:disabled{opacity:.5;cursor:not-allowed}
 .song-card .compare-lyrics{position:relative;z-index:2}
+.recommendation-rating{margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+.recommendation-rating fieldset{min-width:0;border:0;padding:0;margin:0}
+.recommendation-rating legend{font-weight:700;padding:0}
+.recommendation-rating p{font-size:.875rem;margin:8px 0}
+.rating-fields{display:flex;flex-wrap:wrap;gap:12px;align-items:end}
+.rating-fields label{display:grid;gap:6px;font-size:.875rem}
+.rating-fields select{padding:8px;background:var(--surface);color:inherit;border:1px solid var(--line);border-radius:6px;font:inherit}
 @media(max-width:650px){.lyrics-comparison{padding:18px;margin:24px 0}.lyrics-columns{grid-template-columns:minmax(0,1fr);gap:16px}.lyrics-panel{padding:18px}.lyrics-text{max-height:55vh}.lyrics-comparison .section-header{flex-wrap:wrap}}
+
+.fma-audio{margin:0 0 24px;padding:clamp(16px,3vw,30px);border:1px solid #816046;border-radius:var(--radius);background:#251a15;color:#f6e7ce;scroll-margin-top:16px}
+.fma-heading{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.fma-heading h2{margin:0;font-size:clamp(20px,3vw,30px);line-height:1.2}
+.fma-heading p{margin:4px 0 0;color:#cfb79e}
+.fma-icon{display:grid;place-items:center;width:44px;height:44px;flex:none;border-radius:50%;background:#4d3022;color:#ffba81}
+.fma-audio form label{display:block;margin-bottom:6px;font-weight:700}
+.fma-search-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.fma-search-row input{min-width:0;width:100%;min-height:46px;padding:0 12px;border:1px solid #a78161;border-radius:6px;background:#19110e;color:#fff3df;font-size:16px}
+.fma-search-row input::placeholder{color:#c5ad95}
+.fma-audio .fma-search-row .primary-button{display:flex;justify-content:center;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:6px;background:#ffba81;color:#25160e;font-weight:800}
+.fma-audio .fma-search-row .primary-button:hover{background:#ffd0a7}
+.fma-example,.fma-status a{color:#ffd0a7;text-decoration:underline;text-underline-offset:3px}
+.fma-example{padding:8px 0 0;background:transparent;text-align:left}
+.fma-status{margin:12px 0;color:#f0d1b3}
+.fma-status:empty{display:none}
+.fma-results{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:12px}
+.fma-track{min-width:0;display:grid;align-content:start;gap:8px;padding:14px;border:1px solid #76543c;border-radius:8px;background:#36261d;overflow-wrap:anywhere}
+.fma-track h3,.fma-track p{margin:0}
+.fma-track a{display:grid;gap:6px;border-radius:4px}
+.fma-track a span{color:#ffd0a7;font-weight:700}
+.fma-track p,.fma-track small{color:#e0c4a9}
+.fma-track audio{width:100%;min-width:0;height:44px}
+@media(max-width:480px){.fma-search-row{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:640px){
+ .sidebar{grid-template-columns:auto minmax(0,1fr)}
+ .app-nav{flex-wrap:wrap;justify-content:flex-end}
+}
