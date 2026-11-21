@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SONORA · Propuesta de investigación</title>
+  <link rel="icon" href="/assets/brand/cactus-sonora.svg">
+  <link rel="stylesheet" href="/presentacion.css">
+  <link rel="stylesheet" href="/western.css">
+  <script src="/presentacion.js" defer></script>
+</head>
+<body class="deck-page">
+  <header class="deck-header">
+    <a class="deck-brand" href="/">
+      <img src="/assets/brand/cactus-sonora.svg" alt="">
+      SONORA
+    </a>
+    <div class="deck-actions">
+      <a href="/presentacion.html">Presentación original</a>
+      <button id="fullscreen" type="button" hidden>Pantalla completa</button>
+    </div>
+  </header>
+
+  <main id="slides" aria-label="Propuesta de investigación de SONORA">
+    <div class="slide-scroll">
+      <section class="slide cover" aria-labelledby="propuesta">
+        <p class="eyebrow">Propuesta de investigación · NLP</p>
+        <h2 id="propuesta" tabindex="-1">¿Cómo expresan las letras un mismo sentimiento?</h2>
+        <p class="lead">Estudiar la relación entre emoción, tema y recursos expresivos en letras de canciones en inglés.</p>
+        <p class="author">Bruno Ruiz Juárez</p>
+      </section>
+
+      <section class="slide" aria-labelledby="hipotesis" hidden>
+        <p class="eyebrow">Hipótesis</p>
+        <h2 id="hipotesis" tabindex="-1">Compartir emoción aumenta la probabilidad de compartir rasgos expresivos</h2>
+        <p class="lead">Esperamos que, a igual tema, dos letras con mayor afinidad emocional se parezcan más en su vocabulario, imágenes o formas de dirigirse a otras personas.</p>
+        <p class="takeaway">Contrastaremos pares del mismo tema con afinidad emocional alta y baja. Por ejemplo, dos letras sobre una ruptura pueden expresar tristeza con recuerdos o con imágenes de ausencia.</p>
+      </section>
+
+      <section class="slide" aria-labelledby="objetivos" hidden>
+        <p class="eyebrow">Objetivos de NLP</p>
+        <h2 id="objetivos" tabindex="-1">Reconocer, agrupar y comparar letras</h2>
+        <ol class="tiles steps">
+          <li><h3>Reconocer sentimientos</h3><p>Estimar perfiles de ocho emociones con NRC EmoLex y contrastar la afinidad emocional de los pares con juicios humanos.</p></li>
+          <li><h3>Encontrar y agrupar vecinos</h3><p>Comparar coseno, euclidiana y Manhattan en vectores de letras. Comparar también coseno y Manhattan en perfiles emocionales. Medir qué vecinos y grupos se mantienen.</p></li>
+          <li><h3>Comparar formas de expresión</h3><p>Comprobar si letras con emociones parecidas comparten vocabulario, imágenes o voz narrativa. Anotar estos rasgos y controlar el tema al comparar los pares.</p></li>
+        </ol>
+        <p class="takeaway">En vectores normalizados con L2, coseno y euclidiana producen el mismo orden de vecinos. Esa comparación sirve como control.</p>
+      </section>
+
+      <section class="slide" aria-labelledby="retos" hidden>
+        <p class="eyebrow">Retos metodológicos</p>
+        <h2 id="retos" tabindex="-1">Del significado de las palabras al sentido de la letra</h2>
+        <div class="tiles">
+          <article><h3>Orden</h3><p>La suma de vectores pierde el orden de las palabras y de los versos. Puede confundir «I still love you» con «I don’t love you anymore».</p></article>
+          <article><h3>Embeddings estáticos</h3><p>Word2Vec asigna un mismo vector a cada palabra para todos sus usos. El contexto puede cambiar su sentido dentro de una canción.</p></article>
+          <article><h3>Análisis de sentimiento</h3><p>EmoLex cuenta asociaciones léxicas. La negación, la ironía y los cambios de tono requieren evidencia contextual.</p></article>
+          <article><h3>Falta de anotación</h3><p>Se necesitan juicios independientes sobre tema, emoción y recursos expresivos para evaluar el ranking y contrastar la hipótesis.</p></article>
+        </div>
+      </section>
+
+      <section class="slide" aria-labelledby="resultados" hidden>
+        <p class="eyebrow">Resultados preliminares</p>
+        <h2 id="resultados" tabindex="-1">Los métodos recuperan vecinos distintos</h2>
+        <div class="tiles">
+          <article><h3>Representación</h3><p>Entrenamos Word2Vec sobre 2 208 832 letras. Los vectores de 128 dimensiones cubrieron cerca del 81,9 % de los tokens.</p></article>
+          <article><h3>Vecinos</h3><p>En cinco consultas de validación, SGNS y TF-IDF compartieron un vecino en un top 10 y ninguno en los otros cuatro.</p></article>
+          <article><h3>Piloto emocional</h3><p>192 de 200 letras obtuvieron un perfil utilizable. Se prepararon 224 pares de 12 consultas semilla para anotación.</p></article>
+        </div>
+        <p class="takeaway">Queda por medir si la emoción mejora el ranking, qué grupos se mantienen entre métricas y si compartir emoción se asocia con compartir recursos expresivos.</p>
+      </section>
+    </div>
+
+    <footer class="deck-footer">
+      <button id="previous-slide" type="button">← Anterior</button>
+      <div class="slide-position">
+        <span id="slide-status" role="status"></span>
+        <progress id="slide-progress" aria-label="Avance de la propuesta"></progress>
+      </div>
+      <button id="next-slide" type="button">Siguiente →</button>
+    </footer>
+  </main>
+</body>
+</html>

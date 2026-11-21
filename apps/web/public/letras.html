@@ -21,6 +21,8 @@
 <meta name="description" content="Tres rutas de diseño para una estación de descubrimiento musical en el desierto: Radio Ocaso, Archivo del Desierto y Frecuencia Cobre.">
 <link rel="icon" type="image/svg+xml" href="assets/brand/cactus-sonora.svg">
 <link rel="stylesheet" href="styles.css?v=fma-2">
+<link rel="stylesheet" href="/presentacion-enlace.css">
+<link rel="stylesheet" href="/western.css">
 </head>
 <body data-theme="ocaso">
 <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
@@ -37,6 +39,7 @@
 <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"/></symbol>
 </defs></svg>
 <header class="studio-bar">
+ <a class="presentation-link" href="/presentacion.html?guion=1">Presentación</a>
  <a class="studio-id" href="?direccion=ocaso"><span class="studio-dot"></span> SONORA <span>/ Estudio visual</span></a>
  <nav class="directions" aria-label="Direcciones visuales">
   <button data-direction="ocaso" aria-pressed="true"><span>01</span> Radio Ocaso</button>
@@ -71,6 +74,10 @@
 </aside>
 <main>
  <header class="app-topbar"><div><span class="live-dot"></span> TU ESTACIÓN DE DESCUBRIMIENTOS</div><span class="catalog-label">Cargando catálogo textual…</span></header>
+ <section class="hero">
+  <div class="hero-image" aria-hidden="true"></div>
+  <div class="hero-text"><h1>Una canción.<br><em>Mil caminos.</em></h1><p>Parte de lo que te mueve.<br>Encuentra algo que todavía no conoces.</p></div>
+ </section>
  <section id="fma-audio" class="fma-audio" aria-labelledby="fma-title">
   <header class="fma-heading">
    <span class="fma-icon" aria-hidden="true"><svg><use href="#i-music"/></svg></span>
@@ -87,12 +94,6 @@
   <p id="fma-status" class="fma-status" role="status"></p>
   <p id="fma-local-link" class="fma-status" hidden><a href="http://127.0.0.1:8010/#fma-audio">Abrir el servidor local de SONORA</a></p>
   <div id="fma-results" class="fma-results"></div>
- </section>
- <section class="hero">
-  <div class="hero-image" aria-hidden="true"></div>
-  <div class="hero-text"><div class="hero-eyebrow"><span></span> BUENA MÚSICA, NUEVOS HORIZONTES</div><h1>Una canción.<br><em>Mil caminos.</em></h1><p>Parte de lo que te mueve.<br>Encuentra algo que todavía no conoces.</p></div>
-  <div class="hero-stamp" aria-hidden="true">EST. <b>SONORA</b> 2026 <span>EXPLORACIÓN MUSICAL</span></div>
-  <span class="hero-coordinate" aria-hidden="true">29° 04′ N · 110° 57′ O</span>
  </section>
  <section class="discovery-console" aria-label="Configurar tu descubrimiento">
   <form id="search-form" autocomplete="off">

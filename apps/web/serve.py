@@ -55,6 +55,8 @@ class SonoraHandler(SimpleHTTPRequestHandler):
             self.end_headers()
             from io import BytesIO
             return BytesIO(payload)
+        if request_path in ("/", "/index.html"):
+            self.path = "/letras.html"
         return super().send_head()
 
 
@@ -82,8 +84,8 @@ def main():
     args = parser.parse_args()
     if not 1 <= args.port <= 65535:
         parser.error("El puerto debe estar entre 1 y 65535.")
-    if not (PUBLIC / "index.html").is_file():
-        print("Falta public/index.html. Extrae el ZIP completo antes de iniciar.", file=sys.stderr)
+    if not (PUBLIC / "letras.html").is_file():
+        print("Falta public/letras.html. Extrae el ZIP completo antes de iniciar.", file=sys.stderr)
         return 1
     host = "0.0.0.0" if args.wifi else "127.0.0.1"
     try:

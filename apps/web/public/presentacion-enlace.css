@@ -1,0 +1,20 @@
+.presentation-link {
+  position: fixed;
+  inset: 12px 16px auto auto;
+  z-index: 20;
+  padding: .55rem .9rem;
+  border-radius: 8px;
+  background: #ffc18c;
+  color: #28170e;
+  font: 700 .875rem Open, system-ui, sans-serif;
+  text-decoration: none;
+}
+
+.studio-bar { padding-right: max(30px, 10rem); }
+.site-header { padding-right: max(3rem, 10rem); }
+
+@media (max-width: 640px) {
+  .studio-bar { padding-right: 14px; }
+  .studio-id { margin-right: 8rem; }
+  .studio-bar .brief-toggle { margin-right: 8rem; }
+}
